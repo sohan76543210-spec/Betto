@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Matchday Predictions</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch:#0B3B2E;
+    --pitch-2:#123F30;
+    --turf:#1E6B4E;
+    --line:#2E7D5B;
+    --chalk:#F4F1E6;
+    --chalk-dim:#B9C7BF;
+    --amber:#FFB020;
+    --amber-dim:#7A5A18;
+    --card:#0F2F26;
+    --danger:#E4573D;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(255,176,32,0.08), transparent 60%),
+      repeating-linear-gradient(0deg, var(--pitch) 0px, var(--pitch) 44px, var(--pitch-2) 44px, var(--pitch-2) 88px);
+    color:var(--chalk);
+    font-family:'Inter', sans-serif;
+    min-height:100vh;
+    padding-bottom:48px;
+  }
+  .field-lines{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      linear-gradient(rgba(244,241,230,0.05) 1px, transparent 1px);
+    background-size: 100% 44px;
+  }
+  header{
+    position:relative; z-index:1;
+    padding:22px 20px 16px;
+    text-align:center;
+    border-bottom:2px dashed rgba(244,241,230,0.18);
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--amber); margin-bottom:6px;
+  }
+  h1{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:34px;
+    letter-spacing:0.5px;
+    margin:0;
+    color:var(--chalk);
+    text-shadow:0 2px 0 rgba(0,0,0,0.25);
+  }
+  .sub{
+    color:var(--chalk-dim);
+    font-size:13px;
+    margin-top:6px;
+  }
+  main{position:relative; z-index:1; max-width:520px; margin:0 auto; padding:18px 14px;}
+
+  #status{
+    text-align:center; color:var(--chalk-dim); padding:40px 20px; font-size:14px;
+  }
+  #status .spinner{
+    width:26px; height:26px; margin:0 auto 14px;
+    border:3px solid rgba(244,241,230,0.2);
+    border-top-color:var(--amber);
+    border-radius:50%;
+    animation:spin 0.8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .match-card{
+    background:var(--card);
+    border:1px solid rgba(244,241,230,0.1);
+    border-radius:var(--radius);
+    margin-bottom:16px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
+  .match-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:12px 16px 8px;
+    border-bottom:1px dashed rgba(244,241,230,0.15);
+  }
+  .competition{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--amber);
+  }
+  .kickoff{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px; color:var(--chalk-dim);
+  }
+  .teams{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 16px 10px;
+    gap:10px;
+  }
+  .team{flex:1; font-size:16px; font-weight:600; line-height:1.25;}
+  .team.away{text-align:right;}
+  .vs-block{
+    font-family:'Anton', sans-serif;
+    font-size:13px; color:var(--chalk-dim);
+    background:rgba(255,176,32,0.08);
+    border:1px solid rgba(255,176,32,0.25);
+    border-radius:8px;
+    padding:4px 8px;
+    white-space:nowrap;
+  }
+
+  .scoreboard{
+    display:flex;
+    margin:0 16px 12px;
+    background:rgba(0,0,0,0.25);
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid rgba(244,241,230,0.08);
+  }
+  .sb-cell{
+    flex:1; text-align:center; padding:9px 4px;
+    border-right:1px solid rgba(244,241,230,0.08);
+  }
+  .sb-cell:last-child{border-right:none;}
+  .sb-val{
+    font-family:'JetBrains Mono', monospace;
+    font-size:15px; font-weight:700; color:var(--chalk);
+  }
+  .sb-label{font-size:9.5px; color:var(--chalk-dim); margin-top:2px; letter-spacing:0.5px;}
+
+  .pick-row{
+    margin:0 16px 14px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:linear-gradient(135deg, rgba(255,176,32,0.14), rgba(255,176,32,0.04));
+    border:1px solid rgba(255,176,32,0.3);
+    border-radius:10px;
+    padding:10px 14px;
+  }
+  .pick-label{font-size:10px; letter-spacing:1px; color:var(--amber-dim); text-transform:uppercase; font-family:'JetBrains Mono', monospace; background:var(--amber); color:#1a1300; padding:2px 7px; border-radius:5px; font-weight:700;}
+  .pick-market{font-weight:700; font-size:14px; margin-top:2px;}
+  .pick-odds{font-family:'JetBrains Mono', monospace; text-align:right; font-size:13px;}
+  .pick-odds b{color:var(--amber); font-size:16px;}
+
+  .scores-row{
+    display:flex; gap:8px; margin:0 16px 16px; flex-wrap:wrap;
+  }
+  .score-chip{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    background:rgba(244,241,230,0.06);
+    border:1px solid rgba(244,241,230,0.12);
+    border-radius:7px;
+    padding:5px 9px;
+  }
+  .score-chip b{color:var(--chalk);}
+  .score-chip span{color:var(--chalk-dim);}
+
+  .empty{
+    text-align:center; padding:50px 20px; color:var(--chalk-dim);
+  }
+  .disclaimer{
+    max-width:520px; margin:8px auto 0; padding:14px 18px;
+    font-size:11.5px; line-height:1.6; color:var(--chalk-dim);
+    border-top:2px dashed rgba(244,241,230,0.18);
+    text-align:center;
+  }
+  .disclaimer b{color:var(--danger);}
+  .updated{
+    text-align:center; font-family:'JetBrains Mono', monospace;
+    font-size:10px; color:var(--chalk-dim); opacity:0.7; margin-top:10px;
+  }
+</style>
+</head>
+<body>
+<div class="field-lines"></div>
+
+<header>
+  <div class="eyebrow">Poisson Model · Matchday Board</div>
+  <h1>Today's Picks</h1>
+  <div class="sub">Statistics-based football predictions</div>
+</header>
+
+<main>
+  <div id="status">
+    <div class="spinner"></div>
+    Loading today's matches...
+  </div>
+  <div id="matches"></div>
+</main>
+
+<div class="disclaimer" id="disclaimer" style="display:none;"></div>
+<div class="updated" id="updated"></div>
+
+<script>
+  // Telegram Mini App setup
+  const tg = window.Telegram?.WebApp;
+  if (tg) {
+    tg.ready();
+    tg.expand();
+    if (tg.setHeaderColor) { try { tg.setHeaderColor('#0B3B2E'); } catch(e){} }
+    if (tg.setBackgroundColor) { try { tg.setBackgroundColor('#0B3B2E'); } catch(e){} }
+  }
+
+  function fmtKickoff(iso){
+    if(!iso) return '';
+    try{
+      const d = new Date(iso);
+      return d.toLocaleString('en-US', {weekday:'short', hour:'2-digit', minute:'2-digit'});
+    }catch(e){ return ''; }
+  }
+
+  function matchCard(m){
+    const best = m.best_pick;
+    const scores = (m.top_scores||[]).map(s =>
+      `<div class="score-chip"><b>${s.score}</b> <span>${s.probability_pct}%</span></div>`
+    ).join('');
+
+    return `
+    <div class="match-card">
+      <div class="match-head">
+        <span class="competition">${m.competition||''}</span>
+        <span class="kickoff">${fmtKickoff(m.match_date)}</span>
+      </div>
+      <div class="teams">
+        <div class="team home">${m.home_team}</div>
+        <div class="vs-block">VS</div>
+        <div class="team away">${m.away_team}</div>
+      </div>
+      <div class="scoreboard">
+        <div class="sb-cell"><div class="sb-val">${m.home_win_pct}%</div><div class="sb-label">Home Win</div></div>
+        <div class="sb-cell"><div class="sb-val">${m.draw_pct}%</div><div class="sb-label">Draw</div></div>
+        <div class="sb-cell"><div class="sb-val">${m.away_win_pct}%</div><div class="sb-label">Away Win</div></div>
+        <div class="sb-cell"><div class="sb-val">${m.most_likely_score}</div><div class="sb-label">Likely Score</div></div>
+      </div>
+      ${best ? `
+      <div class="pick-row">
+        <div>
+          <div class="pick-label">Best Pick</div>
+          <div class="pick-market">${best.market}</div>
+        </div>
+        <div class="pick-odds">${best.probability_pct}%<br><b>${best.fair_odds}</b> odds</div>
+      </div>` : ''}
+      <div class="scores-row">${scores}</div>
+    </div>`;
+  }
+
+  async function load(){
+    const statusEl = document.getElementById('status');
+    const listEl = document.getElementById('matches');
+    try{
+      const res = await fetch('data/predictions.json?t=' + Date.now());
+      if(!res.ok) throw new Error('fetch failed');
+      const data = await res.json();
+
+      statusEl.style.display = 'none';
+
+      if(!data.matches || data.matches.length === 0){
+        listEl.innerHTML = '<div class="empty">🗓️ No scheduled matches found for today.<br>Check back tomorrow.</div>';
+      } else {
+        listEl.innerHTML = data.matches.map(matchCard).join('');
+      }
+
+      const discEl = document.getElementById('disclaimer');
+      discEl.style.display = 'block';
+      discEl.innerHTML = '⚠️ <b>Please note:</b> ' + (data.disclaimer || '');
+
+      if(data.generated_at){
+        const d = new Date(data.generated_at);
+        document.getElementById('updated').textContent =
+          'Last updated: ' + d.toLocaleString('en-US');
+      }
+    }catch(e){
+      statusEl.innerHTML = '⚠️ Could not load data. Please try again shortly.';
+    }
+  }
+
+  load();
+</script>
+</body>
+</html>
