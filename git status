@@ -1,7 +1,0 @@
-cd football_bot
-git init
-git add .
-git commit -m "Initial commit: football prediction telegram bot"
-git branch -M main
-git remote add origin https://github.com/আপনার_ইউজারনেম/রিপো_নাম.git
-git push -u origin main
