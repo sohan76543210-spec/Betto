@@ -1,135 +1,12 @@
 {
-  "generated_at": "2026-08-13T23:55:03.621713+00:00",
+  "generated_at": "2026-08-14T07:25:47.446394+00:00",
   "disclaimer": "This is a statistical estimate, not a guaranteed outcome. The odds shown are our own model's calculation, not a bookmaker's real odds. No prediction system can ever be 100% accurate. Please make decisions responsibly.",
   "matches": [
     {
-      "competition": "Second League - Group 2",
-      "home_team": "Spartak Moscow 2",
-      "away_team": "Irkutsk",
-      "match_date": "2026-08-13T13:00:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Liga de Ascenso",
-      "home_team": "Cariari Pococi",
-      "away_team": "Pitbulls Santa Barbara FC",
-      "match_date": "2026-08-13T19:00:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "UEFA Europa League",
-      "home_team": "KI Klaksvik",
-      "away_team": "Lech Poznan",
-      "match_date": "2026-08-13T19:45:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
       "competition": "Copa Colombia",
-      "home_team": "Internacional de Bogota",
-      "away_team": "Real Soacha",
-      "match_date": "2026-08-13T21:00:00+00:00",
+      "home_team": "Independiente Medellin",
+      "away_team": "Deportivo Pasto",
+      "match_date": "2026-08-14T01:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -167,10 +44,10 @@
       ]
     },
     {
-      "competition": "CONCACAF Central American Cup",
-      "home_team": "Alianza FC",
-      "away_team": "UMECIT",
-      "match_date": "2026-08-14T00:00:00+00:00",
+      "competition": "Npl Nsw U20",
+      "home_team": "Sydney FC U20",
+      "away_team": "St. George City U20",
+      "match_date": "2026-08-14T07:30:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -208,10 +85,10 @@
       ]
     },
     {
-      "competition": "Primera B",
-      "home_team": "Curico Unido",
-      "away_team": "Deportes Santa Cruz",
-      "match_date": "2026-08-14T00:30:00+00:00",
+      "competition": "Youth Championship",
+      "home_team": "Ural U20",
+      "away_team": "Rostov U19",
+      "match_date": "2026-08-14T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -249,10 +126,10 @@
       ]
     },
     {
-      "competition": "Primera B",
-      "home_team": "Deportes Iquique",
-      "away_team": "Deportes Copiapo",
-      "match_date": "2026-08-14T00:30:00+00:00",
+      "competition": "Central Youth League",
+      "home_team": "Arkonia U19",
+      "away_team": "Górnik Zabrze U19",
+      "match_date": "2026-08-14T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -290,10 +167,10 @@
       ]
     },
     {
-      "competition": "Leagues Cup",
-      "home_team": "Club America",
-      "away_team": "Austin",
-      "match_date": "2026-08-14T00:30:00+00:00",
+      "competition": "Friendlies Clubs",
+      "home_team": "Karlovac 1919",
+      "away_team": "Trnje",
+      "match_date": "2026-08-14T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -331,10 +208,10 @@
       ]
     },
     {
-      "competition": "CONMEBOL Libertadores",
-      "home_team": "Rosario Central",
-      "away_team": "Corinthians",
-      "match_date": "2026-08-14T00:30:00+00:00",
+      "competition": "Friendlies Clubs",
+      "home_team": "Intercity",
+      "away_team": "Levante II",
+      "match_date": "2026-08-14T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -372,10 +249,133 @@
       ]
     },
     {
-      "competition": "CONMEBOL Sudamericana",
-      "home_team": "Cienciano",
-      "away_team": "Botafogo",
-      "match_date": "2026-08-14T00:30:00+00:00",
+      "competition": "Youth Championship",
+      "home_team": "Nizhny Novgorod U19",
+      "away_team": "Akademiya Konoplev U20",
+      "match_date": "2026-08-14T09:00:00+00:00",
+      "home_expected_goals": 1.32,
+      "away_expected_goals": 1.2,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.2,
+      "draw_pct": 26.8,
+      "away_win_pct": 33.6,
+      "over_2_5_pct": 45.7,
+      "btts_yes_pct": 50.9,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 66.0,
+        "fair_odds": 1.51
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - No",
+        "probability_pct": 49.1,
+        "fair_odds": 2.04
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 12.7,
+          "fair_odds": 7.85
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 10.6,
+          "fair_odds": 9.42
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 9.7,
+          "fair_odds": 10.36
+        }
+      ]
+    },
+    {
+      "competition": "New South Wales NPL",
+      "home_team": "Sydney FC U23",
+      "away_team": "St George City FA",
+      "match_date": "2026-08-14T09:30:00+00:00",
+      "home_expected_goals": 1.32,
+      "away_expected_goals": 1.2,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.2,
+      "draw_pct": 26.8,
+      "away_win_pct": 33.6,
+      "over_2_5_pct": 45.7,
+      "btts_yes_pct": 50.9,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 66.0,
+        "fair_odds": 1.51
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - No",
+        "probability_pct": 49.1,
+        "fair_odds": 2.04
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 12.7,
+          "fair_odds": 7.85
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 10.6,
+          "fair_odds": 9.42
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 9.7,
+          "fair_odds": 10.36
+        }
+      ]
+    },
+    {
+      "competition": "Queensland NPL",
+      "home_team": "Moreton City Excelsior",
+      "away_team": "Lions",
+      "match_date": "2026-08-14T09:30:00+00:00",
+      "home_expected_goals": 1.32,
+      "away_expected_goals": 1.2,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.2,
+      "draw_pct": 26.8,
+      "away_win_pct": 33.6,
+      "over_2_5_pct": 45.7,
+      "btts_yes_pct": 50.9,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 66.0,
+        "fair_odds": 1.51
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - No",
+        "probability_pct": 49.1,
+        "fair_odds": 2.04
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 12.7,
+          "fair_odds": 7.85
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 10.6,
+          "fair_odds": 9.42
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 9.7,
+          "fair_odds": 10.36
+        }
+      ]
+    },
+    {
+      "competition": "Queensland NPL",
+      "home_team": "Peninsula Power",
+      "away_team": "Brisbane City",
+      "match_date": "2026-08-14T09:30:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
