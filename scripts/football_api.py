@@ -64,17 +64,24 @@ def get_team_season_stats(team_id: int, league_id: int, season: int):
     ডেটা না পেলে None রিটার্ন করে (তখন predictor ডিফল্ট মান ব্যবহার করবে)।
     """
     if not league_id or not season:
+        print(f"DEBUG: missing league_id/season for team {team_id} (league_id={league_id}, season={season})")
         return None
     url = f"{BASE_URL}/teams/statistics"
     params = {"team": team_id, "league": league_id, "season": season}
     resp = requests.get(url, headers=_headers(), params=params, timeout=15)
     resp.raise_for_status()
     data = resp.json()
+
+    errors = data.get("errors")
+    if errors:
+        print(f"DEBUG: API error for team {team_id}, league {league_id}, season {season}: {errors}")
+
     stats = data.get("response") or {}
     goals = stats.get("goals", {})
     played = stats.get("fixtures", {}).get("played", {}).get("total", 0)
 
     if not played:
+        print(f"DEBUG: no 'played' data for team {team_id}, league {league_id}, season {season}. Raw response: {data}")
         return None
 
     try:
