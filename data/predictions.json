@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T11:27:01.771391+00:00",
+  "generated_at": "2026-08-14T11:36:44.839505+00:00",
   "disclaimer": "This is a statistical estimate, not a guaranteed outcome. The odds shown are our own model's calculation, not a bookmaker's real odds. No prediction system can ever be 100% accurate. Please make decisions responsibly.",
   "matches": [
     {
@@ -48,6 +48,47 @@
       "home_team": "Eastern Lions",
       "away_team": "Essendon Royals SC",
       "match_date": "2026-08-14T09:45:00+00:00",
+      "home_expected_goals": 1.1,
+      "away_expected_goals": 2.0,
+      "most_likely_score": "1-1",
+      "home_win_pct": 20.3,
+      "draw_pct": 21.4,
+      "away_win_pct": 56.6,
+      "over_2_5_pct": 58.1,
+      "btts_yes_pct": 56.5,
+      "best_pick": {
+        "market": "Over 2.5 Goals",
+        "probability_pct": 58.1,
+        "fair_odds": 1.72
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - No",
+        "probability_pct": 43.5,
+        "fair_odds": 2.3
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 9.9,
+          "fair_odds": 10.09
+        },
+        {
+          "score": "1-2",
+          "probability_pct": 9.9,
+          "fair_odds": 10.09
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 9.0,
+          "fair_odds": 11.1
+        }
+      ]
+    },
+    {
+      "competition": "Liga II",
+      "home_team": "CS Dinamo București",
+      "away_team": "Metalul Buzău",
+      "match_date": "2026-08-15T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -85,10 +126,10 @@
       ]
     },
     {
-      "competition": "Victoria Premier League 2",
-      "home_team": "Springvale",
-      "away_team": "Malvern",
-      "match_date": "2026-08-14T10:30:00+00:00",
+      "competition": "Liga II",
+      "home_team": "CSM Reşiţa",
+      "away_team": "Ştefăneşti",
+      "match_date": "2026-08-15T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -126,10 +167,10 @@
       ]
     },
     {
-      "competition": "U19 Bundesliga",
-      "home_team": "Eintracht Frankf U19",
-      "away_team": "Rot-Weiß Erfurt U19",
-      "match_date": "2026-08-14T10:30:00+00:00",
+      "competition": "Liga II",
+      "home_team": "Bihor Oradea",
+      "away_team": "ASA Targu Mures",
+      "match_date": "2026-08-15T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -167,10 +208,10 @@
       ]
     },
     {
-      "competition": "U19 Bundesliga",
-      "home_team": "Erzgebirge Aue U19",
-      "away_team": "Greuther Fürth U19",
-      "match_date": "2026-08-14T11:00:00+00:00",
+      "competition": "Liga II",
+      "home_team": "Gloria Bistriţa",
+      "away_team": "Concordia",
+      "match_date": "2026-08-15T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -208,10 +249,10 @@
       ]
     },
     {
-      "competition": "Ligue A",
-      "home_team": "Muzinga",
-      "away_team": "Never Give Up Academy",
-      "match_date": "2026-08-14T11:00:00+00:00",
+      "competition": "Liga II",
+      "home_team": "Metaloglobus",
+      "away_team": "Viitorul Şelimbăr",
+      "match_date": "2026-08-15T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -249,10 +290,10 @@
       ]
     },
     {
-      "competition": "League One",
-      "home_team": "Shaanxi Union",
-      "away_team": "Changchun Yatai",
-      "match_date": "2026-08-14T11:30:00+00:00",
+      "competition": "Liga II",
+      "home_team": "FC Politehnica Timisoara",
+      "away_team": "Unirea Slobozia",
+      "match_date": "2026-08-15T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -290,10 +331,10 @@
       ]
     },
     {
-      "competition": "Super League",
-      "home_team": "Shandong Luneng",
-      "away_team": "Qingdao Jonoon",
-      "match_date": "2026-08-14T11:35:00+00:00",
+      "competition": "Liga II",
+      "home_team": "CSM Ramnicu Valcea",
+      "away_team": "Slatina",
+      "match_date": "2026-08-15T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -331,51 +372,10 @@
       ]
     },
     {
-      "competition": "Super League",
-      "home_team": "Wuhan Three Towns",
-      "away_team": "SHANGHAI SIPG",
-      "match_date": "2026-08-14T11:35:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Youth Championship",
-      "home_team": "Rubin Kazan U20",
-      "away_team": "Rodina Moscow U19",
-      "match_date": "2026-08-14T12:00:00+00:00",
+      "competition": "Liga II",
+      "home_team": "Cetatea Suceava",
+      "away_team": "CSM Satu Mare",
+      "match_date": "2026-08-15T08:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
