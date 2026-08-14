@@ -2,24 +2,119 @@
 predictor.py
 Poisson distribution ব্যবহার করে ম্যাচের সম্ভাব্য ফলাফলের probability হিসাব করে।
 
+তিনটা সিগন্যাল মিলিয়ে প্রতিটা টিমের expected গোল বের করা হয়:
+  1. Head-to-Head (দুই টিমের আগের মুখোমুখি লড়াই)         - weight 0.25
+  2. Overall recent form (শেষ কয়েক ম্যাচ, যেকোনো ভেন্যু)   - weight 0.35
+  3. Venue-specific form (হোম টিমের হোম-ফর্ম / অ্যাওয়ে টিমের অ্যাওয়ে-ফর্ম) - weight 0.40
+
+যেকোনো একটা সিগন্যাল ডেটা না পেলে বাকিগুলো দিয়েই (re-normalize করে) হিসাব হয়।
+সবগুলোই না পেলে ডিফল্ট মান (1.2, 1.2) ব্যবহার হয়।
+
 গুরুত্বপূর্ণ: এটা একটা statistical estimate, guarantee না।
 """
 
 import math
-from football_api import get_team_season_stats
+from football_api import get_head_to_head, get_team_recent_form
+
+H2H_WEIGHT = 0.25
+FORM_WEIGHT = 0.35
+VENUE_WEIGHT = 0.40
+
+
+def _venue_split(matches, team_id):
+    """টিমের ম্যাচগুলোকে হোম-এ খেলা ও অ্যাওয়ে-তে খেলা ম্যাচে ভাগ করে।"""
+    home_matches = [m for m in matches if m["homeTeam"]["id"] == team_id]
+    away_matches = [m for m in matches if m["awayTeam"]["id"] == team_id]
+    return home_matches, away_matches
+
+
+def _avg_scored_conceded(matches, team_id):
+    """একটা ম্যাচ-লিস্ট থেকে টিমের গড় স্কোর করা ও গোল খাওয়ার হিসাব। ডেটা না থাকলে None।"""
+    scored, conceded, count = 0, 0, 0
+    for m in matches:
+        full_time = m.get("score", {}).get("fullTime", {})
+        home_goals = full_time.get("home")
+        away_goals = full_time.get("away")
+        if home_goals is None or away_goals is None:
+            continue
+        home_id = m["homeTeam"]["id"]
+        away_id = m["awayTeam"]["id"]
+        if home_id == team_id:
+            scored += home_goals
+            conceded += away_goals
+        elif away_id == team_id:
+            scored += away_goals
+            conceded += home_goals
+        else:
+            continue
+        count += 1
+    if count == 0:
+        return None
+    return scored / count, conceded / count
+
+
+def _weighted_avg(pairs):
+    """[(value_or_None, weight), ...] থেকে উপলব্ধ ভ্যালুগুলোর ওজনসহ গড় বের করে।"""
+    total_w = 0.0
+    total_v = 0.0
+    for v, w in pairs:
+        if v is None:
+            continue
+        total_v += v * w
+        total_w += w
+    if total_w == 0:
+        return None
+    return total_v / total_w
 
 
 def _poisson_prob(k, lam):
     return (lam ** k) * math.exp(-lam) / math.factorial(k)
 
 
-def predict_match(home_team_id: int, away_team_id: int, league_id: int = None,
-                   season: int = None, max_goals: int = 6):
-    home_stats = get_team_season_stats(home_team_id, league_id, season)
-    away_stats = get_team_season_stats(away_team_id, league_id, season)
+def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
+    h2h = get_head_to_head(home_team_id, away_team_id, limit=10)
+    home_recent = get_team_recent_form(home_team_id, limit=6)
+    away_recent = get_team_recent_form(away_team_id, limit=6)
 
-    home_scored_avg, home_conceded_avg = home_stats if home_stats else (1.2, 1.2)
-    away_scored_avg, away_conceded_avg = away_stats if away_stats else (1.2, 1.2)
+    home_home_matches, _ = _venue_split(home_recent, home_team_id)
+    _, away_away_matches = _venue_split(away_recent, away_team_id)
+
+    h2h_home = _avg_scored_conceded(h2h, home_team_id)
+    h2h_away = _avg_scored_conceded(h2h, away_team_id)
+    overall_home = _avg_scored_conceded(home_recent, home_team_id)
+    overall_away = _avg_scored_conceded(away_recent, away_team_id)
+    venue_home = _avg_scored_conceded(home_home_matches, home_team_id)
+    venue_away = _avg_scored_conceded(away_away_matches, away_team_id)
+
+    home_scored_avg = _weighted_avg([
+        (h2h_home[0] if h2h_home else None, H2H_WEIGHT),
+        (overall_home[0] if overall_home else None, FORM_WEIGHT),
+        (venue_home[0] if venue_home else None, VENUE_WEIGHT),
+    ])
+    home_conceded_avg = _weighted_avg([
+        (h2h_home[1] if h2h_home else None, H2H_WEIGHT),
+        (overall_home[1] if overall_home else None, FORM_WEIGHT),
+        (venue_home[1] if venue_home else None, VENUE_WEIGHT),
+    ])
+    away_scored_avg = _weighted_avg([
+        (h2h_away[0] if h2h_away else None, H2H_WEIGHT),
+        (overall_away[0] if overall_away else None, FORM_WEIGHT),
+        (venue_away[0] if venue_away else None, VENUE_WEIGHT),
+    ])
+    away_conceded_avg = _weighted_avg([
+        (h2h_away[1] if h2h_away else None, H2H_WEIGHT),
+        (overall_away[1] if overall_away else None, FORM_WEIGHT),
+        (venue_away[1] if venue_away else None, VENUE_WEIGHT),
+    ])
+
+    if home_scored_avg is None:
+        home_scored_avg = 1.2
+    if home_conceded_avg is None:
+        home_conceded_avg = 1.2
+    if away_scored_avg is None:
+        away_scored_avg = 1.2
+    if away_conceded_avg is None:
+        away_conceded_avg = 1.2
 
     home_expected = ((home_scored_avg + away_conceded_avg) / 2) * 1.1
     away_expected = (away_scored_avg + home_conceded_avg) / 2
