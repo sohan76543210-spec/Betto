@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T10:30:33.584283+00:00",
+  "generated_at": "2026-08-14T11:27:01.771391+00:00",
   "disclaimer": "This is a statistical estimate, not a guaranteed outcome. The odds shown are our own model's calculation, not a bookmaker's real odds. No prediction system can ever be 100% accurate. Please make decisions responsibly.",
   "matches": [
     {
@@ -48,88 +48,6 @@
       "home_team": "Eastern Lions",
       "away_team": "Essendon Royals SC",
       "match_date": "2026-08-14T09:45:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Victoria NPL",
-      "home_team": "St. Albans Saints",
-      "away_team": "Bentleigh Greens",
-      "match_date": "2026-08-14T10:30:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Victoria NPL 2",
-      "home_team": "Eltham Redbacks FC",
-      "away_team": "Manningham United Blues",
-      "match_date": "2026-08-14T10:30:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -249,91 +167,9 @@
       ]
     },
     {
-      "competition": "Western Australia NPL",
-      "home_team": "Bayswater City",
-      "away_team": "Stirling Lions",
-      "match_date": "2026-08-14T11:00:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
       "competition": "U19 Bundesliga",
       "home_team": "Erzgebirge Aue U19",
       "away_team": "Greuther Fürth U19",
-      "match_date": "2026-08-14T11:00:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Ligi kuu Bara",
-      "home_team": "Pamba Jiji",
-      "away_team": "Dodoma Jiji",
       "match_date": "2026-08-14T11:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
@@ -376,6 +212,170 @@
       "home_team": "Muzinga",
       "away_team": "Never Give Up Academy",
       "match_date": "2026-08-14T11:00:00+00:00",
+      "home_expected_goals": 1.32,
+      "away_expected_goals": 1.2,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.2,
+      "draw_pct": 26.8,
+      "away_win_pct": 33.6,
+      "over_2_5_pct": 45.7,
+      "btts_yes_pct": 50.9,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 66.0,
+        "fair_odds": 1.51
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - No",
+        "probability_pct": 49.1,
+        "fair_odds": 2.04
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 12.7,
+          "fair_odds": 7.85
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 10.6,
+          "fair_odds": 9.42
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 9.7,
+          "fair_odds": 10.36
+        }
+      ]
+    },
+    {
+      "competition": "League One",
+      "home_team": "Shaanxi Union",
+      "away_team": "Changchun Yatai",
+      "match_date": "2026-08-14T11:30:00+00:00",
+      "home_expected_goals": 1.32,
+      "away_expected_goals": 1.2,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.2,
+      "draw_pct": 26.8,
+      "away_win_pct": 33.6,
+      "over_2_5_pct": 45.7,
+      "btts_yes_pct": 50.9,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 66.0,
+        "fair_odds": 1.51
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - No",
+        "probability_pct": 49.1,
+        "fair_odds": 2.04
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 12.7,
+          "fair_odds": 7.85
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 10.6,
+          "fair_odds": 9.42
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 9.7,
+          "fair_odds": 10.36
+        }
+      ]
+    },
+    {
+      "competition": "Super League",
+      "home_team": "Shandong Luneng",
+      "away_team": "Qingdao Jonoon",
+      "match_date": "2026-08-14T11:35:00+00:00",
+      "home_expected_goals": 1.32,
+      "away_expected_goals": 1.2,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.2,
+      "draw_pct": 26.8,
+      "away_win_pct": 33.6,
+      "over_2_5_pct": 45.7,
+      "btts_yes_pct": 50.9,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 66.0,
+        "fair_odds": 1.51
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - No",
+        "probability_pct": 49.1,
+        "fair_odds": 2.04
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 12.7,
+          "fair_odds": 7.85
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 10.6,
+          "fair_odds": 9.42
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 9.7,
+          "fair_odds": 10.36
+        }
+      ]
+    },
+    {
+      "competition": "Super League",
+      "home_team": "Wuhan Three Towns",
+      "away_team": "SHANGHAI SIPG",
+      "match_date": "2026-08-14T11:35:00+00:00",
+      "home_expected_goals": 1.32,
+      "away_expected_goals": 1.2,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.2,
+      "draw_pct": 26.8,
+      "away_win_pct": 33.6,
+      "over_2_5_pct": 45.7,
+      "btts_yes_pct": 50.9,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 66.0,
+        "fair_odds": 1.51
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - No",
+        "probability_pct": 49.1,
+        "fair_odds": 2.04
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 12.7,
+          "fair_odds": 7.85
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 10.6,
+          "fair_odds": 9.42
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 9.7,
+          "fair_odds": 10.36
+        }
+      ]
+    },
+    {
+      "competition": "Youth Championship",
+      "home_team": "Rubin Kazan U20",
+      "away_team": "Rodina Moscow U19",
+      "match_date": "2026-08-14T12:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
