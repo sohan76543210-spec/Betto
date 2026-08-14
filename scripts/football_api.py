@@ -3,10 +3,8 @@ football_api.py
 API-Football (api-sports.io) থেকে আজকের/আসন্ন ম্যাচ, দুই টিমের head-to-head
 এবং প্রতিটা টিমের সাম্প্রতিক ফর্ম (recent fixtures) টেনে আনে।
 
-নোট: ফ্রি প্ল্যানে /teams/statistics endpoint বর্তমান সিজনের জন্য কাজ করে না
-(শুধু 2022-2024 সিজন সাপোর্ট করে), তাই এই ফাইলে সেটা ব্যবহার করা হয়নি।
-এর বদলে /fixtures endpoint (team + last N) এবং /fixtures/headtohead
-ব্যবহার করা হয়েছে, যেগুলো সাধারণত ফ্রি প্ল্যানেও সিজন-নিরপেক্ষভাবে কাজ করে।
+নোট: ফ্রি প্ল্যানে "last" প্যারামিটার ব্যবহার নিষিদ্ধ, তাই এখানে "from"/"to"
+তারিখ-রেঞ্জ ব্যবহার করে ম্যাচ টেনে এনে Python-এ sort করে সর্বশেষ N-টা নেওয়া হয়।
 """
 
 import os
@@ -61,10 +59,13 @@ def get_upcoming_matches(days_ahead: int = 1):
     return all_matches
 
 
-def get_team_recent_form(team_id: int, limit: int = 6):
-    """টিমের শেষ কয়েকটি (যেকোনো ভেন্যুর) ফিনিশড ম্যাচ ফিরিয়ে দেয়।"""
+def get_team_recent_form(team_id: int, limit: int = 6, lookback_days: int = 270):
+    """টিমের শেষ কয়েকটি (যেকোনো ভেন্যুর) ফিনিশড ম্যাচ ফিরিয়ে দেয় (from/to রেঞ্জ দিয়ে)।"""
+    today = date.today()
+    from_date = (today - timedelta(days=lookback_days)).isoformat()
+    to_date = today.isoformat()
     url = f"{BASE_URL}/fixtures"
-    params = {"team": team_id, "last": limit}
+    params = {"team": team_id, "from": from_date, "to": to_date, "status": "FT"}
     resp = requests.get(url, headers=_headers(), params=params, timeout=15)
     resp.raise_for_status()
     data = resp.json()
@@ -72,15 +73,25 @@ def get_team_recent_form(team_id: int, limit: int = 6):
     if errors:
         print(f"DEBUG: get_team_recent_form error for team {team_id}: {errors}")
     matches = [_adapt_fixture(fx) for fx in data.get("response", [])]
+    matches.sort(key=lambda m: m["utcDate"], reverse=True)
+    matches = matches[:limit]
     if not matches:
         print(f"DEBUG: get_team_recent_form empty for team {team_id}. Raw: {data}")
     return matches
 
 
-def get_head_to_head(home_team_id: int, away_team_id: int, limit: int = 10):
-    """দুই টিমের আগের মুখোমুখি লড়াইয়ের (finished) ফলাফল ফিরিয়ে দেয়।"""
+def get_head_to_head(home_team_id: int, away_team_id: int, limit: int = 10, lookback_days: int = 1095):
+    """দুই টিমের আগের মুখোমুখি লড়াইয়ের (finished) ফলাফল ফিরিয়ে দেয় (from/to রেঞ্জ দিয়ে)।"""
+    today = date.today()
+    from_date = (today - timedelta(days=lookback_days)).isoformat()
+    to_date = today.isoformat()
     url = f"{BASE_URL}/fixtures/headtohead"
-    params = {"h2h": f"{home_team_id}-{away_team_id}", "last": limit}
+    params = {
+        "h2h": f"{home_team_id}-{away_team_id}",
+        "from": from_date,
+        "to": to_date,
+        "status": "FT",
+    }
     resp = requests.get(url, headers=_headers(), params=params, timeout=15)
     resp.raise_for_status()
     data = resp.json()
@@ -88,6 +99,8 @@ def get_head_to_head(home_team_id: int, away_team_id: int, limit: int = 10):
     if errors:
         print(f"DEBUG: get_head_to_head error for {home_team_id} vs {away_team_id}: {errors}")
     matches = [_adapt_fixture(fx) for fx in data.get("response", [])]
+    matches.sort(key=lambda m: m["utcDate"], reverse=True)
+    matches = matches[:limit]
     if not matches:
         print(f"DEBUG: get_head_to_head empty for {home_team_id} vs {away_team_id}. Raw: {data}")
     return matches
