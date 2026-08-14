@@ -37,12 +37,7 @@ def build():
         if len(output_matches) >= MAX_MATCHES:
             break
         try:
-            pred = predict_match(
-                m["homeTeam"]["id"],
-                m["awayTeam"]["id"],
-                league_id=m["competition"].get("id"),
-                season=m["competition"].get("season"),
-            )
+            pred = predict_match(m["homeTeam"]["id"], m["awayTeam"]["id"]))
         except Exception as e:
             print(f"prediction failed for match {m.get('id')}: {e}", file=sys.stderr)
             continue
