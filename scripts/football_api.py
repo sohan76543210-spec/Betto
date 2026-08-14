@@ -1,8 +1,12 @@
 """
 football_api.py
-API-Football (api-sports.io) থেকে আজকের/আসন্ন ম্যাচ ও টিমের সাম্প্রতিক ফলাফল টেনে আনে।
-predictor.py ও generate_predictions.py football-data.org-এর পুরনো ফরম্যাট আশা করে,
-তাই এখানে API-Football-এর রেসপন্স সেই একই shape-এ রূপান্তর করা হয়েছে।
+API-Football (api-sports.io) থেকে আজকের/আসন্ন ম্যাচ ও টিমের সিজন-স্ট্যাটস টেনে আনে।
+predictor.py ও generate_predictions.py-এর জন্য পুরনো football-data.org ফরম্যাটে
+রেসপন্স রূপান্তর করা হয়েছে।
+
+নোট: API-Football ফ্রি প্ল্যানে পুরনো ম্যাচ-হিস্ট্রি (last N fixtures) সবসময়
+বর্তমান সিজনের জন্য কাজ করে না, তাই team form বের করতে /teams/statistics
+endpoint ব্যবহার করা হচ্ছে, যা সরাসরি গড় গোল দেয়।
 """
 
 import os
@@ -26,7 +30,12 @@ def _adapt_fixture(fx):
         "id": fixture["id"],
         "utcDate": fixture["date"],
         "status": fixture["status"]["short"],
-        "competition": {"name": league["name"], "code": str(league["id"])},
+        "competition": {
+            "name": league["name"],
+            "code": str(league["id"]),
+            "id": league["id"],
+            "season": league.get("season"),
+        },
         "homeTeam": {"id": teams["home"]["id"], "name": teams["home"]["name"]},
         "awayTeam": {"id": teams["away"]["id"], "name": teams["away"]["name"]},
         "score": {"fullTime": {"home": goals.get("home"), "away": goals.get("away")}},
@@ -49,13 +58,35 @@ def get_upcoming_matches(days_ahead: int = 1):
     return all_matches
 
 
-def get_team_recent_form(team_id: int, limit: int = 5):
-    url = f"{BASE_URL}/fixtures"
-    params = {"team": team_id, "last": limit}
+def get_team_season_stats(team_id: int, league_id: int, season: int):
+    """
+    টিমের চলতি সিজনের গড় গোল-স্কোর ও গোল-কনসিড ফিরিয়ে দেয়।
+    ডেটা না পেলে None রিটার্ন করে (তখন predictor ডিফল্ট মান ব্যবহার করবে)।
+    """
+    if not league_id or not season:
+        return None
+    url = f"{BASE_URL}/teams/statistics"
+    params = {"team": team_id, "league": league_id, "season": season}
     resp = requests.get(url, headers=_headers(), params=params, timeout=15)
     resp.raise_for_status()
     data = resp.json()
-    return [_adapt_fixture(fx) for fx in data.get("response", [])[:limit]]
+    stats = data.get("response") or {}
+    goals = stats.get("goals", {})
+    played = stats.get("fixtures", {}).get("played", {}).get("total", 0)
+
+    if not played:
+        return None
+
+    try:
+        scored_avg = float(goals.get("for", {}).get("average", {}).get("total") or 0)
+        conceded_avg = float(goals.get("against", {}).get("average", {}).get("total") or 0)
+    except (TypeError, ValueError):
+        return None
+
+    if scored_avg == 0 and conceded_avg == 0:
+        return None
+
+    return scored_avg, conceded_avg
 
 
 def get_head_to_head(home_team_id: int, away_team_id: int, limit: int = 5):
