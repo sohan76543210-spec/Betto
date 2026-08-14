@@ -1,12 +1,12 @@
 """
 football_api.py
-API-Football (api-sports.io) থেকে আজকের/আসন্ন ম্যাচ ও টিমের সিজন-স্ট্যাটস টেনে আনে।
-predictor.py ও generate_predictions.py-এর জন্য পুরনো football-data.org ফরম্যাটে
-রেসপন্স রূপান্তর করা হয়েছে।
+API-Football (api-sports.io) থেকে আজকের/আসন্ন ম্যাচ, দুই টিমের head-to-head
+এবং প্রতিটা টিমের সাম্প্রতিক ফর্ম (recent fixtures) টেনে আনে।
 
-নোট: API-Football ফ্রি প্ল্যানে পুরনো ম্যাচ-হিস্ট্রি (last N fixtures) সবসময়
-বর্তমান সিজনের জন্য কাজ করে না, তাই team form বের করতে /teams/statistics
-endpoint ব্যবহার করা হচ্ছে, যা সরাসরি গড় গোল দেয়।
+নোট: ফ্রি প্ল্যানে /teams/statistics endpoint বর্তমান সিজনের জন্য কাজ করে না
+(শুধু 2022-2024 সিজন সাপোর্ট করে), তাই এই ফাইলে সেটা ব্যবহার করা হয়নি।
+এর বদলে /fixtures endpoint (team + last N) এবং /fixtures/headtohead
+ব্যবহার করা হয়েছে, যেগুলো সাধারণত ফ্রি প্ল্যানেও সিজন-নিরপেক্ষভাবে কাজ করে।
 """
 
 import os
@@ -53,56 +53,44 @@ def get_upcoming_matches(days_ahead: int = 1):
         resp = requests.get(url, headers=_headers(), params=params, timeout=15)
         resp.raise_for_status()
         data = resp.json()
+        errors = data.get("errors")
+        if errors:
+            print(f"DEBUG: get_upcoming_matches error for {d}: {errors}")
         for fx in data.get("response", []):
             all_matches.append(_adapt_fixture(fx))
     return all_matches
 
 
-def get_team_season_stats(team_id: int, league_id: int, season: int):
-    """
-    টিমের চলতি সিজনের গড় গোল-স্কোর ও গোল-কনসিড ফিরিয়ে দেয়।
-    ডেটা না পেলে None রিটার্ন করে (তখন predictor ডিফল্ট মান ব্যবহার করবে)।
-    """
-    if not league_id or not season:
-        print(f"DEBUG: missing league_id/season for team {team_id} (league_id={league_id}, season={season})")
-        return None
-    url = f"{BASE_URL}/teams/statistics"
-    params = {"team": team_id, "league": league_id, "season": season}
+def get_team_recent_form(team_id: int, limit: int = 6):
+    """টিমের শেষ কয়েকটি (যেকোনো ভেন্যুর) ফিনিশড ম্যাচ ফিরিয়ে দেয়।"""
+    url = f"{BASE_URL}/fixtures"
+    params = {"team": team_id, "last": limit}
     resp = requests.get(url, headers=_headers(), params=params, timeout=15)
     resp.raise_for_status()
     data = resp.json()
-
     errors = data.get("errors")
     if errors:
-        print(f"DEBUG: API error for team {team_id}, league {league_id}, season {season}: {errors}")
-
-    stats = data.get("response") or {}
-    goals = stats.get("goals", {})
-    played = stats.get("fixtures", {}).get("played", {}).get("total", 0)
-
-    if not played:
-        print(f"DEBUG: no 'played' data for team {team_id}, league {league_id}, season {season}. Raw response: {data}")
-        return None
-
-    try:
-        scored_avg = float(goals.get("for", {}).get("average", {}).get("total") or 0)
-        conceded_avg = float(goals.get("against", {}).get("average", {}).get("total") or 0)
-    except (TypeError, ValueError):
-        return None
-
-    if scored_avg == 0 and conceded_avg == 0:
-        return None
-
-    return scored_avg, conceded_avg
+        print(f"DEBUG: get_team_recent_form error for team {team_id}: {errors}")
+    matches = [_adapt_fixture(fx) for fx in data.get("response", [])]
+    if not matches:
+        print(f"DEBUG: get_team_recent_form empty for team {team_id}. Raw: {data}")
+    return matches
 
 
-def get_head_to_head(home_team_id: int, away_team_id: int, limit: int = 5):
+def get_head_to_head(home_team_id: int, away_team_id: int, limit: int = 10):
+    """দুই টিমের আগের মুখোমুখি লড়াইয়ের (finished) ফলাফল ফিরিয়ে দেয়।"""
     url = f"{BASE_URL}/fixtures/headtohead"
     params = {"h2h": f"{home_team_id}-{away_team_id}", "last": limit}
     resp = requests.get(url, headers=_headers(), params=params, timeout=15)
     resp.raise_for_status()
     data = resp.json()
-    return [_adapt_fixture(fx) for fx in data.get("response", [])]
+    errors = data.get("errors")
+    if errors:
+        print(f"DEBUG: get_head_to_head error for {home_team_id} vs {away_team_id}: {errors}")
+    matches = [_adapt_fixture(fx) for fx in data.get("response", [])]
+    if not matches:
+        print(f"DEBUG: get_head_to_head empty for {home_team_id} vs {away_team_id}. Raw: {data}")
+    return matches
 
 
 def get_match_result(fixture_id: int):
