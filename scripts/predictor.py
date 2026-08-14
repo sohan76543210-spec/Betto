@@ -6,43 +6,20 @@ Poisson distribution ব্যবহার করে ম্যাচের স�
 """
 
 import math
-from football_api import get_team_recent_form
-
-
-def _avg_goals(matches, team_id):
-    scored, conceded, count = 0, 0, 0
-    for m in matches:
-        home = m["homeTeam"]["id"]
-        away = m["awayTeam"]["id"]
-        full_time = m.get("score", {}).get("fullTime", {})
-        home_goals = full_time.get("home")
-        away_goals = full_time.get("away")
-        if home_goals is None or away_goals is None:
-            continue
-        if home == team_id:
-            scored += home_goals
-            conceded += away_goals
-        elif away == team_id:
-            scored += away_goals
-            conceded += home_goals
-        else:
-            continue
-        count += 1
-    if count == 0:
-        return 1.2, 1.2
-    return scored / count, conceded / count
+from football_api import get_team_season_stats
 
 
 def _poisson_prob(k, lam):
     return (lam ** k) * math.exp(-lam) / math.factorial(k)
 
 
-def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
-    home_matches = get_team_recent_form(home_team_id, limit=6)
-    away_matches = get_team_recent_form(away_team_id, limit=6)
+def predict_match(home_team_id: int, away_team_id: int, league_id: int = None,
+                   season: int = None, max_goals: int = 6):
+    home_stats = get_team_season_stats(home_team_id, league_id, season)
+    away_stats = get_team_season_stats(away_team_id, league_id, season)
 
-    home_scored_avg, home_conceded_avg = _avg_goals(home_matches, home_team_id)
-    away_scored_avg, away_conceded_avg = _avg_goals(away_matches, away_team_id)
+    home_scored_avg, home_conceded_avg = home_stats if home_stats else (1.2, 1.2)
+    away_scored_avg, away_conceded_avg = away_stats if away_stats else (1.2, 1.2)
 
     home_expected = ((home_scored_avg + away_conceded_avg) / 2) * 1.1
     away_expected = (away_scored_avg + home_conceded_avg) / 2
@@ -206,4 +183,4 @@ def best_pick(prediction: dict, min_odds: float = 1.40):
         "market": best[0],
         "probability_pct": round(best[1] * 100, 1),
         "fair_odds": best[2],
-  }
+    }
