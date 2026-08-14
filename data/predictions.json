@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T10:13:56.067501+00:00",
+  "generated_at": "2026-08-14T10:30:33.584283+00:00",
   "disclaimer": "This is a statistical estimate, not a guaranteed outcome. The odds shown are our own model's calculation, not a bookmaker's real odds. No prediction system can ever be 100% accurate. Please make decisions responsibly.",
   "matches": [
     {
@@ -48,47 +48,6 @@
       "home_team": "Eastern Lions",
       "away_team": "Essendon Royals SC",
       "match_date": "2026-08-14T09:45:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Victoria NPL",
-      "home_team": "Oakleigh Cannons",
-      "away_team": "Green Gully",
-      "match_date": "2026-08-14T10:15:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
       "most_likely_score": "1-1",
@@ -375,6 +334,47 @@
       "competition": "Ligi kuu Bara",
       "home_team": "Pamba Jiji",
       "away_team": "Dodoma Jiji",
+      "match_date": "2026-08-14T11:00:00+00:00",
+      "home_expected_goals": 1.32,
+      "away_expected_goals": 1.2,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.2,
+      "draw_pct": 26.8,
+      "away_win_pct": 33.6,
+      "over_2_5_pct": 45.7,
+      "btts_yes_pct": 50.9,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 66.0,
+        "fair_odds": 1.51
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - No",
+        "probability_pct": 49.1,
+        "fair_odds": 2.04
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 12.7,
+          "fair_odds": 7.85
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 10.6,
+          "fair_odds": 9.42
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 9.7,
+          "fair_odds": 10.36
+        }
+      ]
+    },
+    {
+      "competition": "Ligue A",
+      "home_team": "Muzinga",
+      "away_team": "Never Give Up Academy",
       "match_date": "2026-08-14T11:00:00+00:00",
       "home_expected_goals": 1.32,
       "away_expected_goals": 1.2,
