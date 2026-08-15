@@ -18,6 +18,55 @@ MIN_ODDS = 1.40
 HIGH_ODDS_THRESHOLD = 2.00
 MAX_MATCHES = 10
 
+# --------------------------------------------------------------------------
+# লিগ হোয়াইটলিস্ট: ব্যবহারকারীর সরবরাহ করা ঠিক এই ২০টা লিগ/কাপ-ই রাখা হয়েছে।
+# ম্যাচ ফিল্টার হয় (country, league name) মিলিয়ে — যেটা এখানে নেই সেটা স্কিপ হবে।
+#
+# গুরুত্বপূর্ণ: এই নামগুলো একটা ভিন্ন অ্যাপের স্ক্রিনশট থেকে নেওয়া। api-sports.io
+# হুবহু একই বানান/ফরম্যাট ব্যবহার করে কিনা তা নিশ্চিত নয় (যেমন: "Türkiye" বনাম
+# "Turkey", বা "Persian Gulf" পুরো নাম হয়তো "Persian Gulf Pro League")। প্রথমবার
+# চালিয়ে stderr লগে "league not in whitelist" মেসেজ চেক করুন — কোনো লিগ ভুলবশত
+# বাদ পড়লে সেখান থেকে সঠিক বানান কপি করে নিচে ঠিক করে দিন।
+# --------------------------------------------------------------------------
+
+ALLOWED_LEAGUES = {
+    ("United States", "MLS Next Pro"),
+    ("Russia", "Premier League"),
+    ("United Arab Emirates", "Pro League"),
+    ("Scotland", "League One"),
+    ("Iran", "Persian Gulf"),
+    ("Norway", "Eliteserien"),
+    ("Sweden", "Superettan"),
+    ("Japan", "J. League"),
+    ("Sweden", "Allsvenskan"),
+    ("Belgium", "First Division A"),
+    ("Türkiye", "1. Lig"),
+    ("England", "National League"),
+    ("Austria", "Bundesliga"),
+    ("England", "Championship"),
+    ("Italy", "Coppa Italia"),
+    ("Portugal", "Liga Portugal"),
+    ("Netherlands", "Eredivisie"),
+    ("England", "League Two"),
+    ("England", "League One"),
+    ("Spain", "LaLiga"),
+    ("Saudi Arabia", "Saudi Pro League"),
+    ("Armenia", "Premier League"),
+    ("Brazil", "Serie A"),
+}
+
+# নাম-মিলের জন্য lowercase সেট বানিয়ে রাখা হচ্ছে যাতে প্রতিবার লুপে lower() কল করতে না হয়
+ALLOWED_LEAGUES_LOWER = {(c.lower(), n.lower()) for c, n in ALLOWED_LEAGUES}
+
+
+def is_allowed_league(match: dict) -> bool:
+    """হোয়াইটলিস্টের লিগ হলে True; বাকি সব লিগ False (স্কিপ হবে)।"""
+    competition = match.get("competition", {})
+    country = (competition.get("country") or "").lower()
+    name = (competition.get("name") or "").lower()
+    return (country, name) in ALLOWED_LEAGUES_LOWER
+
+
 DISCLAIMER = (
     "This is a statistical estimate, not a guaranteed outcome. The odds shown are "
     "our own model's calculation, not a bookmaker's real odds. No prediction system "
@@ -36,10 +85,29 @@ def build():
     for m in matches:
         if len(output_matches) >= MAX_MATCHES:
             break
+
+        if not is_allowed_league(m):
+            print(
+                f"skipping {m['homeTeam']['name']} vs {m['awayTeam']['name']} "
+                f"({m['competition'].get('country')} - {m['competition']['name']}): "
+                f"league not in big/medium whitelist",
+                file=sys.stderr,
+            )
+            continue
+
         try:
             pred = predict_match(m["homeTeam"]["id"], m["awayTeam"]["id"])
         except Exception as e:
             print(f"prediction failed for match {m.get('id')}: {e}", file=sys.stderr)
+            continue
+
+        if not pred.get("has_real_data"):
+            print(
+                f"skipping {m['homeTeam']['name']} vs {m['awayTeam']['name']} "
+                f"({m['competition']['name']}): no h2h/form/venue data available "
+                f"from API-Football, would be pure fallback (1.2/1.2)",
+                file=sys.stderr,
+            )
             continue
 
         output_matches.append({
