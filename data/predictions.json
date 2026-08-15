@@ -1,48 +1,7 @@
 {
-  "generated_at": "2026-08-15T17:31:17.691084+00:00",
+  "generated_at": "2026-08-15T17:33:18.566161+00:00",
   "disclaimer": "This is a statistical estimate, not a guaranteed outcome. The odds shown are our own model's calculation, not a bookmaker's real odds. No prediction system can ever be 100% accurate. Please make decisions responsibly.",
   "matches": [
-    {
-      "competition": "La Liga",
-      "home_team": "Alaves",
-      "away_team": "Getafe",
-      "match_date": "2026-08-15T17:30:00+00:00",
-      "home_expected_goals": 0.37,
-      "away_expected_goals": 1.17,
-      "most_likely_score": "0-1",
-      "home_win_pct": 11.6,
-      "draw_pct": 31.8,
-      "away_win_pct": 56.4,
-      "over_2_5_pct": 19.8,
-      "btts_yes_pct": 21.1,
-      "best_pick": {
-        "market": "Double Chance (Home/Away)",
-        "probability_pct": 68.0,
-        "fair_odds": 1.47
-      },
-      "high_odds_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 43.5,
-        "fair_odds": 2.3
-      },
-      "top_scores": [
-        {
-          "score": "0-1",
-          "probability_pct": 25.2,
-          "fair_odds": 3.97
-        },
-        {
-          "score": "0-0",
-          "probability_pct": 21.6,
-          "fair_odds": 4.63
-        },
-        {
-          "score": "0-2",
-          "probability_pct": 14.7,
-          "fair_odds": 6.81
-        }
-      ]
-    },
     {
       "competition": "Premier League",
       "home_team": "FC Krasnodar",
@@ -81,6 +40,47 @@
           "score": "0-0",
           "probability_pct": 10.8,
           "fair_odds": 9.23
+        }
+      ]
+    },
+    {
+      "competition": "Eredivisie",
+      "home_team": "Excelsior",
+      "away_team": "PSV Eindhoven",
+      "match_date": "2026-08-15T18:00:00+00:00",
+      "home_expected_goals": 0.83,
+      "away_expected_goals": 3.0,
+      "most_likely_score": "0-2",
+      "home_win_pct": 7.2,
+      "draw_pct": 12.0,
+      "away_win_pct": 72.4,
+      "over_2_5_pct": 65.1,
+      "btts_yes_pct": 48.6,
+      "best_pick": {
+        "market": "Over 2.5 Goals",
+        "probability_pct": 65.1,
+        "fair_odds": 1.54
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - Yes",
+        "probability_pct": 48.6,
+        "fair_odds": 2.06
+      },
+      "top_scores": [
+        {
+          "score": "0-2",
+          "probability_pct": 9.8,
+          "fair_odds": 10.19
+        },
+        {
+          "score": "0-3",
+          "probability_pct": 9.8,
+          "fair_odds": 10.19
+        },
+        {
+          "score": "1-2",
+          "probability_pct": 8.1,
+          "fair_odds": 12.35
         }
       ]
     }
