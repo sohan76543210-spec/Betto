@@ -54,6 +54,8 @@ ALLOWED_LEAGUES = {
     ("Saudi Arabia", "Saudi Pro League"),
     ("Armenia", "Premier League"),
     ("Brazil", "Serie A"),
+    ("International", "ASEAN Championship"),
+    ("International", "Club Friendlies"),
 }
 
 # নাম-মিলের জন্য lowercase সেট বানিয়ে রাখা হচ্ছে যাতে প্রতিবার লুপে lower() কল করতে না হয়
@@ -100,6 +102,7 @@ def build():
     allowed_matches.sort(key=lambda m: m.get("utcDate") or "")
 
     output_matches = []
+    no_data_skipped = 0
     for m in allowed_matches:
         if len(output_matches) >= MAX_MATCHES:
             print(
@@ -117,6 +120,7 @@ def build():
             continue
 
         if not pred.get("has_real_data"):
+            no_data_skipped += 1
             print(
                 f"skipping {m['homeTeam']['name']} vs {m['awayTeam']['name']} "
                 f"({m['competition']['name']}): no h2h/form/venue data available "
@@ -153,7 +157,13 @@ def build():
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote {len(output_matches)} matches to {out_path}")
+    print(
+        f"Wrote {len(output_matches)} matches to {out_path} "
+        f"(fetched {len(matches)} total NS fixtures today+tomorrow -> "
+        f"{len(allowed_matches)} in whitelisted leagues -> "
+        f"{no_data_skipped} dropped for lack of h2h/form data -> "
+        f"{len(output_matches)} final)"
+    )
 
 
 if __name__ == "__main__":
