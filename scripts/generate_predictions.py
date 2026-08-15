@@ -56,6 +56,27 @@ ALLOWED_LEAGUES = {
     ("Brazil", "Serie A"),
     ("International", "ASEAN Championship"),
     ("International", "Club Friendlies"),
+
+    # --------------------------------------------------------------------
+    # ইউরোপের "টপ ৫" লিগ + মেজর ইউরোপিয়ান কাপ। api-football (api-sports.io)-এর
+    # leagues এন্ডপয়েন্ট থেকে ভেরিফাই করা নাম/দেশ ব্যবহার করা হয়েছে:
+    #   /leagues?id=39  -> England / Premier League
+    #   /leagues?id=140 -> Spain   / La Liga
+    #   /leagues?id=135 -> Italy   / Serie A
+    #   /leagues?id=78  -> Germany / Bundesliga
+    #   /leagues?id=61  -> France  / Ligue 1
+    #   /leagues?id=2   -> World   / UEFA Champions League
+    #   /leagues?id=3   -> World   / UEFA Europa League
+    #   /leagues?id=848 -> World   / UEFA Conference League
+    # --------------------------------------------------------------------
+    ("England", "Premier League"),
+    ("Spain", "La Liga"),  # কনফার্মড বানান; উপরের ("Spain","LaLiga") সেফটি-নেট হিসেবে থাকল
+    ("Italy", "Serie A"),
+    ("Germany", "Bundesliga"),
+    ("France", "Ligue 1"),
+    ("World", "UEFA Champions League"),
+    ("World", "UEFA Europa League"),
+    ("World", "UEFA Conference League"),
 }
 
 # নাম-মিলের জন্য lowercase সেট বানিয়ে রাখা হচ্ছে যাতে প্রতিবার লুপে lower() কল করতে না হয়
