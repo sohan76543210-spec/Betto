@@ -30,6 +30,7 @@ def _adapt_fixture(fx):
         "status": fixture["status"]["short"],
         "competition": {
             "name": league["name"],
+            "country": league.get("country"),
             "code": str(league["id"]),
             "id": league["id"],
             "season": league.get("season"),
