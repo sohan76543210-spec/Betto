@@ -16,7 +16,7 @@ from predictor import predict_match, best_pick, top_correct_scores, high_odds_pi
 
 MIN_ODDS = 1.40
 HIGH_ODDS_THRESHOLD = 2.00
-MAX_MATCHES = 10
+MAX_MATCHES = 30
 
 # --------------------------------------------------------------------------
 # লিগ হোয়াইটলিস্ট: ব্যবহারকারীর সরবরাহ করা ঠিক এই ২০টা লিগ/কাপ-ই রাখা হয়েছে।
@@ -49,7 +49,8 @@ ALLOWED_LEAGUES = {
     ("Netherlands", "Eredivisie"),
     ("England", "League Two"),
     ("England", "League One"),
-    ("Spain", "LaLiga"),
+    ("Spain", "La Liga"),
+    ("Spain", "LaLiga"),  # সেফটি-নেট: কোনো একটা ভ্যারিয়েন্ট মিলে যাবে
     ("Saudi Arabia", "Saudi Pro League"),
     ("Armenia", "Premier League"),
     ("Brazil", "Serie A"),
@@ -81,19 +82,33 @@ def build():
         print(f"API error: {e}", file=sys.stderr)
         matches = []
 
-    output_matches = []
+    # আগে allowed-league ম্যাচগুলো বাছাই করে kickoff সময় অনুযায়ী সাজানো হচ্ছে,
+    # যাতে MAX_MATCHES ক্যাপ প্রয়োগ হওয়ার সময় সবচেয়ে তাড়াতাড়ি শুরু হওয়া ম্যাচগুলো
+    # অগ্রাধিকার পায় (API যে ক্রমে ফেরত দেয় সেটা সময়ানুক্রমিক নয়)।
+    allowed_matches = []
     for m in matches:
-        if len(output_matches) >= MAX_MATCHES:
-            break
-
-        if not is_allowed_league(m):
+        if is_allowed_league(m):
+            allowed_matches.append(m)
+        else:
             print(
                 f"skipping {m['homeTeam']['name']} vs {m['awayTeam']['name']} "
                 f"({m['competition'].get('country')} - {m['competition']['name']}): "
                 f"league not in big/medium whitelist",
                 file=sys.stderr,
             )
-            continue
+
+    allowed_matches.sort(key=lambda m: m.get("utcDate") or "")
+
+    output_matches = []
+    for m in allowed_matches:
+        if len(output_matches) >= MAX_MATCHES:
+            print(
+                f"reached MAX_MATCHES={MAX_MATCHES} cap; "
+                f"{len(allowed_matches) - len(output_matches)} more allowed-league "
+                f"match(es) left unprocessed",
+                file=sys.stderr,
+            )
+            break
 
         try:
             pred = predict_match(m["homeTeam"]["id"], m["awayTeam"]["id"])
