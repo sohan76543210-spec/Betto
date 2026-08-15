@@ -1,86 +1,86 @@
 {
-  "generated_at": "2026-08-15T17:42:39.625167+00:00",
+  "generated_at": "2026-08-15T21:23:32.588036+00:00",
   "disclaimer": "This is a statistical estimate, not a guaranteed outcome. The odds shown are our own model's calculation, not a bookmaker's real odds. No prediction system can ever be 100% accurate. Please make decisions responsibly.",
   "matches": [
     {
-      "competition": "Premier League",
-      "home_team": "FC Krasnodar",
-      "away_team": "Akhmat",
-      "match_date": "2026-08-15T17:45:00+00:00",
-      "home_expected_goals": 1.22,
-      "away_expected_goals": 1.0,
-      "most_likely_score": "1-0",
-      "home_win_pct": 41.0,
-      "draw_pct": 28.7,
-      "away_win_pct": 30.0,
-      "over_2_5_pct": 38.1,
-      "btts_yes_pct": 44.4,
+      "competition": "Serie A",
+      "home_team": "Atletico Paranaense",
+      "away_team": "RB Bragantino",
+      "match_date": "2026-08-15T21:30:00+00:00",
+      "home_expected_goals": 1.41,
+      "away_expected_goals": 1.29,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.7,
+      "draw_pct": 25.8,
+      "away_win_pct": 34.0,
+      "over_2_5_pct": 50.1,
+      "btts_yes_pct": 54.4,
       "best_pick": {
-        "market": "Double Chance (Home/Away)",
-        "probability_pct": 71.1,
-        "fair_odds": 1.41
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 65.5,
+        "fair_odds": 1.53
       },
       "high_odds_pick": {
-        "market": "Both Teams to Score - Yes",
-        "probability_pct": 44.4,
-        "fair_odds": 2.25
+        "market": "Over 2.5 Goals",
+        "probability_pct": 50.1,
+        "fair_odds": 2.0
       },
       "top_scores": [
         {
-          "score": "1-0",
-          "probability_pct": 13.2,
-          "fair_odds": 7.55
-        },
-        {
           "score": "1-1",
-          "probability_pct": 13.2,
-          "fair_odds": 7.55
+          "probability_pct": 12.2,
+          "fair_odds": 8.18
         },
         {
-          "score": "0-0",
-          "probability_pct": 10.8,
-          "fair_odds": 9.23
+          "score": "1-0",
+          "probability_pct": 9.5,
+          "fair_odds": 10.52
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 8.6,
+          "fair_odds": 11.57
         }
       ]
     },
     {
-      "competition": "Eredivisie",
-      "home_team": "Excelsior",
-      "away_team": "PSV Eindhoven",
-      "match_date": "2026-08-15T18:00:00+00:00",
-      "home_expected_goals": 0.83,
-      "away_expected_goals": 3.0,
-      "most_likely_score": "0-2",
-      "home_win_pct": 7.2,
-      "draw_pct": 12.0,
-      "away_win_pct": 72.4,
-      "over_2_5_pct": 65.1,
-      "btts_yes_pct": 48.6,
+      "competition": "Serie A",
+      "home_team": "Sao Paulo",
+      "away_team": "Coritiba",
+      "match_date": "2026-08-16T00:00:00+00:00",
+      "home_expected_goals": 1.65,
+      "away_expected_goals": 0.5,
+      "most_likely_score": "1-0",
+      "home_win_pct": 65.1,
+      "draw_pct": 23.4,
+      "away_win_pct": 10.8,
+      "over_2_5_pct": 35.7,
+      "btts_yes_pct": 31.5,
       "best_pick": {
-        "market": "Over 2.5 Goals",
-        "probability_pct": 65.1,
-        "fair_odds": 1.54
+        "market": "Both Teams to Score - No",
+        "probability_pct": 68.5,
+        "fair_odds": 1.46
       },
       "high_odds_pick": {
-        "market": "Both Teams to Score - Yes",
-        "probability_pct": 48.6,
-        "fair_odds": 2.06
+        "market": "Over 2.5 Goals",
+        "probability_pct": 35.7,
+        "fair_odds": 2.8
       },
       "top_scores": [
         {
-          "score": "0-2",
-          "probability_pct": 9.8,
-          "fair_odds": 10.19
+          "score": "1-0",
+          "probability_pct": 19.2,
+          "fair_odds": 5.2
         },
         {
-          "score": "0-3",
-          "probability_pct": 9.8,
-          "fair_odds": 10.19
+          "score": "2-0",
+          "probability_pct": 15.9,
+          "fair_odds": 6.31
         },
         {
-          "score": "1-2",
-          "probability_pct": 8.1,
-          "fair_odds": 12.35
+          "score": "0-0",
+          "probability_pct": 11.6,
+          "fair_odds": 8.58
         }
       ]
     }
