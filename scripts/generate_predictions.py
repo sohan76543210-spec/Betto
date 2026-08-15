@@ -12,10 +12,23 @@ from datetime import datetime, timezone
 sys.path.insert(0, os.path.dirname(__file__))
 
 import football_api
-from predictor import predict_match, best_pick, top_correct_scores, high_odds_pick
+from predictor import predict_match, best_pick, top_correct_scores, high_odds_pick, combo_pick
 
 MIN_ODDS = 1.40
 HIGH_ODDS_THRESHOLD = 2.00
+
+# --------------------------------------------------------------------------
+# ক্যাটাগরি থ্রেশহোল্ড: কোন ম্যাচ কোন ক্যাটাগরিতে পড়বে তা এই মানগুলো ঠিক করে।
+# প্রয়োজনমতো টিউন করা যাবে — এগুলো শুরুর জন্য যুক্তিসঙ্গত ডিফল্ট।
+# --------------------------------------------------------------------------
+SAFE_TIP_MIN_PROB = 65.0          # "Safe & Sure Tips"-এ ঢুকতে best_pick probability কমপক্ষে এই %
+OVER_UNDER_MIN_CONFIDENCE = 60.0  # Over/Under ক্যাটাগরিতে ঢুকতে over_2_5/under_2_5 কমপক্ষে এই %
+CORRECT_SCORE_MIN_PROB = 12.0     # "Correct Score" ক্যাটাগরিতে ঢুকতে টপ স্কোরের probability কমপক্ষে এই %
+
+# একাধিক ম্যাচ মিলিয়ে accumulator/ticket বানানোর টার্গেট combined odds
+FOOTBALL_3ODDS_TARGET = 3.0
+ODDS_10PLUS_TARGET = 10.0
+ODDS_20PLUS_TARGET = 20.0
 # --------------------------------------------------------------------------
 # api-football ফ্রি প্ল্যানে দিনে মোট ১০০টা রিকোয়েস্ট পাওয়া যায়। প্রতিটা ম্যাচের
 # প্রেডিকশনে গড়ে ~৩-৪টা কল লাগে (h2h + home form + away form, কখনো কখনো form
@@ -108,6 +121,112 @@ DISCLAIMER = (
 )
 
 
+def _match_label(m: dict) -> str:
+    return f"{m['home_team']} vs {m['away_team']}"
+
+
+def _build_ticket(match_picks: list, target_odds: float, min_legs: int = 2, max_legs: int = 8):
+    """match_picks-এর সবচেয়ে বেশি probability-ওয়ালা পিকগুলো একে একে যোগ করে
+    combined odds টার্গেটে পৌঁছানোর চেষ্টা করে। টার্গেটে পৌঁছালে সেটাই রিটার্ন করে;
+    না পৌঁছালে সর্বোচ্চ যতটুকু বানানো গেছে সেটা রিটার্ন করে (না বানা গেলে None)।
+    """
+    best = None
+    upper = min(max_legs, len(match_picks))
+    for legs in range(min_legs, upper + 1):
+        combo = combo_pick(match_picks, legs=legs)
+        if combo is None:
+            continue
+        best = combo
+        if combo["combined_odds"] >= target_odds:
+            return combo
+    return best
+
+
+def build_categories(output_matches: list) -> dict:
+    """Free/VIP অ্যাপের মতো ক্যাটাগরিতে ম্যাচগুলো ভাগ করে।
+
+    নোট: এই মুহূর্তে শুধু ফুটবল ডেটা (api-football) আছে, তাই Basketball/Tennis/
+    All Sport এবং HT/FT-এর মতো ক্যাটাগরি বানানো সম্ভব না — সেগুলোর জন্য আলাদা
+    ডেটা সোর্স/মডেল দরকার। Free বনাম VIP-এর মধ্যে কোনো access-lock এখানে নেই,
+    শুধু কনটেন্ট আলাদা করে দেওয়া হয়েছে।
+    """
+
+    matches_with_pick = [m for m in output_matches if m.get("best_pick")]
+
+    # ---- Game Of The Day: সবচেয়ে বেশি confidence-এর একটা ম্যাচ ----
+    game_of_the_day = None
+    if matches_with_pick:
+        game_of_the_day = max(
+            matches_with_pick, key=lambda m: m["best_pick"]["probability_pct"]
+        )
+
+    # ---- Safe & Sure Tips ----
+    safe_sure_tips = [
+        m for m in matches_with_pick
+        if m["best_pick"]["probability_pct"] >= SAFE_TIP_MIN_PROB
+    ]
+    safe_sure_tips.sort(key=lambda m: m["best_pick"]["probability_pct"], reverse=True)
+
+    # ---- Over/Under Goal: over_2_5 বা under_2_5 যেটা confident সেটা পিক করা ----
+    over_under_goal = []
+    for m in output_matches:
+        over_p = m["over_2_5_pct"]
+        under_p = 100.0 - over_p  # over_2_5_pct থেকেই ডেরাইভড, predictor-এর under_2_5_pct এর সমান
+        if over_p >= OVER_UNDER_MIN_CONFIDENCE:
+            over_under_goal.append({
+                "match": _match_label(m),
+                "competition": m["competition"],
+                "match_date": m["match_date"],
+                "market": "Over 2.5 Goals",
+                "probability_pct": round(over_p, 1),
+            })
+        elif under_p >= OVER_UNDER_MIN_CONFIDENCE:
+            over_under_goal.append({
+                "match": _match_label(m),
+                "competition": m["competition"],
+                "match_date": m["match_date"],
+                "market": "Under 2.5 Goals",
+                "probability_pct": round(under_p, 1),
+            })
+    over_under_goal.sort(key=lambda x: x["probability_pct"], reverse=True)
+
+    # ---- Correct Score: টপ স্কোরের probability যথেষ্ট বেশি এমন ম্যাচ ----
+    correct_score = []
+    for m in output_matches:
+        if not m["top_scores"]:
+            continue
+        top = m["top_scores"][0]
+        if top["probability_pct"] >= CORRECT_SCORE_MIN_PROB:
+            correct_score.append({
+                "match": _match_label(m),
+                "competition": m["competition"],
+                "match_date": m["match_date"],
+                "score": top["score"],
+                "probability_pct": top["probability_pct"],
+                "fair_odds": top["fair_odds"],
+            })
+    correct_score.sort(key=lambda x: x["probability_pct"], reverse=True)
+
+    # ---- Odds accumulators/tickets: একাধিক ম্যাচ মিলিয়ে ----
+    match_picks = [
+        {"match": _match_label(m), "pick": m["best_pick"]}
+        for m in matches_with_pick
+    ]
+    football_3odds = _build_ticket(match_picks, FOOTBALL_3ODDS_TARGET, min_legs=2)
+    odds_10plus = _build_ticket(match_picks, ODDS_10PLUS_TARGET, min_legs=3)
+    odds_20plus = _build_ticket(match_picks, ODDS_20PLUS_TARGET, min_legs=4)
+
+    return {
+        "game_of_the_day": game_of_the_day,
+        "safe_sure_tips": safe_sure_tips,
+        "over_under_goal": over_under_goal,
+        "correct_score": correct_score,
+        "football_3odds_ticket": football_3odds,
+        "odds_10plus_ticket": odds_10plus,
+        "odds_20plus_ticket": odds_20plus,
+    }
+
+
 def build():
     try:
         matches = football_api.get_upcoming_matches(days_ahead=1)
@@ -189,9 +308,12 @@ def build():
             "top_scores": top_correct_scores(pred, n=3),
         })
 
+    categories = build_categories(output_matches)
+
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "disclaimer": DISCLAIMER,
+        "categories": categories,
         "matches": output_matches,
     }
 
