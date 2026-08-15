@@ -107,6 +107,13 @@ def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
         (venue_away[1] if venue_away else None, VENUE_WEIGHT),
     ])
 
+    # কোনো real signal (h2h/overall/venue) না থাকলে সেটা track করি, যাতে
+    # সম্পূর্ণ ডিফল্ট-ভিত্তিক (1.2, 1.2) প্রেডিকশন পরে চিহ্নিত/বাদ দেওয়া যায়।
+    has_real_data = any([
+        h2h_home, overall_home, venue_home,
+        h2h_away, overall_away, venue_away,
+    ])
+
     if home_scored_avg is None:
         home_scored_avg = 1.2
     if home_conceded_avg is None:
@@ -159,6 +166,7 @@ def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
         "double_chance_x2_pct": round(double_chance_x2 * 100, 1),
         "double_chance_12_pct": round(double_chance_12 * 100, 1),
         "most_likely_score": f"{most_likely_score[0]}-{most_likely_score[1]}",
+        "has_real_data": has_real_data,
         "_score_probs": score_probs,
         "_raw_probs": {
             "Home Win": home_win,
