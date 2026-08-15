@@ -1,414 +1,86 @@
 {
-  "generated_at": "2026-08-15T06:39:33.959776+00:00",
+  "generated_at": "2026-08-15T16:59:30.147625+00:00",
   "disclaimer": "This is a statistical estimate, not a guaranteed outcome. The odds shown are our own model's calculation, not a bookmaker's real odds. No prediction system can ever be 100% accurate. Please make decisions responsibly.",
   "matches": [
     {
-      "competition": "Tasmania Southern Championship",
-      "home_team": "Taroona",
-      "away_team": "Glenorchy Knights U21",
-      "match_date": "2026-08-15T02:15:00+00:00",
-      "home_expected_goals": 4.4,
-      "away_expected_goals": 1.33,
-      "most_likely_score": "4-1",
-      "home_win_pct": 58.5,
-      "draw_pct": 7.6,
-      "away_win_pct": 5.7,
-      "over_2_5_pct": 64.3,
-      "btts_yes_pct": 51.9,
+      "competition": "Bundesliga",
+      "home_team": "Sturm Graz",
+      "away_team": "SCR Altach",
+      "match_date": "2026-08-15T17:30:00+00:00",
+      "home_expected_goals": 1.83,
+      "away_expected_goals": 0.5,
+      "most_likely_score": "1-0",
+      "home_win_pct": 68.7,
+      "draw_pct": 20.8,
+      "away_win_pct": 9.4,
+      "over_2_5_pct": 40.1,
+      "btts_yes_pct": 32.6,
       "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.1,
-        "fair_odds": 1.51
+        "market": "Home Win",
+        "probability_pct": 68.7,
+        "fair_odds": 1.46
       },
       "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 48.1,
-        "fair_odds": 2.08
+        "market": "Over 2.5 Goals",
+        "probability_pct": 40.1,
+        "fair_odds": 2.49
       },
       "top_scores": [
         {
-          "score": "4-1",
-          "probability_pct": 6.7,
-          "fair_odds": 14.84
+          "score": "1-0",
+          "probability_pct": 17.8,
+          "fair_odds": 5.62
         },
         {
-          "score": "3-1",
-          "probability_pct": 6.1,
-          "fair_odds": 16.32
+          "score": "2-0",
+          "probability_pct": 16.3,
+          "fair_odds": 6.14
         },
         {
-          "score": "5-1",
-          "probability_pct": 5.9,
-          "fair_odds": 16.86
+          "score": "3-0",
+          "probability_pct": 10.0,
+          "fair_odds": 10.04
         }
       ]
     },
     {
-      "competition": "NNSW League 1",
-      "home_team": "New Lambton",
-      "away_team": "Cessnock City Hornets",
-      "match_date": "2026-08-15T04:00:00+00:00",
-      "home_expected_goals": 3.3,
-      "away_expected_goals": 2.0,
-      "most_likely_score": "3-1",
-      "home_win_pct": 51.8,
-      "draw_pct": 15.3,
-      "away_win_pct": 19.8,
-      "over_2_5_pct": 76.7,
-      "btts_yes_pct": 71.7,
+      "competition": "Premier League",
+      "home_team": "FC Krasnodar",
+      "away_team": "Akhmat",
+      "match_date": "2026-08-15T17:45:00+00:00",
+      "home_expected_goals": 1.22,
+      "away_expected_goals": 1.0,
+      "most_likely_score": "1-0",
+      "home_win_pct": 41.0,
+      "draw_pct": 28.7,
+      "away_win_pct": 30.0,
+      "over_2_5_pct": 38.1,
+      "btts_yes_pct": 44.4,
       "best_pick": {
         "market": "Double Chance (Home/Away)",
-        "probability_pct": 71.5,
-        "fair_odds": 1.4
+        "probability_pct": 71.1,
+        "fair_odds": 1.41
       },
       "high_odds_pick": {
-        "market": "Double Chance (Draw/Away)",
-        "probability_pct": 35.1,
-        "fair_odds": 2.85
+        "market": "Both Teams to Score - Yes",
+        "probability_pct": 44.4,
+        "fair_odds": 2.25
       },
       "top_scores": [
         {
-          "score": "3-1",
-          "probability_pct": 6.0,
-          "fair_odds": 16.72
+          "score": "1-0",
+          "probability_pct": 13.2,
+          "fair_odds": 7.55
         },
         {
-          "score": "3-2",
-          "probability_pct": 6.0,
-          "fair_odds": 16.72
-        },
-        {
-          "score": "2-1",
-          "probability_pct": 5.4,
-          "fair_odds": 18.4
-        }
-      ]
-    },
-    {
-      "competition": "National League",
-      "home_team": "Kidderminster Harriers",
-      "away_team": "Eastleigh",
-      "match_date": "2026-08-15T14:00:00+00:00",
-      "home_expected_goals": 0.55,
-      "away_expected_goals": 1.5,
-      "most_likely_score": "0-1",
-      "home_win_pct": 13.5,
-      "draw_pct": 25.9,
-      "away_win_pct": 60.2,
-      "over_2_5_pct": 33.2,
-      "btts_yes_pct": 32.7,
-      "best_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 67.3,
-        "fair_odds": 1.49
-      },
-      "high_odds_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 39.4,
-        "fair_odds": 2.54
-      },
-      "top_scores": [
-        {
-          "score": "0-1",
-          "probability_pct": 19.3,
-          "fair_odds": 5.18
-        },
-        {
-          "score": "0-2",
-          "probability_pct": 14.5,
-          "fair_odds": 6.9
+          "score": "1-1",
+          "probability_pct": 13.2,
+          "fair_odds": 7.55
         },
         {
           "score": "0-0",
-          "probability_pct": 12.9,
-          "fair_odds": 7.77
-        }
-      ]
-    },
-    {
-      "competition": "National League",
-      "home_team": "Solihull Moors",
-      "away_team": "Boston United",
-      "match_date": "2026-08-15T14:00:00+00:00",
-      "home_expected_goals": 1.65,
-      "away_expected_goals": 1.5,
-      "most_likely_score": "1-1",
-      "home_win_pct": 40.7,
-      "draw_pct": 23.6,
-      "away_win_pct": 34.5,
-      "over_2_5_pct": 59.8,
-      "btts_yes_pct": 61.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 64.3,
-        "fair_odds": 1.55
-      },
-      "high_odds_pick": {
-        "market": "Home Win",
-        "probability_pct": 40.7,
-        "fair_odds": 2.45
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 10.6,
-          "fair_odds": 9.43
-        },
-        {
-          "score": "2-1",
-          "probability_pct": 8.7,
-          "fair_odds": 11.43
-        },
-        {
-          "score": "1-2",
-          "probability_pct": 8.0,
-          "fair_odds": 12.57
-        }
-      ]
-    },
-    {
-      "competition": "National League",
-      "home_team": "Southend",
-      "away_team": "Scunthorpe",
-      "match_date": "2026-08-15T14:00:00+00:00",
-      "home_expected_goals": 0.0,
-      "away_expected_goals": 1.33,
-      "most_likely_score": "0-1",
-      "home_win_pct": 0.0,
-      "draw_pct": 26.4,
-      "away_win_pct": 73.4,
-      "over_2_5_pct": 14.8,
-      "btts_yes_pct": 0.0,
-      "best_pick": {
-        "market": "Draw",
-        "probability_pct": 26.4,
-        "fair_odds": 3.79
-      },
-      "high_odds_pick": {
-        "market": "Draw",
-        "probability_pct": 26.4,
-        "fair_odds": 3.79
-      },
-      "top_scores": [
-        {
-          "score": "0-1",
-          "probability_pct": 35.1,
-          "fair_odds": 2.85
-        },
-        {
-          "score": "0-0",
-          "probability_pct": 26.4,
-          "fair_odds": 3.79
-        },
-        {
-          "score": "0-2",
-          "probability_pct": 23.4,
-          "fair_odds": 4.27
-        }
-      ]
-    },
-    {
-      "competition": "Victoria NPL 2",
-      "home_team": "Western United II",
-      "away_team": "Langwarrin",
-      "match_date": "2026-08-16T04:00:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Northern NSW NPL",
-      "home_team": "Broadmeadow Magic",
-      "away_team": "Charlestown City Blues",
-      "match_date": "2026-08-16T04:00:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Northern NSW NPL",
-      "home_team": "Maitland",
-      "away_team": "Edgeworth Eagles",
-      "match_date": "2026-08-16T04:00:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Northern NSW NPL",
-      "home_team": "Lambton Jaffas",
-      "away_team": "Hamilton Olympic",
-      "match_date": "2026-08-16T04:00:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
-        }
-      ]
-    },
-    {
-      "competition": "Northern NSW NPL",
-      "home_team": "Valentine",
-      "away_team": "Weston Bears",
-      "match_date": "2026-08-16T04:00:00+00:00",
-      "home_expected_goals": 1.32,
-      "away_expected_goals": 1.2,
-      "most_likely_score": "1-1",
-      "home_win_pct": 39.2,
-      "draw_pct": 26.8,
-      "away_win_pct": 33.6,
-      "over_2_5_pct": 45.7,
-      "btts_yes_pct": 50.9,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 66.0,
-        "fair_odds": 1.51
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 49.1,
-        "fair_odds": 2.04
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 12.7,
-          "fair_odds": 7.85
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.42
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.36
+          "probability_pct": 10.8,
+          "fair_odds": 9.23
         }
       ]
     }
