@@ -16,7 +16,17 @@ from predictor import predict_match, best_pick, top_correct_scores, high_odds_pi
 
 MIN_ODDS = 1.40
 HIGH_ODDS_THRESHOLD = 2.00
-MAX_MATCHES = 30
+# --------------------------------------------------------------------------
+# api-football ফ্রি প্ল্যানে দিনে মোট ১০০টা রিকোয়েস্ট পাওয়া যায়। প্রতিটা ম্যাচের
+# প্রেডিকশনে গড়ে ~৩-৪টা কল লাগে (h2h + home form + away form, কখনো কখনো form
+# কলে সিজন-ফলব্যাকের কারণে extra কল)। শুরুর fixtures fetch-এ ২টা কল যায়।
+# তাই MAX_MATCHES এমনভাবে রাখা হয়েছে যাতে পুরো রান নিরাপদে দৈনিক কোটার মধ্যে
+# শেষ হয় এবং কিছুটা বাফারও থাকে।
+# --------------------------------------------------------------------------
+MAX_MATCHES = 20
+# কোটা এই সংখ্যার নিচে নেমে গেলে বাকি ম্যাচ প্রসেস না করে নিরাপদে থেমে যাওয়া হয়,
+# যাতে ৪২৯ এরর দিয়ে একগাদা ম্যাচ নষ্ট হওয়ার বদলে যা হয়েছে তা সেভ থাকে।
+MIN_QUOTA_BUFFER = 5
 
 # --------------------------------------------------------------------------
 # লিগ হোয়াইটলিস্ট: ব্যবহারকারীর সরবরাহ করা ঠিক এই ২০টা লিগ/কাপ-ই রাখা হয়েছে।
@@ -128,6 +138,17 @@ def build():
         if len(output_matches) >= MAX_MATCHES:
             print(
                 f"reached MAX_MATCHES={MAX_MATCHES} cap; "
+                f"{len(allowed_matches) - len(output_matches)} more allowed-league "
+                f"match(es) left unprocessed",
+                file=sys.stderr,
+            )
+            break
+
+        remaining_quota = football_api.last_known_remaining_daily_quota
+        if remaining_quota is not None and remaining_quota < MIN_QUOTA_BUFFER:
+            print(
+                f"stopping early: daily API quota nearly exhausted "
+                f"(remaining={remaining_quota}); "
                 f"{len(allowed_matches) - len(output_matches)} more allowed-league "
                 f"match(es) left unprocessed",
                 file=sys.stderr,
