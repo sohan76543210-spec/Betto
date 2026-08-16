@@ -15,6 +15,13 @@ Poisson distribution ব্যবহার করে ম্যাচের স�
 
 import math
 from football_api import get_head_to_head, get_team_recent_form
+from advanced_stats import (
+    recency_weighted_scored_conceded,
+    power_rating,
+    dynamic_home_advantage,
+    dixon_coles_adjustment,
+    confidence_score,
+)
 
 H2H_WEIGHT = 0.25
 FORM_WEIGHT = 0.35
@@ -29,28 +36,10 @@ def _venue_split(matches, team_id):
 
 
 def _avg_scored_conceded(matches, team_id):
-    """একটা ম্যাচ-লিস্ট থেকে টিমের গড় স্কোর করা ও গোল খাওয়ার হিসাব। ডেটা না থাকলে None।"""
-    scored, conceded, count = 0, 0, 0
-    for m in matches:
-        full_time = m.get("score", {}).get("fullTime", {})
-        home_goals = full_time.get("home")
-        away_goals = full_time.get("away")
-        if home_goals is None or away_goals is None:
-            continue
-        home_id = m["homeTeam"]["id"]
-        away_id = m["awayTeam"]["id"]
-        if home_id == team_id:
-            scored += home_goals
-            conceded += away_goals
-        elif away_id == team_id:
-            scored += away_goals
-            conceded += home_goals
-        else:
-            continue
-        count += 1
-    if count == 0:
-        return None
-    return scored / count, conceded / count
+    """একটা ম্যাচ-লিস্ট থেকে টিমের recency-weighted গড় স্কোর করা ও গোল খাওয়ার হিসাব
+    (advanced_stats.recency_weighted_scored_conceded-এর thin wrapper — সাম্প্রতিক
+    ম্যাচকে বেশি গুরুত্ব দেয়, পুরনো সব ম্যাচকে সমান গুরুত্ব দেয় না)। ডেটা না থাকলে None।"""
+    return recency_weighted_scored_conceded(matches, team_id)
 
 
 def _weighted_avg(pairs):
@@ -72,11 +61,13 @@ def _poisson_prob(k, lam):
 
 
 def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
-    h2h = get_head_to_head(home_team_id, away_team_id, limit=10)
-    home_recent = get_team_recent_form(home_team_id, limit=6)
-    away_recent = get_team_recent_form(away_team_id, limit=6)
+    # h2h শেষ ৫-৮টা, recent form শেষ ১০টা (cache করা থাকে football_api.py-তে,
+    # তাই একই টিম অন্য ম্যাচেও লাগলে দ্বিতীয়বার API call হয় না)
+    h2h = get_head_to_head(home_team_id, away_team_id, limit=8)
+    home_recent = get_team_recent_form(home_team_id, limit=10)
+    away_recent = get_team_recent_form(away_team_id, limit=10)
 
-    home_home_matches, _ = _venue_split(home_recent, home_team_id)
+    home_home_matches, home_away_matches = _venue_split(home_recent, home_team_id)
     _, away_away_matches = _venue_split(away_recent, away_team_id)
 
     h2h_home = _avg_scored_conceded(h2h, home_team_id)
@@ -123,8 +114,14 @@ def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
     if away_conceded_avg is None:
         away_conceded_avg = 1.2
 
-    home_expected = ((home_scored_avg + away_conceded_avg) / 2) * 1.1
-    away_expected = (away_scored_avg + home_conceded_avg) / 2
+    # Dynamic Home Advantage: ফিক্সড ১.১x-এর বদলে এই টিম নির্দিষ্টভাবে হোমে কতটা
+    # ভালো/খারাপ করে সেটা থেকে বুস্ট বের করা হয় (যথেষ্ট sample না থাকলে ১.১x-এই fallback করে)
+    home_scored_mult, home_conceded_mult = dynamic_home_advantage(
+        home_home_matches, home_away_matches, home_team_id
+    )
+
+    home_expected = ((home_scored_avg * home_scored_mult) + (away_conceded_avg)) / 2
+    away_expected = (away_scored_avg + (home_conceded_avg * home_conceded_mult)) / 2
 
     home_win, draw, away_win = 0.0, 0.0, 0.0
     btts_yes = 0.0
@@ -133,20 +130,38 @@ def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
 
     for hg in range(max_goals):
         for ag in range(max_goals):
-            p = _poisson_prob(hg, home_expected) * _poisson_prob(ag, away_expected)
-            score_probs[(hg, ag)] = p
-            if hg > ag:
-                home_win += p
-            elif hg == ag:
-                draw += p
-            else:
-                away_win += p
-            if hg > 0 and ag > 0:
-                btts_yes += p
-            if hg + ag > 2.5:
-                over_2_5 += p
+            score_probs[(hg, ag)] = _poisson_prob(hg, home_expected) * _poisson_prob(ag, away_expected)
+
+    # Dixon-Coles adjustment: Poisson-এর independence assumption কম-স্কোরিং
+    # ফলাফলে (0-0/1-0/0-1/1-1) সামান্য ভুল করে; এখানে সেটা সংশোধন করে renormalize করা হয়
+    score_probs = dixon_coles_adjustment(score_probs, home_expected, away_expected)
+
+    for (hg, ag), p in score_probs.items():
+        if hg > ag:
+            home_win += p
+        elif hg == ag:
+            draw += p
+        else:
+            away_win += p
+        if hg > 0 and ag > 0:
+            btts_yes += p
+        if hg + ag > 2.5:
+            over_2_5 += p
 
     most_likely_score = max(score_probs, key=score_probs.get)
+
+    # Power Rating (form-based approximation, real persistent ELO না — advanced_stats.py দ্রষ্টব্য)
+    home_power = power_rating(home_recent, home_team_id)
+    away_power = power_rating(away_recent, away_team_id)
+
+    # Confidence Score: কতটা sample-সমর্থিত এই প্রেডিকশন, probability না
+    confidence = confidence_score(
+        h2h_count=len(h2h),
+        home_recent_count=len(home_recent),
+        away_recent_count=len(away_recent),
+        venue_home_count=len(home_home_matches),
+        venue_away_count=len(away_away_matches),
+    )
 
     double_chance_1x = home_win + draw
     double_chance_x2 = draw + away_win
@@ -167,6 +182,9 @@ def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
         "double_chance_12_pct": round(double_chance_12 * 100, 1),
         "most_likely_score": f"{most_likely_score[0]}-{most_likely_score[1]}",
         "has_real_data": has_real_data,
+        "home_power_rating": home_power,
+        "away_power_rating": away_power,
+        "confidence_score": confidence,
         "_score_probs": score_probs,
         "_raw_probs": {
             "Home Win": home_win,
@@ -189,11 +207,27 @@ def fair_odds(probability: float) -> float:
     return round(1 / probability, 2)
 
 
-def top_correct_scores(prediction: dict, n: int = 3):
+def top_correct_scores(prediction: dict, relative_threshold: float = 0.55, max_scores: int = 10):
+    """সবচেয়ে বেশি সম্ভাবনার correct score(গুলো) ফেরত দেয় — ফিক্সড সংখ্যা না,
+    বরং যেগুলোর probability সবচেয়ে বেশি সম্ভাবনাময় স্কোরের কাছাকাছি (অন্তত
+    relative_threshold গুণ) সেগুলোই দেখায়। ফলাফল ম্যাচভেদে ১টা, ৫টা, বা ১০টা —
+    যাই স্বাভাবিকভাবে "সবচেয়ে সম্ভাবনাময়" গ্রুপে পড়ে, তত।
+    একটা স্পষ্ট ফেভারিট স্কোর থাকলে (বাকিগুলো অনেক কম সম্ভাবনার) মাত্র ১-২টা
+    আসবে; ফলাফল অনিশ্চিত/সমান-সমান হলে বেশি স্কোর আসবে — সেটাই বাস্তবতা।
+    """
     score_probs_raw = prediction["_score_probs"]
-    sorted_scores = sorted(score_probs_raw.items(), key=lambda x: x[1], reverse=True)[:n]
+    sorted_scores = sorted(score_probs_raw.items(), key=lambda x: x[1], reverse=True)
+    if not sorted_scores:
+        return []
+
+    top_prob = sorted_scores[0][1]
+    cutoff = top_prob * relative_threshold
     results = []
     for (hg, ag), p in sorted_scores:
+        if p < cutoff and results:
+            break
+        if len(results) >= max_scores:
+            break
         results.append({
             "score": f"{hg}-{ag}",
             "probability_pct": round(p * 100, 1),
