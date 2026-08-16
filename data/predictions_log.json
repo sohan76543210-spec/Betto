@@ -1,1 +1,68 @@
-[]
+[
+  {
+    "match_id": 1492339,
+    "competition": "Serie A (Brazil)",
+    "home_team": "Vitoria",
+    "away_team": "Botafogo",
+    "match_date": "2026-08-16T21:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 67.0,
+      "fair_odds": 1.49,
+      "market_label": "Vitoria Win or Draw"
+    },
+    "high_odds_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 45.9,
+      "fair_odds": 2.18,
+      "market_label": "Vitoria Win or Botafogo Win"
+    },
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": 1492336,
+    "competition": "Serie A (Brazil)",
+    "home_team": "Mirassol",
+    "away_team": "Flamengo",
+    "match_date": "2026-08-16T21:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 66.2,
+      "fair_odds": 1.51,
+      "market_label": "Draw or Flamengo Win"
+    },
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 45.0,
+      "fair_odds": 2.22,
+      "market_label": "Flamengo Win"
+    },
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": 1492333,
+    "competition": "Serie A (Brazil)",
+    "home_team": "Corinthians",
+    "away_team": "Cruzeiro",
+    "match_date": "2026-08-16T22:30:00+00:00",
+    "best_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 69.3,
+      "fair_odds": 1.44,
+      "market_label": "Under 2.5 Goals"
+    },
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 44.5,
+      "fair_odds": 2.25,
+      "market_label": "Cruzeiro Win"
+    },
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  }
+]

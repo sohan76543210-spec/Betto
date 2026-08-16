@@ -1,18 +1,674 @@
 {
-  "generated_at": "2026-08-16T20:24:09.268853+00:00",
+  "generated_at": "2026-08-16T20:35:04.325025+00:00",
   "prediction_window_bd": {
     "from": "2026-08-16T06:00:00+06:00",
     "to": "2026-08-17T06:00:00+06:00"
   },
   "disclaimer": "This is a statistical estimate, not a guaranteed outcome. The odds shown are our own model's calculation, not a bookmaker's real odds. No prediction system can ever be 100% accurate. Please make decisions responsibly.",
-  "top_picks_count": 0,
+  "top_picks_count": 3,
   "api_cache_stats": {
-    "teams_cached": 0,
-    "h2h_pairs_cached": 0,
-    "team_stats_cached": 0,
-    "standings_cached": 0,
-    "injuries_cached": 0,
+    "teams_cached": 6,
+    "h2h_pairs_cached": 3,
+    "team_stats_cached": 6,
+    "standings_cached": 1,
+    "injuries_cached": 3,
     "lineups_cached": 0
   },
-  "matches": []
+  "matches": [
+    {
+      "match_id": 1492339,
+      "competition": "Serie A (Brazil)",
+      "league_id": 71,
+      "season": 2026,
+      "home_team": "Vitoria",
+      "away_team": "Botafogo",
+      "home_team_id": 136,
+      "away_team_id": 120,
+      "match_date": "2026-08-16T21:30:00+00:00",
+      "home_expected_goals": 0.24,
+      "away_expected_goals": 0.52,
+      "most_likely_score": "0-0",
+      "home_win_pct": 12.9,
+      "draw_pct": 54.1,
+      "away_win_pct": 33.0,
+      "over_2_5_pct": 4.2,
+      "btts_yes_pct": 9.3,
+      "home_power_rating": null,
+      "away_power_rating": null,
+      "confidence_score": 20,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 67.0,
+        "fair_odds": 1.49,
+        "market_label": "Vitoria Win or Draw"
+      },
+      "high_odds_pick": {
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 45.9,
+        "fair_odds": 2.18,
+        "market_label": "Vitoria Win or Botafogo Win"
+      },
+      "top_scores": [
+        {
+          "score": "0-0",
+          "probability_pct": 47.4,
+          "fair_odds": 2.11
+        }
+      ],
+      "top_pick": true,
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [],
+        "injuries": [
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Anderson",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Camutanga",
+            "type": "Missing Fixture",
+            "reason": "Broken Leg"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Dudu",
+            "type": "Missing Fixture",
+            "reason": "Back Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Edu",
+            "type": "Missing Fixture",
+            "reason": "Achilles Tendon Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Nathan Mendes",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "R. Ramos",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Riccieli",
+            "type": "Questionable",
+            "reason": "Calf Injury"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "G. Justino",
+            "type": "Missing Fixture",
+            "reason": "Yellow Cards"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "Kaio Pantaleao",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "Marcal",
+            "type": "Missing Fixture",
+            "reason": "Red Card"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "Paulinho",
+            "type": "Missing Fixture",
+            "reason": "Injury"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "J. Barrera",
+            "type": "Questionable",
+            "reason": "Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Anderson",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Camutanga",
+            "type": "Missing Fixture",
+            "reason": "Broken Leg"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Dudu",
+            "type": "Missing Fixture",
+            "reason": "Back Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Edu",
+            "type": "Missing Fixture",
+            "reason": "Achilles Tendon Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Nathan Mendes",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "R. Ramos",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 136,
+            "team_name": "Vitoria",
+            "player_name": "Riccieli",
+            "type": "Questionable",
+            "reason": "Calf Injury"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "G. Justino",
+            "type": "Missing Fixture",
+            "reason": "Yellow Cards"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "Kaio Pantaleao",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "Marcal",
+            "type": "Missing Fixture",
+            "reason": "Red Card"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "Paulinho",
+            "type": "Missing Fixture",
+            "reason": "Injury"
+          },
+          {
+            "team_id": 120,
+            "team_name": "Botafogo",
+            "player_name": "J. Barrera",
+            "type": "Questionable",
+            "reason": "Injury"
+          }
+        ]
+      }
+    },
+    {
+      "match_id": 1492336,
+      "competition": "Serie A (Brazil)",
+      "league_id": 71,
+      "season": 2026,
+      "home_team": "Mirassol",
+      "away_team": "Flamengo",
+      "home_team_id": 7848,
+      "away_team_id": 127,
+      "match_date": "2026-08-16T21:30:00+00:00",
+      "home_expected_goals": 2.19,
+      "away_expected_goals": 2.54,
+      "most_likely_score": "2-2",
+      "home_win_pct": 33.8,
+      "draw_pct": 21.1,
+      "away_win_pct": 45.0,
+      "over_2_5_pct": 84.0,
+      "btts_yes_pct": 81.8,
+      "home_power_rating": null,
+      "away_power_rating": null,
+      "confidence_score": 8,
+      "best_pick": {
+        "market": "Double Chance (Draw/Away)",
+        "probability_pct": 66.2,
+        "fair_odds": 1.51,
+        "market_label": "Draw or Flamengo Win"
+      },
+      "high_odds_pick": {
+        "market": "Away Win",
+        "probability_pct": 45.0,
+        "fair_odds": 2.22,
+        "market_label": "Flamengo Win"
+      },
+      "top_scores": [
+        {
+          "score": "2-2",
+          "probability_pct": 7.3,
+          "fair_odds": 13.66
+        },
+        {
+          "score": "1-2",
+          "probability_pct": 6.7,
+          "fair_odds": 14.96
+        },
+        {
+          "score": "2-3",
+          "probability_pct": 6.2,
+          "fair_odds": 16.11
+        },
+        {
+          "score": "1-1",
+          "probability_pct": 5.8,
+          "fair_odds": 17.14
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 5.8,
+          "fair_odds": 17.36
+        },
+        {
+          "score": "1-3",
+          "probability_pct": 5.7,
+          "fair_odds": 17.64
+        },
+        {
+          "score": "3-2",
+          "probability_pct": 5.3,
+          "fair_odds": 18.7
+        },
+        {
+          "score": "3-3",
+          "probability_pct": 4.5,
+          "fair_odds": 22.06
+        },
+        {
+          "score": "3-1",
+          "probability_pct": 4.2,
+          "fair_odds": 23.78
+        }
+      ],
+      "top_pick": true,
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [],
+        "injuries": [
+          {
+            "team_id": 7848,
+            "team_name": "Mirassol",
+            "player_name": "Jose Aldo",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 7848,
+            "team_name": "Mirassol",
+            "player_name": "Negueba",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 7848,
+            "team_name": "Mirassol",
+            "player_name": "Gabriel Knesowitsch",
+            "type": "Questionable",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "Alex Sandro",
+            "type": "Missing Fixture",
+            "reason": "Calf Injury"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "Bruno Henrique",
+            "type": "Missing Fixture",
+            "reason": "Rest"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "Everton",
+            "type": "Missing Fixture",
+            "reason": "Illness"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "Vitao",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "N. de la Cruz",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 7848,
+            "team_name": "Mirassol",
+            "player_name": "Jose Aldo",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 7848,
+            "team_name": "Mirassol",
+            "player_name": "Negueba",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 7848,
+            "team_name": "Mirassol",
+            "player_name": "Gabriel Knesowitsch",
+            "type": "Questionable",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "Alex Sandro",
+            "type": "Missing Fixture",
+            "reason": "Calf Injury"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "Bruno Henrique",
+            "type": "Missing Fixture",
+            "reason": "Rest"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "Everton",
+            "type": "Missing Fixture",
+            "reason": "Illness"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "Vitao",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 127,
+            "team_name": "Flamengo",
+            "player_name": "N. de la Cruz",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          }
+        ]
+      }
+    },
+    {
+      "match_id": 1492333,
+      "competition": "Serie A (Brazil)",
+      "league_id": 71,
+      "season": 2026,
+      "home_team": "Corinthians",
+      "away_team": "Cruzeiro",
+      "home_team_id": 131,
+      "away_team_id": 135,
+      "match_date": "2026-08-16T22:30:00+00:00",
+      "home_expected_goals": 0.76,
+      "away_expected_goals": 1.19,
+      "most_likely_score": "0-0",
+      "home_win_pct": 22.2,
+      "draw_pct": 33.3,
+      "away_win_pct": 44.5,
+      "over_2_5_pct": 30.7,
+      "btts_yes_pct": 38.3,
+      "home_power_rating": null,
+      "away_power_rating": null,
+      "confidence_score": 20,
+      "best_pick": {
+        "market": "Under 2.5 Goals",
+        "probability_pct": 69.3,
+        "fair_odds": 1.44,
+        "market_label": "Under 2.5 Goals"
+      },
+      "high_odds_pick": {
+        "market": "Away Win",
+        "probability_pct": 44.5,
+        "fair_odds": 2.25,
+        "market_label": "Cruzeiro Win"
+      },
+      "top_scores": [
+        {
+          "score": "0-0",
+          "probability_pct": 15.7,
+          "fair_odds": 6.35
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 15.6,
+          "fair_odds": 6.43
+        },
+        {
+          "score": "1-1",
+          "probability_pct": 14.3,
+          "fair_odds": 6.99
+        },
+        {
+          "score": "0-2",
+          "probability_pct": 10.1,
+          "fair_odds": 9.94
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 9.5,
+          "fair_odds": 10.57
+        }
+      ],
+      "top_pick": true,
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [],
+        "injuries": [
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Andre",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Kayke",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Z. Labyad",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Pedro Raul",
+            "type": "Missing Fixture",
+            "reason": "Ribs Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Vitinho",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Yuri Alberto",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "Cassio",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "Gabriel Pec",
+            "type": "Missing Fixture",
+            "reason": "Broken Leg"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "Kenji",
+            "type": "Missing Fixture",
+            "reason": "Yellow Cards"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "Leo Aragao",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "L. Sinisterra",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "N. Villarreal",
+            "type": "Questionable",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Andre",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Kayke",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Z. Labyad",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Pedro Raul",
+            "type": "Missing Fixture",
+            "reason": "Ribs Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Vitinho",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 131,
+            "team_name": "Corinthians",
+            "player_name": "Yuri Alberto",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "Cassio",
+            "type": "Missing Fixture",
+            "reason": "Knee Injury"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "Gabriel Pec",
+            "type": "Missing Fixture",
+            "reason": "Broken Leg"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "Kenji",
+            "type": "Missing Fixture",
+            "reason": "Yellow Cards"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "Leo Aragao",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "L. Sinisterra",
+            "type": "Missing Fixture",
+            "reason": "Muscle Injury"
+          },
+          {
+            "team_id": 135,
+            "team_name": "Cruzeiro",
+            "player_name": "N. Villarreal",
+            "type": "Questionable",
+            "reason": "Muscle Injury"
+          }
+        ]
+      }
+    }
+  ]
 }
