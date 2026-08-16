@@ -2,7 +2,10 @@ name: Update Predictions
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    # বাংলাদেশ সময় সকাল ৫টা = UTC রাত ১১টা (আগের দিন) — শুধু result check
+    - cron: "0 23 * * *"
+    # বাংলাদেশ সময় সকাল ৬টা = UTC মধ্যরাত ১২টা — শুধু নতুন top-5 predictions
+    - cron: "0 0 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -23,15 +26,26 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Generate predictions.json
+      # শুধু "0 0 * * *" cron-এ (বাংলাদেশ সকাল ৬টা, বা manual run-এ) চলবে
+      - name: Generate today's top-5 predictions
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 0 * * *'
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
         run: python scripts/generate_predictions.py
+
+      # শুধু "0 23 * * *" cron-এ (বাংলাদেশ সকাল ৫টা, বা manual run-এ) চলবে —
+      # দিনে একবারই, তাই এই স্টেপ পুরো ১০০ quota-র সিংহভাগ ব্যবহার করতে পারবে,
+      # generate_predictions-এর সাথে কোনো conflict নেই
+      - name: Check results and update history.json
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 23 * * *'
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: python scripts/check_results.py
 
       - name: Commit updated data
         run: |
           git config user.name "predictions-bot"
           git config user.email "actions@github.com"
-          git add data/predictions.json
-          git diff --staged --quiet || git commit -m "Update predictions [auto]"
+          git add data/predictions.json data/predictions_log.json data/history.json
+          git diff --staged --quiet || git commit -m "Update predictions/results [auto]"
           git push
