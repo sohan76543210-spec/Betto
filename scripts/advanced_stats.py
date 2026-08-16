@@ -158,13 +158,50 @@ def dixon_coles_adjustment(score_probs: dict, home_exp: float, away_exp: float, 
     return {k: v / total for k, v in adjusted.items()}
 
 
+def _lean(diff: float, scale: float = 1.5) -> float:
+    """একটা raw গোল-ব্যবধানকে (-scale..+scale ধরনের মান) -1..+1 রেঞ্জে ক্ল্যাম্প করে
+    ম্যাপ করে। + মানে হোম-ফেভারিং সিগন্যাল, - মানে অ্যাওয়ে-ফেভারিং। scale যত বড়,
+    সিগন্যালটা তত কম sensitive (ছোট ব্যবধানে ±1 এ পৌঁছায় না)।"""
+    return max(-1.0, min(1.0, diff / scale))
+
+
+def signal_agreement(leans: list) -> float:
+    """একাধিক সিগন্যাল (প্রতিটা -1..+1, + মানে হোম-ফেভারিং, - মানে অ্যাওয়ে-ফেভারিং)
+    একই দিকে নির্দেশ করছে কিনা তার measure — 0 (সম্পূর্ণ বিপরীতমুখী/দ্বিধাবিভক্ত)
+    থেকে 1 (সব সিগন্যাল একমত) পর্যন্ত।
+
+    কেন এটা দরকার: শুধু sample size (কত ম্যাচ ডেটা আছে) দিয়ে confidence মাপলে একটা
+    সমস্যা থেকে যায় — h2h বলছে হোম জিতবে, কিন্তু recent form বলছে অ্যাওয়ে টিম ভালো
+    ফর্মে, এরকম পরস্পরবিরোধী সিগন্যাল থাকলেও শুধু ডেটা যথেষ্ট থাকলে confidence বেশি
+    দেখাত। agreement মেট্রিক এই contradiction ধরে confidence-এ পেনাল্টি দেয়।
+
+    ২টার কম উপলব্ধ (None নয়) সিগন্যাল থাকলে agreement মাপার মতো কিছু নেই, তাই
+    নিরপেক্ষ 0.5 রিটার্ন করা হয় (না বাড়ায়, না কমায়)।
+    Implementation: mean(signed) / mean(abs) — সবগুলো একই দিকে বড় মান দিলে
+    অনুপাত ১-এর কাছাকাছি; বিপরীতমুখী সিগন্যাল একে অপরকে cancel করে অনুপাত কমায়।"""
+    vals = [v for v in leans if v is not None]
+    if len(vals) < 2:
+        return 0.5
+    mean_signed = sum(vals) / len(vals)
+    mean_abs = sum(abs(v) for v in vals) / len(vals)
+    if mean_abs == 0:
+        return 0.5  # সব সিগন্যাল নিরপেক্ষ (0) — agreement মাপা অর্থহীন
+    return abs(mean_signed) / mean_abs
+
+
 def confidence_score(h2h_count: int, home_recent_count: int, away_recent_count: int,
-                      venue_home_count: int, venue_away_count: int) -> int:
+                      venue_home_count: int, venue_away_count: int,
+                      agreement: float = None) -> int:
     """0-100 স্কেলে বলে দেয় প্রেডিকশনটা কতটা ডেটা-সমর্থিত। এটা probability না,
-    বরং "এই প্রেডিকশনের পেছনে কতটা sample আছে" তার একটা measure — কম confidence
-    মানে predictor.py-এর ফলাফল কম বিশ্বাসযোগ্য, ভুল না অগত্যা।
+    বরং "এই প্রেডিকশনের পেছনে কতটা sample আছে ও সিগন্যালগুলো কতটা একমত" তার একটা
+    measure — কম confidence মানে predictor.py-এর ফলাফল কম বিশ্বাসযোগ্য, ভুল না অগত্যা।
     প্রতিটা সিগন্যালের জন্য একটা saturating (diminishing-returns) স্কোর যোগ হয়:
-    h2h ৫+ ম্যাচে full মার্ক, overall form ৬+ ম্যাচে, venue-specific form ৩+ ম্যাচে।"""
+    h2h ৫+ ম্যাচে full মার্ক, overall form ৬+ ম্যাচে, venue-specific form ৩+ ম্যাচে।
+
+    agreement (signal_agreement()-এর রিটার্ন, 0..1) দেওয়া থাকলে চূড়ান্ত স্কোরে
+    সর্বোচ্চ ৪০% পর্যন্ত পেনাল্টি প্রয়োগ হয় — সিগন্যালগুলো পরস্পরবিরোধী হলে অনেক
+    ডেটা থাকলেও confidence পূর্ণ থাকবে না। agreement=None দিলে (ব্যাকওয়ার্ড
+    কম্প্যাটিবিলিটির জন্য) কোনো পেনাল্টি প্রয়োগ হয় না।"""
     def sat(count, target, weight):
         return weight * min(1.0, count / target)
 
@@ -175,4 +212,6 @@ def confidence_score(h2h_count: int, home_recent_count: int, away_recent_count: 
         + sat(venue_home_count, 3, 20)
         + sat(venue_away_count, 3, 20)
     )
+    if agreement is not None:
+        score = score * (0.6 + 0.4 * agreement)
     return round(score)
