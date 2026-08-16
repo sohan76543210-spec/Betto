@@ -31,6 +31,7 @@ jobs:
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 0 * * *'
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          FOOTBALL_DATA_ORG_TOKEN: ${{ secrets.FOOTBALL_DATA_ORG_TOKEN }}
         run: python scripts/generate_predictions.py
 
       # শুধু "0 23 * * *" cron-এ (বাংলাদেশ সকাল ৫টা, বা manual run-এ) চলবে —
@@ -40,6 +41,7 @@ jobs:
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 23 * * *'
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          FOOTBALL_DATA_ORG_TOKEN: ${{ secrets.FOOTBALL_DATA_ORG_TOKEN }}
         run: python scripts/check_results.py
 
       - name: Commit updated data
