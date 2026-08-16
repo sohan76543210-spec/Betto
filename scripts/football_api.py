@@ -45,6 +45,7 @@ _team_stats_cache: dict = {}
 _standings_cache: dict = {}
 _injuries_cache: dict = {}
 _lineups_cache: dict = {}
+_odds_cache: dict = {}
 
 
 def cache_stats() -> dict:
@@ -56,6 +57,7 @@ def cache_stats() -> dict:
         "standings_cached": len(_standings_cache),
         "injuries_cached": len(_injuries_cache),
         "lineups_cached": len(_lineups_cache),
+        "odds_cached": len(_odds_cache),
     }
 
 
@@ -345,6 +347,59 @@ def get_lineups(fixture_id: int):
 
     _lineups_cache[cache_key] = lineups
     return lineups
+
+
+def get_odds(fixture_id: int):
+    """/odds?fixture=... — bookmaker odds (শুধু "Match Winner" মার্কেট)।
+
+    গুরুত্বপূর্ণ: api-football-এর ফ্রি প্ল্যানে odds endpoint সাধারণত অন্তর্ভুক্ত
+    থাকে না বা সীমিত থাকে। তাই এখানে যেকোনো এরর/খালি রেসপন্সে চুপচাপ None
+    রিটার্ন করা হয় — এই কলের ব্যর্থতা কখনোই মূল prediction pipeline ভাঙবে না।
+
+    ব্যবহার: এটা predict_match()-এর কোনো সংখ্যা বদলায় না (bookmaker odds দিয়ে
+    prediction "ঠিক করা" ঝুঁকিপূর্ণ, কারণ bookmaker margin/vig probability-কে
+    biased করে)। বরং এটা শুধু deep_analysis-এ সংরক্ষিত থাকে, যাতে পরে
+    analyze_accuracy.py বা ম্যানুয়ালি model-এর probability বনাম real market
+    odds তুলনা করে দেখা যায় model systematically over/under-confident কিনা।
+    CACHED by fixture_id।"""
+    cache_key = fixture_id
+    if cache_key in _odds_cache:
+        return _odds_cache[cache_key]
+
+    url = f"{BASE_URL}/odds"
+    params = {"fixture": fixture_id}
+    try:
+        data = _get(url, params)
+    except Exception as e:
+        print(f"DEBUG: get_odds failed for fixture {fixture_id} (may not be available on this API plan): {e}")
+        _odds_cache[cache_key] = None
+        return None
+
+    response = data.get("response") or []
+    result = None
+    if response:
+        try:
+            bookmakers = response[0].get("bookmakers", [])
+            if bookmakers:
+                bets = bookmakers[0].get("bets", [])
+                match_winner = next((b for b in bets if b.get("name") == "Match Winner"), None)
+                if match_winner:
+                    values = {v["value"]: float(v["odd"]) for v in match_winner.get("values", [])}
+                    result = {
+                        "bookmaker": bookmakers[0].get("name"),
+                        "home": values.get("Home"),
+                        "draw": values.get("Draw"),
+                        "away": values.get("Away"),
+                    }
+        except (KeyError, IndexError, ValueError, TypeError) as e:
+            print(f"DEBUG: get_odds parse error for fixture {fixture_id}: {e}")
+            result = None
+
+    if result is None:
+        print(f"DEBUG: get_odds empty/unavailable for fixture {fixture_id} (normal if plan lacks odds access)")
+
+    _odds_cache[cache_key] = result
+    return result
 
 
 def get_match_result(fixture_id: int):
