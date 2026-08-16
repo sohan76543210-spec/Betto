@@ -21,6 +21,8 @@ from advanced_stats import (
     dynamic_home_advantage,
     dixon_coles_adjustment,
     confidence_score,
+    signal_agreement,
+    _lean,
 )
 
 H2H_WEIGHT = 0.25
@@ -60,12 +62,118 @@ def _poisson_prob(k, lam):
     return (lam ** k) * math.exp(-lam) / math.factorial(k)
 
 
+def _poisson_outcomes(home_expected: float, away_expected: float, max_goals: int = 6) -> dict:
+    """expected গোল (lambda) থেকে পুরো outcome distribution বের করে: score_probs
+    (Dixon-Coles adjusted), win/draw/loss %, btts, over/under, double chance,
+    most likely score। predict_match() এবং injury-adjustment-এর পরে
+    পুনঃহিসাবের (apply_injury_adjustment) দুই জায়গাতেই reuse করার জন্য আলাদা
+    ফাংশনে বের করা হয়েছে, যাতে Poisson+Dixon-Coles লজিক একবারই লেখা থাকে।"""
+    score_probs = {}
+    for hg in range(max_goals):
+        for ag in range(max_goals):
+            score_probs[(hg, ag)] = _poisson_prob(hg, home_expected) * _poisson_prob(ag, away_expected)
+
+    # Dixon-Coles adjustment: Poisson-এর independence assumption কম-স্কোরিং
+    # ফলাফলে (0-0/1-0/0-1/1-1) সামান্য ভুল করে; এখানে সেটা সংশোধন করে renormalize করা হয়
+    score_probs = dixon_coles_adjustment(score_probs, home_expected, away_expected)
+
+    home_win, draw, away_win = 0.0, 0.0, 0.0
+    btts_yes = 0.0
+    over_2_5 = 0.0
+
+    for (hg, ag), p in score_probs.items():
+        if hg > ag:
+            home_win += p
+        elif hg == ag:
+            draw += p
+        else:
+            away_win += p
+        if hg > 0 and ag > 0:
+            btts_yes += p
+        if hg + ag > 2.5:
+            over_2_5 += p
+
+    most_likely_score = max(score_probs, key=score_probs.get)
+
+    double_chance_1x = home_win + draw
+    double_chance_x2 = draw + away_win
+    double_chance_12 = home_win + away_win
+
+    return {
+        "home_win_pct": round(home_win * 100, 1),
+        "draw_pct": round(draw * 100, 1),
+        "away_win_pct": round(away_win * 100, 1),
+        "btts_yes_pct": round(btts_yes * 100, 1),
+        "btts_no_pct": round((1 - btts_yes) * 100, 1),
+        "over_2_5_pct": round(over_2_5 * 100, 1),
+        "under_2_5_pct": round((1 - over_2_5) * 100, 1),
+        "double_chance_1x_pct": round(double_chance_1x * 100, 1),
+        "double_chance_x2_pct": round(double_chance_x2 * 100, 1),
+        "double_chance_12_pct": round(double_chance_12 * 100, 1),
+        "most_likely_score": f"{most_likely_score[0]}-{most_likely_score[1]}",
+        "_score_probs": score_probs,
+        "_raw_probs": {
+            "Home Win": home_win,
+            "Draw": draw,
+            "Away Win": away_win,
+            "Double Chance (Home/Draw)": double_chance_1x,
+            "Double Chance (Draw/Away)": double_chance_x2,
+            "Double Chance (Home/Away)": double_chance_12,
+            "Over 2.5 Goals": over_2_5,
+            "Under 2.5 Goals": 1 - over_2_5,
+            "Both Teams to Score - Yes": btts_yes,
+            "Both Teams to Score - No": 1 - btts_yes,
+        },
+    }
+
+
+def apply_injury_adjustment(home_expected: float, away_expected: float, injuries: list,
+                             home_team_id: int, away_team_id: int,
+                             per_player_reduction: float = 0.04,
+                             max_per_team_reduction: float = 0.25):
+    """Phase 2-তে fetch হওয়া injuries লিস্ট প্রয়োগ করে expected গোল সামান্য কমিয়ে
+    outcome পুনরায় হিসাব করে।
+
+    সীমাবদ্ধতা (গুরুত্বপূর্ণ): api-football-এর ফ্রি প্ল্যানের injuries endpoint
+    প্লেয়ারের নাম/কারণ দেয়, কিন্তু quality/গুরুত্ব (star striker vs backup) বলে না।
+    তাই এখানে প্রতিটা অনুপস্থিত প্লেয়ারকে সমান ওজন (per_player_reduction=4%) দেওয়া
+    হয়েছে — এটা একটা ভোঁতা (blunt) heuristic, নিখুঁত না। max_per_team_reduction
+    (ডিফল্ট ২৫%) দিয়ে ক্যাপ করা থাকে যাতে অনেক প্লেয়ার injury-listed থাকলেও
+    অবাস্তব বড় adjustment না হয়।
+
+    কোনো adjustment দরকার না হলে (কোনো টিমেরই injury নেই) None রিটার্ন করে, যাতে
+    caller বুঝতে পারে মূল (Phase 1) প্রেডিকশনই বহাল রাখতে হবে।"""
+    home_missing = sum(1 for i in injuries if i.get("team_id") == home_team_id)
+    away_missing = sum(1 for i in injuries if i.get("team_id") == away_team_id)
+
+    if home_missing == 0 and away_missing == 0:
+        return None
+
+    home_reduction = min(max_per_team_reduction, per_player_reduction * home_missing)
+    away_reduction = min(max_per_team_reduction, per_player_reduction * away_missing)
+
+    adj_home_expected = home_expected * (1 - home_reduction)
+    adj_away_expected = away_expected * (1 - away_reduction)
+
+    outcomes = _poisson_outcomes(adj_home_expected, adj_away_expected)
+
+    return {
+        **outcomes,
+        "home_expected_goals": round(adj_home_expected, 2),
+        "away_expected_goals": round(adj_away_expected, 2),
+        "home_missing_players": home_missing,
+        "away_missing_players": away_missing,
+    }
+
+
 def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
-    # h2h শেষ ৫-৮টা, recent form শেষ ১০টা (cache করা থাকে football_api.py-তে,
-    # তাই একই টিম অন্য ম্যাচেও লাগলে দ্বিতীয়বার API call হয় না)
-    h2h = get_head_to_head(home_team_id, away_team_id, limit=8)
-    home_recent = get_team_recent_form(home_team_id, limit=10)
-    away_recent = get_team_recent_form(away_team_id, limit=10)
+    # h2h শেষ ১০টা, recent form শেষ ১২টা (আগে ছিল h2h=8, form=10 — sample size
+    # সামান্য বাড়ানো হয়েছে যাতে recency-weighting আরও স্থিতিশীল গড় পায়়; cache
+    # করা থাকে football_api.py-তে, তাই একই টিম অন্য ম্যাচেও লাগলে দ্বিতীয়বার
+    # API call হয় না — শুধু প্রথমবার সামান্য বেশি ডেটা আসে)
+    h2h = get_head_to_head(home_team_id, away_team_id, limit=10)
+    home_recent = get_team_recent_form(home_team_id, limit=12)
+    away_recent = get_team_recent_form(away_team_id, limit=12)
 
     home_home_matches, home_away_matches = _venue_split(home_recent, home_team_id)
     _, away_away_matches = _venue_split(away_recent, away_team_id)
@@ -123,81 +231,49 @@ def predict_match(home_team_id: int, away_team_id: int, max_goals: int = 6):
     home_expected = ((home_scored_avg * home_scored_mult) + (away_conceded_avg)) / 2
     away_expected = (away_scored_avg + (home_conceded_avg * home_conceded_mult)) / 2
 
-    home_win, draw, away_win = 0.0, 0.0, 0.0
-    btts_yes = 0.0
-    over_2_5 = 0.0
-    score_probs = {}
-
-    for hg in range(max_goals):
-        for ag in range(max_goals):
-            score_probs[(hg, ag)] = _poisson_prob(hg, home_expected) * _poisson_prob(ag, away_expected)
-
-    # Dixon-Coles adjustment: Poisson-এর independence assumption কম-স্কোরিং
-    # ফলাফলে (0-0/1-0/0-1/1-1) সামান্য ভুল করে; এখানে সেটা সংশোধন করে renormalize করা হয়
-    score_probs = dixon_coles_adjustment(score_probs, home_expected, away_expected)
-
-    for (hg, ag), p in score_probs.items():
-        if hg > ag:
-            home_win += p
-        elif hg == ag:
-            draw += p
-        else:
-            away_win += p
-        if hg > 0 and ag > 0:
-            btts_yes += p
-        if hg + ag > 2.5:
-            over_2_5 += p
-
-    most_likely_score = max(score_probs, key=score_probs.get)
+    outcomes = _poisson_outcomes(home_expected, away_expected, max_goals)
 
     # Power Rating (form-based approximation, real persistent ELO না — advanced_stats.py দ্রষ্টব্য)
     home_power = power_rating(home_recent, home_team_id)
     away_power = power_rating(away_recent, away_team_id)
 
-    # Confidence Score: কতটা sample-সমর্থিত এই প্রেডিকশন, probability না
+    # সিগন্যাল agreement: h2h/overall-form/venue-form একই দিকে (হোম বা অ্যাওয়ে
+    # ফেভারিং) ইঙ্গিত দিচ্ছে কিনা। প্রতিটা সিগন্যাল থেকে একটা "lean" (-1..+1) বের
+    # করা হয় (হোম টিমের গোল-ব্যবধান বনাম অ্যাওয়ে টিমের গোল-ব্যবধান), তারপর
+    # signal_agreement() দিয়ে সামগ্রিক agreement (0..1) মাপা হয়।
+    def _signal_lean(home_pair, away_pair):
+        if home_pair is None or away_pair is None:
+            return None
+        home_diff = home_pair[0] - home_pair[1]
+        away_diff = away_pair[0] - away_pair[1]
+        return _lean(home_diff - away_diff)
+
+    leans = [
+        _signal_lean(h2h_home, h2h_away),
+        _signal_lean(overall_home, overall_away),
+        _signal_lean(venue_home, venue_away),
+    ]
+    agreement = signal_agreement(leans)
+
+    # Confidence Score: কতটা sample-সমর্থিত এবং সিগন্যালগুলো কতটা একমত, probability না
     confidence = confidence_score(
         h2h_count=len(h2h),
         home_recent_count=len(home_recent),
         away_recent_count=len(away_recent),
         venue_home_count=len(home_home_matches),
         venue_away_count=len(away_away_matches),
+        agreement=agreement,
     )
-
-    double_chance_1x = home_win + draw
-    double_chance_x2 = draw + away_win
-    double_chance_12 = home_win + away_win
 
     return {
         "home_expected_goals": round(home_expected, 2),
         "away_expected_goals": round(away_expected, 2),
-        "home_win_pct": round(home_win * 100, 1),
-        "draw_pct": round(draw * 100, 1),
-        "away_win_pct": round(away_win * 100, 1),
-        "btts_yes_pct": round(btts_yes * 100, 1),
-        "btts_no_pct": round((1 - btts_yes) * 100, 1),
-        "over_2_5_pct": round(over_2_5 * 100, 1),
-        "under_2_5_pct": round((1 - over_2_5) * 100, 1),
-        "double_chance_1x_pct": round(double_chance_1x * 100, 1),
-        "double_chance_x2_pct": round(double_chance_x2 * 100, 1),
-        "double_chance_12_pct": round(double_chance_12 * 100, 1),
-        "most_likely_score": f"{most_likely_score[0]}-{most_likely_score[1]}",
+        **outcomes,
         "has_real_data": has_real_data,
         "home_power_rating": home_power,
         "away_power_rating": away_power,
         "confidence_score": confidence,
-        "_score_probs": score_probs,
-        "_raw_probs": {
-            "Home Win": home_win,
-            "Draw": draw,
-            "Away Win": away_win,
-            "Double Chance (Home/Draw)": double_chance_1x,
-            "Double Chance (Draw/Away)": double_chance_x2,
-            "Double Chance (Home/Away)": double_chance_12,
-            "Over 2.5 Goals": over_2_5,
-            "Under 2.5 Goals": 1 - over_2_5,
-            "Both Teams to Score - Yes": btts_yes,
-            "Both Teams to Score - No": 1 - btts_yes,
-        },
+        "signal_agreement": round(agreement, 2),
     }
 
 
