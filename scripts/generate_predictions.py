@@ -1,7 +1,8 @@
 """
 generate_predictions.py
-GitHub Actions থেকে প্রতিদিন চলে। football_api.py + predictor.py ব্যবহার করে
-আজ/আগামীকালের ম্যাচের প্রেডিকশন বানিয়ে ../data/predictions.json ফাইলে লেখে।
+Runs daily from GitHub Actions. Uses football_api.py + predictor.py to build
+predictions for today's/tomorrow's matches and writes them to
+../data/predictions.json.
 """
 
 import json
@@ -17,26 +18,29 @@ from predictor import predict_match, best_pick, top_correct_scores, high_odds_pi
 MIN_ODDS = 1.40
 HIGH_ODDS_THRESHOLD = 2.00
 # --------------------------------------------------------------------------
-# api-football ফ্রি প্ল্যানে দিনে মোট ১০০টা রিকোয়েস্ট পাওয়া যায়। প্রতিটা ম্যাচের
-# প্রেডিকশনে গড়ে ~৩-৪টা কল লাগে (h2h + home form + away form, কখনো কখনো form
-# কলে সিজন-ফলব্যাকের কারণে extra কল)। শুরুর fixtures fetch-এ ২টা কল যায়।
-# তাই MAX_MATCHES এমনভাবে রাখা হয়েছে যাতে পুরো রান নিরাপদে দৈনিক কোটার মধ্যে
-# শেষ হয় এবং কিছুটা বাফারও থাকে।
+# api-football's free plan allows 100 requests per day total. Each match
+# prediction costs ~3-4 calls on average (h2h + home form + away form,
+# sometimes an extra call when the form call falls back to a previous
+# season). The initial fixtures fetch costs 2 calls. MAX_MATCHES is set so
+# a full run safely finishes within the daily quota, with some buffer left.
 # --------------------------------------------------------------------------
 MAX_MATCHES = 20
-# কোটা এই সংখ্যার নিচে নেমে গেলে বাকি ম্যাচ প্রসেস না করে নিরাপদে থেমে যাওয়া হয়,
-# যাতে ৪২৯ এরর দিয়ে একগাদা ম্যাচ নষ্ট হওয়ার বদলে যা হয়েছে তা সেভ থাকে।
+# If the quota drops below this number, remaining matches are skipped
+# instead of processed, so a 429 error doesn't waste a batch of matches
+# that would otherwise be lost — whatever was already done stays saved.
 MIN_QUOTA_BUFFER = 5
 
 # --------------------------------------------------------------------------
-# লিগ হোয়াইটলিস্ট: ব্যবহারকারীর সরবরাহ করা ঠিক এই ২০টা লিগ/কাপ-ই রাখা হয়েছে।
-# ম্যাচ ফিল্টার হয় (country, league name) মিলিয়ে — যেটা এখানে নেই সেটা স্কিপ হবে।
+# League whitelist: exactly these 20 leagues/cups the user supplied are
+# kept. Matches are filtered by (country, league name) match — anything
+# not in this list is skipped.
 #
-# গুরুত্বপূর্ণ: এই নামগুলো একটা ভিন্ন অ্যাপের স্ক্রিনশট থেকে নেওয়া। api-sports.io
-# হুবহু একই বানান/ফরম্যাট ব্যবহার করে কিনা তা নিশ্চিত নয় (যেমন: "Türkiye" বনাম
-# "Turkey", বা "Persian Gulf" পুরো নাম হয়তো "Persian Gulf Pro League")। প্রথমবার
-# চালিয়ে stderr লগে "league not in whitelist" মেসেজ চেক করুন — কোনো লিগ ভুলবশত
-# বাদ পড়লে সেখান থেকে সঠিক বানান কপি করে নিচে ঠিক করে দিন।
+# IMPORTANT: these names were taken from a different app's screenshots.
+# It isn't confirmed that api-sports.io uses the exact same spelling/format
+# (e.g. "Türkiye" vs "Turkey", or "Persian Gulf" whose full name might be
+# "Persian Gulf Pro League"). After the first run, check the stderr log for
+# "league not in whitelist" messages — if a league was accidentally
+# dropped, copy the correct spelling from there and fix it below.
 # --------------------------------------------------------------------------
 
 ALLOWED_LEAGUES = {
@@ -60,7 +64,7 @@ ALLOWED_LEAGUES = {
     ("England", "League Two"),
     ("England", "League One"),
     ("Spain", "La Liga"),
-    ("Spain", "LaLiga"),  # সেফটি-নেট: কোনো একটা ভ্যারিয়েন্ট মিলে যাবে
+    ("Spain", "LaLiga"),  # safety net: whichever variant matches
     ("Saudi Arabia", "Saudi Pro League"),
     ("Armenia", "Premier League"),
     ("Brazil", "Serie A"),
@@ -68,8 +72,8 @@ ALLOWED_LEAGUES = {
     ("International", "Club Friendlies"),
 
     # --------------------------------------------------------------------
-    # ইউরোপের "টপ ৫" লিগ + মেজর ইউরোপিয়ান কাপ। api-football (api-sports.io)-এর
-    # leagues এন্ডপয়েন্ট থেকে ভেরিফাই করা নাম/দেশ ব্যবহার করা হয়েছে:
+    # Europe's "top 5" leagues + major European cups. Names/countries
+    # verified from api-football's (api-sports.io) leagues endpoint:
     #   /leagues?id=39  -> England / Premier League
     #   /leagues?id=140 -> Spain   / La Liga
     #   /leagues?id=135 -> Italy   / Serie A
@@ -80,7 +84,7 @@ ALLOWED_LEAGUES = {
     #   /leagues?id=848 -> World   / UEFA Conference League
     # --------------------------------------------------------------------
     ("England", "Premier League"),
-    ("Spain", "La Liga"),  # কনফার্মড বানান; উপরের ("Spain","LaLiga") সেফটি-নেট হিসেবে থাকল
+    ("Spain", "La Liga"),  # confirmed spelling; the ("Spain","LaLiga") entry above is a safety net
     ("Italy", "Serie A"),
     ("Germany", "Bundesliga"),
     ("France", "Ligue 1"),
@@ -89,12 +93,13 @@ ALLOWED_LEAGUES = {
     ("World", "UEFA Conference League"),
 }
 
-# নাম-মিলের জন্য lowercase সেট বানিয়ে রাখা হচ্ছে যাতে প্রতিবার লুপে lower() কল করতে না হয়
+# A lowercase set is built once for name matching, so lower() doesn't need
+# to be called on every loop iteration
 ALLOWED_LEAGUES_LOWER = {(c.lower(), n.lower()) for c, n in ALLOWED_LEAGUES}
 
 
 def is_allowed_league(match: dict) -> bool:
-    """হোয়াইটলিস্টের লিগ হলে True; বাকি সব লিগ False (স্কিপ হবে)।"""
+    """True if the league is in the whitelist; False for everything else (skipped)."""
     competition = match.get("competition", {})
     country = (competition.get("country") or "").lower()
     name = (competition.get("name") or "").lower()
@@ -108,6 +113,85 @@ DISCLAIMER = (
 )
 
 
+def humanize_pick(pick: dict | None, home_team: str, away_team: str) -> dict | None:
+    """
+    predictor.py's 'market' field holds generic labels like "Home Win"/
+    "Away Win" (left unchanged here because check_pick_correctness() relies
+    on those exact strings). This function adds a new 'market_label' field
+    to the same dict, where "Home Win"/"Away Win" is replaced with the
+    actual team name — so it's easier for users to read.
+    """
+    if pick is None:
+        return None
+
+    market = pick.get("market")
+    label_map = {
+        "Home Win": f"{home_team} Win",
+        "Away Win": f"{away_team} Win",
+        "Draw": "Draw",
+        "Double Chance (Home/Draw)": f"{home_team} Win or Draw",
+        "Double Chance (Draw/Away)": f"Draw or {away_team} Win",
+        "Double Chance (Home/Away)": f"{home_team} Win or {away_team} Win",
+        "Over 2.5 Goals": "Over 2.5 Goals",
+        "Under 2.5 Goals": "Under 2.5 Goals",
+        "Both Teams to Score - Yes": "Both Teams to Score - Yes",
+        "Both Teams to Score - No": "Both Teams to Score - No",
+    }
+    market_label = label_map.get(market, market)
+
+    return {**pick, "market_label": market_label}
+
+
+def append_to_log(output_matches: list, log_path: str) -> int:
+    """
+    Saves each prediction with a 'pending' status into
+    ../data/predictions_log.json, so that check_results.py can later match
+    it against the real result once the match has finished (for the
+    History tab). predictions.json gets overwritten every day, so this
+    separate log file is what preserves history. Matches without a
+    match_id can't be tracked (no way to look up the result later), so
+    they're skipped.
+    """
+    try:
+        with open(log_path, "r", encoding="utf-8") as f:
+            log = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        log = []
+
+    existing_ids = {entry.get("match_id") for entry in log}
+
+    added = 0
+    for m in output_matches:
+        match_id = m.get("match_id")
+        if match_id is None or match_id in existing_ids:
+            continue
+
+        log.append({
+            "match_id": match_id,
+            "competition": m["competition"],
+            "home_team": m["home_team"],
+            "away_team": m["away_team"],
+            "match_date": m["match_date"],
+            "best_pick": m.get("best_pick"),
+            "high_odds_pick": m.get("high_odds_pick"),
+            "status": "pending",       # pending -> correct / incorrect / no_pick
+            "actual_score": None,
+            "checked_at": None,
+        })
+        existing_ids.add(match_id)
+        added += 1
+
+    # Trim the oldest entries so the log file doesn't grow without bound
+    LOG_MAX_ENTRIES = 1000
+    if len(log) > LOG_MAX_ENTRIES:
+        log = log[-LOG_MAX_ENTRIES:]
+
+    with open(log_path, "w", encoding="utf-8") as f:
+        json.dump(log, f, ensure_ascii=False, indent=2)
+
+    return added
+
+
 def build():
     try:
         matches = football_api.get_upcoming_matches(days_ahead=1)
@@ -115,9 +199,10 @@ def build():
         print(f"API error: {e}", file=sys.stderr)
         matches = []
 
-    # আগে allowed-league ম্যাচগুলো বাছাই করে kickoff সময় অনুযায়ী সাজানো হচ্ছে,
-    # যাতে MAX_MATCHES ক্যাপ প্রয়োগ হওয়ার সময় সবচেয়ে তাড়াতাড়ি শুরু হওয়া ম্যাচগুলো
-    # অগ্রাধিকার পায় (API যে ক্রমে ফেরত দেয় সেটা সময়ানুক্রমিক নয়)।
+    # First, allowed-league matches are collected and sorted by kickoff
+    # time, so that when the MAX_MATCHES cap is applied, the earliest-
+    # starting matches get priority (the API doesn't return them in
+    # chronological order).
     allowed_matches = []
     for m in matches:
         if is_allowed_league(m):
@@ -171,10 +256,20 @@ def build():
             )
             continue
 
+        home_team_name = m["homeTeam"]["name"]
+        away_team_name = m["awayTeam"]["name"]
+
+        league_name = m["competition"]["name"]
+        league_country = m["competition"].get("country")
+        competition_display = (
+            f"{league_name} ({league_country})" if league_country else league_name
+        )
+
         output_matches.append({
-            "competition": m["competition"]["name"],
-            "home_team": m["homeTeam"]["name"],
-            "away_team": m["awayTeam"]["name"],
+            "match_id": m.get("id"),
+            "competition": competition_display,
+            "home_team": home_team_name,
+            "away_team": away_team_name,
             "match_date": m.get("utcDate"),
             "home_expected_goals": pred["home_expected_goals"],
             "away_expected_goals": pred["away_expected_goals"],
@@ -184,8 +279,14 @@ def build():
             "away_win_pct": pred["away_win_pct"],
             "over_2_5_pct": pred["over_2_5_pct"],
             "btts_yes_pct": pred["btts_yes_pct"],
-            "best_pick": best_pick(pred, min_odds=MIN_ODDS),
-            "high_odds_pick": high_odds_pick(pred, min_odds=HIGH_ODDS_THRESHOLD),
+            "best_pick": humanize_pick(
+                best_pick(pred, min_odds=MIN_ODDS), home_team_name, away_team_name
+            ),
+            "high_odds_pick": humanize_pick(
+                high_odds_pick(pred, min_odds=HIGH_ODDS_THRESHOLD),
+                home_team_name,
+                away_team_name,
+            ),
             "top_scores": top_correct_scores(pred, n=3),
         })
 
@@ -199,12 +300,16 @@ def build():
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
+    log_path = os.path.join(os.path.dirname(__file__), "..", "data", "predictions_log.json")
+    added_to_log = append_to_log(output_matches, log_path)
+
     print(
         f"Wrote {len(output_matches)} matches to {out_path} "
         f"(fetched {len(matches)} total NS fixtures today+tomorrow -> "
         f"{len(allowed_matches)} in whitelisted leagues -> "
         f"{no_data_skipped} dropped for lack of h2h/form data -> "
-        f"{len(output_matches)} final)"
+        f"{len(output_matches)} final); "
+        f"{added_to_log} new match(es) added to {log_path} for result-tracking"
     )
 
 
