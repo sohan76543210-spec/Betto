@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T22:34:53.236244+00:00",
+  "generated_at": "2026-08-16T23:37:44.747285+00:00",
   "prediction_window_bd": {
     "from": "2026-08-16T06:00:00+00:00",
     "to": "2026-08-17T06:00:00+00:00"
@@ -8,13 +8,20 @@
   "disclaimer": "Statistical estimate only; no prediction is guaranteed.",
   "top_picks_count": 0,
   "api_cache_stats": {
-    "teams_cached": 0,
-    "h2h_pairs_cached": 0,
-    "team_stats_cached": 0,
-    "standings_cached": 0,
-    "injuries_cached": 0,
-    "lineups_cached": 0
+    "fdo": {
+      "teams_cached": 0,
+      "h2h_matches_cached": 0,
+      "standings_cached": 0
+    },
+    "aps": {
+      "teams_cached": 0,
+      "h2h_pairs_cached": 0,
+      "team_stats_cached": 0,
+      "standings_cached": 0,
+      "injuries_cached": 0,
+      "lineups_cached": 0
+    }
   },
-  "remaining_quota": 7,
+  "remaining_quota": 2,
   "matches": []
 }
