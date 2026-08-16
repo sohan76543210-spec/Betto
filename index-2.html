@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Matchday Predictions</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch:#0B3B2E;
+    --pitch-2:#123F30;
+    --turf:#1E6B4E;
+    --line:#2E7D5B;
+    --chalk:#F4F1E6;
+    --chalk-dim:#B9C7BF;
+    --amber:#FFB020;
+    --amber-dim:#7A5A18;
+    --card:#0F2F26;
+    --danger:#E4573D;
+    --win:#3FBE72;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1200px 600px at 50% -10%, rgba(255,176,32,0.08), transparent 60%),
+      repeating-linear-gradient(0deg, var(--pitch) 0px, var(--pitch) 44px, var(--pitch-2) 44px, var(--pitch-2) 88px);
+    color:var(--chalk);
+    font-family:'Inter', sans-serif;
+    min-height:100vh;
+    padding-bottom:86px;
+  }
+  .field-lines{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      linear-gradient(rgba(244,241,230,0.05) 1px, transparent 1px);
+    background-size: 100% 44px;
+  }
+  header{
+    position:relative; z-index:1;
+    padding:22px 20px 16px;
+    text-align:center;
+    border-bottom:2px dashed rgba(244,241,230,0.18);
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--amber); margin-bottom:6px;
+  }
+  h1{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    font-size:34px;
+    letter-spacing:0.5px;
+    margin:0;
+    color:var(--chalk);
+    text-shadow:0 2px 0 rgba(0,0,0,0.25);
+  }
+  .sub{
+    color:var(--chalk-dim);
+    font-size:13px;
+    margin-top:6px;
+  }
+  main{position:relative; z-index:1; max-width:520px; margin:0 auto; padding:18px 14px;}
+
+  #status{
+    text-align:center; color:var(--chalk-dim); padding:40px 20px; font-size:14px;
+  }
+  #status .spinner{
+    width:26px; height:26px; margin:0 auto 14px;
+    border:3px solid rgba(244,241,230,0.2);
+    border-top-color:var(--amber);
+    border-radius:50%;
+    animation:spin 0.8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .match-card{
+    background:var(--card);
+    border:1px solid rgba(244,241,230,0.1);
+    border-radius:var(--radius);
+    margin-bottom:16px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
+  .match-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:12px 16px 8px;
+    border-bottom:1px dashed rgba(244,241,230,0.15);
+  }
+  .competition{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--amber);
+  }
+  .kickoff{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px; color:var(--chalk-dim);
+  }
+  .result-pill{
+    display:flex; align-items:center; gap:6px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px; letter-spacing:1px; text-transform:uppercase;
+  }
+  .result-pill .dot{
+    width:18px; height:18px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:800; color:#0F2F26;
+  }
+  .result-pill .dot.win{background:var(--win);}
+  .result-pill .dot.lose{background:var(--danger); color:#fff;}
+  .result-pill.win{color:var(--win);}
+  .result-pill.lose{color:var(--danger);}
+
+  .teams{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 16px 10px;
+    gap:10px;
+  }
+  .team{flex:1; font-size:16px; font-weight:600; line-height:1.25;}
+  .team.away{text-align:right;}
+  .vs-block{
+    font-family:'Anton', sans-serif;
+    font-size:13px; color:var(--chalk-dim);
+    background:rgba(255,176,32,0.08);
+    border:1px solid rgba(255,176,32,0.25);
+    border-radius:8px;
+    padding:4px 8px;
+    white-space:nowrap;
+  }
+  .score-block{
+    font-family:'JetBrains Mono', monospace;
+    font-size:15px; font-weight:700; color:var(--chalk);
+    background:rgba(0,0,0,0.25);
+    border:1px solid rgba(244,241,230,0.08);
+    border-radius:8px;
+    padding:4px 10px;
+    white-space:nowrap;
+  }
+
+  .scoreboard{
+    display:flex;
+    margin:0 16px 12px;
+    background:rgba(0,0,0,0.25);
+    border-radius:10px;
+    overflow:hidden;
+    border:1px solid rgba(244,241,230,0.08);
+  }
+  .sb-cell{
+    flex:1; text-align:center; padding:9px 4px;
+    border-right:1px solid rgba(244,241,230,0.08);
+  }
+  .sb-cell:last-child{border-right:none;}
+  .sb-val{
+    font-family:'JetBrains Mono', monospace;
+    font-size:15px; font-weight:700; color:var(--chalk);
+  }
+  .sb-label{font-size:9.5px; color:var(--chalk-dim); margin-top:2px; letter-spacing:0.5px;}
+
+  .pick-row{
+    margin:0 16px 14px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:linear-gradient(135deg, rgba(255,176,32,0.14), rgba(255,176,32,0.04));
+    border:1px solid rgba(255,176,32,0.3);
+    border-radius:10px;
+    padding:10px 14px;
+  }
+  .pick-row.win{background:linear-gradient(135deg, rgba(63,190,114,0.16), rgba(63,190,114,0.04)); border-color:rgba(63,190,114,0.35);}
+  .pick-row.lose{background:linear-gradient(135deg, rgba(228,87,61,0.16), rgba(228,87,61,0.04)); border-color:rgba(228,87,61,0.35);}
+  .pick-label{font-size:10px; letter-spacing:1px; color:var(--amber-dim); text-transform:uppercase; font-family:'JetBrains Mono', monospace; background:var(--amber); color:#1a1300; padding:2px 7px; border-radius:5px; font-weight:700;}
+  .pick-market{font-weight:700; font-size:14px; margin-top:2px;}
+  .pick-odds{font-family:'JetBrains Mono', monospace; text-align:right; font-size:13px;}
+  .pick-odds b{color:var(--amber); font-size:16px;}
+
+  .scores-row{
+    display:flex; gap:8px; margin:0 16px 16px; flex-wrap:wrap;
+  }
+  .score-chip{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    background:rgba(244,241,230,0.06);
+    border:1px solid rgba(244,241,230,0.12);
+    border-radius:7px;
+    padding:5px 9px;
+  }
+  .score-chip b{color:var(--chalk);}
+  .score-chip span{color:var(--chalk-dim);}
+
+  .empty{
+    text-align:center; padding:50px 20px; color:var(--chalk-dim);
+  }
+  .disclaimer{
+    max-width:520px; margin:8px auto 0; padding:14px 18px;
+    font-size:11.5px; line-height:1.6; color:var(--chalk-dim);
+    border-top:2px dashed rgba(244,241,230,0.18);
+    text-align:center;
+  }
+  .disclaimer b{color:var(--danger);}
+  .updated{
+    text-align:center; font-family:'JetBrains Mono', monospace;
+    font-size:10px; color:var(--chalk-dim); opacity:0.7; margin-top:10px;
+  }
+
+  .tabs{
+    position:fixed;
+    bottom:0; left:0; right:0;
+    z-index:5;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg, transparent, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.7));
+    backdrop-filter:blur(2px);
+  }
+  .tabs-inner{
+    display:flex; gap:8px;
+    max-width:520px; margin:0 auto;
+  }
+  .tab-btn{
+    flex:1;
+    display:flex; align-items:center; justify-content:center; gap:6px;
+    padding:12px 10px;
+    border:1px solid rgba(255,176,32,0.25);
+    border-radius:10px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+    color:var(--chalk-dim);
+    background:rgba(15,47,38,0.9);
+    cursor:pointer;
+    transition:transform .15s ease, background .15s ease, color .15s ease;
+  }
+  .tab-btn.active{
+    background:var(--amber);
+    color:#1a1300;
+    border-color:var(--amber);
+  }
+  .tab-btn:active{transform:scale(.97);}
+</style>
+</head>
+<body>
+<div class="field-lines"></div>
+
+<header>
+  <div class="eyebrow">Poisson Model · Matchday Board</div>
+  <h1 id="page-title">Today's Picks</h1>
+  <div class="sub" id="page-sub">Statistics-based football predictions</div>
+</header>
+
+<main>
+  <div id="status">
+    <div class="spinner"></div>
+    Loading today's matches...
+  </div>
+  <div id="matches"></div>
+</main>
+
+<div class="disclaimer" id="disclaimer" style="display:none;"></div>
+<div class="updated" id="updated"></div>
+
+<div class="tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" id="btn-newest" onclick="showTab('newest')">🆕 Newest</button>
+    <button class="tab-btn" id="btn-history" onclick="showTab('history')">🕓 History</button>
+  </div>
+</div>
+
+<script>
+  // Telegram Mini App setup
+  const tg = window.Telegram?.WebApp;
+  if (tg) {
+    tg.ready();
+    tg.expand();
+    if (tg.setHeaderColor) { try { tg.setHeaderColor('#0B3B2E'); } catch(e){} }
+    if (tg.setBackgroundColor) { try { tg.setBackgroundColor('#0B3B2E'); } catch(e){} }
+  }
+
+  const PREDICTIONS_URL = 'data/predictions.json';
+  const HISTORY_URL = 'data/history.json';
+
+  let currentTab = 'newest';
+  let predictionsData = null;
+  let historyData = null;
+  let loaded = false;
+
+  function fmtKickoff(iso){
+    if(!iso) return '';
+    try{
+      const d = new Date(iso);
+      return d.toLocaleString('en-US', {weekday:'short', hour:'2-digit', minute:'2-digit'});
+    }catch(e){ return ''; }
+  }
+
+  function matchCard(m){
+    const best = m.best_pick;
+    const scores = (m.top_scores||[]).map(s =>
+      `<div class="score-chip"><b>${s.score}</b> <span>${s.probability_pct}%</span></div>`
+    ).join('');
+
+    return `
+    <div class="match-card">
+      <div class="match-head">
+        <span class="competition">${m.competition||''}</span>
+        <span class="kickoff">${fmtKickoff(m.match_date)}</span>
+      </div>
+      <div class="teams">
+        <div class="team home">${m.home_team}</div>
+        <div class="vs-block">VS</div>
+        <div class="team away">${m.away_team}</div>
+      </div>
+      <div class="scoreboard">
+        <div class="sb-cell"><div class="sb-val">${m.home_win_pct}%</div><div class="sb-label">Home Win</div></div>
+        <div class="sb-cell"><div class="sb-val">${m.draw_pct}%</div><div class="sb-label">Draw</div></div>
+        <div class="sb-cell"><div class="sb-val">${m.away_win_pct}%</div><div class="sb-label">Away Win</div></div>
+        <div class="sb-cell"><div class="sb-val">${m.most_likely_score}</div><div class="sb-label">Likely Score</div></div>
+      </div>
+      ${best ? `
+      <div class="pick-row">
+        <div>
+          <div class="pick-label">Best Pick</div>
+          <div class="pick-market">${best.market_label || best.market}</div>
+        </div>
+        <div class="pick-odds">${best.probability_pct}%<br><b>${best.fair_odds}</b> odds</div>
+      </div>` : ''}
+      <div class="scores-row">${scores}</div>
+    </div>`;
+  }
+
+  function historyCard(m){
+    const won = m.status === 'correct';
+    const resultClass = won ? 'win' : 'lose';
+    const resultIcon = won ? '✓' : '✕';
+    const resultText = won ? 'Won' : 'Lost';
+    const score = m.actual_score ? m.actual_score.replace('-', ' : ') : '?';
+    const pick = m.best_pick;
+
+    return `
+    <div class="match-card">
+      <div class="match-head">
+        <span class="competition">${m.competition||''}</span>
+        <span class="result-pill ${resultClass}"><span class="dot ${resultClass}">${resultIcon}</span>${resultText}</span>
+      </div>
+      <div class="teams">
+        <div class="team home">${m.home_team}</div>
+        <div class="score-block">${score}</div>
+        <div class="team away">${m.away_team}</div>
+      </div>
+      ${pick ? `
+      <div class="pick-row ${resultClass}">
+        <div>
+          <div class="pick-label">Pick</div>
+          <div class="pick-market">${pick.market_label || pick.market}</div>
+        </div>
+        <div class="pick-odds"><b>${pick.fair_odds}</b> odds</div>
+      </div>` : ''}
+    </div>`;
+  }
+
+  function render(){
+    const statusEl = document.getElementById('status');
+    const listEl = document.getElementById('matches');
+    const discEl = document.getElementById('disclaimer');
+    const updEl = document.getElementById('updated');
+
+    if(!loaded){
+      return;
+    }
+    statusEl.style.display = 'none';
+
+    if(currentTab === 'newest'){
+      document.getElementById('page-title').textContent = "Today's Picks";
+      document.getElementById('page-sub').textContent = 'Statistics-based football predictions';
+      const matches = predictionsData?.matches || [];
+      listEl.innerHTML = matches.length
+        ? matches.map(matchCard).join('')
+        : '<div class="empty">🗓️ No scheduled matches found right now.<br>Check back soon.</div>';
+
+      discEl.style.display = 'block';
+      discEl.innerHTML = '⚠️ <b>Please note:</b> ' + (predictionsData?.disclaimer || '');
+
+      if(predictionsData?.generated_at){
+        const d = new Date(predictionsData.generated_at);
+        updEl.textContent = 'Last updated: ' + d.toLocaleString('en-US');
+      } else {
+        updEl.textContent = '';
+      }
+    } else {
+      document.getElementById('page-title').textContent = 'History';
+      document.getElementById('page-sub').textContent = 'Verified results — hits & misses';
+      const matches = historyData?.matches || [];
+      listEl.innerHTML = matches.length
+        ? matches.map(historyCard).join('')
+        : '<div class="empty">📋 No results verified yet.<br>Check back after matches finish.</div>';
+
+      discEl.style.display = 'none';
+
+      if(historyData?.generated_at){
+        const d = new Date(historyData.generated_at);
+        updEl.textContent = 'Last updated: ' + d.toLocaleString('en-US');
+      } else {
+        updEl.textContent = '';
+      }
+    }
+  }
+
+  function showTab(tab){
+    currentTab = tab;
+    document.getElementById('btn-newest').classList.toggle('active', tab === 'newest');
+    document.getElementById('btn-history').classList.toggle('active', tab === 'history');
+    render();
+  }
+
+  async function load(){
+    try{
+      const [predRes, histRes] = await Promise.allSettled([
+        fetch(PREDICTIONS_URL + '?t=' + Date.now()).then(r => r.json()),
+        fetch(HISTORY_URL + '?t=' + Date.now()).then(r => r.json()),
+      ]);
+      predictionsData = predRes.status === 'fulfilled' ? predRes.value : { matches: [] };
+      historyData = histRes.status === 'fulfilled' ? histRes.value : { matches: [] };
+      loaded = true;
+      render();
+    }catch(e){
+      document.getElementById('status').innerHTML = '⚠️ Could not load data. Please try again shortly.';
+    }
+  }
+
+  load();
+</script>
+</body>
+</html>
