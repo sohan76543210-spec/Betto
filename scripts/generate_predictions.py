@@ -13,10 +13,24 @@ from datetime import datetime, timedelta, timezone
 sys.path.insert(0, os.path.dirname(__file__))
 
 import football_api
-from predictor import predict_match, best_pick, top_correct_scores, high_odds_pick
+from predictor import (
+    predict_match,
+    best_pick,
+    top_correct_scores,
+    high_odds_pick,
+    apply_injury_adjustment,
+)
 
 MIN_ODDS = 1.40
 HIGH_ODDS_THRESHOLD = 2.00
+# Phase 1 স্ক্রিনিং-এ যত ম্যাচ ভালো লাগুক না কেন, screening_score এই থ্রেশহোল্ডের
+# নিচে হলে top pick হিসেবে নেওয়া হবে না — অর্থাৎ কোনো দিন সব ম্যাচ অনিশ্চিত/কম-ডেটা
+# হলে top_picks_count 5-এর কম (এমনকি 0) হতে পারে। "কম কিন্তু নিশ্চিত" ভালো,
+# "৫টা পূরণ করার জন্য দুর্বল পিক ঢোকানো" খারাপ। মান নির্বাচন: confidence(0-100) ×
+# strongest_outcome_pct(0-100)-এর প্রোডাক্ট, তাই maximum সম্ভাব্য মান 10000।
+# 45%+ confidence ও 55%+ strongest outcome (মোটামুটি যুক্তিসঙ্গত ন্যূনতম) মিললে
+# প্রায় 2475 হয় — তাই থ্রেশহোল্ড 2400-এ সেট করা হলো।
+MIN_SCREENING_SCORE = 2400
 
 # বাংলাদেশ সবসময় UTC+6 (কোনো DST নেই), তাই fixed offset যথেষ্ট।
 BD_OFFSET = timedelta(hours=6)
@@ -214,6 +228,7 @@ def deep_enrich(match_id: int, home_id: int, away_id: int, league_id: int, seaso
         "away_team_stats": None,
         "standings": None,
         "injuries": [],
+        "odds": None,
     }
     try:
         result["home_team_stats"] = football_api.get_team_statistics(home_id, league_id, season)
@@ -231,6 +246,12 @@ def deep_enrich(match_id: int, home_id: int, away_id: int, league_id: int, seaso
         result["injuries"] = football_api.get_injuries(match_id)
     except Exception as e:
         print(f"deep_enrich: injuries failed for fixture {match_id}: {e}", file=sys.stderr)
+    try:
+        # শুধু calibration/diagnostic-এর জন্য (দেখুন football_api.get_odds
+        # docstring) — prediction-এর কোনো সংখ্যা এটা বদলায় না।
+        result["odds"] = football_api.get_odds(match_id)
+    except Exception as e:
+        print(f"deep_enrich: odds failed for fixture {match_id}: {e}", file=sys.stderr)
     return result
 
 
@@ -266,6 +287,10 @@ def append_to_log(output_matches: list, log_path: str) -> int:
             "match_date": m["match_date"],
             "best_pick": m.get("best_pick"),
             "high_odds_pick": m.get("high_odds_pick"),
+            # analyze_accuracy.py-তে confidence-bucket-ভিত্তিক accuracy চেক
+            # করার জন্য প্রেডিকশনের সময়কার confidence_score সংরক্ষণ করা হয়
+            "confidence_score_at_prediction": m.get("confidence_score"),
+            "injury_adjusted": m.get("injury_adjusted", False),
             "status": "pending",       # pending -> correct / incorrect / no_pick
             "actual_score": None,
             "checked_at": None,
@@ -421,7 +446,17 @@ def build():
     # শুধু এই কয়টা ম্যাচই থাকে — বাকি Phase 1-এর ম্যাচ বাদ যায়।
     # ---------------------------------------------------------------
     ranked = sorted(output_matches, key=lambda x: x["_screening_score"], reverse=True)
-    top_matches = ranked[:TOP_PICKS_COUNT]
+    # MIN_SCREENING_SCORE-এর নিচের ম্যাচ বাদ — "৫টা পূরণ করার জন্য দুর্বল পিক
+    # ঢোকানো"র বদলে সেদিন কম (এমনকি ০টা) sure pick দেওয়া হবে।
+    qualified = [m for m in ranked if m["_screening_score"] >= MIN_SCREENING_SCORE]
+    dropped_for_low_score = len(ranked[:TOP_PICKS_COUNT]) - len(qualified[:TOP_PICKS_COUNT])
+    if dropped_for_low_score > 0:
+        print(
+            f"{dropped_for_low_score} candidate match(es) dropped from top picks: "
+            f"screening_score below MIN_SCREENING_SCORE={MIN_SCREENING_SCORE}",
+            file=sys.stderr,
+        )
+    top_matches = qualified[:TOP_PICKS_COUNT]
 
     for om in top_matches:
         remaining_quota = football_api.last_known_remaining_daily_quota
@@ -438,6 +473,34 @@ def build():
                 om["league_id"], om["season"],
             )
         om["top_pick"] = True
+
+        # ইনজুরি-অ্যাডজাস্টেড রিক্যালকুলেশন: Phase 1-এর বেসিক expected গোল থেকে
+        # শুরু করে এইমাত্র deep_enrich-এ পাওয়া injuries প্রয়োগ করে outcome
+        # (win%/draw%/score ইত্যাদি) পুনরায় হিসাব করা হয়। দেখুন
+        # predictor.apply_injury_adjustment()-এর docstring-এ সীমাবদ্ধতার নোট।
+        injuries = (om.get("deep_analysis") or {}).get("injuries") or []
+        adjustment = apply_injury_adjustment(
+            home_expected=om["home_expected_goals"],
+            away_expected=om["away_expected_goals"],
+            injuries=injuries,
+            home_team_id=om["home_team_id"],
+            away_team_id=om["away_team_id"],
+        )
+        if adjustment is not None:
+            om.update({k: v for k, v in adjustment.items() if not k.startswith("_")})
+            # probability বদলে গেছে, তাই pick/top-scores-ও ঐ নতুন সংখ্যা থেকেই
+            # পুনরায় বের করতে হবে (adjustment dict-এ _score_probs/_raw_probs আছে)
+            om["best_pick"] = humanize_pick(
+                best_pick(adjustment, min_odds=MIN_ODDS), om["home_team"], om["away_team"]
+            )
+            om["high_odds_pick"] = humanize_pick(
+                high_odds_pick(adjustment, min_odds=HIGH_ODDS_THRESHOLD),
+                om["home_team"], om["away_team"],
+            )
+            om["top_scores"] = top_correct_scores(adjustment)
+            om["injury_adjusted"] = True
+        else:
+            om["injury_adjusted"] = False
 
     # ফাইনাল আউটপুট = শুধু top picks (kickoff সময় অনুযায়ী সাজানো), internal
     # screening_score ফিল্ড বাদ দিয়ে
