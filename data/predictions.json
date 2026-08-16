@@ -1,9 +1,10 @@
 {
-  "generated_at": "2026-08-16T01:28:52.607760+00:00",
+  "generated_at": "2026-08-16T02:59:57.841021+00:00",
   "disclaimer": "This is a statistical estimate, not a guaranteed outcome. The odds shown are our own model's calculation, not a bookmaker's real odds. No prediction system can ever be 100% accurate. Please make decisions responsibly.",
   "matches": [
     {
-      "competition": "Eredivisie",
+      "match_id": 1552131,
+      "competition": "Eredivisie (Netherlands)",
       "home_team": "ADO Den Haag",
       "away_team": "Groningen",
       "match_date": "2026-08-16T10:15:00+00:00",
@@ -18,12 +19,14 @@
       "best_pick": {
         "market": "Double Chance (Home/Away)",
         "probability_pct": 65.3,
-        "fair_odds": 1.53
+        "fair_odds": 1.53,
+        "market_label": "ADO Den Haag Win or Groningen Win"
       },
       "high_odds_pick": {
         "market": "Away Win",
         "probability_pct": 45.5,
-        "fair_odds": 2.2
+        "fair_odds": 2.2,
+        "market_label": "Groningen Win"
       },
       "top_scores": [
         {
@@ -44,7 +47,8 @@
       ]
     },
     {
-      "competition": "Superettan",
+      "match_id": 1497664,
+      "competition": "Superettan (Sweden)",
       "home_team": "IFK Varnamo",
       "away_team": "Ostersunds FK",
       "match_date": "2026-08-16T11:00:00+00:00",
@@ -59,12 +63,14 @@
       "best_pick": {
         "market": "Double Chance (Draw/Away)",
         "probability_pct": 63.6,
-        "fair_odds": 1.57
+        "fair_odds": 1.57,
+        "market_label": "Draw or Ostersunds FK Win"
       },
       "high_odds_pick": {
         "market": "Away Win",
         "probability_pct": 46.7,
-        "fair_odds": 2.14
+        "fair_odds": 2.14,
+        "market_label": "Ostersunds FK Win"
       },
       "top_scores": [
         {
@@ -85,7 +91,8 @@
       ]
     },
     {
-      "competition": "Premier League",
+      "match_id": 1561362,
+      "competition": "Premier League (Russia)",
       "home_team": "Zenit",
       "away_team": "Dynamo",
       "match_date": "2026-08-16T11:30:00+00:00",
@@ -100,12 +107,14 @@
       "best_pick": {
         "market": "Under 2.5 Goals",
         "probability_pct": 59.2,
-        "fair_odds": 1.69
+        "fair_odds": 1.69,
+        "market_label": "Under 2.5 Goals"
       },
       "high_odds_pick": {
         "market": "Home Win",
         "probability_pct": 49.0,
-        "fair_odds": 2.04
+        "fair_odds": 2.04,
+        "market_label": "Zenit Win"
       },
       "top_scores": [
         {
@@ -126,7 +135,8 @@
       ]
     },
     {
-      "competition": "Allsvenskan",
+      "match_id": 1494241,
+      "competition": "Allsvenskan (Sweden)",
       "home_team": "IF Brommapojkarna",
       "away_team": "Orgryte IS",
       "match_date": "2026-08-16T12:00:00+00:00",
@@ -141,12 +151,14 @@
       "best_pick": {
         "market": "Both Teams to Score - No",
         "probability_pct": 65.6,
-        "fair_odds": 1.53
+        "fair_odds": 1.53,
+        "market_label": "Both Teams to Score - No"
       },
       "high_odds_pick": {
         "market": "Under 2.5 Goals",
         "probability_pct": 43.0,
-        "fair_odds": 2.32
+        "fair_odds": 2.32,
+        "market_label": "Under 2.5 Goals"
       },
       "top_scores": [
         {
@@ -167,7 +179,8 @@
       ]
     },
     {
-      "competition": "Allsvenskan",
+      "match_id": 1494242,
+      "competition": "Allsvenskan (Sweden)",
       "home_team": "Degerfors IF",
       "away_team": "IFK Goteborg",
       "match_date": "2026-08-16T12:00:00+00:00",
@@ -182,12 +195,14 @@
       "best_pick": {
         "market": "Over 2.5 Goals",
         "probability_pct": 58.3,
-        "fair_odds": 1.71
+        "fair_odds": 1.71,
+        "market_label": "Over 2.5 Goals"
       },
       "high_odds_pick": {
         "market": "Both Teams to Score - Yes",
         "probability_pct": 42.4,
-        "fair_odds": 2.36
+        "fair_odds": 2.36,
+        "market_label": "Both Teams to Score - Yes"
       },
       "top_scores": [
         {
@@ -208,7 +223,8 @@
       ]
     },
     {
-      "competition": "Allsvenskan",
+      "match_id": 1494243,
+      "competition": "Allsvenskan (Sweden)",
       "home_team": "Djurgardens IF",
       "away_team": "AIK Stockholm",
       "match_date": "2026-08-16T12:00:00+00:00",
@@ -223,12 +239,14 @@
       "best_pick": {
         "market": "Under 2.5 Goals",
         "probability_pct": 57.0,
-        "fair_odds": 1.75
+        "fair_odds": 1.75,
+        "market_label": "Under 2.5 Goals"
       },
       "high_odds_pick": {
         "market": "Double Chance (Home/Draw)",
         "probability_pct": 49.1,
-        "fair_odds": 2.04
+        "fair_odds": 2.04,
+        "market_label": "Djurgardens IF Win or Draw"
       },
       "top_scores": [
         {
@@ -249,7 +267,8 @@
       ]
     },
     {
-      "competition": "Eliteserien",
+      "match_id": 1494733,
+      "competition": "Eliteserien (Norway)",
       "home_team": "Aalesund",
       "away_team": "Valerenga",
       "match_date": "2026-08-16T12:30:00+00:00",
@@ -264,12 +283,14 @@
       "best_pick": {
         "market": "Away Win",
         "probability_pct": 70.4,
-        "fair_odds": 1.42
+        "fair_odds": 1.42,
+        "market_label": "Valerenga Win"
       },
       "high_odds_pick": {
         "market": "Both Teams to Score - Yes",
         "probability_pct": 44.9,
-        "fair_odds": 2.23
+        "fair_odds": 2.23,
+        "market_label": "Both Teams to Score - Yes"
       },
       "top_scores": [
         {
@@ -290,7 +311,8 @@
       ]
     },
     {
-      "competition": "Eredivisie",
+      "match_id": 1552132,
+      "competition": "Eredivisie (Netherlands)",
       "home_team": "Feyenoord",
       "away_team": "GO Ahead Eagles",
       "match_date": "2026-08-16T12:30:00+00:00",
@@ -305,12 +327,14 @@
       "best_pick": {
         "market": "Over 2.5 Goals",
         "probability_pct": 69.8,
-        "fair_odds": 1.43
+        "fair_odds": 1.43,
+        "market_label": "Over 2.5 Goals"
       },
       "high_odds_pick": {
         "market": "Both Teams to Score - No",
         "probability_pct": 40.2,
-        "fair_odds": 2.48
+        "fair_odds": 2.48,
+        "market_label": "Both Teams to Score - No"
       },
       "top_scores": [
         {
@@ -331,7 +355,8 @@
       ]
     },
     {
-      "competition": "Eredivisie",
+      "match_id": 1552133,
+      "competition": "Eredivisie (Netherlands)",
       "home_team": "Twente",
       "away_team": "PEC Zwolle",
       "match_date": "2026-08-16T12:30:00+00:00",
@@ -346,12 +371,14 @@
       "best_pick": {
         "market": "Under 2.5 Goals",
         "probability_pct": 55.7,
-        "fair_odds": 1.8
+        "fair_odds": 1.8,
+        "market_label": "Under 2.5 Goals"
       },
       "high_odds_pick": {
         "market": "Both Teams to Score - Yes",
         "probability_pct": 48.3,
-        "fair_odds": 2.07
+        "fair_odds": 2.07,
+        "market_label": "Both Teams to Score - Yes"
       },
       "top_scores": [
         {
@@ -372,7 +399,8 @@
       ]
     },
     {
-      "competition": "Championship",
+      "match_id": 1563092,
+      "competition": "Championship (England)",
       "home_team": "Watford",
       "away_team": "Southampton",
       "match_date": "2026-08-16T12:30:00+00:00",
@@ -387,12 +415,14 @@
       "best_pick": {
         "market": "Both Teams to Score - Yes",
         "probability_pct": 55.2,
-        "fair_odds": 1.81
+        "fair_odds": 1.81,
+        "market_label": "Both Teams to Score - Yes"
       },
       "high_odds_pick": {
         "market": "Double Chance (Home/Draw)",
         "probability_pct": 45.4,
-        "fair_odds": 2.2
+        "fair_odds": 2.2,
+        "market_label": "Watford Win or Draw"
       },
       "top_scores": [
         {
@@ -413,7 +443,8 @@
       ]
     },
     {
-      "competition": "Serie A",
+      "match_id": 1492332,
+      "competition": "Serie A (Brazil)",
       "home_team": "Chapecoense-sc",
       "away_team": "Bahia",
       "match_date": "2026-08-16T14:00:00+00:00",
@@ -428,12 +459,14 @@
       "best_pick": {
         "market": "Under 2.5 Goals",
         "probability_pct": 69.3,
-        "fair_odds": 1.44
+        "fair_odds": 1.44,
+        "market_label": "Under 2.5 Goals"
       },
       "high_odds_pick": {
         "market": "Over 2.5 Goals",
         "probability_pct": 30.7,
-        "fair_odds": 3.26
+        "fair_odds": 3.26,
+        "market_label": "Over 2.5 Goals"
       },
       "top_scores": [
         {
@@ -454,7 +487,8 @@
       ]
     },
     {
-      "competition": "Premier League",
+      "match_id": 1561359,
+      "competition": "Premier League (Russia)",
       "home_team": "Krylia Sovetov",
       "away_team": "Dinamo Makhachkala",
       "match_date": "2026-08-16T14:00:00+00:00",
@@ -469,12 +503,14 @@
       "best_pick": {
         "market": "Both Teams to Score - Yes",
         "probability_pct": 54.1,
-        "fair_odds": 1.85
+        "fair_odds": 1.85,
+        "market_label": "Both Teams to Score - Yes"
       },
       "high_odds_pick": {
         "market": "Double Chance (Home/Draw)",
         "probability_pct": 48.2,
-        "fair_odds": 2.08
+        "fair_odds": 2.08,
+        "market_label": "Krylia Sovetov Win or Draw"
       },
       "top_scores": [
         {
@@ -495,7 +531,8 @@
       ]
     },
     {
-      "competition": "Allsvenskan",
+      "match_id": 1494245,
+      "competition": "Allsvenskan (Sweden)",
       "home_team": "Gais",
       "away_team": "Malmo FF",
       "match_date": "2026-08-16T14:30:00+00:00",
@@ -510,12 +547,14 @@
       "best_pick": {
         "market": "Double Chance (Home/Away)",
         "probability_pct": 68.8,
-        "fair_odds": 1.45
+        "fair_odds": 1.45,
+        "market_label": "Gais Win or Malmo FF Win"
       },
       "high_odds_pick": {
         "market": "Double Chance (Home/Draw)",
         "probability_pct": 44.7,
-        "fair_odds": 2.24
+        "fair_odds": 2.24,
+        "market_label": "Gais Win or Draw"
       },
       "top_scores": [
         {
@@ -536,7 +575,8 @@
       ]
     },
     {
-      "competition": "Allsvenskan",
+      "match_id": 1494247,
+      "competition": "Allsvenskan (Sweden)",
       "home_team": "Kalmar FF",
       "away_team": "Hammarby FF",
       "match_date": "2026-08-16T14:30:00+00:00",
@@ -551,12 +591,14 @@
       "best_pick": {
         "market": "Away Win",
         "probability_pct": 70.2,
-        "fair_odds": 1.42
+        "fair_odds": 1.42,
+        "market_label": "Hammarby FF Win"
       },
       "high_odds_pick": {
         "market": "Under 2.5 Goals",
         "probability_pct": 48.0,
-        "fair_odds": 2.08
+        "fair_odds": 2.08,
+        "market_label": "Under 2.5 Goals"
       },
       "top_scores": [
         {
@@ -577,7 +619,8 @@
       ]
     },
     {
-      "competition": "Eredivisie",
+      "match_id": 1552134,
+      "competition": "Eredivisie (Netherlands)",
       "home_team": "Ajax",
       "away_team": "Heerenveen",
       "match_date": "2026-08-16T14:45:00+00:00",
@@ -592,12 +635,14 @@
       "best_pick": {
         "market": "Home Win",
         "probability_pct": 59.9,
-        "fair_odds": 1.67
+        "fair_odds": 1.67,
+        "market_label": "Ajax Win"
       },
       "high_odds_pick": {
         "market": "Over 2.5 Goals",
         "probability_pct": 48.7,
-        "fair_odds": 2.05
+        "fair_odds": 2.05,
+        "market_label": "Over 2.5 Goals"
       },
       "top_scores": [
         {
@@ -618,7 +663,8 @@
       ]
     },
     {
-      "competition": "Eliteserien",
+      "match_id": 1494734,
+      "competition": "Eliteserien (Norway)",
       "home_team": "Brann",
       "away_team": "Ham-Kam",
       "match_date": "2026-08-16T15:00:00+00:00",
@@ -633,12 +679,14 @@
       "best_pick": {
         "market": "Home Win",
         "probability_pct": 71.4,
-        "fair_odds": 1.4
+        "fair_odds": 1.4,
+        "market_label": "Brann Win"
       },
       "high_odds_pick": {
         "market": "Both Teams to Score - Yes",
         "probability_pct": 48.3,
-        "fair_odds": 2.07
+        "fair_odds": 2.07,
+        "market_label": "Both Teams to Score - Yes"
       },
       "top_scores": [
         {
@@ -659,7 +707,8 @@
       ]
     },
     {
-      "competition": "Eliteserien",
+      "match_id": 1494737,
+      "competition": "Eliteserien (Norway)",
       "home_team": "Molde",
       "away_team": "Tromso",
       "match_date": "2026-08-16T15:00:00+00:00",
@@ -674,12 +723,14 @@
       "best_pick": {
         "market": "Both Teams to Score - Yes",
         "probability_pct": 66.6,
-        "fair_odds": 1.5
+        "fair_odds": 1.5,
+        "market_label": "Both Teams to Score - Yes"
       },
       "high_odds_pick": {
         "market": "Home Win",
         "probability_pct": 41.2,
-        "fair_odds": 2.43
+        "fair_odds": 2.43,
+        "market_label": "Molde Win"
       },
       "top_scores": [
         {
@@ -700,7 +751,8 @@
       ]
     },
     {
-      "competition": "Eliteserien",
+      "match_id": 1494739,
+      "competition": "Eliteserien (Norway)",
       "home_team": "Sarpsborg 08 FF",
       "away_team": "Sandefjord",
       "match_date": "2026-08-16T15:00:00+00:00",
@@ -715,12 +767,14 @@
       "best_pick": {
         "market": "Over 2.5 Goals",
         "probability_pct": 67.4,
-        "fair_odds": 1.48
+        "fair_odds": 1.48,
+        "market_label": "Over 2.5 Goals"
       },
       "high_odds_pick": {
         "market": "Double Chance (Draw/Away)",
         "probability_pct": 44.6,
-        "fair_odds": 2.24
+        "fair_odds": 2.24,
+        "market_label": "Draw or Sandefjord Win"
       },
       "top_scores": [
         {
@@ -741,7 +795,8 @@
       ]
     },
     {
-      "competition": "Bundesliga",
+      "match_id": 1561909,
+      "competition": "Bundesliga (Austria)",
       "home_team": "TSV Hartberg",
       "away_team": "Austria Vienna",
       "match_date": "2026-08-16T15:00:00+00:00",
@@ -756,12 +811,14 @@
       "best_pick": {
         "market": "Double Chance (Home/Away)",
         "probability_pct": 70.8,
-        "fair_odds": 1.41
+        "fair_odds": 1.41,
+        "market_label": "TSV Hartberg Win or Austria Vienna Win"
       },
       "high_odds_pick": {
         "market": "Both Teams to Score - Yes",
         "probability_pct": 43.8,
-        "fair_odds": 2.28
+        "fair_odds": 2.28,
+        "market_label": "Both Teams to Score - Yes"
       },
       "top_scores": [
         {
@@ -782,7 +839,8 @@
       ]
     },
     {
-      "competition": "Bundesliga",
+      "match_id": 1561910,
+      "competition": "Bundesliga (Austria)",
       "home_team": "WSG Wattens",
       "away_team": "Red Bull Salzburg",
       "match_date": "2026-08-16T15:00:00+00:00",
@@ -797,12 +855,14 @@
       "best_pick": {
         "market": "Away Win",
         "probability_pct": 54.3,
-        "fair_odds": 1.84
+        "fair_odds": 1.84,
+        "market_label": "Red Bull Salzburg Win"
       },
       "high_odds_pick": {
         "market": "Both Teams to Score - Yes",
         "probability_pct": 48.2,
-        "fair_odds": 2.07
+        "fair_odds": 2.07,
+        "market_label": "Both Teams to Score - Yes"
       },
       "top_scores": [
         {
