@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T22:19:05.500351+00:00",
+  "generated_at": "2026-08-16T22:29:23.541854+00:00",
   "prediction_window_bd": {
     "from": "2026-08-16T06:00:00+00:00",
     "to": "2026-08-17T06:00:00+00:00"
@@ -15,6 +15,6 @@
     "injuries_cached": 1,
     "lineups_cached": 0
   },
-  "remaining_quota": 84,
+  "remaining_quota": 79,
   "matches": []
 }
