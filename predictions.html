@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আজকের প্রেডিকশন</title>
+<style>
+  :root{
+    --pitch-dark:#1c3d1f;
+    --pitch-light:#2b5a30;
+    --ink:#111111;
+    --paper:#ffffff;
+    --pick-orange:#f5a623;
+    --odds-green:#2e9e4f;
+    --win-green:#2e9e4f;
+    --lose-red:#e5484d;
+    --muted:#6b6b6b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.15) 40%, rgba(0,0,0,.55)),
+      repeating-linear-gradient(90deg, var(--pitch-dark) 0 40px, var(--pitch-light) 40px 80px);
+    min-height:100vh;
+    color:var(--ink);
+  }
+  header{
+    background:#000;
+    color:#fff;
+    padding:16px 14px 14px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+  }
+  header h1{
+    margin:0;
+    font-size:19px;
+    letter-spacing:.5px;
+    font-weight:800;
+  }
+  .disclaimer{
+    max-width:640px;
+    margin:10px auto 0;
+    font-size:11px;
+    color:#cfcfcf;
+    line-height:1.5;
+    padding:0 8px;
+  }
+
+  main{
+    max-width:640px;
+    margin:0 auto;
+    padding:14px 12px 90px;
+  }
+
+  .card{
+    background:var(--paper);
+    border-radius:12px;
+    padding:14px 14px 12px;
+    margin-bottom:14px;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+  }
+  .card-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:10px;
+  }
+  .league{
+    font-weight:700;
+    font-size:15px;
+    color:#333;
+  }
+  .kickoff-pill{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    background:#f1f1f1;
+    border-radius:8px;
+    padding:4px 8px;
+    font-size:12px;
+    color:#444;
+    white-space:nowrap;
+  }
+  .result-badge{
+    width:26px;
+    height:26px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    flex-shrink:0;
+  }
+  .result-badge.win{background:var(--win-green);}
+  .result-badge.lose{background:var(--lose-red);}
+
+  .matchup{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    gap:8px;
+    margin-bottom:10px;
+  }
+  .team{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    text-align:center;
+    min-width:0;
+  }
+  .team.away{align-items:center;}
+  .team-icon{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    font-size:13px;
+    color:#fff;
+    flex-shrink:0;
+  }
+  .team-name{
+    font-size:13px;
+    font-weight:700;
+    color:#222;
+    line-height:1.2;
+    overflow-wrap:anywhere;
+  }
+  .center-col{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    min-width:54px;
+  }
+  .score{
+    font-size:20px;
+    font-weight:800;
+    color:#111;
+  }
+  .vs-label{
+    font-size:12px;
+    color:var(--muted);
+    font-weight:700;
+  }
+
+  .pick-row{
+    display:flex;
+    border-radius:8px;
+    overflow:hidden;
+    font-size:13px;
+    font-weight:700;
+  }
+  .pick-market{
+    background:var(--pick-orange);
+    color:#3a2400;
+    padding:9px 10px;
+    flex:1;
+  }
+  .pick-odds{
+    background:var(--odds-green);
+    color:#fff;
+    padding:9px 12px;
+    min-width:50px;
+    text-align:center;
+  }
+
+  .empty, .loading{
+    text-align:center;
+    color:#eee;
+    padding:40px 16px;
+    font-size:14px;
+  }
+
+  .tabs{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    display:flex;
+    gap:8px;
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    background:linear-gradient(180deg, transparent, rgba(0,0,0,.5) 30%);
+  }
+  .tab-btn{
+    flex:1;
+    max-width:640px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:13px 10px;
+    border:none;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.4px;
+    cursor:pointer;
+    color:#3a2400;
+    background:#f1c85e;
+    transition:transform .15s ease;
+  }
+  .tab-btn.active{
+    background:var(--pick-orange);
+    color:#2b1800;
+  }
+  .tab-btn:active{transform:scale(.97);}
+  .tabs-inner{
+    display:flex;
+    gap:8px;
+    max-width:640px;
+    margin:0 auto;
+    width:100%;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>টপ প্রেডিকশনস</h1>
+  <p class="disclaimer" id="disclaimer"></p>
+</header>
+
+<main id="main">
+  <div class="loading">লোড হচ্ছে…</div>
+</main>
+
+<div class="tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" id="btn-newest" onclick="showTab('newest')">🆕 NEWEST</button>
+    <button class="tab-btn" id="btn-history" onclick="showTab('history')">🕓 HISTORY</button>
+  </div>
+</div>
+
+<script>
+// এই দুটো পাথ ../data/predictions.json এবং ../data/history.json এর সাথে মিলিয়ে
+// আপনার সাইটের আসল ফোল্ডার-স্ট্রাকচার অনুযায়ী দরকার হলে বদলে নিন
+const PREDICTIONS_URL = "data/predictions.json";
+const HISTORY_URL = "data/history.json";
+
+let currentTab = "newest";
+let predictionsData = null;
+let historyData = null;
+
+const TEAM_COLORS = ["#e5484d","#2e9e4f","#3b6fd4","#a441c9","#e08c2b","#1d9e9e","#c9457a"];
+function colorFor(name){
+  let h = 0;
+  for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return TEAM_COLORS[h % TEAM_COLORS.length];
+}
+function initials(name){
+  return (name || "?").trim().split(/\s+/).map(w => w[0]).slice(0,2).join("").toUpperCase();
+}
+function formatKickoff(iso){
+  if(!iso) return "--:--";
+  const d = new Date(iso);
+  if(isNaN(d)) return "--:--";
+  return d.toLocaleString("bn-BD", {
+    day:"2-digit", month:"short", hour:"2-digit", minute:"2-digit"
+  });
+}
+
+function teamBlock(name, side){
+  return `
+    <div class="team ${side}">
+      <div class="team-icon" style="background:${colorFor(name)}">${initials(name)}</div>
+      <div class="team-name">${name}</div>
+    </div>`;
+}
+
+function pickRow(pick){
+  if(!pick){
+    return `<div class="pick-row"><div class="pick-market" style="background:#ddd;color:#666;">কোনো পিক নেই (নিরাপদ অডস মেলেনি)</div></div>`;
+  }
+  const label = pick.market_label || pick.market || "-";
+  const odds = pick.fair_odds != null ? pick.fair_odds.toFixed(2) : "-";
+  return `
+    <div class="pick-row">
+      <div class="pick-market">${label}</div>
+      <div class="pick-odds">${odds}</div>
+    </div>`;
+}
+
+function renderNewestCard(m){
+  return `
+    <div class="card">
+      <div class="card-top">
+        <div class="league">${m.competition}</div>
+        <div class="kickoff-pill">🕒 ${formatKickoff(m.match_date)}</div>
+      </div>
+      <div class="matchup">
+        ${teamBlock(m.home_team, "home")}
+        <div class="center-col">
+          <div class="vs-label">VS</div>
+        </div>
+        ${teamBlock(m.away_team, "away")}
+      </div>
+      ${pickRow(m.best_pick)}
+    </div>`;
+}
+
+function renderHistoryCard(m){
+  const won = m.status === "correct";
+  const badgeClass = won ? "win" : "lose";
+  const badgeIcon = won ? "✓" : "✕";
+  const score = m.actual_score ? m.actual_score.replace("-", " : ") : "?";
+  return `
+    <div class="card">
+      <div class="card-top">
+        <div class="league">${m.competition}</div>
+        <div class="result-badge ${badgeClass}">${badgeIcon}</div>
+      </div>
+      <div class="matchup">
+        ${teamBlock(m.home_team, "home")}
+        <div class="center-col">
+          <div class="score">${score}</div>
+        </div>
+        ${teamBlock(m.away_team, "away")}
+      </div>
+      ${pickRow(m.best_pick)}
+    </div>`;
+}
+
+function render(){
+  const main = document.getElementById("main");
+
+  if(currentTab === "newest"){
+    const matches = predictionsData?.matches || [];
+    document.getElementById("disclaimer").textContent = predictionsData?.disclaimer || "";
+    main.innerHTML = matches.length
+      ? matches.map(renderNewestCard).join("")
+      : `<div class="empty">এই মুহূর্তে কোনো নতুন প্রেডিকশন নেই।</div>`;
+  } else {
+    const matches = historyData?.matches || [];
+    document.getElementById("disclaimer").textContent = "";
+    main.innerHTML = matches.length
+      ? matches.map(renderHistoryCard).join("")
+      : `<div class="empty">এখনো কোনো ফলাফল যাচাই করা হয়নি।</div>`;
+  }
+}
+
+function showTab(tab){
+  currentTab = tab;
+  document.getElementById("btn-newest").classList.toggle("active", tab === "newest");
+  document.getElementById("btn-history").classList.toggle("active", tab === "history");
+  render();
+}
+
+async function loadData(){
+  try{
+    const [predRes, histRes] = await Promise.allSettled([
+      fetch(PREDICTIONS_URL).then(r => r.json()),
+      fetch(HISTORY_URL).then(r => r.json()),
+    ]);
+    predictionsData = predRes.status === "fulfilled" ? predRes.value : { matches: [] };
+    historyData = histRes.status === "fulfilled" ? histRes.value : { matches: [] };
+  }catch(e){
+    predictionsData = { matches: [] };
+    historyData = { matches: [] };
+  }
+  render();
+}
+
+loadData();
+</script>
+
+</body>
+</html>
