@@ -1,164 +1,140 @@
 """
 check_results.py
-Runs after generate_predictions.py (or separately, a few times a day) from
-GitHub Actions. Checks whether the matches in ../data/predictions_log.json
-that are still 'pending' have finished; if so, fetches the real score via
-football_api.get_match_result() and uses predictor.check_pick_correctness()
-to verify whether best_pick was right or wrong. Finally writes
-../data/history.json (used by the frontend's History tab).
+Runs daily from GitHub Actions (বাংলাদেশ সকাল ৫টা, cron "0 23 * * *" — আগের দিনের
+top-pick ম্যাচগুলো ততক্ষণে শেষ হয়ে গেছে ধরে নেওয়া হয়)।
+
+কাজ: ../data/predictions_log.json-এ status="pending" থাকা প্রতিটা এন্ট্রির জন্য
+football_api.get_match_result() দিয়ে আসল ফলাফল আনে, best_pick/high_odds_pick
+সঠিক হয়েছিল কিনা যাচাই করে (predictor.check_pick_correctness ব্যবহার করে),
+এবং log এন্ট্রি + ../data/history.json দুটোই আপডেট করে।
+
+match_date এখনো ভবিষ্যতে (এখনো খেলা শুরুই হয়নি) এমন pending এন্ট্রি স্কিপ করা হয়,
+যাতে অকারণে API call না হয়।
 """
 
 import json
 import os
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(__file__))
 
 import football_api
 from predictor import check_pick_correctness
 
-DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
-LOG_PATH = os.path.join(DATA_DIR, "predictions_log.json")
-HISTORY_PATH = os.path.join(DATA_DIR, "history.json")
-
-# There's no guarantee exactly when a match ends (stoppage time, extra
-# time, penalties), so results are only checked this long after kickoff.
-# Checking earlier risks catching a match still in progress, with a
-# wrong/incomplete score.
-RESULT_CHECK_DELAY = timedelta(minutes=115)
-
-# How many recently-resolved matches to show in the History tab
-HISTORY_LIMIT = 30
-
-# Same as generate_predictions.py: if the daily quota drops below this
-# number, remaining pending matches are skipped for this run (retried
-# next run)
 MIN_QUOTA_BUFFER = 5
 
+LOG_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "predictions_log.json")
+HISTORY_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "history.json")
+HISTORY_MAX_ENTRIES = 500
 
-def load_log() -> list:
+
+def _load_json(path, default):
     try:
-        with open(LOG_PATH, "r", encoding="utf-8") as f:
+        with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
-        return []
+        return default
 
 
-def save_log(log: list) -> None:
-    with open(LOG_PATH, "w", encoding="utf-8") as f:
-        json.dump(log, f, ensure_ascii=False, indent=2)
+def _pick_status(pick: dict | None, home_goals: int, away_goals: int) -> str:
+    """pick None হলে 'no_pick', নাহলে market অনুযায়ী সঠিক/ভুল যাচাই করে।"""
+    if pick is None or pick.get("market") is None:
+        return "no_pick"
+    correct = check_pick_correctness(pick["market"], home_goals, away_goals)
+    return "correct" if correct else "incorrect"
 
 
-def parse_match_date(match_date: str):
-    if not match_date:
-        return None
-    try:
-        return datetime.fromisoformat(match_date.replace("Z", "+00:00"))
-    except ValueError:
-        return None
+def check_and_update():
+    log = _load_json(LOG_PATH, [])
+    history = _load_json(HISTORY_PATH, [])
 
-
-def get_fixture_result(match_id):
-    """
-    football_api.get_match_result() returns
-    {"status", "home_goals", "away_goals"} (all None if the match wasn't
-    found). This just normalizes the "not found" case to None; everything
-    else passes through directly.
-    """
-    result = football_api.get_match_result(match_id)
-    if result.get("status") is None:
-        return None
-    return result
-
-
-def update_pending(log: list) -> int:
-    now = datetime.now(timezone.utc)
+    now_utc = datetime.now(timezone.utc)
     updated = 0
+    skipped_not_started = 0
+    skipped_no_result = 0
 
     for entry in log:
         if entry.get("status") != "pending":
             continue
 
-        match_dt = parse_match_date(entry.get("match_date"))
-        if match_dt is None:
-            continue
-        if now < match_dt + RESULT_CHECK_DELAY:
-            continue  # match shouldn't have finished yet; will retry next run
+        match_date_str = entry.get("match_date")
+        if match_date_str:
+            try:
+                kickoff = datetime.fromisoformat(match_date_str.replace("Z", "+00:00"))
+                if kickoff > now_utc:
+                    skipped_not_started += 1
+                    continue
+            except ValueError:
+                pass
 
         remaining_quota = football_api.last_known_remaining_daily_quota
         if remaining_quota is not None and remaining_quota < MIN_QUOTA_BUFFER:
             print(
-                f"stopping early: daily API quota nearly exhausted "
-                f"(remaining={remaining_quota}); remaining pending matches "
-                f"will be checked on the next run",
+                f"stopping early: daily API quota nearly exhausted (remaining={remaining_quota})",
                 file=sys.stderr,
             )
             break
 
+        match_id = entry.get("match_id")
+        if match_id is None:
+            continue
+
         try:
-            result = get_fixture_result(entry["match_id"])
+            result = football_api.get_match_result(match_id)
         except Exception as e:
-            print(f"result fetch failed for match {entry['match_id']}: {e}", file=sys.stderr)
+            print(f"check_results: get_match_result failed for {match_id}: {e}", file=sys.stderr)
             continue
 
-        if not result or result.get("status") not in ("FT", "AET", "PEN"):
-            continue  # not finished yet, or no data available
-
-        home_goals = result.get("home_goals")
-        away_goals = result.get("away_goals")
-        if home_goals is None or away_goals is None:
+        if result.get("status") != "FT" or result.get("home_goals") is None:
+            skipped_no_result += 1
             continue
 
-        pick = entry.get("best_pick")
-        if not pick or not pick.get("market"):
-            entry["status"] = "no_pick"
-            entry["actual_score"] = f"{home_goals}-{away_goals}"
-            entry["checked_at"] = now.isoformat()
-            continue
+        home_goals = result["home_goals"]
+        away_goals = result["away_goals"]
 
-        is_correct = check_pick_correctness(pick["market"], home_goals, away_goals)
-        entry["status"] = "correct" if is_correct else "incorrect"
+        best_pick_status = _pick_status(entry.get("best_pick"), home_goals, away_goals)
+        high_odds_status = _pick_status(entry.get("high_odds_pick"), home_goals, away_goals)
+
+        # সামগ্রিক status: best_pick-কে primary ধরা হয় (predictions.json-এও সেটাই
+        # হেডলাইন pick); best_pick না থাকলে high_odds_pick দিয়ে ফলব্যাক
+        overall_status = best_pick_status if best_pick_status != "no_pick" else high_odds_status
+
+        entry["status"] = overall_status
         entry["actual_score"] = f"{home_goals}-{away_goals}"
-        entry["checked_at"] = now.isoformat()
+        entry["checked_at"] = now_utc.isoformat()
+        entry["best_pick_status"] = best_pick_status
+        entry["high_odds_pick_status"] = high_odds_status
+
+        history.append({
+            "match_id": match_id,
+            "competition": entry.get("competition"),
+            "home_team": entry.get("home_team"),
+            "away_team": entry.get("away_team"),
+            "match_date": entry.get("match_date"),
+            "best_pick": entry.get("best_pick"),
+            "best_pick_status": best_pick_status,
+            "high_odds_pick": entry.get("high_odds_pick"),
+            "high_odds_pick_status": high_odds_status,
+            "actual_score": entry["actual_score"],
+            "checked_at": entry["checked_at"],
+        })
         updated += 1
 
-        print(
-            f"checked {entry['home_team']} vs {entry['away_team']}: "
-            f"pick='{pick.get('market_label', pick['market'])}' "
-            f"actual={home_goals}-{away_goals} -> {entry['status']}",
-            file=sys.stderr,
-        )
+    if len(history) > HISTORY_MAX_ENTRIES:
+        history = history[-HISTORY_MAX_ENTRIES:]
 
-    return updated
-
-
-def build_history(log: list, limit: int = HISTORY_LIMIT) -> list:
-    done = [e for e in log if e.get("status") in ("correct", "incorrect")]
-    done.sort(key=lambda e: e.get("match_date") or "", reverse=True)
-    return done[:limit]
-
-
-def main():
-    log = load_log()
-    updated = update_pending(log)
-    save_log(log)
-
-    history = build_history(log)
-    payload = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "matches": history,
-    }
+    with open(LOG_PATH, "w", encoding="utf-8") as f:
+        json.dump(log, f, ensure_ascii=False, indent=2)
     with open(HISTORY_PATH, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+        json.dump(history, f, ensure_ascii=False, indent=2)
 
-    pending_count = sum(1 for e in log if e.get("status") == "pending")
     print(
-        f"Checked results: {updated} match(es) newly resolved; "
-        f"{pending_count} still pending; "
-        f"wrote {len(history)} match(es) to {HISTORY_PATH}"
+        f"Checked results: {updated} entries updated, "
+        f"{skipped_not_started} skipped (not started yet), "
+        f"{skipped_no_result} skipped (result not final yet)"
     )
 
 
 if __name__ == "__main__":
-    main()
+    check_and_update()
