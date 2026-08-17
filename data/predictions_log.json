@@ -64,5 +64,59 @@
     "status": "pending",
     "actual_score": null,
     "checked_at": null
+  },
+  {
+    "match_id": "aps:1494246",
+    "competition": "Allsvenskan (Sweden)",
+    "home_team": "BK Hacken",
+    "away_team": "Halmstad",
+    "match_date": "2026-08-17T17:00:00+00:00",
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 67.7,
+      "fair_odds": 1.48,
+      "reliability_score": 54,
+      "market_label": "BK Hacken Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561772",
+    "competition": "Championship (England)",
+    "home_team": "Cardiff City FC",
+    "away_team": "Wrexham AFC",
+    "match_date": "2026-08-17T19:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 72.2,
+      "fair_odds": 1.38,
+      "reliability_score": 52,
+      "market_label": "Cardiff City FC Win or Wrexham AFC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:564635",
+    "competition": "Primera Division (Spain)",
+    "home_team": "RC Deportivo La Coruña",
+    "away_team": "Elche CF",
+    "match_date": "2026-08-17T19:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 70.6,
+      "fair_odds": 1.42,
+      "reliability_score": 51,
+      "market_label": "RC Deportivo La Coruña Win or Elche CF Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
   }
 ]
