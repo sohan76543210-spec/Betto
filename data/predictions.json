@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T02:55:08.574167+00:00",
+  "generated_at": "2026-08-17T03:08:53.711467+00:00",
   "prediction_window_bd": {
     "from": "2026-08-17T06:00:00+00:00",
     "to": "2026-08-18T06:00:00+00:00"
@@ -14,14 +14,14 @@
       "standings_cached": 0
     },
     "aps": {
-      "teams_cached": 18,
-      "h2h_pairs_cached": 9,
+      "teams_cached": 0,
+      "h2h_pairs_cached": 0,
       "team_stats_cached": 0,
       "standings_cached": 0,
       "injuries_cached": 0,
       "lineups_cached": 0
     }
   },
-  "remaining_quota": 12,
+  "remaining_quota": 3,
   "matches": []
 }
