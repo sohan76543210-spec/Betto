@@ -1,4 +1,135 @@
-{
-  "generated_at": "2026-08-16T20:35:04.457675+00:00",
-  "matches": []
-}
+[
+  {
+    "match_id": "aps:1494246",
+    "competition": "Allsvenskan (Sweden)",
+    "home_team": "BK Hacken",
+    "away_team": "Halmstad",
+    "match_date": "2026-08-17T17:00:00+00:00",
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 67.7,
+      "fair_odds": 1.48,
+      "reliability_score": 54,
+      "market_label": "BK Hacken Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "1-0",
+    "checked_at": "2026-08-18T00:33:14.608767+00:00"
+  },
+  {
+    "match_id": "aps:1493067",
+    "competition": "Liga Profesional Argentina (Argentina)",
+    "home_team": "Estudiantes de Rio Cuarto",
+    "away_team": "Atletico Tucuman",
+    "match_date": "2026-08-17T17:45:00+00:00",
+    "best_pick": {
+      "market": "Both Teams to Score - Yes",
+      "probability_pct": 67.0,
+      "fair_odds": 1.49,
+      "reliability_score": 43,
+      "market_label": "BTTS - Yes"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-1",
+    "checked_at": "2026-08-18T00:33:14.608767+00:00"
+  },
+  {
+    "match_id": "aps:1551756",
+    "competition": "Eerste Divisie (Netherlands)",
+    "home_team": "Jong Utrecht",
+    "away_team": "Vitesse",
+    "match_date": "2026-08-17T18:00:00+00:00",
+    "best_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 58.0,
+      "fair_odds": 1.72,
+      "reliability_score": 56,
+      "market_label": "Under 2.5 Goals"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "1-3",
+    "checked_at": "2026-08-18T00:33:14.608767+00:00"
+  },
+  {
+    "match_id": "aps:1551754",
+    "competition": "Eerste Divisie (Netherlands)",
+    "home_team": "De Graafschap",
+    "away_team": "Jong AZ",
+    "match_date": "2026-08-17T18:00:00+00:00",
+    "best_pick": {
+      "market": "Both Teams to Score - Yes",
+      "probability_pct": 67.1,
+      "fair_odds": 1.49,
+      "reliability_score": 50,
+      "market_label": "BTTS - Yes"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "2-5",
+    "checked_at": "2026-08-18T00:33:14.608767+00:00"
+  },
+  {
+    "match_id": "aps:1551755",
+    "competition": "Eerste Divisie (Netherlands)",
+    "home_team": "Jong Ajax",
+    "away_team": "Emmen",
+    "match_date": "2026-08-17T18:00:00+00:00",
+    "best_pick": {
+      "market": "Away Win",
+      "probability_pct": 63.6,
+      "fair_odds": 1.57,
+      "reliability_score": 52,
+      "market_label": "Emmen Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "4-6",
+    "checked_at": "2026-08-18T00:33:14.608767+00:00"
+  },
+  {
+    "match_id": "aps:1569871",
+    "competition": "Segunda División (Spain)",
+    "home_team": "Almeria",
+    "away_team": "Eldense",
+    "match_date": "2026-08-17T19:30:00+00:00",
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 63.1,
+      "fair_odds": 1.58,
+      "reliability_score": 46,
+      "market_label": "Almeria Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "3-0",
+    "checked_at": "2026-08-18T00:33:14.608767+00:00"
+  },
+  {
+    "match_id": "aps:1493076",
+    "competition": "Liga Profesional Argentina (Argentina)",
+    "home_team": "Velez Sarsfield",
+    "away_team": "Defensa Y Justicia",
+    "match_date": "2026-08-17T22:15:00+00:00",
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 71.0,
+      "fair_odds": 1.41,
+      "reliability_score": 51,
+      "market_label": "Velez Sarsfield Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "1-1",
+    "checked_at": "2026-08-18T00:33:14.608767+00:00"
+  }
+]
