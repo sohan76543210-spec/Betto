@@ -1,11 +1,15 @@
 name: Update Predictions
 
 on:
-  schedule:
-    # বাংলাদেশ সময় সকাল ৫টা = UTC রাত ১১টা (আগের দিন) — শুধু result check
-    - cron: "0 23 * * *"
-    # বাংলাদেশ সময় সকাল ৬টা = UTC মধ্যরাত ১২টা — শুধু নতুন top-5 predictions
-    - cron: "0 0 * * *"
+  # --- Scheduled cron সাময়িকভাবে বন্ধ করে দেওয়া হলো (ইউজারের অনুরোধে) ---
+  # আগে এই দুইটা cron ছিল:
+  #   - cron: "0 23 * * *"   # BD সকাল ৫টা — শুধু result check
+  #   - cron: "0 0 * * *"    # BD সকাল ৬টা — শুধু নতুন top-5 predictions
+  # আবার চালু করতে চাইলে schedule: ব্লক এবং নিচের দুইটা cron লাইন আনকমেন্ট করুন।
+  #
+  # schedule:
+  #   - cron: "0 23 * * *"
+  #   - cron: "0 0 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -26,7 +30,8 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      # শুধু "0 0 * * *" cron-এ (বাংলাদেশ সকাল ৬টা, বা manual run-এ) চলবে
+      # schedule বন্ধ থাকায় এখন শুধু workflow_dispatch (ম্যানুয়াল রান) দিয়েই চলবে,
+      # এবং তখন দুইটা স্টেপই (generate + check) একসাথে চলবে
       - name: Generate today's top-5 predictions
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 0 * * *'
         env:
@@ -34,9 +39,6 @@ jobs:
           FOOTBALL_DATA_ORG_TOKEN: ${{ secrets.FOOTBALL_DATA_ORG_TOKEN }}
         run: python scripts/generate_predictions.py
 
-      # শুধু "0 23 * * *" cron-এ (বাংলাদেশ সকাল ৫টা, বা manual run-এ) চলবে —
-      # দিনে একবারই, তাই এই স্টেপ পুরো ১০০ quota-র সিংহভাগ ব্যবহার করতে পারবে,
-      # generate_predictions-এর সাথে কোনো conflict নেই
       - name: Check results and update history.json
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 23 * * *'
         env:
