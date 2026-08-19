@@ -1,27 +1,274 @@
 {
-  "generated_at": "2026-08-19T03:17:43.697894+00:00",
+  "generated_at": "2026-08-19T03:45:03.117299+00:00",
   "prediction_window_bd": {
     "from": "2026-08-19T06:00:00+00:00",
     "to": "2026-08-20T06:00:00+00:00"
   },
   "model_version": "v2.0-high-selectivity",
   "disclaimer": "Statistical estimate only; no prediction is guaranteed.",
-  "top_picks_count": 0,
+  "top_picks_count": 1,
   "api_cache_stats": {
     "fdo": {
       "teams_cached": 2,
       "h2h_matches_cached": 1,
-      "standings_cached": 0
+      "standings_cached": 1
     },
     "aps": {
-      "teams_cached": 36,
-      "h2h_pairs_cached": 18,
+      "teams_cached": 0,
+      "h2h_pairs_cached": 0,
       "team_stats_cached": 0,
       "standings_cached": 0,
       "injuries_cached": 0,
       "lineups_cached": 0
     }
   },
-  "remaining_quota": 9,
-  "matches": []
+  "remaining_quota": 99,
+  "matches": [
+    {
+      "match_id": "fdo:564628",
+      "competition": "Primera Division (Spain)",
+      "league_id": 2014,
+      "season": 2026,
+      "home_team": "Club Atlético de Madrid",
+      "away_team": "Málaga CF",
+      "home_team_id": "fdo:78",
+      "away_team_id": "fdo:84",
+      "match_date": "2026-08-19T19:00:00Z",
+      "home_expected_goals": 1.14,
+      "away_expected_goals": 1.15,
+      "most_likely_score": "1-1",
+      "home_win_pct": 34.1,
+      "draw_pct": 31.4,
+      "away_win_pct": 34.5,
+      "over_2_5_pct": 39.9,
+      "btts_yes_pct": 47.8,
+      "double_chance_1x_pct": 65.5,
+      "double_chance_x2_pct": 65.9,
+      "home_power_rating": -5.9,
+      "away_power_rating": null,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 40,
+      "signal_agreement": 57,
+      "reliability_score": 52,
+      "best_market_probability": 68.6,
+      "best_pick": {
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 68.6,
+        "fair_odds": 1.46,
+        "reliability_score": 52,
+        "market_label": "Club Atlético de Madrid Win or Málaga CF Win"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 14.8,
+          "fair_odds": 6.78
+        },
+        {
+          "score": "0-0",
+          "probability_pct": 11.7,
+          "fair_odds": 8.58
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 10.2,
+          "fair_odds": 9.78
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 10.1,
+          "fair_odds": 9.87
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:263",
+              "name": "Deportivo Alavés"
+            },
+            "points": 3,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:80",
+              "name": "RCD Espanyol de Barcelona"
+            },
+            "points": 3,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:559",
+              "name": "Sevilla FC"
+            },
+            "points": 3,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:5335",
+              "name": "Real Racing Club de Santander"
+            },
+            "points": 1,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:94",
+              "name": "Villarreal CF"
+            },
+            "points": 1,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:560",
+              "name": "RC Deportivo La Coruña"
+            },
+            "points": 1,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:285",
+              "name": "Elche CF"
+            },
+            "points": 1,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:78",
+              "name": "Club Atlético de Madrid"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:84",
+              "name": "Málaga CF"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:90",
+              "name": "Real Betis Balompié"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:92",
+              "name": "Real Sociedad de Fútbol"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:77",
+              "name": "Athletic Club"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:95",
+              "name": "Valencia CF"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:558",
+              "name": "RC Celta de Vigo"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:86",
+              "name": "Real Madrid CF"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:81",
+              "name": "FC Barcelona"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:79",
+              "name": "CA Osasuna"
+            },
+            "points": 0,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:87",
+              "name": "Rayo Vallecano de Madrid"
+            },
+            "points": 0,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 19,
+            "team": {
+              "id": "fdo:82",
+              "name": "Getafe CF"
+            },
+            "points": 0,
+            "goalsDiff": -3
+          },
+          {
+            "rank": 20,
+            "team": {
+              "id": "fdo:88",
+              "name": "Levante UD"
+            },
+            "points": 0,
+            "goalsDiff": -3
+          }
+        ],
+        "injuries": []
+      }
+    }
+  ]
 }

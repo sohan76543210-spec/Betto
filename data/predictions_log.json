@@ -436,5 +436,23 @@
     "status": "pending",
     "actual_score": null,
     "checked_at": null
+  },
+  {
+    "match_id": "fdo:564628",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Club Atlético de Madrid",
+    "away_team": "Málaga CF",
+    "match_date": "2026-08-19T19:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 68.6,
+      "fair_odds": 1.46,
+      "reliability_score": 52,
+      "market_label": "Club Atlético de Madrid Win or Málaga CF Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
   }
 ]
