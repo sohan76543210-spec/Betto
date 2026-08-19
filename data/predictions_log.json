@@ -433,9 +433,11 @@
       "market_label": "Londrina Win or Atletico Goianiense Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "0-0",
+    "checked_at": "2026-08-19T04:06:58.503229+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:564628",

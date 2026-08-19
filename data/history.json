@@ -283,5 +283,24 @@
     "high_odds_pick_status": "no_pick",
     "actual_score": "0-4",
     "checked_at": "2026-08-19T03:17:43.832123+00:00"
+  },
+  {
+    "match_id": "aps:1520826",
+    "competition": "Serie B (Brazil)",
+    "home_team": "Londrina",
+    "away_team": "Atletico Goianiense",
+    "match_date": "2026-08-18T22:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 76.4,
+      "fair_odds": 1.31,
+      "reliability_score": 41,
+      "market_label": "Londrina Win or Atletico Goianiense Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-0",
+    "checked_at": "2026-08-19T04:06:58.503229+00:00"
   }
 ]
