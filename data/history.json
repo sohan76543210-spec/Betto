@@ -131,5 +131,157 @@
     "high_odds_pick_status": "no_pick",
     "actual_score": "1-1",
     "checked_at": "2026-08-18T00:33:14.608767+00:00"
+  },
+  {
+    "match_id": "aps:1493068",
+    "competition": "Liga Profesional Argentina (Argentina)",
+    "home_team": "Gimnasia M.",
+    "away_team": "Talleres Cordoba",
+    "match_date": "2026-08-18T00:30:00+00:00",
+    "best_pick": {
+      "market": "Away Win",
+      "probability_pct": 64.9,
+      "fair_odds": 1.54,
+      "reliability_score": 44,
+      "market_label": "Talleres Cordoba Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "3-1",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00"
+  },
+  {
+    "match_id": "aps:1550929",
+    "competition": "Liga MX (Mexico)",
+    "home_team": "CF Pachuca",
+    "away_team": "Puebla",
+    "match_date": "2026-08-18T03:06:00+00:00",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 70.2,
+      "fair_odds": 1.42,
+      "reliability_score": 48,
+      "market_label": "Over 2.5 Goals"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "2-3",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00"
+  },
+  {
+    "match_id": "aps:1523198",
+    "competition": "Super League (China)",
+    "home_team": "Shanghai Shenhua",
+    "away_team": "Beijing Guoan",
+    "match_date": "2026-08-18T11:35:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 76.2,
+      "fair_odds": 1.31,
+      "reliability_score": 46,
+      "market_label": "Shanghai Shenhua Win or Beijing Guoan Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-3",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00"
+  },
+  {
+    "match_id": "aps:1618220",
+    "competition": "Persian Gulf Pro League (Iran)",
+    "home_team": "Nassaji Mazandaran",
+    "away_team": "Esteghlal FC",
+    "match_date": "2026-08-18T15:45:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.9,
+      "fair_odds": 1.35,
+      "reliability_score": 57,
+      "market_label": "Nassaji Mazandaran Win or Esteghlal FC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-1",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00"
+  },
+  {
+    "match_id": "aps:1618221",
+    "competition": "Persian Gulf Pro League (Iran)",
+    "home_team": "Paykan",
+    "away_team": "Gol Gohar",
+    "match_date": "2026-08-18T15:45:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 76.2,
+      "fair_odds": 1.31,
+      "reliability_score": 42,
+      "market_label": "Paykan Win or Draw"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-0",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00"
+  },
+  {
+    "match_id": "aps:1618222",
+    "competition": "Persian Gulf Pro League (Iran)",
+    "home_team": "Aluminium Arak",
+    "away_team": "Chadormalu SC",
+    "match_date": "2026-08-18T16:00:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 71.2,
+      "fair_odds": 1.41,
+      "reliability_score": 51,
+      "market_label": "Aluminium Arak Win or Draw"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-0",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00"
+  },
+  {
+    "match_id": "aps:1618223",
+    "competition": "Persian Gulf Pro League (Iran)",
+    "home_team": "Sepahan FC",
+    "away_team": "Tractor Sazi",
+    "match_date": "2026-08-18T16:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 62.7,
+      "fair_odds": 1.6,
+      "reliability_score": 51,
+      "market_label": "Sepahan FC Win or Tractor Sazi Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-2",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00"
+  },
+  {
+    "match_id": "aps:1607651",
+    "competition": "CONMEBOL Sudamericana (World)",
+    "home_team": "Deportivo Recoleta",
+    "away_team": "Boca Juniors",
+    "match_date": "2026-08-18T22:00:00+00:00",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 76.9,
+      "fair_odds": 1.3,
+      "reliability_score": 44,
+      "market_label": "Over 2.5 Goals"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-4",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00"
   }
 ]

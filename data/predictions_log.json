@@ -255,9 +255,11 @@
       "market_label": "Talleres Cordoba Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "3-1",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1550929",
@@ -273,9 +275,11 @@
       "market_label": "Over 2.5 Goals"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-3",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1523198",
@@ -291,9 +295,11 @@
       "market_label": "Shanghai Shenhua Win or Beijing Guoan Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-3",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1618220",
@@ -309,9 +315,11 @@
       "market_label": "Nassaji Mazandaran Win or Esteghlal FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-1",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1618221",
@@ -327,9 +335,11 @@
       "market_label": "Paykan Win or Draw"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-0",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1618222",
@@ -345,9 +355,11 @@
       "market_label": "Aluminium Arak Win or Draw"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-0",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1618223",
@@ -363,9 +375,11 @@
       "market_label": "Sepahan FC Win or Tractor Sazi Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-2",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1607651",
@@ -381,9 +395,11 @@
       "market_label": "Over 2.5 Goals"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-4",
+    "checked_at": "2026-08-19T03:17:43.832123+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1547770",
