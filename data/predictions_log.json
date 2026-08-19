@@ -456,5 +456,167 @@
     "status": "pending",
     "actual_score": null,
     "checked_at": null
+  },
+  {
+    "match_id": "aps:1547765",
+    "competition": "CONMEBOL Libertadores (World)",
+    "home_team": "Cerro Porteno",
+    "away_team": "Palmeiras",
+    "match_date": "2026-08-19T22:00:00+00:00",
+    "best_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 73.8,
+      "fair_odds": 1.36,
+      "reliability_score": 48,
+      "market_label": "Under 2.5 Goals"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1549696",
+    "competition": "Primera A (Colombia)",
+    "home_team": "Cucuta",
+    "away_team": "Internacional de Bogota",
+    "match_date": "2026-08-19T23:00:00+00:00",
+    "best_pick": {
+      "market": "Away Win",
+      "probability_pct": 63.3,
+      "fair_odds": 1.58,
+      "reliability_score": 44,
+      "market_label": "Internacional de Bogota Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1490396",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "Toronto FC",
+    "away_team": "Charlotte",
+    "match_date": "2026-08-19T23:30:00+00:00",
+    "best_pick": {
+      "market": "Away Win",
+      "probability_pct": 68.1,
+      "fair_odds": 1.47,
+      "reliability_score": 55,
+      "market_label": "Charlotte Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1490391",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "Philadelphia Union",
+    "away_team": "Inter Miami",
+    "match_date": "2026-08-19T23:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 76.8,
+      "fair_odds": 1.3,
+      "reliability_score": 51,
+      "market_label": "Draw or Inter Miami Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1490393",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "Columbus Crew",
+    "away_team": "CF Montreal",
+    "match_date": "2026-08-19T23:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.3,
+      "fair_odds": 1.35,
+      "reliability_score": 51,
+      "market_label": "Columbus Crew Win or CF Montreal Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1490394",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "New York Red Bulls",
+    "away_team": "Nashville SC",
+    "match_date": "2026-08-19T23:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 59.2,
+      "fair_odds": 1.69,
+      "reliability_score": 48,
+      "market_label": "New York Red Bulls Win or Nashville SC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1490392",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "FC Cincinnati",
+    "away_team": "New York City FC",
+    "match_date": "2026-08-19T23:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.7,
+      "fair_odds": 1.32,
+      "reliability_score": 48,
+      "market_label": "FC Cincinnati Win or New York City FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1490395",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "Orlando City SC",
+    "away_team": "Chicago Fire",
+    "match_date": "2026-08-19T23:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.2,
+      "fair_odds": 1.35,
+      "reliability_score": 46,
+      "market_label": "Orlando City SC Win or Chicago Fire Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1490397",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "DC United",
+    "away_team": "New England Revolution",
+    "match_date": "2026-08-19T23:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 73.7,
+      "fair_odds": 1.36,
+      "reliability_score": 44,
+      "market_label": "Draw or New England Revolution Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
   }
 ]
