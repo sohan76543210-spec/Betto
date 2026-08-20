@@ -471,9 +471,11 @@
       "market_label": "Under 2.5 Goals"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-1",
+    "checked_at": "2026-08-20T02:22:12.065361+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1549696",
@@ -489,9 +491,11 @@
       "market_label": "Internacional de Bogota Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "1-1",
+    "checked_at": "2026-08-20T02:22:12.065361+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1490396",
@@ -507,9 +511,11 @@
       "market_label": "Charlotte Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "3-3",
+    "checked_at": "2026-08-20T02:22:12.065361+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1490391",
@@ -525,9 +531,11 @@
       "market_label": "Draw or Inter Miami Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-2",
+    "checked_at": "2026-08-20T02:22:12.065361+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1490393",
@@ -543,9 +551,11 @@
       "market_label": "Columbus Crew Win or CF Montreal Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-2",
+    "checked_at": "2026-08-20T02:22:12.065361+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1490394",
@@ -561,9 +571,11 @@
       "market_label": "New York Red Bulls Win or Nashville SC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-1",
+    "checked_at": "2026-08-20T02:22:12.065361+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1490392",
@@ -579,9 +591,11 @@
       "market_label": "FC Cincinnati Win or New York City FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-1",
+    "checked_at": "2026-08-20T02:22:12.065361+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1490395",
@@ -613,6 +627,116 @@
       "fair_odds": 1.36,
       "reliability_score": 44,
       "market_label": "Draw or New England Revolution Win"
+    },
+    "high_odds_pick": null,
+    "status": "correct",
+    "actual_score": "0-3",
+    "checked_at": "2026-08-20T02:22:12.065361+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
+  },
+  {
+    "match_id": "aps:1490405",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "Portland Timbers",
+    "away_team": "San Diego",
+    "match_date": "2026-08-20T02:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 75.5,
+      "fair_odds": 1.33,
+      "reliability_score": 45,
+      "market_label": "Draw or San Diego Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1490403",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "Los Angeles Galaxy",
+    "away_team": "San Jose Earthquakes",
+    "match_date": "2026-08-20T02:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.1,
+      "fair_odds": 1.37,
+      "reliability_score": 46,
+      "market_label": "Los Angeles Galaxy Win or San Jose Earthquakes Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1490404",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "Vancouver Whitecaps",
+    "away_team": "Houston Dynamo",
+    "match_date": "2026-08-20T02:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 71.7,
+      "fair_odds": 1.39,
+      "reliability_score": 47,
+      "market_label": "Vancouver Whitecaps Win or Houston Dynamo Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1602981",
+    "competition": "Pro League (Saudi-Arabia)",
+    "home_team": "Al-Fayha",
+    "away_team": "Al-Hilal Saudi FC",
+    "match_date": "2026-08-20T18:00:00+00:00",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 53.6,
+      "fair_odds": 1.86,
+      "reliability_score": 55,
+      "market_label": "Over 2.5 Goals"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:564638",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Deportivo Alavés",
+    "match_date": "2026-08-20T19:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 74.3,
+      "fair_odds": 1.35,
+      "reliability_score": 81,
+      "market_label": "Rayo Vallecano de Madrid Win or Draw"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1547771",
+    "competition": "CONMEBOL Libertadores (World)",
+    "home_team": "LDU de Quito",
+    "away_team": "Mirassol",
+    "match_date": "2026-08-20T22:00:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.4,
+      "fair_odds": 1.33,
+      "reliability_score": 49,
+      "market_label": "LDU de Quito Win or Mirassol Win"
     },
     "high_odds_pick": null,
     "status": "pending",
