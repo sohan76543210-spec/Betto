@@ -742,5 +742,149 @@
     "status": "pending",
     "actual_score": null,
     "checked_at": null
+  },
+  {
+    "match_id": "fdo:558621",
+    "competition": "Serie A (Italy)",
+    "home_team": "US Lecce",
+    "away_team": "AS Roma",
+    "match_date": "2026-08-31T16:30:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.7,
+      "fair_odds": 1.34,
+      "reliability_score": 88,
+      "market_label": "US Lecce Win or AS Roma Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:564657",
+    "competition": "Primera Division (Spain)",
+    "home_team": "CA Osasuna",
+    "away_team": "Getafe CF",
+    "match_date": "2026-08-31T17:30:00Z",
+    "best_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 69.3,
+      "fair_odds": 1.44,
+      "reliability_score": 78,
+      "market_label": "Under 2.5 Goals"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:558628",
+    "competition": "Serie A (Italy)",
+    "home_team": "Atalanta BC",
+    "away_team": "Bologna FC 1909",
+    "match_date": "2026-08-31T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 68.6,
+      "fair_odds": 1.46,
+      "reliability_score": 78,
+      "market_label": "Atalanta BC Win or Draw"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:560557",
+    "competition": "Premier League (England)",
+    "home_team": "Aston Villa FC",
+    "away_team": "Arsenal FC",
+    "match_date": "2026-08-31T19:00:00Z",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 75.9,
+      "fair_odds": 1.32,
+      "reliability_score": 81,
+      "market_label": "Over 2.5 Goals"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:567288",
+    "competition": "Primeira Liga (Portugal)",
+    "home_team": "Sport Lisboa e Benfica",
+    "away_team": "GD Estoril Praia",
+    "match_date": "2026-08-31T19:15:00Z",
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 64.8,
+      "fair_odds": 1.54,
+      "reliability_score": 87,
+      "market_label": "Sport Lisboa e Benfica Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:567292",
+    "competition": "Primeira Liga (Portugal)",
+    "home_team": "Sporting Clube de Braga",
+    "away_team": "Vitória SC",
+    "match_date": "2026-08-31T19:15:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 72.7,
+      "fair_odds": 1.38,
+      "reliability_score": 79,
+      "market_label": "Sporting Clube de Braga Win or Vitória SC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:564650",
+    "competition": "Primera Division (Spain)",
+    "home_team": "FC Barcelona",
+    "away_team": "Rayo Vallecano de Madrid",
+    "match_date": "2026-08-31T19:30:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 72.5,
+      "fair_odds": 1.38,
+      "reliability_score": 89,
+      "market_label": "FC Barcelona Win or Rayo Vallecano de Madrid Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:554987",
+    "competition": "Campeonato Brasileiro Série A (Brazil)",
+    "home_team": "Clube do Remo",
+    "away_team": "Coritiba FBC",
+    "match_date": "2026-08-31T23:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 69.3,
+      "fair_odds": 1.44,
+      "reliability_score": 71,
+      "market_label": "Clube do Remo Win or Draw"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
   }
 ]
