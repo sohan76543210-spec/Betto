@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-31T10:13:20.191910+00:00",
+  "generated_at": "2026-09-01T03:23:26.632985+00:00",
   "prediction_window_bd": {
-    "from": "2026-08-31T06:00:00+00:00",
-    "to": "2026-09-01T06:00:00+00:00"
+    "from": "2026-09-01T06:00:00+00:00",
+    "to": "2026-09-02T06:00:00+00:00"
   },
   "model_version": "v2.0-high-selectivity",
   "disclaimer": "Statistical estimate only; no prediction is guaranteed.",
@@ -11,7 +11,7 @@
     "fdo": {
       "teams_cached": 16,
       "h2h_matches_cached": 8,
-      "standings_cached": 5
+      "standings_cached": 1
     },
     "aps": {
       "teams_cached": 0,
@@ -25,829 +25,71 @@
   "remaining_quota": 99,
   "matches": [
     {
-      "match_id": "fdo:558621",
-      "competition": "Serie A (Italy)",
-      "league_id": 2019,
+      "match_id": "fdo:561804",
+      "competition": "Championship (England)",
+      "league_id": 2016,
       "season": 2026,
-      "home_team": "US Lecce",
-      "away_team": "AS Roma",
-      "home_team_id": "fdo:5890",
-      "away_team_id": "fdo:100",
-      "match_date": "2026-08-31T16:30:00Z",
-      "home_expected_goals": 0.82,
-      "away_expected_goals": 1.78,
-      "most_likely_score": "0-1",
-      "home_win_pct": 15.6,
-      "draw_pct": 25.3,
-      "away_win_pct": 59.1,
-      "over_2_5_pct": 48.1,
-      "btts_yes_pct": 47.6,
-      "double_chance_1x_pct": 40.9,
-      "double_chance_x2_pct": 84.4,
-      "home_power_rating": 15.0,
-      "away_power_rating": 47.9,
+      "home_team": "Swansea City AFC",
+      "away_team": "Watford FC",
+      "home_team_id": "fdo:72",
+      "away_team_id": "fdo:346",
+      "match_date": "2026-09-01T18:45:00Z",
+      "home_expected_goals": 1.81,
+      "away_expected_goals": 0.87,
+      "most_likely_score": "1-1",
+      "home_win_pct": 58.3,
+      "draw_pct": 25.2,
+      "away_win_pct": 16.6,
+      "over_2_5_pct": 50.0,
+      "btts_yes_pct": 49.8,
+      "double_chance_1x_pct": 83.4,
+      "double_chance_x2_pct": 41.7,
+      "home_power_rating": 28.4,
+      "away_power_rating": -22.2,
       "home_cards_avg": null,
       "away_cards_avg": null,
       "confidence_score": 100,
-      "signal_agreement": 74,
-      "reliability_score": 88,
-      "best_market_probability": 84.4,
+      "signal_agreement": 72,
+      "reliability_score": 87,
+      "best_market_probability": 83.4,
       "best_pick": {
         "market": "Double Chance (Home/Away)",
-        "probability_pct": 74.7,
+        "probability_pct": 74.8,
         "fair_odds": 1.34,
-        "reliability_score": 88,
-        "market_label": "US Lecce Win or AS Roma Win"
+        "reliability_score": 87,
+        "market_label": "Swansea City AFC Win or Watford FC Win"
       },
       "high_odds_pick": null,
       "top_scores": [
-        {
-          "score": "0-1",
-          "probability_pct": 12.1,
-          "fair_odds": 8.28
-        },
         {
           "score": "1-1",
           "probability_pct": 12.0,
-          "fair_odds": 8.31
+          "fair_odds": 8.32
         },
         {
-          "score": "0-2",
-          "probability_pct": 11.8,
-          "fair_odds": 8.44
-        },
-        {
-          "score": "1-2",
-          "probability_pct": 9.7,
-          "fair_odds": 10.34
-        },
-        {
-          "score": "0-0",
-          "probability_pct": 8.6,
-          "fair_odds": 11.59
-        },
-        {
-          "score": "0-3",
-          "probability_pct": 7.0,
-          "fair_odds": 14.2
-        }
-      ],
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:108",
-              "name": "FC Internazionale Milano"
-            },
-            "points": 6,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:98",
-              "name": "AC Milan"
-            },
-            "points": 6,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:109",
-              "name": "Juventus FC"
-            },
-            "points": 6,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:110",
-              "name": "SS Lazio"
-            },
-            "points": 6,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:115",
-              "name": "Udinese Calcio"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:7397",
-              "name": "Como 1907"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:100",
-              "name": "AS Roma"
-            },
-            "points": 3,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:470",
-              "name": "Frosinone Calcio"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:5890",
-              "name": "US Lecce"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:113",
-              "name": "SSC Napoli"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:102",
-              "name": "Atalanta BC"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:471",
-              "name": "US Sassuolo Calcio"
-            },
-            "points": 3,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:104",
-              "name": "Cagliari Calcio"
-            },
-            "points": 3,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:103",
-              "name": "Bologna FC 1909"
-            },
-            "points": 0,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:586",
-              "name": "Torino FC"
-            },
-            "points": 0,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:107",
-              "name": "Genoa CFC"
-            },
-            "points": 0,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:112",
-              "name": "Parma Calcio 1913"
-            },
-            "points": 0,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:5911",
-              "name": "AC Monza"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 19,
-            "team": {
-              "id": "fdo:454",
-              "name": "Venezia FC"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 20,
-            "team": {
-              "id": "fdo:99",
-              "name": "ACF Fiorentina"
-            },
-            "points": 0,
-            "goalsDiff": -7
-          }
-        ],
-        "injuries": []
-      }
-    },
-    {
-      "match_id": "fdo:564657",
-      "competition": "Primera Division (Spain)",
-      "league_id": 2014,
-      "season": 2026,
-      "home_team": "CA Osasuna",
-      "away_team": "Getafe CF",
-      "home_team_id": "fdo:79",
-      "away_team_id": "fdo:82",
-      "match_date": "2026-08-31T17:30:00Z",
-      "home_expected_goals": 0.99,
-      "away_expected_goals": 0.94,
-      "most_likely_score": "0-0",
-      "home_win_pct": 34.1,
-      "draw_pct": 34.4,
-      "away_win_pct": 31.5,
-      "over_2_5_pct": 30.7,
-      "btts_yes_pct": 40.0,
-      "double_chance_1x_pct": 68.5,
-      "double_chance_x2_pct": 65.9,
-      "home_power_rating": -13.1,
-      "away_power_rating": -2.6,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 100,
-      "signal_agreement": 52,
-      "reliability_score": 78,
-      "best_market_probability": 69.3,
-      "best_pick": {
-        "market": "Under 2.5 Goals",
-        "probability_pct": 69.3,
-        "fair_odds": 1.44,
-        "reliability_score": 78,
-        "market_label": "Under 2.5 Goals"
-      },
-      "high_odds_pick": null,
-      "top_scores": [
-        {
-          "score": "0-0",
-          "probability_pct": 15.9,
-          "fair_odds": 6.3
-        },
-        {
-          "score": "1-1",
-          "probability_pct": 15.0,
-          "fair_odds": 6.67
+          "score": "2-0",
+          "probability_pct": 11.3,
+          "fair_odds": 8.89
         },
         {
           "score": "1-0",
-          "probability_pct": 12.8,
-          "fair_odds": 7.8
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 12.1,
-          "fair_odds": 8.27
-        }
-      ],
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:86",
-              "name": "Real Madrid CF"
-            },
-            "points": 9,
-            "goalsDiff": 8
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:78",
-              "name": "Club Atlético de Madrid"
-            },
-            "points": 7,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:263",
-              "name": "Deportivo Alavés"
-            },
-            "points": 7,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:81",
-              "name": "FC Barcelona"
-            },
-            "points": 6,
-            "goalsDiff": 7
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:559",
-              "name": "Sevilla FC"
-            },
-            "points": 6,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:90",
-              "name": "Real Betis Balompié"
-            },
-            "points": 6,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:560",
-              "name": "RC Deportivo La Coruña"
-            },
-            "points": 5,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:79",
-              "name": "CA Osasuna"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:5335",
-              "name": "Real Racing Club de Santander"
-            },
-            "points": 4,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:88",
-              "name": "Levante UD"
-            },
-            "points": 4,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:80",
-              "name": "RCD Espanyol de Barcelona"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:77",
-              "name": "Athletic Club"
-            },
-            "points": 3,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:82",
-              "name": "Getafe CF"
-            },
-            "points": 3,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:92",
-              "name": "Real Sociedad de Fútbol"
-            },
-            "points": 3,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:94",
-              "name": "Villarreal CF"
-            },
-            "points": 2,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:87",
-              "name": "Rayo Vallecano de Madrid"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:95",
-              "name": "Valencia CF"
-            },
-            "points": 1,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:558",
-              "name": "RC Celta de Vigo"
-            },
-            "points": 1,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 19,
-            "team": {
-              "id": "fdo:285",
-              "name": "Elche CF"
-            },
-            "points": 1,
-            "goalsDiff": -6
-          },
-          {
-            "rank": 20,
-            "team": {
-              "id": "fdo:84",
-              "name": "Málaga CF"
-            },
-            "points": 1,
-            "goalsDiff": -6
-          }
-        ],
-        "injuries": []
-      }
-    },
-    {
-      "match_id": "fdo:558628",
-      "competition": "Serie A (Italy)",
-      "league_id": 2019,
-      "season": 2026,
-      "home_team": "Atalanta BC",
-      "away_team": "Bologna FC 1909",
-      "home_team_id": "fdo:102",
-      "away_team_id": "fdo:103",
-      "match_date": "2026-08-31T18:45:00Z",
-      "home_expected_goals": 1.04,
-      "away_expected_goals": 0.97,
-      "most_likely_score": "1-1",
-      "home_win_pct": 34.9,
-      "draw_pct": 33.7,
-      "away_win_pct": 31.4,
-      "over_2_5_pct": 32.7,
-      "btts_yes_pct": 41.7,
-      "double_chance_1x_pct": 68.6,
-      "double_chance_x2_pct": 65.1,
-      "home_power_rating": 6.5,
-      "away_power_rating": -2.6,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 100,
-      "signal_agreement": 53,
-      "reliability_score": 78,
-      "best_market_probability": 68.6,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 68.6,
-        "fair_odds": 1.46,
-        "reliability_score": 78,
-        "market_label": "Atalanta BC Win or Draw"
-      },
-      "high_odds_pick": null,
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 15.0,
-          "fair_odds": 6.66
-        },
-        {
-          "score": "0-0",
-          "probability_pct": 14.8,
-          "fair_odds": 6.75
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 12.4,
-          "fair_odds": 8.07
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 11.5,
-          "fair_odds": 8.69
-        }
-      ],
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:108",
-              "name": "FC Internazionale Milano"
-            },
-            "points": 6,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:98",
-              "name": "AC Milan"
-            },
-            "points": 6,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:109",
-              "name": "Juventus FC"
-            },
-            "points": 6,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:110",
-              "name": "SS Lazio"
-            },
-            "points": 6,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:115",
-              "name": "Udinese Calcio"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:7397",
-              "name": "Como 1907"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:100",
-              "name": "AS Roma"
-            },
-            "points": 3,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:470",
-              "name": "Frosinone Calcio"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:5890",
-              "name": "US Lecce"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:113",
-              "name": "SSC Napoli"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:102",
-              "name": "Atalanta BC"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:471",
-              "name": "US Sassuolo Calcio"
-            },
-            "points": 3,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:104",
-              "name": "Cagliari Calcio"
-            },
-            "points": 3,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:103",
-              "name": "Bologna FC 1909"
-            },
-            "points": 0,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:586",
-              "name": "Torino FC"
-            },
-            "points": 0,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:107",
-              "name": "Genoa CFC"
-            },
-            "points": 0,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:112",
-              "name": "Parma Calcio 1913"
-            },
-            "points": 0,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:5911",
-              "name": "AC Monza"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 19,
-            "team": {
-              "id": "fdo:454",
-              "name": "Venezia FC"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 20,
-            "team": {
-              "id": "fdo:99",
-              "name": "ACF Fiorentina"
-            },
-            "points": 0,
-            "goalsDiff": -7
-          }
-        ],
-        "injuries": []
-      }
-    },
-    {
-      "match_id": "fdo:560557",
-      "competition": "Premier League (England)",
-      "league_id": 2021,
-      "season": 2026,
-      "home_team": "Aston Villa FC",
-      "away_team": "Arsenal FC",
-      "home_team_id": "fdo:58",
-      "away_team_id": "fdo:57",
-      "match_date": "2026-08-31T19:00:00Z",
-      "home_expected_goals": 2.08,
-      "away_expected_goals": 1.92,
-      "most_likely_score": "1-1",
-      "home_win_pct": 41.8,
-      "draw_pct": 22.5,
-      "away_win_pct": 35.7,
-      "over_2_5_pct": 75.9,
-      "btts_yes_pct": 75.3,
-      "double_chance_1x_pct": 64.3,
-      "double_chance_x2_pct": 58.2,
-      "home_power_rating": -2.5,
-      "away_power_rating": 29.6,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 100,
-      "signal_agreement": 54,
-      "reliability_score": 81,
-      "best_market_probability": 77.5,
-      "best_pick": {
-        "market": "Over 2.5 Goals",
-        "probability_pct": 75.9,
-        "fair_odds": 1.32,
-        "reliability_score": 81,
-        "market_label": "Over 2.5 Goals"
-      },
-      "high_odds_pick": null,
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 8.2,
-          "fair_odds": 12.17
+          "probability_pct": 11.2,
+          "fair_odds": 8.89
         },
         {
           "score": "2-1",
-          "probability_pct": 7.7,
-          "fair_odds": 13.0
+          "probability_pct": 9.8,
+          "fair_odds": 10.21
         },
         {
-          "score": "2-2",
-          "probability_pct": 7.4,
-          "fair_odds": 13.57
+          "score": "0-0",
+          "probability_pct": 8.1,
+          "fair_odds": 12.4
         },
         {
-          "score": "1-2",
-          "probability_pct": 7.1,
-          "fair_odds": 14.1
-        },
-        {
-          "score": "3-1",
-          "probability_pct": 5.3,
-          "fair_odds": 18.78
-        },
-        {
-          "score": "3-2",
-          "probability_pct": 5.1,
-          "fair_odds": 19.59
-        },
-        {
-          "score": "2-3",
-          "probability_pct": 4.7,
-          "fair_odds": 21.24
-        },
-        {
-          "score": "1-3",
-          "probability_pct": 4.5,
-          "fair_odds": 22.06
+          "score": "3-0",
+          "probability_pct": 6.8,
+          "fair_odds": 14.74
         }
       ],
       "deep_analysis": {
@@ -857,253 +99,279 @@
           {
             "rank": 1,
             "team": {
-              "id": "fdo:65",
-              "name": "Manchester City FC"
+              "id": "fdo:348",
+              "name": "Charlton Athletic FC"
             },
-            "points": 6,
-            "goalsDiff": 4
+            "points": 9,
+            "goalsDiff": 3
           },
           {
             "rank": 2,
             "team": {
-              "id": "fdo:322",
-              "name": "Hull City AFC"
+              "id": "fdo:76",
+              "name": "Wolverhampton Wanderers FC"
             },
-            "points": 6,
-            "goalsDiff": 3
+            "points": 7,
+            "goalsDiff": 5
           },
           {
             "rank": 3,
             "team": {
-              "id": "fdo:61",
-              "name": "Chelsea FC"
+              "id": "fdo:72",
+              "name": "Swansea City AFC"
             },
-            "points": 6,
-            "goalsDiff": 2
+            "points": 7,
+            "goalsDiff": 4
           },
           {
             "rank": 4,
             "team": {
-              "id": "fdo:402",
-              "name": "Brentford FC"
+              "id": "fdo:69",
+              "name": "Queens Park Rangers FC"
             },
-            "points": 4,
+            "points": 7,
             "goalsDiff": 3
           },
           {
             "rank": 5,
             "team": {
-              "id": "fdo:67",
-              "name": "Newcastle United FC"
+              "id": "fdo:340",
+              "name": "Southampton FC"
             },
-            "points": 4,
-            "goalsDiff": 2
+            "points": 6,
+            "goalsDiff": 5
           },
           {
             "rank": 6,
             "team": {
-              "id": "fdo:62",
-              "name": "Everton FC"
+              "id": "fdo:343",
+              "name": "Middlesbrough FC"
             },
-            "points": 4,
+            "points": 6,
             "goalsDiff": 2
           },
           {
             "rank": 7,
             "team": {
-              "id": "fdo:341",
-              "name": "Leeds United FC"
+              "id": "fdo:74",
+              "name": "West Bromwich Albion FC"
             },
-            "points": 4,
+            "points": 6,
             "goalsDiff": 1
           },
           {
             "rank": 8,
             "team": {
-              "id": "fdo:397",
-              "name": "Brighton & Hove Albion FC"
+              "id": "fdo:384",
+              "name": "Millwall FC"
             },
-            "points": 3,
-            "goalsDiff": 3
+            "points": 6,
+            "goalsDiff": 1
           },
           {
             "rank": 9,
             "team": {
-              "id": "fdo:57",
-              "name": "Arsenal FC"
+              "id": "fdo:332",
+              "name": "Birmingham City FC"
             },
-            "points": 3,
-            "goalsDiff": 3
+            "points": 5,
+            "goalsDiff": 1
           },
           {
             "rank": 10,
             "team": {
-              "id": "fdo:66",
-              "name": "Manchester United FC"
+              "id": "fdo:346",
+              "name": "Watford FC"
             },
-            "points": 3,
+            "points": 5,
             "goalsDiff": 1
           },
           {
             "rank": 11,
             "team": {
-              "id": "fdo:71",
-              "name": "Sunderland AFC"
+              "id": "fdo:59",
+              "name": "Blackburn Rovers FC"
             },
-            "points": 3,
+            "points": 4,
             "goalsDiff": 0
           },
           {
             "rank": 12,
             "team": {
-              "id": "fdo:349",
-              "name": "Ipswich Town FC"
+              "id": "fdo:60",
+              "name": "Bolton Wanderers FC"
+            },
+            "points": 4,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:387",
+              "name": "Bristol City FC"
+            },
+            "points": 4,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:715",
+              "name": "Cardiff City FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:356",
+              "name": "Sheffield United FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:68",
+              "name": "Norwich City FC"
+            },
+            "points": 3,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:325",
+              "name": "Portsmouth FC"
+            },
+            "points": 3,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:1126",
+              "name": "Lincoln City FC"
             },
             "points": 3,
             "goalsDiff": -2
           },
           {
-            "rank": 13,
-            "team": {
-              "id": "fdo:64",
-              "name": "Liverpool FC"
-            },
-            "points": 2,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:351",
-              "name": "Nottingham Forest FC"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:1044",
-              "name": "AFC Bournemouth"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:63",
-              "name": "Fulham FC"
-            },
-            "points": 0,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:1076",
-              "name": "Coventry City FC"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:58",
-              "name": "Aston Villa FC"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          },
-          {
             "rank": 19,
             "team": {
-              "id": "fdo:354",
-              "name": "Crystal Palace FC"
+              "id": "fdo:563",
+              "name": "West Ham United FC"
             },
-            "points": 0,
-            "goalsDiff": -5
+            "points": 2,
+            "goalsDiff": -1
           },
           {
             "rank": 20,
             "team": {
-              "id": "fdo:73",
-              "name": "Tottenham Hotspur FC"
+              "id": "fdo:404",
+              "name": "Wrexham AFC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 21,
+            "team": {
+              "id": "fdo:342",
+              "name": "Derby County FC"
+            },
+            "points": 1,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 22,
+            "team": {
+              "id": "fdo:328",
+              "name": "Burnley FC"
+            },
+            "points": 1,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 23,
+            "team": {
+              "id": "fdo:1081",
+              "name": "Preston North End FC"
             },
             "points": 0,
-            "goalsDiff": -5
+            "goalsDiff": -4
+          },
+          {
+            "rank": 24,
+            "team": {
+              "id": "fdo:70",
+              "name": "Stoke City FC"
+            },
+            "points": 0,
+            "goalsDiff": -6
           }
         ],
         "injuries": []
       }
     },
     {
-      "match_id": "fdo:567288",
-      "competition": "Primeira Liga (Portugal)",
-      "league_id": 2017,
+      "match_id": "fdo:561799",
+      "competition": "Championship (England)",
+      "league_id": 2016,
       "season": 2026,
-      "home_team": "Sport Lisboa e Benfica",
-      "away_team": "GD Estoril Praia",
-      "home_team_id": "fdo:1903",
-      "away_team_id": "fdo:582",
-      "match_date": "2026-08-31T19:15:00Z",
-      "home_expected_goals": 2.16,
-      "away_expected_goals": 0.9,
-      "most_likely_score": "2-0",
-      "home_win_pct": 64.8,
-      "draw_pct": 21.5,
-      "away_win_pct": 13.7,
-      "over_2_5_pct": 58.8,
-      "btts_yes_pct": 53.6,
-      "double_chance_1x_pct": 86.3,
-      "double_chance_x2_pct": 35.2,
-      "home_power_rating": 34.8,
-      "away_power_rating": -36.2,
+      "home_team": "West Ham United FC",
+      "away_team": "Wolverhampton Wanderers FC",
+      "home_team_id": "fdo:563",
+      "away_team_id": "fdo:76",
+      "match_date": "2026-09-01T18:45:00Z",
+      "home_expected_goals": 1.9,
+      "away_expected_goals": 1.15,
+      "most_likely_score": "1-1",
+      "home_win_pct": 53.5,
+      "draw_pct": 24.7,
+      "away_win_pct": 21.8,
+      "over_2_5_pct": 58.6,
+      "btts_yes_pct": 59.2,
+      "double_chance_1x_pct": 78.2,
+      "double_chance_x2_pct": 46.5,
+      "home_power_rating": -7.8,
+      "away_power_rating": 8.0,
       "home_cards_avg": null,
       "away_cards_avg": null,
       "confidence_score": 100,
-      "signal_agreement": 70,
-      "reliability_score": 87,
-      "best_market_probability": 86.3,
+      "signal_agreement": 57,
+      "reliability_score": 82,
+      "best_market_probability": 78.2,
       "best_pick": {
-        "market": "Home Win",
-        "probability_pct": 64.8,
-        "fair_odds": 1.54,
-        "reliability_score": 87,
-        "market_label": "Sport Lisboa e Benfica Win"
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 75.3,
+        "fair_odds": 1.33,
+        "reliability_score": 82,
+        "market_label": "West Ham United FC Win or Wolverhampton Wanderers FC Win"
       },
       "high_odds_pick": null,
       "top_scores": [
         {
-          "score": "2-0",
-          "probability_pct": 11.0,
-          "fair_odds": 9.12
-        },
-        {
           "score": "1-1",
-          "probability_pct": 10.2,
-          "fair_odds": 9.8
+          "probability_pct": 11.5,
+          "fair_odds": 8.67
         },
         {
           "score": "2-1",
           "probability_pct": 9.9,
-          "fair_odds": 10.08
+          "fair_odds": 10.14
+        },
+        {
+          "score": "2-0",
+          "probability_pct": 8.6,
+          "fair_odds": 11.67
         },
         {
           "score": "1-0",
-          "probability_pct": 9.2,
-          "fair_odds": 10.92
-        },
-        {
-          "score": "3-0",
           "probability_pct": 7.9,
-          "fair_odds": 12.67
-        },
-        {
-          "score": "3-1",
-          "probability_pct": 7.1,
-          "fair_odds": 14.02
+          "fair_odds": 12.68
         }
       ],
       "deep_analysis": {
@@ -1113,235 +381,561 @@
           {
             "rank": 1,
             "team": {
-              "id": "fdo:503",
-              "name": "FC Porto"
+              "id": "fdo:348",
+              "name": "Charlton Athletic FC"
             },
-            "points": 12,
-            "goalsDiff": 9
+            "points": 9,
+            "goalsDiff": 3
           },
           {
             "rank": 2,
             "team": {
-              "id": "fdo:498",
-              "name": "Sporting Clube de Portugal"
+              "id": "fdo:76",
+              "name": "Wolverhampton Wanderers FC"
             },
-            "points": 10,
-            "goalsDiff": 7
+            "points": 7,
+            "goalsDiff": 5
           },
           {
             "rank": 3,
             "team": {
-              "id": "fdo:712",
-              "name": "FC Arouca"
+              "id": "fdo:72",
+              "name": "Swansea City AFC"
             },
-            "points": 9,
+            "points": 7,
             "goalsDiff": 4
           },
           {
             "rank": 4,
             "team": {
-              "id": "fdo:5530",
-              "name": "CD Santa Clara"
-            },
-            "points": 8,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:5533",
-              "name": "Gil Vicente FC"
+              "id": "fdo:69",
+              "name": "Queens Park Rangers FC"
             },
             "points": 7,
             "goalsDiff": 3
           },
           {
+            "rank": 5,
+            "team": {
+              "id": "fdo:340",
+              "name": "Southampton FC"
+            },
+            "points": 6,
+            "goalsDiff": 5
+          },
+          {
             "rank": 6,
             "team": {
-              "id": "fdo:5575",
-              "name": "CS Marítimo"
+              "id": "fdo:343",
+              "name": "Middlesbrough FC"
             },
-            "points": 7,
-            "goalsDiff": 1
+            "points": 6,
+            "goalsDiff": 2
           },
           {
             "rank": 7,
             "team": {
-              "id": "fdo:9136",
-              "name": "CF Estrela da Amadora"
+              "id": "fdo:74",
+              "name": "West Bromwich Albion FC"
             },
-            "points": 5,
+            "points": 6,
             "goalsDiff": 1
           },
           {
             "rank": 8,
             "team": {
-              "id": "fdo:1903",
-              "name": "Sport Lisboa e Benfica"
+              "id": "fdo:384",
+              "name": "Millwall FC"
             },
-            "points": 4,
-            "goalsDiff": 7
+            "points": 6,
+            "goalsDiff": 1
           },
           {
             "rank": 9,
             "team": {
-              "id": "fdo:5529",
-              "name": "CD Nacional"
+              "id": "fdo:332",
+              "name": "Birmingham City FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:346",
+              "name": "Watford FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:59",
+              "name": "Blackburn Rovers FC"
             },
             "points": 4,
             "goalsDiff": 0
           },
           {
-            "rank": 10,
+            "rank": 12,
             "team": {
-              "id": "fdo:583",
-              "name": "Moreirense FC"
+              "id": "fdo:60",
+              "name": "Bolton Wanderers FC"
             },
             "points": 4,
-            "goalsDiff": -3
+            "goalsDiff": 0
           },
           {
-            "rank": 11,
+            "rank": 13,
             "team": {
-              "id": "fdo:5543",
-              "name": "Vitória SC"
+              "id": "fdo:387",
+              "name": "Bristol City FC"
+            },
+            "points": 4,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:715",
+              "name": "Cardiff City FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:356",
+              "name": "Sheffield United FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:68",
+              "name": "Norwich City FC"
             },
             "points": 3,
             "goalsDiff": -1
           },
           {
-            "rank": 12,
-            "team": {
-              "id": "fdo:496",
-              "name": "Rio Ave FC"
-            },
-            "points": 3,
-            "goalsDiff": -5
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:5531",
-              "name": "FC Famalicão"
-            },
-            "points": 2,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:7822",
-              "name": "FC Alverca"
-            },
-            "points": 2,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:5527",
-              "name": "Académico de Viseu FC"
-            },
-            "points": 2,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:5613",
-              "name": "Sporting Clube de Braga"
-            },
-            "points": 1,
-            "goalsDiff": 0
-          },
-          {
             "rank": 17,
             "team": {
-              "id": "fdo:582",
-              "name": "GD Estoril Praia"
+              "id": "fdo:325",
+              "name": "Portsmouth FC"
             },
-            "points": 1,
-            "goalsDiff": -4
+            "points": 3,
+            "goalsDiff": -1
           },
           {
             "rank": 18,
             "team": {
-              "id": "fdo:6618",
-              "name": "Casa Pia AC"
+              "id": "fdo:1126",
+              "name": "Lincoln City FC"
+            },
+            "points": 3,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 19,
+            "team": {
+              "id": "fdo:563",
+              "name": "West Ham United FC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 20,
+            "team": {
+              "id": "fdo:404",
+              "name": "Wrexham AFC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 21,
+            "team": {
+              "id": "fdo:342",
+              "name": "Derby County FC"
+            },
+            "points": 1,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 22,
+            "team": {
+              "id": "fdo:328",
+              "name": "Burnley FC"
+            },
+            "points": 1,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 23,
+            "team": {
+              "id": "fdo:1081",
+              "name": "Preston North End FC"
             },
             "points": 0,
-            "goalsDiff": -11
+            "goalsDiff": -4
+          },
+          {
+            "rank": 24,
+            "team": {
+              "id": "fdo:70",
+              "name": "Stoke City FC"
+            },
+            "points": 0,
+            "goalsDiff": -6
           }
         ],
         "injuries": []
       }
     },
     {
-      "match_id": "fdo:567292",
-      "competition": "Primeira Liga (Portugal)",
-      "league_id": 2017,
+      "match_id": "fdo:561798",
+      "competition": "Championship (England)",
+      "league_id": 2016,
       "season": 2026,
-      "home_team": "Sporting Clube de Braga",
-      "away_team": "Vitória SC",
-      "home_team_id": "fdo:5613",
-      "away_team_id": "fdo:5543",
-      "match_date": "2026-08-31T19:15:00Z",
-      "home_expected_goals": 1.59,
-      "away_expected_goals": 1.23,
+      "home_team": "Preston North End FC",
+      "away_team": "Bristol City FC",
+      "home_team_id": "fdo:1081",
+      "away_team_id": "fdo:387",
+      "match_date": "2026-09-01T18:45:00Z",
+      "home_expected_goals": 1.13,
+      "away_expected_goals": 1.86,
       "most_likely_score": "1-1",
-      "home_win_pct": 44.5,
-      "draw_pct": 27.3,
-      "away_win_pct": 28.2,
-      "over_2_5_pct": 53.5,
-      "btts_yes_pct": 57.6,
-      "double_chance_1x_pct": 71.8,
-      "double_chance_x2_pct": 55.5,
-      "home_power_rating": 2.2,
-      "away_power_rating": -11.7,
+      "home_win_pct": 21.8,
+      "draw_pct": 25.0,
+      "away_win_pct": 53.2,
+      "over_2_5_pct": 57.3,
+      "btts_yes_pct": 58.2,
+      "double_chance_1x_pct": 46.8,
+      "double_chance_x2_pct": 78.2,
+      "home_power_rating": -30.6,
+      "away_power_rating": 3.2,
       "home_cards_avg": null,
       "away_cards_avg": null,
       "confidence_score": 100,
-      "signal_agreement": 52,
-      "reliability_score": 79,
-      "best_market_probability": 72.7,
+      "signal_agreement": 58,
+      "reliability_score": 82,
+      "best_market_probability": 78.2,
       "best_pick": {
         "market": "Double Chance (Home/Away)",
-        "probability_pct": 72.7,
+        "probability_pct": 75.0,
+        "fair_odds": 1.33,
+        "reliability_score": 82,
+        "market_label": "Preston North End FC Win or Bristol City FC Win"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 11.8,
+          "fair_odds": 8.49
+        },
+        {
+          "score": "1-2",
+          "probability_pct": 9.9,
+          "fair_odds": 10.14
+        },
+        {
+          "score": "0-2",
+          "probability_pct": 8.7,
+          "fair_odds": 11.44
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 8.2,
+          "fair_odds": 12.14
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:348",
+              "name": "Charlton Athletic FC"
+            },
+            "points": 9,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:76",
+              "name": "Wolverhampton Wanderers FC"
+            },
+            "points": 7,
+            "goalsDiff": 5
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:72",
+              "name": "Swansea City AFC"
+            },
+            "points": 7,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:69",
+              "name": "Queens Park Rangers FC"
+            },
+            "points": 7,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:340",
+              "name": "Southampton FC"
+            },
+            "points": 6,
+            "goalsDiff": 5
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:343",
+              "name": "Middlesbrough FC"
+            },
+            "points": 6,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:74",
+              "name": "West Bromwich Albion FC"
+            },
+            "points": 6,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:384",
+              "name": "Millwall FC"
+            },
+            "points": 6,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:332",
+              "name": "Birmingham City FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:346",
+              "name": "Watford FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:59",
+              "name": "Blackburn Rovers FC"
+            },
+            "points": 4,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:60",
+              "name": "Bolton Wanderers FC"
+            },
+            "points": 4,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:387",
+              "name": "Bristol City FC"
+            },
+            "points": 4,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:715",
+              "name": "Cardiff City FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:356",
+              "name": "Sheffield United FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:68",
+              "name": "Norwich City FC"
+            },
+            "points": 3,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:325",
+              "name": "Portsmouth FC"
+            },
+            "points": 3,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:1126",
+              "name": "Lincoln City FC"
+            },
+            "points": 3,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 19,
+            "team": {
+              "id": "fdo:563",
+              "name": "West Ham United FC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 20,
+            "team": {
+              "id": "fdo:404",
+              "name": "Wrexham AFC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 21,
+            "team": {
+              "id": "fdo:342",
+              "name": "Derby County FC"
+            },
+            "points": 1,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 22,
+            "team": {
+              "id": "fdo:328",
+              "name": "Burnley FC"
+            },
+            "points": 1,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 23,
+            "team": {
+              "id": "fdo:1081",
+              "name": "Preston North End FC"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 24,
+            "team": {
+              "id": "fdo:70",
+              "name": "Stoke City FC"
+            },
+            "points": 0,
+            "goalsDiff": -6
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:561802",
+      "competition": "Championship (England)",
+      "league_id": 2016,
+      "season": 2026,
+      "home_team": "Portsmouth FC",
+      "away_team": "Derby County FC",
+      "home_team_id": "fdo:325",
+      "away_team_id": "fdo:342",
+      "match_date": "2026-09-01T18:45:00Z",
+      "home_expected_goals": 1.51,
+      "away_expected_goals": 1.33,
+      "most_likely_score": "1-1",
+      "home_win_pct": 40.2,
+      "draw_pct": 27.6,
+      "away_win_pct": 32.2,
+      "over_2_5_pct": 54.0,
+      "btts_yes_pct": 58.6,
+      "double_chance_1x_pct": 67.8,
+      "double_chance_x2_pct": 59.8,
+      "home_power_rating": 1.2,
+      "away_power_rating": -22.0,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 96,
+      "signal_agreement": 62,
+      "reliability_score": 80,
+      "best_market_probability": 72.4,
+      "best_pick": {
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 72.4,
         "fair_odds": 1.38,
-        "reliability_score": 79,
-        "market_label": "Sporting Clube de Braga Win or Vitória SC Win"
+        "reliability_score": 80,
+        "market_label": "Portsmouth FC Win or Derby County FC Win"
       },
       "high_odds_pick": null,
       "top_scores": [
         {
           "score": "1-1",
           "probability_pct": 13.0,
-          "fair_odds": 7.72
+          "fair_odds": 7.67
         },
         {
           "score": "2-1",
-          "probability_pct": 9.3,
-          "fair_odds": 10.77
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 8.2,
-          "fair_odds": 12.17
-        },
-        {
-          "score": "2-0",
-          "probability_pct": 7.6,
-          "fair_odds": 13.23
-        },
-        {
-          "score": "0-0",
-          "probability_pct": 7.3,
-          "fair_odds": 13.78
+          "probability_pct": 8.9,
+          "fair_odds": 11.28
         },
         {
           "score": "1-2",
-          "probability_pct": 7.2,
-          "fair_odds": 13.95
+          "probability_pct": 7.8,
+          "fair_odds": 12.78
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 7.5,
+          "fair_odds": 13.29
         }
       ],
       "deep_analysis": {
@@ -1351,230 +945,284 @@
           {
             "rank": 1,
             "team": {
-              "id": "fdo:503",
-              "name": "FC Porto"
+              "id": "fdo:348",
+              "name": "Charlton Athletic FC"
             },
-            "points": 12,
-            "goalsDiff": 9
+            "points": 9,
+            "goalsDiff": 3
           },
           {
             "rank": 2,
             "team": {
-              "id": "fdo:498",
-              "name": "Sporting Clube de Portugal"
+              "id": "fdo:76",
+              "name": "Wolverhampton Wanderers FC"
             },
-            "points": 10,
-            "goalsDiff": 7
+            "points": 7,
+            "goalsDiff": 5
           },
           {
             "rank": 3,
             "team": {
-              "id": "fdo:712",
-              "name": "FC Arouca"
+              "id": "fdo:72",
+              "name": "Swansea City AFC"
             },
-            "points": 9,
+            "points": 7,
             "goalsDiff": 4
           },
           {
             "rank": 4,
             "team": {
-              "id": "fdo:5530",
-              "name": "CD Santa Clara"
-            },
-            "points": 8,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:5533",
-              "name": "Gil Vicente FC"
+              "id": "fdo:69",
+              "name": "Queens Park Rangers FC"
             },
             "points": 7,
             "goalsDiff": 3
           },
           {
+            "rank": 5,
+            "team": {
+              "id": "fdo:340",
+              "name": "Southampton FC"
+            },
+            "points": 6,
+            "goalsDiff": 5
+          },
+          {
             "rank": 6,
             "team": {
-              "id": "fdo:5575",
-              "name": "CS Marítimo"
+              "id": "fdo:343",
+              "name": "Middlesbrough FC"
             },
-            "points": 7,
-            "goalsDiff": 1
+            "points": 6,
+            "goalsDiff": 2
           },
           {
             "rank": 7,
             "team": {
-              "id": "fdo:9136",
-              "name": "CF Estrela da Amadora"
+              "id": "fdo:74",
+              "name": "West Bromwich Albion FC"
             },
-            "points": 5,
+            "points": 6,
             "goalsDiff": 1
           },
           {
             "rank": 8,
             "team": {
-              "id": "fdo:1903",
-              "name": "Sport Lisboa e Benfica"
+              "id": "fdo:384",
+              "name": "Millwall FC"
             },
-            "points": 4,
-            "goalsDiff": 7
+            "points": 6,
+            "goalsDiff": 1
           },
           {
             "rank": 9,
             "team": {
-              "id": "fdo:5529",
-              "name": "CD Nacional"
+              "id": "fdo:332",
+              "name": "Birmingham City FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:346",
+              "name": "Watford FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:59",
+              "name": "Blackburn Rovers FC"
             },
             "points": 4,
             "goalsDiff": 0
           },
           {
-            "rank": 10,
+            "rank": 12,
             "team": {
-              "id": "fdo:583",
-              "name": "Moreirense FC"
+              "id": "fdo:60",
+              "name": "Bolton Wanderers FC"
             },
             "points": 4,
-            "goalsDiff": -3
+            "goalsDiff": 0
           },
           {
-            "rank": 11,
+            "rank": 13,
             "team": {
-              "id": "fdo:5543",
-              "name": "Vitória SC"
+              "id": "fdo:387",
+              "name": "Bristol City FC"
+            },
+            "points": 4,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:715",
+              "name": "Cardiff City FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:356",
+              "name": "Sheffield United FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:68",
+              "name": "Norwich City FC"
             },
             "points": 3,
             "goalsDiff": -1
           },
           {
-            "rank": 12,
-            "team": {
-              "id": "fdo:496",
-              "name": "Rio Ave FC"
-            },
-            "points": 3,
-            "goalsDiff": -5
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:5531",
-              "name": "FC Famalicão"
-            },
-            "points": 2,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:7822",
-              "name": "FC Alverca"
-            },
-            "points": 2,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:5527",
-              "name": "Académico de Viseu FC"
-            },
-            "points": 2,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:5613",
-              "name": "Sporting Clube de Braga"
-            },
-            "points": 1,
-            "goalsDiff": 0
-          },
-          {
             "rank": 17,
             "team": {
-              "id": "fdo:582",
-              "name": "GD Estoril Praia"
+              "id": "fdo:325",
+              "name": "Portsmouth FC"
             },
-            "points": 1,
-            "goalsDiff": -4
+            "points": 3,
+            "goalsDiff": -1
           },
           {
             "rank": 18,
             "team": {
-              "id": "fdo:6618",
-              "name": "Casa Pia AC"
+              "id": "fdo:1126",
+              "name": "Lincoln City FC"
+            },
+            "points": 3,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 19,
+            "team": {
+              "id": "fdo:563",
+              "name": "West Ham United FC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 20,
+            "team": {
+              "id": "fdo:404",
+              "name": "Wrexham AFC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 21,
+            "team": {
+              "id": "fdo:342",
+              "name": "Derby County FC"
+            },
+            "points": 1,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 22,
+            "team": {
+              "id": "fdo:328",
+              "name": "Burnley FC"
+            },
+            "points": 1,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 23,
+            "team": {
+              "id": "fdo:1081",
+              "name": "Preston North End FC"
             },
             "points": 0,
-            "goalsDiff": -11
+            "goalsDiff": -4
+          },
+          {
+            "rank": 24,
+            "team": {
+              "id": "fdo:70",
+              "name": "Stoke City FC"
+            },
+            "points": 0,
+            "goalsDiff": -6
           }
         ],
         "injuries": []
       }
     },
     {
-      "match_id": "fdo:564650",
-      "competition": "Primera Division (Spain)",
-      "league_id": 2014,
+      "match_id": "fdo:561800",
+      "competition": "Championship (England)",
+      "league_id": 2016,
       "season": 2026,
-      "home_team": "FC Barcelona",
-      "away_team": "Rayo Vallecano de Madrid",
-      "home_team_id": "fdo:81",
-      "away_team_id": "fdo:87",
-      "match_date": "2026-08-31T19:30:00Z",
-      "home_expected_goals": 1.6,
-      "away_expected_goals": 0.79,
-      "most_likely_score": "1-0",
-      "home_win_pct": 55.4,
-      "draw_pct": 27.5,
-      "away_win_pct": 17.1,
-      "over_2_5_pct": 42.7,
-      "btts_yes_pct": 44.8,
-      "double_chance_1x_pct": 82.9,
-      "double_chance_x2_pct": 44.6,
-      "home_power_rating": 30.7,
-      "away_power_rating": 8.5,
+      "home_team": "Lincoln City FC",
+      "away_team": "Blackburn Rovers FC",
+      "home_team_id": "fdo:1126",
+      "away_team_id": "fdo:59",
+      "match_date": "2026-09-01T18:45:00Z",
+      "home_expected_goals": 1.25,
+      "away_expected_goals": 1.87,
+      "most_likely_score": "1-1",
+      "home_win_pct": 24.5,
+      "draw_pct": 25.0,
+      "away_win_pct": 50.5,
+      "over_2_5_pct": 60.2,
+      "btts_yes_pct": 61.5,
+      "double_chance_1x_pct": 49.5,
+      "double_chance_x2_pct": 75.5,
+      "home_power_rating": -13.2,
+      "away_power_rating": -3.9,
       "home_cards_avg": null,
       "away_cards_avg": null,
-      "confidence_score": 100,
-      "signal_agreement": 76,
-      "reliability_score": 89,
-      "best_market_probability": 82.9,
+      "confidence_score": 52,
+      "signal_agreement": 51,
+      "reliability_score": 58,
+      "best_market_probability": 75.5,
       "best_pick": {
-        "market": "Double Chance (Home/Away)",
-        "probability_pct": 72.5,
-        "fair_odds": 1.38,
-        "reliability_score": 89,
-        "market_label": "FC Barcelona Win or Rayo Vallecano de Madrid Win"
+        "market": "Double Chance (Draw/Away)",
+        "probability_pct": 75.5,
+        "fair_odds": 1.32,
+        "reliability_score": 58,
+        "market_label": "Draw or Blackburn Rovers FC Win"
       },
       "high_odds_pick": null,
       "top_scores": [
         {
-          "score": "1-0",
-          "probability_pct": 13.4,
-          "fair_odds": 7.45
-        },
-        {
           "score": "1-1",
-          "probability_pct": 12.9,
-          "fair_odds": 7.78
+          "probability_pct": 11.5,
+          "fair_odds": 8.7
         },
         {
-          "score": "2-0",
-          "probability_pct": 11.8,
-          "fair_odds": 8.5
+          "score": "1-2",
+          "probability_pct": 9.7,
+          "fair_odds": 10.33
         },
         {
-          "score": "0-0",
-          "probability_pct": 10.5,
-          "fair_odds": 9.57
+          "score": "0-2",
+          "probability_pct": 7.7,
+          "fair_odds": 12.94
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 7.1,
+          "fair_odds": 14.03
         },
         {
           "score": "2-1",
-          "probability_pct": 9.3,
-          "fair_odds": 10.78
+          "probability_pct": 6.5,
+          "fair_odds": 15.41
         }
       ],
       "deep_analysis": {
@@ -1584,26 +1232,26 @@
           {
             "rank": 1,
             "team": {
-              "id": "fdo:86",
-              "name": "Real Madrid CF"
+              "id": "fdo:348",
+              "name": "Charlton Athletic FC"
             },
             "points": 9,
-            "goalsDiff": 8
+            "goalsDiff": 3
           },
           {
             "rank": 2,
             "team": {
-              "id": "fdo:78",
-              "name": "Club Atlético de Madrid"
+              "id": "fdo:76",
+              "name": "Wolverhampton Wanderers FC"
             },
             "points": 7,
-            "goalsDiff": 4
+            "goalsDiff": 5
           },
           {
             "rank": 3,
             "team": {
-              "id": "fdo:263",
-              "name": "Deportivo Alavés"
+              "id": "fdo:72",
+              "name": "Swansea City AFC"
             },
             "points": 7,
             "goalsDiff": 4
@@ -1611,154 +1259,190 @@
           {
             "rank": 4,
             "team": {
-              "id": "fdo:81",
-              "name": "FC Barcelona"
+              "id": "fdo:69",
+              "name": "Queens Park Rangers FC"
             },
-            "points": 6,
-            "goalsDiff": 7
+            "points": 7,
+            "goalsDiff": 3
           },
           {
             "rank": 5,
             "team": {
-              "id": "fdo:559",
-              "name": "Sevilla FC"
+              "id": "fdo:340",
+              "name": "Southampton FC"
+            },
+            "points": 6,
+            "goalsDiff": 5
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:343",
+              "name": "Middlesbrough FC"
+            },
+            "points": 6,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:74",
+              "name": "West Bromwich Albion FC"
             },
             "points": 6,
             "goalsDiff": 1
           },
           {
-            "rank": 6,
-            "team": {
-              "id": "fdo:90",
-              "name": "Real Betis Balompié"
-            },
-            "points": 6,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:560",
-              "name": "RC Deportivo La Coruña"
-            },
-            "points": 5,
-            "goalsDiff": 2
-          },
-          {
             "rank": 8,
             "team": {
-              "id": "fdo:79",
-              "name": "CA Osasuna"
+              "id": "fdo:384",
+              "name": "Millwall FC"
             },
-            "points": 4,
+            "points": 6,
             "goalsDiff": 1
           },
           {
             "rank": 9,
             "team": {
-              "id": "fdo:5335",
-              "name": "Real Racing Club de Santander"
+              "id": "fdo:332",
+              "name": "Birmingham City FC"
             },
-            "points": 4,
-            "goalsDiff": 0
+            "points": 5,
+            "goalsDiff": 1
           },
           {
             "rank": 10,
             "team": {
-              "id": "fdo:88",
-              "name": "Levante UD"
+              "id": "fdo:346",
+              "name": "Watford FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:59",
+              "name": "Blackburn Rovers FC"
             },
             "points": 4,
             "goalsDiff": 0
           },
           {
-            "rank": 11,
-            "team": {
-              "id": "fdo:80",
-              "name": "RCD Espanyol de Barcelona"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
             "rank": 12,
             "team": {
-              "id": "fdo:77",
-              "name": "Athletic Club"
+              "id": "fdo:60",
+              "name": "Bolton Wanderers FC"
             },
-            "points": 3,
-            "goalsDiff": -2
+            "points": 4,
+            "goalsDiff": 0
           },
           {
             "rank": 13,
             "team": {
-              "id": "fdo:82",
-              "name": "Getafe CF"
+              "id": "fdo:387",
+              "name": "Bristol City FC"
             },
-            "points": 3,
-            "goalsDiff": -2
+            "points": 4,
+            "goalsDiff": -1
           },
           {
             "rank": 14,
             "team": {
-              "id": "fdo:92",
-              "name": "Real Sociedad de Fútbol"
+              "id": "fdo:715",
+              "name": "Cardiff City FC"
             },
             "points": 3,
-            "goalsDiff": -3
+            "goalsDiff": 0
           },
           {
             "rank": 15,
             "team": {
-              "id": "fdo:94",
-              "name": "Villarreal CF"
+              "id": "fdo:356",
+              "name": "Sheffield United FC"
             },
-            "points": 2,
-            "goalsDiff": -1
+            "points": 3,
+            "goalsDiff": 0
           },
           {
             "rank": 16,
             "team": {
-              "id": "fdo:87",
-              "name": "Rayo Vallecano de Madrid"
+              "id": "fdo:68",
+              "name": "Norwich City FC"
             },
-            "points": 1,
+            "points": 3,
             "goalsDiff": -1
           },
           {
             "rank": 17,
             "team": {
-              "id": "fdo:95",
-              "name": "Valencia CF"
+              "id": "fdo:325",
+              "name": "Portsmouth FC"
             },
-            "points": 1,
-            "goalsDiff": -3
+            "points": 3,
+            "goalsDiff": -1
           },
           {
             "rank": 18,
             "team": {
-              "id": "fdo:558",
-              "name": "RC Celta de Vigo"
+              "id": "fdo:1126",
+              "name": "Lincoln City FC"
             },
-            "points": 1,
-            "goalsDiff": -3
+            "points": 3,
+            "goalsDiff": -2
           },
           {
             "rank": 19,
             "team": {
-              "id": "fdo:285",
-              "name": "Elche CF"
+              "id": "fdo:563",
+              "name": "West Ham United FC"
             },
-            "points": 1,
-            "goalsDiff": -6
+            "points": 2,
+            "goalsDiff": -1
           },
           {
             "rank": 20,
             "team": {
-              "id": "fdo:84",
-              "name": "Málaga CF"
+              "id": "fdo:404",
+              "name": "Wrexham AFC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 21,
+            "team": {
+              "id": "fdo:342",
+              "name": "Derby County FC"
             },
             "points": 1,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 22,
+            "team": {
+              "id": "fdo:328",
+              "name": "Burnley FC"
+            },
+            "points": 1,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 23,
+            "team": {
+              "id": "fdo:1081",
+              "name": "Preston North End FC"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 24,
+            "team": {
+              "id": "fdo:70",
+              "name": "Stoke City FC"
+            },
+            "points": 0,
             "goalsDiff": -6
           }
         ],
@@ -1766,61 +1450,61 @@
       }
     },
     {
-      "match_id": "fdo:554987",
-      "competition": "Campeonato Brasileiro Série A (Brazil)",
-      "league_id": 2013,
+      "match_id": "fdo:561801",
+      "competition": "Championship (England)",
+      "league_id": 2016,
       "season": 2026,
-      "home_team": "Clube do Remo",
-      "away_team": "Coritiba FBC",
-      "home_team_id": "fdo:4287",
-      "away_team_id": "fdo:4241",
-      "match_date": "2026-08-31T23:00:00Z",
-      "home_expected_goals": 1.16,
-      "away_expected_goals": 1.03,
-      "most_likely_score": "1-1",
-      "home_win_pct": 37.2,
-      "draw_pct": 32.1,
-      "away_win_pct": 30.7,
-      "over_2_5_pct": 37.3,
-      "btts_yes_pct": 45.5,
-      "double_chance_1x_pct": 69.3,
-      "double_chance_x2_pct": 62.8,
-      "home_power_rating": -11.1,
-      "away_power_rating": 6.3,
+      "home_team": "Sheffield United FC",
+      "away_team": "Bolton Wanderers FC",
+      "home_team_id": "fdo:356",
+      "away_team_id": "fdo:60",
+      "match_date": "2026-09-01T18:45:00Z",
+      "home_expected_goals": 0.89,
+      "away_expected_goals": 1.04,
+      "most_likely_score": "0-0",
+      "home_win_pct": 28.8,
+      "draw_pct": 34.4,
+      "away_win_pct": 36.7,
+      "over_2_5_pct": 30.3,
+      "btts_yes_pct": 39.5,
+      "double_chance_1x_pct": 63.3,
+      "double_chance_x2_pct": 71.2,
+      "home_power_rating": 0.5,
+      "away_power_rating": -5.1,
       "home_cards_avg": null,
       "away_cards_avg": null,
-      "confidence_score": 84,
+      "confidence_score": 52,
       "signal_agreement": 54,
-      "reliability_score": 71,
-      "best_market_probability": 69.3,
+      "reliability_score": 57,
+      "best_market_probability": 71.2,
       "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 69.3,
-        "fair_odds": 1.44,
-        "reliability_score": 71,
-        "market_label": "Clube do Remo Win or Draw"
+        "market": "Double Chance (Draw/Away)",
+        "probability_pct": 71.2,
+        "fair_odds": 1.41,
+        "reliability_score": 57,
+        "market_label": "Draw or Bolton Wanderers FC Win"
       },
       "high_odds_pick": null,
       "top_scores": [
         {
-          "score": "1-1",
-          "probability_pct": 14.9,
-          "fair_odds": 6.73
+          "score": "0-0",
+          "probability_pct": 16.1,
+          "fair_odds": 6.22
         },
         {
-          "score": "0-0",
-          "probability_pct": 12.7,
-          "fair_odds": 7.87
+          "score": "1-1",
+          "probability_pct": 14.9,
+          "fair_odds": 6.71
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 13.7,
+          "fair_odds": 7.32
         },
         {
           "score": "1-0",
           "probability_pct": 11.5,
-          "fair_odds": 8.67
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 10.1,
-          "fair_odds": 9.91
+          "fair_odds": 8.71
         }
       ],
       "deep_analysis": {
@@ -1830,182 +1514,782 @@
           {
             "rank": 1,
             "team": {
-              "id": "fdo:1769",
-              "name": "SE Palmeiras"
+              "id": "fdo:348",
+              "name": "Charlton Athletic FC"
             },
-            "points": 52,
-            "goalsDiff": 24
+            "points": 9,
+            "goalsDiff": 3
           },
           {
             "rank": 2,
             "team": {
-              "id": "fdo:1783",
-              "name": "CR Flamengo"
+              "id": "fdo:76",
+              "name": "Wolverhampton Wanderers FC"
             },
-            "points": 48,
-            "goalsDiff": 27
+            "points": 7,
+            "goalsDiff": 5
           },
           {
             "rank": 3,
             "team": {
-              "id": "fdo:1768",
-              "name": "CA Paranaense"
+              "id": "fdo:72",
+              "name": "Swansea City AFC"
             },
-            "points": 45,
-            "goalsDiff": 12
+            "points": 7,
+            "goalsDiff": 4
           },
           {
             "rank": 4,
             "team": {
-              "id": "fdo:1765",
-              "name": "Fluminense FC"
+              "id": "fdo:69",
+              "name": "Queens Park Rangers FC"
             },
-            "points": 42,
-            "goalsDiff": 7
+            "points": 7,
+            "goalsDiff": 3
           },
           {
             "rank": 5,
             "team": {
-              "id": "fdo:1777",
-              "name": "EC Bahia"
+              "id": "fdo:340",
+              "name": "Southampton FC"
             },
-            "points": 40,
-            "goalsDiff": 7
+            "points": 6,
+            "goalsDiff": 5
           },
           {
             "rank": 6,
             "team": {
-              "id": "fdo:1771",
-              "name": "Cruzeiro EC"
+              "id": "fdo:343",
+              "name": "Middlesbrough FC"
             },
-            "points": 39,
-            "goalsDiff": -1
+            "points": 6,
+            "goalsDiff": 2
           },
           {
             "rank": 7,
             "team": {
-              "id": "fdo:1766",
-              "name": "CA Mineiro"
+              "id": "fdo:74",
+              "name": "West Bromwich Albion FC"
             },
-            "points": 36,
-            "goalsDiff": 4
+            "points": 6,
+            "goalsDiff": 1
           },
           {
             "rank": 8,
             "team": {
-              "id": "fdo:4286",
-              "name": "RB Bragantino"
+              "id": "fdo:384",
+              "name": "Millwall FC"
             },
-            "points": 35,
-            "goalsDiff": 4
+            "points": 6,
+            "goalsDiff": 1
           },
           {
             "rank": 9,
             "team": {
-              "id": "fdo:4241",
-              "name": "Coritiba FBC"
+              "id": "fdo:332",
+              "name": "Birmingham City FC"
             },
-            "points": 34,
-            "goalsDiff": -1
+            "points": 5,
+            "goalsDiff": 1
           },
           {
             "rank": 10,
             "team": {
-              "id": "fdo:1779",
-              "name": "SC Corinthians Paulista"
+              "id": "fdo:346",
+              "name": "Watford FC"
             },
-            "points": 32,
+            "points": 5,
             "goalsDiff": 1
           },
           {
             "rank": 11,
             "team": {
-              "id": "fdo:1776",
-              "name": "São Paulo FC"
+              "id": "fdo:59",
+              "name": "Blackburn Rovers FC"
             },
-            "points": 30,
-            "goalsDiff": 1
+            "points": 4,
+            "goalsDiff": 0
           },
           {
             "rank": 12,
             "team": {
-              "id": "fdo:1770",
-              "name": "Botafogo FR"
+              "id": "fdo:60",
+              "name": "Bolton Wanderers FC"
             },
-            "points": 30,
-            "goalsDiff": -3
+            "points": 4,
+            "goalsDiff": 0
           },
           {
             "rank": 13,
             "team": {
-              "id": "fdo:6685",
-              "name": "Santos FC"
+              "id": "fdo:387",
+              "name": "Bristol City FC"
             },
-            "points": 29,
-            "goalsDiff": -2
+            "points": 4,
+            "goalsDiff": -1
           },
           {
             "rank": 14,
             "team": {
-              "id": "fdo:1782",
-              "name": "EC Vitória"
+              "id": "fdo:715",
+              "name": "Cardiff City FC"
             },
-            "points": 29,
-            "goalsDiff": -13
+            "points": 3,
+            "goalsDiff": 0
           },
           {
             "rank": 15,
             "team": {
-              "id": "fdo:1767",
-              "name": "Grêmio FBPA"
+              "id": "fdo:356",
+              "name": "Sheffield United FC"
             },
-            "points": 28,
-            "goalsDiff": -5
+            "points": 3,
+            "goalsDiff": 0
           },
           {
             "rank": 16,
             "team": {
-              "id": "fdo:6684",
-              "name": "SC Internacional"
+              "id": "fdo:68",
+              "name": "Norwich City FC"
             },
-            "points": 25,
-            "goalsDiff": -5
+            "points": 3,
+            "goalsDiff": -1
           },
           {
             "rank": 17,
             "team": {
-              "id": "fdo:4364",
-              "name": "Mirassol FC"
+              "id": "fdo:325",
+              "name": "Portsmouth FC"
             },
-            "points": 25,
-            "goalsDiff": -10
+            "points": 3,
+            "goalsDiff": -1
           },
           {
             "rank": 18,
             "team": {
-              "id": "fdo:1780",
-              "name": "CR Vasco da Gama"
+              "id": "fdo:1126",
+              "name": "Lincoln City FC"
             },
-            "points": 25,
-            "goalsDiff": -12
+            "points": 3,
+            "goalsDiff": -2
           },
           {
             "rank": 19,
             "team": {
-              "id": "fdo:4287",
-              "name": "Clube do Remo"
+              "id": "fdo:563",
+              "name": "West Ham United FC"
             },
-            "points": 23,
-            "goalsDiff": -11
+            "points": 2,
+            "goalsDiff": -1
           },
           {
             "rank": 20,
             "team": {
-              "id": "fdo:1772",
-              "name": "Chapecoense AF"
+              "id": "fdo:404",
+              "name": "Wrexham AFC"
             },
-            "points": 14,
-            "goalsDiff": -24
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 21,
+            "team": {
+              "id": "fdo:342",
+              "name": "Derby County FC"
+            },
+            "points": 1,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 22,
+            "team": {
+              "id": "fdo:328",
+              "name": "Burnley FC"
+            },
+            "points": 1,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 23,
+            "team": {
+              "id": "fdo:1081",
+              "name": "Preston North End FC"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 24,
+            "team": {
+              "id": "fdo:70",
+              "name": "Stoke City FC"
+            },
+            "points": 0,
+            "goalsDiff": -6
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:561797",
+      "competition": "Championship (England)",
+      "league_id": 2016,
+      "season": 2026,
+      "home_team": "Stoke City FC",
+      "away_team": "Norwich City FC",
+      "home_team_id": "fdo:70",
+      "away_team_id": "fdo:68",
+      "match_date": "2026-09-01T19:00:00Z",
+      "home_expected_goals": 1.49,
+      "away_expected_goals": 1.65,
+      "most_likely_score": "1-1",
+      "home_win_pct": 33.6,
+      "draw_pct": 26.0,
+      "away_win_pct": 40.4,
+      "over_2_5_pct": 60.6,
+      "btts_yes_pct": 63.7,
+      "double_chance_1x_pct": 59.6,
+      "double_chance_x2_pct": 66.4,
+      "home_power_rating": -48.4,
+      "away_power_rating": -2.8,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 100,
+      "signal_agreement": 69,
+      "reliability_score": 84,
+      "best_market_probability": 74.0,
+      "best_pick": {
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 74.0,
+        "fair_odds": 1.35,
+        "reliability_score": 84,
+        "market_label": "Stoke City FC Win or Norwich City FC Win"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 11.9,
+          "fair_odds": 8.43
+        },
+        {
+          "score": "1-2",
+          "probability_pct": 8.8,
+          "fair_odds": 11.36
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 7.9,
+          "fair_odds": 12.59
+        },
+        {
+          "score": "2-2",
+          "probability_pct": 6.5,
+          "fair_odds": 15.27
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:348",
+              "name": "Charlton Athletic FC"
+            },
+            "points": 9,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:76",
+              "name": "Wolverhampton Wanderers FC"
+            },
+            "points": 7,
+            "goalsDiff": 5
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:72",
+              "name": "Swansea City AFC"
+            },
+            "points": 7,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:69",
+              "name": "Queens Park Rangers FC"
+            },
+            "points": 7,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:340",
+              "name": "Southampton FC"
+            },
+            "points": 6,
+            "goalsDiff": 5
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:343",
+              "name": "Middlesbrough FC"
+            },
+            "points": 6,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:74",
+              "name": "West Bromwich Albion FC"
+            },
+            "points": 6,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:384",
+              "name": "Millwall FC"
+            },
+            "points": 6,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:332",
+              "name": "Birmingham City FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:346",
+              "name": "Watford FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:59",
+              "name": "Blackburn Rovers FC"
+            },
+            "points": 4,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:60",
+              "name": "Bolton Wanderers FC"
+            },
+            "points": 4,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:387",
+              "name": "Bristol City FC"
+            },
+            "points": 4,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:715",
+              "name": "Cardiff City FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:356",
+              "name": "Sheffield United FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:68",
+              "name": "Norwich City FC"
+            },
+            "points": 3,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:325",
+              "name": "Portsmouth FC"
+            },
+            "points": 3,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:1126",
+              "name": "Lincoln City FC"
+            },
+            "points": 3,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 19,
+            "team": {
+              "id": "fdo:563",
+              "name": "West Ham United FC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 20,
+            "team": {
+              "id": "fdo:404",
+              "name": "Wrexham AFC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 21,
+            "team": {
+              "id": "fdo:342",
+              "name": "Derby County FC"
+            },
+            "points": 1,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 22,
+            "team": {
+              "id": "fdo:328",
+              "name": "Burnley FC"
+            },
+            "points": 1,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 23,
+            "team": {
+              "id": "fdo:1081",
+              "name": "Preston North End FC"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 24,
+            "team": {
+              "id": "fdo:70",
+              "name": "Stoke City FC"
+            },
+            "points": 0,
+            "goalsDiff": -6
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:561803",
+      "competition": "Championship (England)",
+      "league_id": 2016,
+      "season": 2026,
+      "home_team": "Birmingham City FC",
+      "away_team": "Southampton FC",
+      "home_team_id": "fdo:332",
+      "away_team_id": "fdo:340",
+      "match_date": "2026-09-01T19:00:00Z",
+      "home_expected_goals": 1.53,
+      "away_expected_goals": 1.75,
+      "most_likely_score": "1-1",
+      "home_win_pct": 32.9,
+      "draw_pct": 25.3,
+      "away_win_pct": 41.8,
+      "over_2_5_pct": 63.5,
+      "btts_yes_pct": 65.8,
+      "double_chance_1x_pct": 58.2,
+      "double_chance_x2_pct": 67.1,
+      "home_power_rating": 15.7,
+      "away_power_rating": 30.3,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 96,
+      "signal_agreement": 69,
+      "reliability_score": 83,
+      "best_market_probability": 74.7,
+      "best_pick": {
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 74.7,
+        "fair_odds": 1.34,
+        "reliability_score": 83,
+        "market_label": "Birmingham City FC Win or Southampton FC Win"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 11.2,
+          "fair_odds": 8.91
+        },
+        {
+          "score": "1-2",
+          "probability_pct": 8.8,
+          "fair_odds": 11.33
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 7.8,
+          "fair_odds": 12.9
+        },
+        {
+          "score": "2-2",
+          "probability_pct": 6.8,
+          "fair_odds": 14.78
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:348",
+              "name": "Charlton Athletic FC"
+            },
+            "points": 9,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:76",
+              "name": "Wolverhampton Wanderers FC"
+            },
+            "points": 7,
+            "goalsDiff": 5
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:72",
+              "name": "Swansea City AFC"
+            },
+            "points": 7,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:69",
+              "name": "Queens Park Rangers FC"
+            },
+            "points": 7,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:340",
+              "name": "Southampton FC"
+            },
+            "points": 6,
+            "goalsDiff": 5
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:343",
+              "name": "Middlesbrough FC"
+            },
+            "points": 6,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:74",
+              "name": "West Bromwich Albion FC"
+            },
+            "points": 6,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:384",
+              "name": "Millwall FC"
+            },
+            "points": 6,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:332",
+              "name": "Birmingham City FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:346",
+              "name": "Watford FC"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:59",
+              "name": "Blackburn Rovers FC"
+            },
+            "points": 4,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:60",
+              "name": "Bolton Wanderers FC"
+            },
+            "points": 4,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:387",
+              "name": "Bristol City FC"
+            },
+            "points": 4,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:715",
+              "name": "Cardiff City FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:356",
+              "name": "Sheffield United FC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:68",
+              "name": "Norwich City FC"
+            },
+            "points": 3,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:325",
+              "name": "Portsmouth FC"
+            },
+            "points": 3,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:1126",
+              "name": "Lincoln City FC"
+            },
+            "points": 3,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 19,
+            "team": {
+              "id": "fdo:563",
+              "name": "West Ham United FC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 20,
+            "team": {
+              "id": "fdo:404",
+              "name": "Wrexham AFC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 21,
+            "team": {
+              "id": "fdo:342",
+              "name": "Derby County FC"
+            },
+            "points": 1,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 22,
+            "team": {
+              "id": "fdo:328",
+              "name": "Burnley FC"
+            },
+            "points": 1,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 23,
+            "team": {
+              "id": "fdo:1081",
+              "name": "Preston North End FC"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 24,
+            "team": {
+              "id": "fdo:70",
+              "name": "Stoke City FC"
+            },
+            "points": 0,
+            "goalsDiff": -6
           }
         ],
         "injuries": []

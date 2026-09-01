@@ -886,5 +886,149 @@
     "status": "pending",
     "actual_score": null,
     "checked_at": null
+  },
+  {
+    "match_id": "fdo:561804",
+    "competition": "Championship (England)",
+    "home_team": "Swansea City AFC",
+    "away_team": "Watford FC",
+    "match_date": "2026-09-01T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.8,
+      "fair_odds": 1.34,
+      "reliability_score": 87,
+      "market_label": "Swansea City AFC Win or Watford FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561799",
+    "competition": "Championship (England)",
+    "home_team": "West Ham United FC",
+    "away_team": "Wolverhampton Wanderers FC",
+    "match_date": "2026-09-01T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.3,
+      "fair_odds": 1.33,
+      "reliability_score": 82,
+      "market_label": "West Ham United FC Win or Wolverhampton Wanderers FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561798",
+    "competition": "Championship (England)",
+    "home_team": "Preston North End FC",
+    "away_team": "Bristol City FC",
+    "match_date": "2026-09-01T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.0,
+      "fair_odds": 1.33,
+      "reliability_score": 82,
+      "market_label": "Preston North End FC Win or Bristol City FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561802",
+    "competition": "Championship (England)",
+    "home_team": "Portsmouth FC",
+    "away_team": "Derby County FC",
+    "match_date": "2026-09-01T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 72.4,
+      "fair_odds": 1.38,
+      "reliability_score": 80,
+      "market_label": "Portsmouth FC Win or Derby County FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561800",
+    "competition": "Championship (England)",
+    "home_team": "Lincoln City FC",
+    "away_team": "Blackburn Rovers FC",
+    "match_date": "2026-09-01T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 75.5,
+      "fair_odds": 1.32,
+      "reliability_score": 58,
+      "market_label": "Draw or Blackburn Rovers FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561801",
+    "competition": "Championship (England)",
+    "home_team": "Sheffield United FC",
+    "away_team": "Bolton Wanderers FC",
+    "match_date": "2026-09-01T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 71.2,
+      "fair_odds": 1.41,
+      "reliability_score": 57,
+      "market_label": "Draw or Bolton Wanderers FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561797",
+    "competition": "Championship (England)",
+    "home_team": "Stoke City FC",
+    "away_team": "Norwich City FC",
+    "match_date": "2026-09-01T19:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.0,
+      "fair_odds": 1.35,
+      "reliability_score": 84,
+      "market_label": "Stoke City FC Win or Norwich City FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561803",
+    "competition": "Championship (England)",
+    "home_team": "Birmingham City FC",
+    "away_team": "Southampton FC",
+    "match_date": "2026-09-01T19:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.7,
+      "fair_odds": 1.34,
+      "reliability_score": 83,
+      "market_label": "Birmingham City FC Win or Southampton FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
   }
 ]
