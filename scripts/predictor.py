@@ -22,6 +22,7 @@ from advanced_stats import (
     dynamic_home_advantage,
     dixon_coles_adjustment,
     confidence_score,
+    league_average_goals,
 )
 
 H2H_WEIGHT = 0.15
@@ -99,8 +100,10 @@ def _discipline_adjustment(stats):
         return 1.0
     return max(0.95, min(1.0, 1.0 - (avg - 2.0) * 0.015))
 
-def _team_stat_adjustment(stats, venue):
-    """Small, capped adjustment. Missing API fields mean no adjustment."""
+def _team_stat_adjustment(stats, venue, baseline=1.35):
+    """Small, capped adjustment. Missing API fields mean no adjustment.
+    baseline: neutral গোল/ম্যাচ রেফারেন্স — ডিফল্ট 1.35, কিন্তু কলার যদি
+    league_average_goals() থেকে আসল লিগ-গড় পাস করে, সেটা ব্যবহার হয় (নিচে দেখুন)।"""
     if not stats:
         return 1.0, 1.0
 
@@ -110,11 +113,10 @@ def _team_stat_adjustment(stats, venue):
     attack = 1.0
     defence = 1.0
     if goals_for is not None:
-        # Around 1.35 goals is neutral; cap the influence.
-        attack = max(0.90, min(1.12, 1.0 + (goals_for - 1.35) * 0.08))
+        attack = max(0.90, min(1.12, 1.0 + (goals_for - baseline) * 0.08))
     if goals_against is not None:
         # Lower conceded is better -> stronger multiplier below 1.
-        defence = max(0.90, min(1.12, 1.0 + (1.35 - goals_against) * 0.08))
+        defence = max(0.90, min(1.12, 1.0 + (baseline - goals_against) * 0.08))
     return attack, defence
 
 def _standing_adjustment(table, team_id):
@@ -194,8 +196,14 @@ def predict_match(home_team_id, away_team_id, max_goals=7, deep=None, match_id=N
     table = deep.get("standings")
     injuries = deep.get("injuries") or []
 
-    h_attack, h_def = _team_stat_adjustment(hstats, "home")
-    a_attack, a_def = _team_stat_adjustment(astats, "away")
+    # standings already fetched in deep_enrich (Phase 2, no extra API call) —
+    # সেখান থেকে আসল লিগ-গড় গোল/ম্যাচ বের করে হার্ডকোড করা 1.35-এর বদলে
+    # প্রতিটা লিগের নিজস্ব বেসলাইন ব্যবহার করা হচ্ছে (হাই-স্কোরিং vs
+    # লো-স্কোরিং লিগের attack/defense strength আলাদাভাবে ক্যালিব্রেটেড হবে)।
+    league_avg = league_average_goals(table)
+    baseline = league_avg[0] if league_avg else 1.35
+    h_attack, h_def = _team_stat_adjustment(hstats, "home", baseline)
+    a_attack, a_def = _team_stat_adjustment(astats, "away", baseline)
     home_xg *= h_attack * a_def
     away_xg *= a_attack * h_def
     home_xg *= _discipline_adjustment(hstats)
