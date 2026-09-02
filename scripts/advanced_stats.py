@@ -93,6 +93,31 @@ def dixon_coles_adjustment(score_probs, home_exp, away_exp, rho=-0.11):
         return score_probs
     return {k: v / total for k, v in adjusted.items()}
 
+def league_average_goals(table):
+    """standings table (already fetched in deep_enrich, Phase 2 — no extra API
+    call) থেকে লিগের প্রকৃত গড় গোল/ম্যাচ বের করে। এটা _team_stat_adjustment-এর
+    hardcoded 1.35 বেসলাইনের বদলে ব্যবহার করলে হাই-স্কোরিং (Eredivisie) ও
+    লো-স্কোরিং (Ligue 1, Serie A) লিগের attack/defense strength আলাদাভাবে
+    ক্যালিব্রেটেড হয়। রিটার্ন করে (avg_goals_for, avg_goals_against) — টেবিলে
+    played/goals ডেটা না থাকলে None।"""
+    if not table:
+        return None
+    total_for = total_against = total_played = 0.0
+    for row in table:
+        all_stats = row.get("all") or {}
+        played = all_stats.get("played")
+        goals = all_stats.get("goals") or {}
+        gf = goals.get("for")
+        ga = goals.get("against")
+        if not played or gf is None or ga is None:
+            continue
+        total_for += gf
+        total_against += ga
+        total_played += played
+    if total_played == 0:
+        return None
+    return total_for / total_played, total_against / total_played
+
 def confidence_score(h2h_count, home_recent_count, away_recent_count,
                      venue_home_count, venue_away_count):
     def sat(count, target, weight):
