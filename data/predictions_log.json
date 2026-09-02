@@ -1030,5 +1030,95 @@
     "status": "pending",
     "actual_score": null,
     "checked_at": null
+  },
+  {
+    "match_id": "fdo:561806",
+    "competition": "Championship (England)",
+    "home_team": "Millwall FC",
+    "away_team": "Wrexham AFC",
+    "match_date": "2026-09-02T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.8,
+      "fair_odds": 1.35,
+      "reliability_score": 82,
+      "market_label": "Millwall FC Win or Wrexham AFC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561808",
+    "competition": "Championship (England)",
+    "home_team": "West Bromwich Albion FC",
+    "away_team": "Charlton Athletic FC",
+    "match_date": "2026-09-02T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 74.6,
+      "fair_odds": 1.34,
+      "reliability_score": 77,
+      "market_label": "West Bromwich Albion FC Win or Draw"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561807",
+    "competition": "Championship (England)",
+    "home_team": "Queens Park Rangers FC",
+    "away_team": "Cardiff City FC",
+    "match_date": "2026-09-02T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 71.6,
+      "fair_odds": 1.4,
+      "reliability_score": 70,
+      "market_label": "Queens Park Rangers FC Win or Cardiff City FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:561805",
+    "competition": "Championship (England)",
+    "home_team": "Burnley FC",
+    "away_team": "Middlesbrough FC",
+    "match_date": "2026-09-02T19:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 71.6,
+      "fair_odds": 1.4,
+      "reliability_score": 81,
+      "market_label": "Burnley FC Win or Middlesbrough FC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:554775",
+    "competition": "Campeonato Brasileiro Série A (Brazil)",
+    "home_team": "CR Flamengo",
+    "away_team": "Mirassol FC",
+    "match_date": "2026-09-02T22:30:00Z",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 68.0,
+      "fair_odds": 1.47,
+      "reliability_score": 82,
+      "market_label": "Over 2.5 Goals"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
   }
 ]
