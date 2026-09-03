@@ -454,5 +454,43 @@
     "high_odds_pick_status": "no_pick",
     "actual_score": "0-3",
     "checked_at": "2026-08-20T02:22:12.065361+00:00"
+  },
+  {
+    "match_id": "aps:1490395",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "Orlando City SC",
+    "away_team": "Chicago Fire",
+    "match_date": "2026-08-19T23:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.2,
+      "fair_odds": 1.35,
+      "reliability_score": 46,
+      "market_label": "Orlando City SC Win or Chicago Fire Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "1-2",
+    "checked_at": "2026-09-03T00:45:31.194675+00:00"
+  },
+  {
+    "match_id": "aps:1490405",
+    "competition": "Major League Soccer (USA)",
+    "home_team": "Portland Timbers",
+    "away_team": "San Diego",
+    "match_date": "2026-08-20T02:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 75.5,
+      "fair_odds": 1.33,
+      "reliability_score": 45,
+      "market_label": "Draw or San Diego Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "3-1",
+    "checked_at": "2026-09-03T00:45:31.194675+00:00"
   }
 ]

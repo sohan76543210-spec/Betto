@@ -611,9 +611,11 @@
       "market_label": "Orlando City SC Win or Chicago Fire Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-2",
+    "checked_at": "2026-09-03T00:45:31.194675+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1490397",
@@ -649,9 +651,11 @@
       "market_label": "Draw or San Diego Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "3-1",
+    "checked_at": "2026-09-03T00:45:31.194675+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1490403",
@@ -1115,6 +1119,186 @@
       "fair_odds": 1.47,
       "reliability_score": 82,
       "market_label": "Over 2.5 Goals"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1603008",
+    "competition": "Pro League (Saudi-Arabia)",
+    "home_team": "Al-Fayha",
+    "away_team": "Al Kholood",
+    "match_date": "2026-09-03T15:55:00+00:00",
+    "best_pick": {
+      "market": "Away Win",
+      "probability_pct": 74.7,
+      "fair_odds": 1.34,
+      "reliability_score": 55,
+      "market_label": "Al Kholood Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1553144",
+    "competition": "Ekstraklasa (Poland)",
+    "home_team": "Raków Częstochowa",
+    "away_team": "Gornik Zabrze",
+    "match_date": "2026-09-03T16:00:00+00:00",
+    "best_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 71.8,
+      "fair_odds": 1.39,
+      "reliability_score": 60,
+      "market_label": "BTTS - No"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1603009",
+    "competition": "Pro League (Saudi-Arabia)",
+    "home_team": "NEOM",
+    "away_team": "Al Khaleej Saihat",
+    "match_date": "2026-09-03T16:30:00+00:00",
+    "best_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 75.4,
+      "fair_odds": 1.33,
+      "reliability_score": 40,
+      "market_label": "BTTS - No"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1494190",
+    "competition": "Allsvenskan (Sweden)",
+    "home_team": "Mjallby AIF",
+    "away_team": "Djurgardens IF",
+    "match_date": "2026-09-03T17:00:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 76.5,
+      "fair_odds": 1.31,
+      "reliability_score": 46,
+      "market_label": "Mjallby AIF Win or Djurgardens IF Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1549009",
+    "competition": "Superliga (Denmark)",
+    "home_team": "FC Copenhagen",
+    "away_team": "FC Nordsjaelland",
+    "match_date": "2026-09-03T18:00:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.1,
+      "fair_odds": 1.33,
+      "reliability_score": 47,
+      "market_label": "FC Copenhagen Win or FC Nordsjaelland Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1558604",
+    "competition": "Jupiler Pro League (Belgium)",
+    "home_team": "Anderlecht",
+    "away_team": "Kortrijk",
+    "match_date": "2026-09-03T18:30:00+00:00",
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 71.7,
+      "fair_odds": 1.39,
+      "reliability_score": 54,
+      "market_label": "Anderlecht Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1553140",
+    "competition": "Ekstraklasa (Poland)",
+    "home_team": "Lech Poznan",
+    "away_team": "Jagiellonia",
+    "match_date": "2026-09-03T18:30:00+00:00",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 67.6,
+      "fair_odds": 1.48,
+      "reliability_score": 45,
+      "market_label": "Over 2.5 Goals"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:559696",
+    "competition": "Ligue 1 (France)",
+    "home_team": "Toulouse FC",
+    "away_team": "Lille OSC",
+    "match_date": "2026-09-03T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.3,
+      "fair_odds": 1.33,
+      "reliability_score": 89,
+      "market_label": "Toulouse FC Win or Lille OSC Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:564682",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Real Sociedad de Fútbol",
+    "away_team": "RC Celta de Vigo",
+    "match_date": "2026-09-03T19:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 72.0,
+      "fair_odds": 1.39,
+      "reliability_score": 81,
+      "market_label": "Real Sociedad de Fútbol Win or RC Celta de Vigo Win"
+    },
+    "high_odds_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1549763",
+    "competition": "Primera A (Colombia)",
+    "home_team": "America de Cali",
+    "away_team": "Alianza Valledupar",
+    "match_date": "2026-09-03T21:00:00+00:00",
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 71.0,
+      "fair_odds": 1.41,
+      "reliability_score": 59,
+      "market_label": "America de Cali Win"
     },
     "high_odds_pick": null,
     "status": "pending",
