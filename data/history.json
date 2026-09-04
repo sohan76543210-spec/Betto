@@ -1024,5 +1024,62 @@
     "high_odds_pick_status": "no_pick",
     "actual_score": "2-2",
     "checked_at": "2026-09-04T00:19:48.849973+00:00"
+  },
+  {
+    "match_id": "fdo:554775",
+    "competition": "Campeonato Brasileiro Série A (Brazil)",
+    "home_team": "CR Flamengo",
+    "away_team": "Mirassol FC",
+    "match_date": "2026-09-02T22:30:00Z",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 68.0,
+      "fair_odds": 1.47,
+      "reliability_score": 82,
+      "market_label": "Over 2.5 Goals"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "2-0",
+    "checked_at": "2026-09-04T01:05:03.042053+00:00"
+  },
+  {
+    "match_id": "fdo:559696",
+    "competition": "Ligue 1 (France)",
+    "home_team": "Toulouse FC",
+    "away_team": "Lille OSC",
+    "match_date": "2026-09-03T18:45:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.3,
+      "fair_odds": 1.33,
+      "reliability_score": 89,
+      "market_label": "Toulouse FC Win or Lille OSC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-1",
+    "checked_at": "2026-09-04T01:05:03.042053+00:00"
+  },
+  {
+    "match_id": "fdo:564682",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Real Sociedad de Fútbol",
+    "away_team": "RC Celta de Vigo",
+    "match_date": "2026-09-03T19:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 72.0,
+      "fair_odds": 1.39,
+      "reliability_score": 81,
+      "market_label": "Real Sociedad de Fútbol Win or RC Celta de Vigo Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "actual_score": "0-0",
+    "checked_at": "2026-09-04T01:05:03.042053+00:00"
   }
 ]
