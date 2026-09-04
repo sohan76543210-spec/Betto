@@ -1,0 +1,40 @@
+name: Run Calibration
+
+# শুধু ম্যানুয়ালি চালানোর জন্য (GitHub অ্যাপ/ওয়েবসাইট থেকে "Run workflow" চাপুন)।
+# এটা predictor.py-এর weight নিজে থেকে বদলায় না — শুধু data/calibration_result.json-এ
+# সেরা কম্বিনেশন লিখে দেয়, আপনি সেটা দেখে হাতে H2H_WEIGHT/FORM_WEIGHT/VENUE_WEIGHT
+# predictor.py-তে বসাবেন।
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run calibration
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          FOOTBALL_DATA_ORG_TOKEN: ${{ secrets.FOOTBALL_DATA_ORG_TOKEN }}
+        run: python scripts/build_calibration_set.py
+
+      - name: Commit calibration result
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "actions@github.com"
+          git add data/calibration_result.json
+          git diff --staged --quiet || git commit -m "Update calibration result [auto]"
+          git push
