@@ -99,9 +99,11 @@
       "market_label": "Cardiff City FC Win or Wrexham AFC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:564635",
@@ -117,9 +119,11 @@
       "market_label": "RC Deportivo La Coruña Win or Elche CF Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1493067",
@@ -453,9 +457,11 @@
       "market_label": "Club Atlético de Madrid Win or Málaga CF Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-0",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1547765",
@@ -671,9 +677,11 @@
       "market_label": "Los Angeles Galaxy Win or San Jose Earthquakes Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1490404",
@@ -689,9 +697,11 @@
       "market_label": "Vancouver Whitecaps Win or Houston Dynamo Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1602981",
@@ -707,9 +717,11 @@
       "market_label": "Over 2.5 Goals"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-3",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:564638",
@@ -725,9 +737,11 @@
       "market_label": "Rayo Vallecano de Madrid Win or Draw"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1547771",
@@ -761,9 +775,11 @@
       "market_label": "US Lecce Win or AS Roma Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-4",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:564657",
@@ -779,9 +795,11 @@
       "market_label": "Under 2.5 Goals"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:558628",
@@ -797,9 +815,11 @@
       "market_label": "Atalanta BC Win or Draw"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:560557",
@@ -815,9 +835,11 @@
       "market_label": "Over 2.5 Goals"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "0-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:567288",
@@ -833,9 +855,11 @@
       "market_label": "Sport Lisboa e Benfica Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:567292",
@@ -851,9 +875,11 @@
       "market_label": "Sporting Clube de Braga Win or Vitória SC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:564650",
@@ -869,9 +895,11 @@
       "market_label": "FC Barcelona Win or Rayo Vallecano de Madrid Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "5-2",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:554987",
@@ -887,9 +915,11 @@
       "market_label": "Clube do Remo Win or Draw"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "2-3",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561804",
@@ -905,9 +935,11 @@
       "market_label": "Swansea City AFC Win or Watford FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-0",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561799",
@@ -923,9 +955,11 @@
       "market_label": "West Ham United FC Win or Wolverhampton Wanderers FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "4-2",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561798",
@@ -941,9 +975,11 @@
       "market_label": "Preston North End FC Win or Bristol City FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-3",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561802",
@@ -959,9 +995,11 @@
       "market_label": "Portsmouth FC Win or Derby County FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-2",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561800",
@@ -977,9 +1015,11 @@
       "market_label": "Draw or Blackburn Rovers FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-0",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561801",
@@ -995,9 +1035,11 @@
       "market_label": "Draw or Bolton Wanderers FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "3-2",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561797",
@@ -1013,9 +1055,11 @@
       "market_label": "Stoke City FC Win or Norwich City FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561803",
@@ -1031,9 +1075,11 @@
       "market_label": "Birmingham City FC Win or Southampton FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561806",
@@ -1049,9 +1095,11 @@
       "market_label": "Millwall FC Win or Wrexham AFC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "0-3",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561808",
@@ -1067,9 +1115,11 @@
       "market_label": "West Bromwich Albion FC Win or Draw"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561807",
@@ -1085,9 +1135,11 @@
       "market_label": "Queens Park Rangers FC Win or Cardiff City FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:561805",
@@ -1103,9 +1155,11 @@
       "market_label": "Burnley FC Win or Middlesbrough FC Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:554775",
@@ -1139,9 +1193,11 @@
       "market_label": "Al Kholood Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "2-2",
+    "checked_at": "2026-09-04T00:19:48.849973+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1553144",
