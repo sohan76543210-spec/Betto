@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-09-04T01:05:02.888042+00:00",
+  "generated_at": "2026-09-05T14:40:07.445514+00:00",
   "prediction_window_bd": {
-    "from": "2026-09-04T06:00:00+00:00",
-    "to": "2026-09-05T06:00:00+00:00"
+    "from": "2026-09-05T06:00:00+00:00",
+    "to": "2026-09-06T06:00:00+00:00"
   },
   "model_version": "v2.0-high-selectivity",
   "disclaimer": "Statistical estimate only; no prediction is guaranteed.",
-  "top_picks_count": 8,
+  "top_picks_count": 10,
   "api_cache_stats": {
     "fdo": {
-      "teams_cached": 16,
-      "h2h_matches_cached": 8,
-      "standings_cached": 7
+      "teams_cached": 40,
+      "h2h_matches_cached": 20,
+      "standings_cached": 5
     },
     "aps": {
       "teams_cached": 0,
@@ -25,314 +25,66 @@
   "remaining_quota": 99,
   "matches": [
     {
-      "match_id": "fdo:559699",
-      "competition": "Ligue 1 (France)",
-      "league_id": 2015,
-      "season": 2026,
-      "home_team": "Olympique Lyonnais",
-      "away_team": "AJ Auxerre",
-      "home_team_id": "fdo:523",
-      "away_team_id": "fdo:519",
-      "match_date": "2026-09-04T17:00:00Z",
-      "home_expected_goals": 2.17,
-      "away_expected_goals": 1.69,
-      "most_likely_score": "1-1",
-      "home_win_pct": 47.9,
-      "draw_pct": 22.5,
-      "away_win_pct": 29.6,
-      "over_2_5_pct": 73.7,
-      "btts_yes_pct": 72.9,
-      "double_chance_1x_pct": 70.4,
-      "double_chance_x2_pct": 52.1,
-      "home_power_rating": 8.2,
-      "away_power_rating": -4.4,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 100,
-      "signal_agreement": 59,
-      "reliability_score": 82,
-      "best_market_probability": 77.5,
-      "best_pick": {
-        "market": "Over 2.5 Goals",
-        "probability_pct": 73.7,
-        "fair_odds": 1.36,
-        "reliability_score": 82,
-        "market_label": "Over 2.5 Goals"
-      },
-      "high_odds_pick": null,
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 8.7,
-          "fair_odds": 11.52
-        },
-        {
-          "score": "2-1",
-          "probability_pct": 8.5,
-          "fair_odds": 11.81
-        },
-        {
-          "score": "2-2",
-          "probability_pct": 7.1,
-          "fair_odds": 14.0
-        },
-        {
-          "score": "1-2",
-          "probability_pct": 6.6,
-          "fair_odds": 15.17
-        },
-        {
-          "score": "3-1",
-          "probability_pct": 6.1,
-          "fair_odds": 16.34
-        },
-        {
-          "score": "3-2",
-          "probability_pct": 5.2,
-          "fair_odds": 19.38
-        },
-        {
-          "score": "2-0",
-          "probability_pct": 5.0,
-          "fair_odds": 19.91
-        }
-      ],
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:521",
-              "name": "Lille OSC"
-            },
-            "points": 7,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:548",
-              "name": "AS Monaco FC"
-            },
-            "points": 6,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:1045",
-              "name": "Paris FC"
-            },
-            "points": 4,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:523",
-              "name": "Olympique Lyonnais"
-            },
-            "points": 4,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:529",
-              "name": "Stade Rennais FC 1901"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:531",
-              "name": "ES Troyes AC"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:546",
-              "name": "Racing Club de Lens"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:516",
-              "name": "Olympique de Marseille"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:532",
-              "name": "Angers SCO"
-            },
-            "points": 3,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:576",
-              "name": "RC Strasbourg Alsace"
-            },
-            "points": 3,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:512",
-              "name": "Stade Brestois 29"
-            },
-            "points": 2,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:524",
-              "name": "Paris Saint-Germain FC"
-            },
-            "points": 2,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:535",
-              "name": "Le Mans FC"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:525",
-              "name": "FC Lorient"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:533",
-              "name": "Le Havre AC"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:511",
-              "name": "Toulouse FC"
-            },
-            "points": 1,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:522",
-              "name": "OGC Nice"
-            },
-            "points": 1,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:519",
-              "name": "AJ Auxerre"
-            },
-            "points": 0,
-            "goalsDiff": -5
-          }
-        ],
-        "injuries": []
-      }
-    },
-    {
-      "match_id": "fdo:558250",
+      "match_id": "fdo:558251",
       "competition": "Eredivisie (Netherlands)",
       "league_id": 2003,
       "season": 2026,
-      "home_team": "Sparta Rotterdam",
-      "away_team": "PEC Zwolle",
-      "home_team_id": "fdo:6806",
-      "away_team_id": "fdo:684",
-      "match_date": "2026-09-04T18:00:00Z",
-      "home_expected_goals": 1.99,
-      "away_expected_goals": 1.52,
+      "home_team": "NEC",
+      "away_team": "Feyenoord Rotterdam",
+      "home_team_id": "fdo:1915",
+      "away_team_id": "fdo:675",
+      "match_date": "2026-09-05T14:30:00Z",
+      "home_expected_goals": 1.34,
+      "away_expected_goals": 1.75,
       "most_likely_score": "1-1",
-      "home_win_pct": 47.4,
-      "draw_pct": 23.8,
-      "away_win_pct": 28.8,
-      "over_2_5_pct": 67.9,
-      "btts_yes_pct": 68.4,
-      "double_chance_1x_pct": 71.2,
-      "double_chance_x2_pct": 52.6,
-      "home_power_rating": -22.3,
-      "away_power_rating": -28.1,
+      "home_win_pct": 28.3,
+      "draw_pct": 25.8,
+      "away_win_pct": 45.9,
+      "over_2_5_pct": 59.7,
+      "btts_yes_pct": 62.2,
+      "double_chance_1x_pct": 54.1,
+      "double_chance_x2_pct": 71.7,
+      "home_power_rating": 19.0,
+      "away_power_rating": 27.5,
       "home_cards_avg": null,
       "away_cards_avg": null,
       "confidence_score": 100,
-      "signal_agreement": 62,
-      "reliability_score": 83,
-      "best_market_probability": 76.2,
+      "signal_agreement": 56,
+      "reliability_score": 81,
+      "best_market_probability": 74.2,
       "best_pick": {
         "market": "Double Chance (Home/Away)",
-        "probability_pct": 76.2,
-        "fair_odds": 1.31,
-        "reliability_score": 83,
-        "market_label": "Sparta Rotterdam Win or PEC Zwolle Win"
+        "probability_pct": 74.2,
+        "fair_odds": 1.35,
+        "reliability_score": 81,
+        "market_label": "NEC Win or Feyenoord Rotterdam Win"
       },
       "high_odds_pick": null,
       "top_scores": [
         {
           "score": "1-1",
-          "probability_pct": 10.1,
-          "fair_odds": 9.91
-        },
-        {
-          "score": "2-1",
-          "probability_pct": 9.0,
-          "fair_odds": 11.07
+          "probability_pct": 11.9,
+          "fair_odds": 8.44
         },
         {
           "score": "1-2",
-          "probability_pct": 6.9,
-          "fair_odds": 14.44
+          "probability_pct": 9.4,
+          "fair_odds": 10.68
         },
         {
-          "score": "2-2",
-          "probability_pct": 6.9,
-          "fair_odds": 14.53
+          "score": "2-1",
+          "probability_pct": 7.2,
+          "fair_odds": 13.95
         },
         {
-          "score": "3-1",
-          "probability_pct": 6.0,
-          "fair_odds": 16.7
+          "score": "0-2",
+          "probability_pct": 7.0,
+          "fair_odds": 14.35
         },
         {
-          "score": "2-0",
-          "probability_pct": 5.9,
-          "fair_odds": 16.86
+          "score": "0-1",
+          "probability_pct": 6.8,
+          "fair_odds": 14.76
         }
       ],
       "deep_analysis": {
@@ -432,6 +184,15 @@
           {
             "rank": 11,
             "team": {
+              "id": "fdo:6806",
+              "name": "Sparta Rotterdam"
+            },
+            "points": 5,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
               "id": "fdo:673",
               "name": "SC Heerenveen"
             },
@@ -439,21 +200,12 @@
             "goalsDiff": -1
           },
           {
-            "rank": 12,
-            "team": {
-              "id": "fdo:6806",
-              "name": "Sparta Rotterdam"
-            },
-            "points": 4,
-            "goalsDiff": 0
-          },
-          {
             "rank": 13,
             "team": {
               "id": "fdo:684",
               "name": "PEC Zwolle"
             },
-            "points": 3,
+            "points": 4,
             "goalsDiff": -4
           },
           {
@@ -506,1330 +258,61 @@
       }
     },
     {
-      "match_id": "fdo:565791",
-      "competition": "Bundesliga (Germany)",
-      "league_id": 2002,
+      "match_id": "fdo:567297",
+      "competition": "Primeira Liga (Portugal)",
+      "league_id": 2017,
       "season": 2026,
-      "home_team": "VfB Stuttgart",
-      "away_team": "1. FC Köln",
-      "home_team_id": "fdo:10",
-      "away_team_id": "fdo:1",
-      "match_date": "2026-09-04T18:30:00Z",
-      "home_expected_goals": 2.22,
-      "away_expected_goals": 1.24,
-      "most_likely_score": "2-1",
-      "home_win_pct": 58.3,
-      "draw_pct": 22.0,
-      "away_win_pct": 19.7,
-      "over_2_5_pct": 66.9,
-      "btts_yes_pct": 64.3,
-      "double_chance_1x_pct": 80.3,
-      "double_chance_x2_pct": 41.7,
-      "home_power_rating": -3.4,
-      "away_power_rating": -10.3,
+      "home_team": "CF Estrela da Amadora",
+      "away_team": "FC Famalicão",
+      "home_team_id": "fdo:9136",
+      "away_team_id": "fdo:5531",
+      "match_date": "2026-09-05T14:30:00Z",
+      "home_expected_goals": 0.95,
+      "away_expected_goals": 0.86,
+      "most_likely_score": "0-0",
+      "home_win_pct": 34.7,
+      "draw_pct": 35.7,
+      "away_win_pct": 29.6,
+      "over_2_5_pct": 27.2,
+      "btts_yes_pct": 36.8,
+      "double_chance_1x_pct": 70.4,
+      "double_chance_x2_pct": 65.3,
+      "home_power_rating": -5.0,
+      "away_power_rating": -6.4,
       "home_cards_avg": null,
       "away_cards_avg": null,
       "confidence_score": 100,
       "signal_agreement": 56,
-      "reliability_score": 82,
-      "best_market_probability": 80.3,
+      "reliability_score": 80,
+      "best_market_probability": 72.8,
       "best_pick": {
-        "market": "Over 2.5 Goals",
-        "probability_pct": 66.9,
-        "fair_odds": 1.49,
-        "reliability_score": 82,
-        "market_label": "Over 2.5 Goals"
+        "market": "Under 2.5 Goals",
+        "probability_pct": 72.8,
+        "fair_odds": 1.37,
+        "reliability_score": 80,
+        "market_label": "Under 2.5 Goals"
       },
       "high_odds_pick": null,
       "top_scores": [
         {
-          "score": "2-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.33
+          "score": "0-0",
+          "probability_pct": 17.8,
+          "fair_odds": 5.6
         },
         {
           "score": "1-1",
-          "probability_pct": 9.7,
-          "fair_odds": 10.33
-        },
-        {
-          "score": "2-0",
-          "probability_pct": 7.8,
-          "fair_odds": 12.82
-        },
-        {
-          "score": "3-1",
-          "probability_pct": 7.2,
-          "fair_odds": 13.96
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 6.1,
-          "fair_odds": 16.49
-        },
-        {
-          "score": "2-2",
-          "probability_pct": 6.0,
-          "fair_odds": 16.65
-        },
-        {
-          "score": "3-0",
-          "probability_pct": 5.8,
-          "fair_odds": 17.33
-        },
-        {
-          "score": "1-2",
-          "probability_pct": 5.4,
-          "fair_odds": 18.48
-        }
-      ],
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:5",
-              "name": "FC Bayern München"
-            },
-            "points": 3,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:17",
-              "name": "SC Freiburg"
-            },
-            "points": 3,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:721",
-              "name": "RB Leipzig"
-            },
-            "points": 3,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:16",
-              "name": "FC Augsburg"
-            },
-            "points": 3,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:4",
-              "name": "Borussia Dortmund"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:719",
-              "name": "SV 07 Elversberg"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:1",
-              "name": "1. FC Köln"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:28",
-              "name": "1. FC Union Berlin"
-            },
-            "points": 1,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:19",
-              "name": "Eintracht Frankfurt"
-            },
-            "points": 1,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:15",
-              "name": "1. FSV Mainz 05"
-            },
-            "points": 1,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:29",
-              "name": "SC Paderborn 07"
-            },
-            "points": 1,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:3",
-              "name": "Bayer 04 Leverkusen"
-            },
-            "points": 0,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:2",
-              "name": "TSG 1899 Hoffenheim"
-            },
-            "points": 0,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:7",
-              "name": "Hamburger SV"
-            },
-            "points": 0,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:12",
-              "name": "SV Werder Bremen"
-            },
-            "points": 0,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:18",
-              "name": "Borussia Mönchengladbach"
-            },
-            "points": 0,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:6",
-              "name": "FC Schalke 04"
-            },
-            "points": 0,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:10",
-              "name": "VfB Stuttgart"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          }
-        ],
-        "injuries": []
-      }
-    },
-    {
-      "match_id": "fdo:558609",
-      "competition": "Serie A (Italy)",
-      "league_id": 2019,
-      "season": 2026,
-      "home_team": "Genoa CFC",
-      "away_team": "Como 1907",
-      "home_team_id": "fdo:107",
-      "away_team_id": "fdo:7397",
-      "match_date": "2026-09-04T18:45:00Z",
-      "home_expected_goals": 0.7,
-      "away_expected_goals": 1.6,
-      "most_likely_score": "0-1",
-      "home_win_pct": 14.8,
-      "draw_pct": 27.3,
-      "away_win_pct": 57.9,
-      "over_2_5_pct": 40.4,
-      "btts_yes_pct": 41.3,
-      "double_chance_1x_pct": 42.1,
-      "double_chance_x2_pct": 85.2,
-      "home_power_rating": -30.1,
-      "away_power_rating": 26.2,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 96,
-      "signal_agreement": 81,
-      "reliability_score": 89,
-      "best_market_probability": 85.2,
-      "best_pick": {
-        "market": "Double Chance (Home/Away)",
-        "probability_pct": 72.7,
-        "fair_odds": 1.37,
-        "reliability_score": 89,
-        "market_label": "Genoa CFC Win or Como 1907 Win"
-      },
-      "high_odds_pick": null,
-      "top_scores": [
-        {
-          "score": "0-1",
           "probability_pct": 14.8,
           "fair_odds": 6.74
         },
         {
-          "score": "0-2",
-          "probability_pct": 12.9,
-          "fair_odds": 7.75
-        },
-        {
-          "score": "1-1",
-          "probability_pct": 12.4,
-          "fair_odds": 8.04
-        },
-        {
-          "score": "0-0",
-          "probability_pct": 11.3,
-          "fair_odds": 8.89
-        },
-        {
-          "score": "1-2",
-          "probability_pct": 9.0,
-          "fair_odds": 11.12
-        }
-      ],
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:100",
-              "name": "AS Roma"
-            },
-            "points": 6,
-            "goalsDiff": 8
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:108",
-              "name": "FC Internazionale Milano"
-            },
-            "points": 6,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:98",
-              "name": "AC Milan"
-            },
-            "points": 6,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:109",
-              "name": "Juventus FC"
-            },
-            "points": 6,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:102",
-              "name": "Atalanta BC"
-            },
-            "points": 6,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:110",
-              "name": "SS Lazio"
-            },
-            "points": 6,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:115",
-              "name": "Udinese Calcio"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:7397",
-              "name": "Como 1907"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:470",
-              "name": "Frosinone Calcio"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:113",
-              "name": "SSC Napoli"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:471",
-              "name": "US Sassuolo Calcio"
-            },
-            "points": 3,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:104",
-              "name": "Cagliari Calcio"
-            },
-            "points": 3,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:5890",
-              "name": "US Lecce"
-            },
-            "points": 3,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:586",
-              "name": "Torino FC"
-            },
-            "points": 0,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:103",
-              "name": "Bologna FC 1909"
-            },
-            "points": 0,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:107",
-              "name": "Genoa CFC"
-            },
-            "points": 0,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:112",
-              "name": "Parma Calcio 1913"
-            },
-            "points": 0,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:5911",
-              "name": "AC Monza"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 19,
-            "team": {
-              "id": "fdo:454",
-              "name": "Venezia FC"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 20,
-            "team": {
-              "id": "fdo:99",
-              "name": "ACF Fiorentina"
-            },
-            "points": 0,
-            "goalsDiff": -7
-          }
-        ],
-        "injuries": []
-      }
-    },
-    {
-      "match_id": "fdo:564667",
-      "competition": "Primera Division (Spain)",
-      "league_id": 2014,
-      "season": 2026,
-      "home_team": "Real Betis Balompié",
-      "away_team": "Real Madrid CF",
-      "home_team_id": "fdo:90",
-      "away_team_id": "fdo:86",
-      "match_date": "2026-09-04T19:00:00Z",
-      "home_expected_goals": 1.3,
-      "away_expected_goals": 1.38,
-      "most_likely_score": "1-1",
-      "home_win_pct": 34.0,
-      "draw_pct": 28.6,
-      "away_win_pct": 37.4,
-      "over_2_5_pct": 50.1,
-      "btts_yes_pct": 55.8,
-      "double_chance_1x_pct": 62.6,
-      "double_chance_x2_pct": 66.0,
-      "home_power_rating": 9.4,
-      "away_power_rating": 46.1,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 100,
-      "signal_agreement": 63,
-      "reliability_score": 82,
-      "best_market_probability": 71.4,
-      "best_pick": {
-        "market": "Double Chance (Home/Away)",
-        "probability_pct": 71.4,
-        "fair_odds": 1.4,
-        "reliability_score": 82,
-        "market_label": "Real Betis Balompié Win or Real Madrid CF Win"
-      },
-      "high_odds_pick": null,
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 13.7,
-          "fair_odds": 7.32
-        },
-        {
-          "score": "1-2",
-          "probability_pct": 8.5,
-          "fair_odds": 11.79
-        },
-        {
-          "score": "0-0",
-          "probability_pct": 8.2,
-          "fair_odds": 12.18
+          "score": "1-0",
+          "probability_pct": 14.1,
+          "fair_odds": 7.09
         },
         {
           "score": "0-1",
-          "probability_pct": 8.1,
-          "fair_odds": 12.36
-        },
-        {
-          "score": "2-1",
-          "probability_pct": 8.0,
-          "fair_odds": 12.47
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 7.6,
-          "fair_odds": 13.2
-        }
-      ],
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:81",
-              "name": "FC Barcelona"
-            },
-            "points": 9,
-            "goalsDiff": 10
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:86",
-              "name": "Real Madrid CF"
-            },
-            "points": 9,
-            "goalsDiff": 8
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:78",
-              "name": "Club Atlético de Madrid"
-            },
-            "points": 7,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:263",
-              "name": "Deportivo Alavés"
-            },
-            "points": 7,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:79",
-              "name": "CA Osasuna"
-            },
-            "points": 7,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:559",
-              "name": "Sevilla FC"
-            },
-            "points": 6,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:90",
-              "name": "Real Betis Balompié"
-            },
-            "points": 6,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:560",
-              "name": "RC Deportivo La Coruña"
-            },
-            "points": 5,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:5335",
-              "name": "Real Racing Club de Santander"
-            },
-            "points": 4,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:88",
-              "name": "Levante UD"
-            },
-            "points": 4,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:92",
-              "name": "Real Sociedad de Fútbol"
-            },
-            "points": 4,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:80",
-              "name": "RCD Espanyol de Barcelona"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:77",
-              "name": "Athletic Club"
-            },
-            "points": 3,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:82",
-              "name": "Getafe CF"
-            },
-            "points": 3,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:94",
-              "name": "Villarreal CF"
-            },
-            "points": 2,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:558",
-              "name": "RC Celta de Vigo"
-            },
-            "points": 2,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:95",
-              "name": "Valencia CF"
-            },
-            "points": 1,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:87",
-              "name": "Rayo Vallecano de Madrid"
-            },
-            "points": 1,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 19,
-            "team": {
-              "id": "fdo:285",
-              "name": "Elche CF"
-            },
-            "points": 1,
-            "goalsDiff": -6
-          },
-          {
-            "rank": 20,
-            "team": {
-              "id": "fdo:84",
-              "name": "Málaga CF"
-            },
-            "points": 1,
-            "goalsDiff": -6
-          }
-        ],
-        "injuries": []
-      }
-    },
-    {
-      "match_id": "fdo:560566",
-      "competition": "Premier League (England)",
-      "league_id": 2021,
-      "season": 2026,
-      "home_team": "Ipswich Town FC",
-      "away_team": "Liverpool FC",
-      "home_team_id": "fdo:349",
-      "away_team_id": "fdo:64",
-      "match_date": "2026-09-04T19:00:00Z",
-      "home_expected_goals": 2.23,
-      "away_expected_goals": 1.57,
-      "most_likely_score": "2-1",
-      "home_win_pct": 51.6,
-      "draw_pct": 22.2,
-      "away_win_pct": 26.3,
-      "over_2_5_pct": 72.8,
-      "btts_yes_pct": 71.4,
-      "double_chance_1x_pct": 73.7,
-      "double_chance_x2_pct": 48.4,
-      "home_power_rating": 8.4,
-      "away_power_rating": -4.1,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 88,
-      "signal_agreement": 60,
-      "reliability_score": 77,
-      "best_market_probability": 77.8,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 73.7,
-        "fair_odds": 1.36,
-        "reliability_score": 77,
-        "market_label": "Ipswich Town FC Win or Draw"
-      },
-      "high_odds_pick": null,
-      "top_scores": [
-        {
-          "score": "2-1",
-          "probability_pct": 8.8,
-          "fair_odds": 11.34
-        },
-        {
-          "score": "1-1",
-          "probability_pct": 8.8,
-          "fair_odds": 11.39
-        },
-        {
-          "score": "2-2",
-          "probability_pct": 6.9,
-          "fair_odds": 14.46
-        },
-        {
-          "score": "3-1",
-          "probability_pct": 6.6,
-          "fair_odds": 15.26
-        },
-        {
-          "score": "1-2",
-          "probability_pct": 6.2,
-          "fair_odds": 16.12
-        },
-        {
-          "score": "2-0",
-          "probability_pct": 5.6,
-          "fair_odds": 17.79
-        },
-        {
-          "score": "3-2",
-          "probability_pct": 5.1,
-          "fair_odds": 19.45
-        }
-      ],
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:65",
-              "name": "Manchester City FC"
-            },
-            "points": 6,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:57",
-              "name": "Arsenal FC"
-            },
-            "points": 6,
-            "goalsDiff": 4
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:322",
-              "name": "Hull City AFC"
-            },
-            "points": 6,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:61",
-              "name": "Chelsea FC"
-            },
-            "points": 6,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:402",
-              "name": "Brentford FC"
-            },
-            "points": 4,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:67",
-              "name": "Newcastle United FC"
-            },
-            "points": 4,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:62",
-              "name": "Everton FC"
-            },
-            "points": 4,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:341",
-              "name": "Leeds United FC"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:397",
-              "name": "Brighton & Hove Albion FC"
-            },
-            "points": 3,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:66",
-              "name": "Manchester United FC"
-            },
-            "points": 3,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:71",
-              "name": "Sunderland AFC"
-            },
-            "points": 3,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:349",
-              "name": "Ipswich Town FC"
-            },
-            "points": 3,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:64",
-              "name": "Liverpool FC"
-            },
-            "points": 2,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:351",
-              "name": "Nottingham Forest FC"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:1044",
-              "name": "AFC Bournemouth"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:63",
-              "name": "Fulham FC"
-            },
-            "points": 0,
-            "goalsDiff": -2
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:1076",
-              "name": "Coventry City FC"
-            },
-            "points": 0,
-            "goalsDiff": -4
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:354",
-              "name": "Crystal Palace FC"
-            },
-            "points": 0,
-            "goalsDiff": -5
-          },
-          {
-            "rank": 19,
-            "team": {
-              "id": "fdo:73",
-              "name": "Tottenham Hotspur FC"
-            },
-            "points": 0,
-            "goalsDiff": -5
-          },
-          {
-            "rank": 20,
-            "team": {
-              "id": "fdo:58",
-              "name": "Aston Villa FC"
-            },
-            "points": 0,
-            "goalsDiff": -5
-          }
-        ],
-        "injuries": []
-      }
-    },
-    {
-      "match_id": "fdo:559697",
-      "competition": "Ligue 1 (France)",
-      "league_id": 2015,
-      "season": 2026,
-      "home_team": "Paris Saint-Germain FC",
-      "away_team": "AS Monaco FC",
-      "home_team_id": "fdo:524",
-      "away_team_id": "fdo:548",
-      "match_date": "2026-09-04T19:05:00Z",
-      "home_expected_goals": 2.78,
-      "away_expected_goals": 2.12,
-      "most_likely_score": "2-2",
-      "home_win_pct": 51.1,
-      "draw_pct": 19.4,
-      "away_win_pct": 29.5,
-      "over_2_5_pct": 86.3,
-      "btts_yes_pct": 82.9,
-      "double_chance_1x_pct": 70.5,
-      "double_chance_x2_pct": 48.9,
-      "home_power_rating": 14.8,
-      "away_power_rating": 11.2,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 100,
-      "signal_agreement": 59,
-      "reliability_score": 84,
-      "best_market_probability": 86.3,
-      "best_pick": {
-        "market": "Double Chance (Home/Draw)",
-        "probability_pct": 70.5,
-        "fair_odds": 1.42,
-        "reliability_score": 84,
-        "market_label": "Paris Saint-Germain FC Win or Draw"
-      },
-      "high_odds_pick": null,
-      "top_scores": [
-        {
-          "score": "2-2",
-          "probability_pct": 6.7,
-          "fair_odds": 15.0
-        },
-        {
-          "score": "2-1",
-          "probability_pct": 6.3,
-          "fair_odds": 15.93
-        },
-        {
-          "score": "3-2",
-          "probability_pct": 6.2,
-          "fair_odds": 16.2
-        },
-        {
-          "score": "3-1",
-          "probability_pct": 5.8,
-          "fair_odds": 17.21
-        },
-        {
-          "score": "1-1",
-          "probability_pct": 5.0,
-          "fair_odds": 19.94
-        },
-        {
-          "score": "1-2",
-          "probability_pct": 4.8,
-          "fair_odds": 20.83
-        },
-        {
-          "score": "2-3",
-          "probability_pct": 4.7,
-          "fair_odds": 21.18
-        },
-        {
-          "score": "3-3",
-          "probability_pct": 4.4,
-          "fair_odds": 22.88
-        },
-        {
-          "score": "4-2",
-          "probability_pct": 4.3,
-          "fair_odds": 23.33
-        },
-        {
-          "score": "4-1",
-          "probability_pct": 4.0,
-          "fair_odds": 24.78
-        }
-      ],
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:521",
-              "name": "Lille OSC"
-            },
-            "points": 7,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:548",
-              "name": "AS Monaco FC"
-            },
-            "points": 6,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:1045",
-              "name": "Paris FC"
-            },
-            "points": 4,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:523",
-              "name": "Olympique Lyonnais"
-            },
-            "points": 4,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:529",
-              "name": "Stade Rennais FC 1901"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:531",
-              "name": "ES Troyes AC"
-            },
-            "points": 4,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:546",
-              "name": "Racing Club de Lens"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:516",
-              "name": "Olympique de Marseille"
-            },
-            "points": 3,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:532",
-              "name": "Angers SCO"
-            },
-            "points": 3,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:576",
-              "name": "RC Strasbourg Alsace"
-            },
-            "points": 3,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:512",
-              "name": "Stade Brestois 29"
-            },
-            "points": 2,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:524",
-              "name": "Paris Saint-Germain FC"
-            },
-            "points": 2,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:535",
-              "name": "Le Mans FC"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:525",
-              "name": "FC Lorient"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:533",
-              "name": "Le Havre AC"
-            },
-            "points": 1,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:511",
-              "name": "Toulouse FC"
-            },
-            "points": 1,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:522",
-              "name": "OGC Nice"
-            },
-            "points": 1,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:519",
-              "name": "AJ Auxerre"
-            },
-            "points": 0,
-            "goalsDiff": -5
-          }
-        ],
-        "injuries": []
-      }
-    },
-    {
-      "match_id": "fdo:567299",
-      "competition": "Primeira Liga (Portugal)",
-      "league_id": 2017,
-      "season": 2026,
-      "home_team": "FC Porto",
-      "away_team": "Moreirense FC",
-      "home_team_id": "fdo:503",
-      "away_team_id": "fdo:583",
-      "match_date": "2026-09-04T19:15:00Z",
-      "home_expected_goals": 2.03,
-      "away_expected_goals": 0.39,
-      "most_likely_score": "2-0",
-      "home_win_pct": 75.6,
-      "draw_pct": 19.1,
-      "away_win_pct": 5.3,
-      "over_2_5_pct": 43.5,
-      "btts_yes_pct": 29.1,
-      "double_chance_1x_pct": 94.7,
-      "double_chance_x2_pct": 24.4,
-      "home_power_rating": 46.2,
-      "away_power_rating": -7.8,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 100,
-      "signal_agreement": 84,
-      "reliability_score": 94,
-      "best_market_probability": 94.7,
-      "best_pick": {
-        "market": "Home Win",
-        "probability_pct": 75.6,
-        "fair_odds": 1.32,
-        "reliability_score": 94,
-        "market_label": "FC Porto Win"
-      },
-      "high_odds_pick": null,
-      "top_scores": [
-        {
-          "score": "2-0",
-          "probability_pct": 18.3,
-          "fair_odds": 5.45
-        },
-        {
-          "score": "1-0",
-          "probability_pct": 17.2,
-          "fair_odds": 5.8
-        },
-        {
-          "score": "3-0",
-          "probability_pct": 12.4,
-          "fair_odds": 8.05
+          "probability_pct": 12.6,
+          "fair_odds": 7.95
         }
       ],
       "deep_analysis": {
@@ -1842,8 +325,8 @@
               "id": "fdo:503",
               "name": "FC Porto"
             },
-            "points": 12,
-            "goalsDiff": 9
+            "points": 15,
+            "goalsDiff": 10
           },
           {
             "rank": 2,
@@ -1933,7 +416,1975 @@
               "name": "Moreirense FC"
             },
             "points": 4,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:5543",
+              "name": "Vitória SC"
+            },
+            "points": 3,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:496",
+              "name": "Rio Ave FC"
+            },
+            "points": 3,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:5531",
+              "name": "FC Famalicão"
+            },
+            "points": 2,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:7822",
+              "name": "FC Alverca"
+            },
+            "points": 2,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:5527",
+              "name": "Académico de Viseu FC"
+            },
+            "points": 2,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:582",
+              "name": "GD Estoril Praia"
+            },
+            "points": 1,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:6618",
+              "name": "Casa Pia AC"
+            },
+            "points": 0,
+            "goalsDiff": -11
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:559695",
+      "competition": "Ligue 1 (France)",
+      "league_id": 2015,
+      "season": 2026,
+      "home_team": "Racing Club de Lens",
+      "away_team": "FC Lorient",
+      "home_team_id": "fdo:546",
+      "away_team_id": "fdo:525",
+      "match_date": "2026-09-05T15:15:00Z",
+      "home_expected_goals": 2.2,
+      "away_expected_goals": 1.21,
+      "most_likely_score": "1-1",
+      "home_win_pct": 58.5,
+      "draw_pct": 22.1,
+      "away_win_pct": 19.4,
+      "over_2_5_pct": 66.0,
+      "btts_yes_pct": 63.4,
+      "double_chance_1x_pct": 80.6,
+      "double_chance_x2_pct": 41.5,
+      "home_power_rating": 11.3,
+      "away_power_rating": -13.3,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 100,
+      "signal_agreement": 57,
+      "reliability_score": 82,
+      "best_market_probability": 80.6,
+      "best_pick": {
+        "market": "Over 2.5 Goals",
+        "probability_pct": 66.0,
+        "fair_odds": 1.52,
+        "reliability_score": 82,
+        "market_label": "Over 2.5 Goals"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 9.8,
+          "fair_odds": 10.16
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 9.7,
+          "fair_odds": 10.26
+        },
+        {
+          "score": "2-0",
+          "probability_pct": 8.0,
+          "fair_odds": 12.43
+        },
+        {
+          "score": "3-1",
+          "probability_pct": 7.1,
+          "fair_odds": 14.0
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 6.3,
+          "fair_odds": 15.77
+        },
+        {
+          "score": "2-2",
+          "probability_pct": 5.9,
+          "fair_odds": 16.93
+        },
+        {
+          "score": "3-0",
+          "probability_pct": 5.9,
+          "fair_odds": 16.96
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:548",
+              "name": "AS Monaco FC"
+            },
+            "points": 9,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:523",
+              "name": "Olympique Lyonnais"
+            },
+            "points": 7,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:521",
+              "name": "Lille OSC"
+            },
+            "points": 7,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:1045",
+              "name": "Paris FC"
+            },
+            "points": 4,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:529",
+              "name": "Stade Rennais FC 1901"
+            },
+            "points": 4,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:531",
+              "name": "ES Troyes AC"
+            },
+            "points": 4,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:546",
+              "name": "Racing Club de Lens"
+            },
+            "points": 3,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:516",
+              "name": "Olympique de Marseille"
+            },
+            "points": 3,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:532",
+              "name": "Angers SCO"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:576",
+              "name": "RC Strasbourg Alsace"
+            },
+            "points": 3,
             "goalsDiff": -3
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:512",
+              "name": "Stade Brestois 29"
+            },
+            "points": 2,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:524",
+              "name": "Paris Saint-Germain FC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:535",
+              "name": "Le Mans FC"
+            },
+            "points": 1,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:525",
+              "name": "FC Lorient"
+            },
+            "points": 1,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:533",
+              "name": "Le Havre AC"
+            },
+            "points": 1,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:511",
+              "name": "Toulouse FC"
+            },
+            "points": 1,
+            "goalsDiff": -3
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:522",
+              "name": "OGC Nice"
+            },
+            "points": 1,
+            "goalsDiff": -3
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:519",
+              "name": "AJ Auxerre"
+            },
+            "points": 0,
+            "goalsDiff": -7
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:558614",
+      "competition": "Serie A (Italy)",
+      "league_id": 2019,
+      "season": 2026,
+      "home_team": "FC Internazionale Milano",
+      "away_team": "SSC Napoli",
+      "home_team_id": "fdo:108",
+      "away_team_id": "fdo:113",
+      "match_date": "2026-09-05T16:00:00Z",
+      "home_expected_goals": 1.88,
+      "away_expected_goals": 1.14,
+      "most_likely_score": "1-1",
+      "home_win_pct": 53.5,
+      "draw_pct": 24.8,
+      "away_win_pct": 21.7,
+      "over_2_5_pct": 58.0,
+      "btts_yes_pct": 58.7,
+      "double_chance_1x_pct": 78.3,
+      "double_chance_x2_pct": 46.5,
+      "home_power_rating": 39.0,
+      "away_power_rating": 13.0,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 100,
+      "signal_agreement": 58,
+      "reliability_score": 82,
+      "best_market_probability": 78.3,
+      "best_pick": {
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 75.2,
+        "fair_odds": 1.33,
+        "reliability_score": 82,
+        "market_label": "FC Internazionale Milano Win or SSC Napoli Win"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 11.6,
+          "fair_odds": 8.6
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 9.9,
+          "fair_odds": 10.13
+        },
+        {
+          "score": "2-0",
+          "probability_pct": 8.7,
+          "fair_odds": 11.53
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 8.1,
+          "fair_odds": 12.41
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:7397",
+              "name": "Como 1907"
+            },
+            "points": 7,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:100",
+              "name": "AS Roma"
+            },
+            "points": 6,
+            "goalsDiff": 8
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:108",
+              "name": "FC Internazionale Milano"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:98",
+              "name": "AC Milan"
+            },
+            "points": 6,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:109",
+              "name": "Juventus FC"
+            },
+            "points": 6,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:102",
+              "name": "Atalanta BC"
+            },
+            "points": 6,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:110",
+              "name": "SS Lazio"
+            },
+            "points": 6,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:115",
+              "name": "Udinese Calcio"
+            },
+            "points": 4,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:470",
+              "name": "Frosinone Calcio"
+            },
+            "points": 3,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:113",
+              "name": "SSC Napoli"
+            },
+            "points": 3,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:471",
+              "name": "US Sassuolo Calcio"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:104",
+              "name": "Cagliari Calcio"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:5890",
+              "name": "US Lecce"
+            },
+            "points": 3,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:586",
+              "name": "Torino FC"
+            },
+            "points": 0,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:103",
+              "name": "Bologna FC 1909"
+            },
+            "points": 0,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:112",
+              "name": "Parma Calcio 1913"
+            },
+            "points": 0,
+            "goalsDiff": -3
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:5911",
+              "name": "AC Monza"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:454",
+              "name": "Venezia FC"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 19,
+            "team": {
+              "id": "fdo:107",
+              "name": "Genoa CFC"
+            },
+            "points": 0,
+            "goalsDiff": -6
+          },
+          {
+            "rank": 20,
+            "team": {
+              "id": "fdo:99",
+              "name": "ACF Fiorentina"
+            },
+            "points": 0,
+            "goalsDiff": -7
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:560569",
+      "competition": "Premier League (England)",
+      "league_id": 2021,
+      "season": 2026,
+      "home_team": "Hull City AFC",
+      "away_team": "Aston Villa FC",
+      "home_team_id": "fdo:322",
+      "away_team_id": "fdo:58",
+      "match_date": "2026-09-05T16:30:00Z",
+      "home_expected_goals": 1.71,
+      "away_expected_goals": 0.68,
+      "most_likely_score": "1-0",
+      "home_win_pct": 60.9,
+      "draw_pct": 25.8,
+      "away_win_pct": 13.3,
+      "over_2_5_pct": 42.5,
+      "btts_yes_pct": 41.5,
+      "double_chance_1x_pct": 86.7,
+      "double_chance_x2_pct": 39.1,
+      "home_power_rating": 28.8,
+      "away_power_rating": -8.8,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 80,
+      "signal_agreement": 81,
+      "reliability_score": 82,
+      "best_market_probability": 86.7,
+      "best_pick": {
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 74.2,
+        "fair_odds": 1.35,
+        "reliability_score": 82,
+        "market_label": "Hull City AFC Win or Aston Villa FC Win"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-0",
+          "probability_pct": 14.6,
+          "fair_odds": 6.87
+        },
+        {
+          "score": "2-0",
+          "probability_pct": 13.4,
+          "fair_odds": 7.45
+        },
+        {
+          "score": "1-1",
+          "probability_pct": 11.9,
+          "fair_odds": 8.43
+        },
+        {
+          "score": "0-0",
+          "probability_pct": 10.4,
+          "fair_odds": 9.62
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 9.1,
+          "fair_odds": 10.97
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:65",
+              "name": "Manchester City FC"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:57",
+              "name": "Arsenal FC"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:322",
+              "name": "Hull City AFC"
+            },
+            "points": 6,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:61",
+              "name": "Chelsea FC"
+            },
+            "points": 6,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:67",
+              "name": "Newcastle United FC"
+            },
+            "points": 5,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:64",
+              "name": "Liverpool FC"
+            },
+            "points": 5,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:402",
+              "name": "Brentford FC"
+            },
+            "points": 4,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:62",
+              "name": "Everton FC"
+            },
+            "points": 4,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:341",
+              "name": "Leeds United FC"
+            },
+            "points": 4,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:397",
+              "name": "Brighton & Hove Albion FC"
+            },
+            "points": 3,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:66",
+              "name": "Manchester United FC"
+            },
+            "points": 3,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:71",
+              "name": "Sunderland AFC"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:349",
+              "name": "Ipswich Town FC"
+            },
+            "points": 3,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:1044",
+              "name": "AFC Bournemouth"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:351",
+              "name": "Nottingham Forest FC"
+            },
+            "points": 1,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:63",
+              "name": "Fulham FC"
+            },
+            "points": 0,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:1076",
+              "name": "Coventry City FC"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:354",
+              "name": "Crystal Palace FC"
+            },
+            "points": 0,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 19,
+            "team": {
+              "id": "fdo:73",
+              "name": "Tottenham Hotspur FC"
+            },
+            "points": 0,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 20,
+            "team": {
+              "id": "fdo:58",
+              "name": "Aston Villa FC"
+            },
+            "points": 0,
+            "goalsDiff": -5
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:558252",
+      "competition": "Eredivisie (Netherlands)",
+      "league_id": 2003,
+      "season": 2026,
+      "home_team": "FC Utrecht",
+      "away_team": "Go Ahead Eagles",
+      "home_team_id": "fdo:676",
+      "away_team_id": "fdo:718",
+      "match_date": "2026-09-05T16:45:00Z",
+      "home_expected_goals": 2.13,
+      "away_expected_goals": 2.01,
+      "most_likely_score": "1-1",
+      "home_win_pct": 41.3,
+      "draw_pct": 22.0,
+      "away_win_pct": 36.7,
+      "over_2_5_pct": 78.0,
+      "btts_yes_pct": 77.0,
+      "double_chance_1x_pct": 63.3,
+      "double_chance_x2_pct": 58.7,
+      "home_power_rating": -16.7,
+      "away_power_rating": -3.2,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 100,
+      "signal_agreement": 50,
+      "reliability_score": 80,
+      "best_market_probability": 78.0,
+      "best_pick": {
+        "market": "Double Chance (Home/Draw)",
+        "probability_pct": 63.3,
+        "fair_odds": 1.58,
+        "reliability_score": 80,
+        "market_label": "FC Utrecht Win or Draw"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 7.6,
+          "fair_odds": 13.09
+        },
+        {
+          "score": "2-2",
+          "probability_pct": 7.4,
+          "fair_odds": 13.56
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 7.3,
+          "fair_odds": 13.62
+        },
+        {
+          "score": "1-2",
+          "probability_pct": 6.9,
+          "fair_odds": 14.47
+        },
+        {
+          "score": "3-2",
+          "probability_pct": 5.2,
+          "fair_odds": 19.05
+        },
+        {
+          "score": "3-1",
+          "probability_pct": 5.2,
+          "fair_odds": 19.14
+        },
+        {
+          "score": "2-3",
+          "probability_pct": 4.9,
+          "fair_odds": 20.25
+        },
+        {
+          "score": "1-3",
+          "probability_pct": 4.6,
+          "fair_odds": 21.62
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:682",
+              "name": "AZ"
+            },
+            "points": 12,
+            "goalsDiff": 10
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:674",
+              "name": "PSV"
+            },
+            "points": 10,
+            "goalsDiff": 10
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:675",
+              "name": "Feyenoord Rotterdam"
+            },
+            "points": 8,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:678",
+              "name": "AFC Ajax"
+            },
+            "points": 7,
+            "goalsDiff": 6
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:718",
+              "name": "Go Ahead Eagles"
+            },
+            "points": 7,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:1920",
+              "name": "Fortuna Sittard"
+            },
+            "points": 7,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:1915",
+              "name": "NEC"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:670",
+              "name": "SBV Excelsior"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:666",
+              "name": "FC Twente '65"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:677",
+              "name": "FC Groningen"
+            },
+            "points": 6,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:6806",
+              "name": "Sparta Rotterdam"
+            },
+            "points": 5,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:673",
+              "name": "SC Heerenveen"
+            },
+            "points": 5,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:684",
+              "name": "PEC Zwolle"
+            },
+            "points": 4,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:1912",
+              "name": "Telstar 1963"
+            },
+            "points": 3,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:672",
+              "name": "Willem II Tilburg"
+            },
+            "points": 1,
+            "goalsDiff": -6
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:680",
+              "name": "ADO Den Haag"
+            },
+            "points": 1,
+            "goalsDiff": -7
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:676",
+              "name": "FC Utrecht"
+            },
+            "points": 1,
+            "goalsDiff": -9
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:1909",
+              "name": "SC Cambuur-Leeuwarden"
+            },
+            "points": 0,
+            "goalsDiff": -12
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:558253",
+      "competition": "Eredivisie (Netherlands)",
+      "league_id": 2003,
+      "season": 2026,
+      "home_team": "AFC Ajax",
+      "away_team": "PSV",
+      "home_team_id": "fdo:678",
+      "away_team_id": "fdo:674",
+      "match_date": "2026-09-05T18:00:00Z",
+      "home_expected_goals": 1.49,
+      "away_expected_goals": 2.53,
+      "most_likely_score": "1-2",
+      "home_win_pct": 20.9,
+      "draw_pct": 20.2,
+      "away_win_pct": 58.9,
+      "over_2_5_pct": 76.0,
+      "btts_yes_pct": 71.8,
+      "double_chance_1x_pct": 41.1,
+      "double_chance_x2_pct": 79.1,
+      "home_power_rating": 21.6,
+      "away_power_rating": 49.9,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 100,
+      "signal_agreement": 52,
+      "reliability_score": 81,
+      "best_market_probability": 79.8,
+      "best_pick": {
+        "market": "Over 2.5 Goals",
+        "probability_pct": 76.0,
+        "fair_odds": 1.32,
+        "reliability_score": 81,
+        "market_label": "Over 2.5 Goals"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-2",
+          "probability_pct": 8.7,
+          "fair_odds": 11.48
+        },
+        {
+          "score": "1-1",
+          "probability_pct": 7.6,
+          "fair_odds": 13.07
+        },
+        {
+          "score": "1-3",
+          "probability_pct": 7.3,
+          "fair_odds": 13.62
+        },
+        {
+          "score": "2-2",
+          "probability_pct": 6.5,
+          "fair_odds": 15.45
+        },
+        {
+          "score": "0-2",
+          "probability_pct": 5.9,
+          "fair_odds": 17.06
+        },
+        {
+          "score": "2-3",
+          "probability_pct": 5.5,
+          "fair_odds": 18.33
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 5.1,
+          "fair_odds": 19.53
+        },
+        {
+          "score": "0-3",
+          "probability_pct": 4.9,
+          "fair_odds": 20.23
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:682",
+              "name": "AZ"
+            },
+            "points": 12,
+            "goalsDiff": 10
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:674",
+              "name": "PSV"
+            },
+            "points": 10,
+            "goalsDiff": 10
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:675",
+              "name": "Feyenoord Rotterdam"
+            },
+            "points": 8,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:678",
+              "name": "AFC Ajax"
+            },
+            "points": 7,
+            "goalsDiff": 6
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:718",
+              "name": "Go Ahead Eagles"
+            },
+            "points": 7,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:1920",
+              "name": "Fortuna Sittard"
+            },
+            "points": 7,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:1915",
+              "name": "NEC"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:670",
+              "name": "SBV Excelsior"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:666",
+              "name": "FC Twente '65"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:677",
+              "name": "FC Groningen"
+            },
+            "points": 6,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:6806",
+              "name": "Sparta Rotterdam"
+            },
+            "points": 5,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:673",
+              "name": "SC Heerenveen"
+            },
+            "points": 5,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:684",
+              "name": "PEC Zwolle"
+            },
+            "points": 4,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:1912",
+              "name": "Telstar 1963"
+            },
+            "points": 3,
+            "goalsDiff": -5
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:672",
+              "name": "Willem II Tilburg"
+            },
+            "points": 1,
+            "goalsDiff": -6
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:680",
+              "name": "ADO Den Haag"
+            },
+            "points": 1,
+            "goalsDiff": -7
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:676",
+              "name": "FC Utrecht"
+            },
+            "points": 1,
+            "goalsDiff": -9
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:1909",
+              "name": "SC Cambuur-Leeuwarden"
+            },
+            "points": 0,
+            "goalsDiff": -12
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:558611",
+      "competition": "Serie A (Italy)",
+      "league_id": 2019,
+      "season": 2026,
+      "home_team": "AS Roma",
+      "away_team": "Atalanta BC",
+      "home_team_id": "fdo:100",
+      "away_team_id": "fdo:102",
+      "match_date": "2026-09-05T18:45:00Z",
+      "home_expected_goals": 1.97,
+      "away_expected_goals": 0.96,
+      "most_likely_score": "1-1",
+      "home_win_pct": 59.8,
+      "draw_pct": 23.6,
+      "away_win_pct": 16.6,
+      "over_2_5_pct": 55.9,
+      "btts_yes_pct": 54.1,
+      "double_chance_1x_pct": 83.4,
+      "double_chance_x2_pct": 40.2,
+      "home_power_rating": 51.7,
+      "away_power_rating": 12.5,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 100,
+      "signal_agreement": 68,
+      "reliability_score": 86,
+      "best_market_probability": 83.4,
+      "best_pick": {
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 76.4,
+        "fair_odds": 1.31,
+        "reliability_score": 86,
+        "market_label": "AS Roma Win or Atalanta BC Win"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 11.2,
+          "fair_odds": 8.9
+        },
+        {
+          "score": "2-0",
+          "probability_pct": 10.5,
+          "fair_odds": 9.57
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 10.0,
+          "fair_odds": 10.01
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 9.5,
+          "fair_odds": 10.55
+        },
+        {
+          "score": "3-0",
+          "probability_pct": 6.9,
+          "fair_odds": 14.54
+        },
+        {
+          "score": "3-1",
+          "probability_pct": 6.6,
+          "fair_odds": 15.21
+        },
+        {
+          "score": "0-0",
+          "probability_pct": 6.5,
+          "fair_odds": 15.44
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:7397",
+              "name": "Como 1907"
+            },
+            "points": 7,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:100",
+              "name": "AS Roma"
+            },
+            "points": 6,
+            "goalsDiff": 8
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:108",
+              "name": "FC Internazionale Milano"
+            },
+            "points": 6,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:98",
+              "name": "AC Milan"
+            },
+            "points": 6,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:109",
+              "name": "Juventus FC"
+            },
+            "points": 6,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:102",
+              "name": "Atalanta BC"
+            },
+            "points": 6,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:110",
+              "name": "SS Lazio"
+            },
+            "points": 6,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:115",
+              "name": "Udinese Calcio"
+            },
+            "points": 4,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:470",
+              "name": "Frosinone Calcio"
+            },
+            "points": 3,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:113",
+              "name": "SSC Napoli"
+            },
+            "points": 3,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:471",
+              "name": "US Sassuolo Calcio"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:104",
+              "name": "Cagliari Calcio"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:5890",
+              "name": "US Lecce"
+            },
+            "points": 3,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:586",
+              "name": "Torino FC"
+            },
+            "points": 0,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:103",
+              "name": "Bologna FC 1909"
+            },
+            "points": 0,
+            "goalsDiff": -2
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:112",
+              "name": "Parma Calcio 1913"
+            },
+            "points": 0,
+            "goalsDiff": -3
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:5911",
+              "name": "AC Monza"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:454",
+              "name": "Venezia FC"
+            },
+            "points": 0,
+            "goalsDiff": -4
+          },
+          {
+            "rank": 19,
+            "team": {
+              "id": "fdo:107",
+              "name": "Genoa CFC"
+            },
+            "points": 0,
+            "goalsDiff": -6
+          },
+          {
+            "rank": 20,
+            "team": {
+              "id": "fdo:99",
+              "name": "ACF Fiorentina"
+            },
+            "points": 0,
+            "goalsDiff": -7
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:559693",
+      "competition": "Ligue 1 (France)",
+      "league_id": 2015,
+      "season": 2026,
+      "home_team": "Le Havre AC",
+      "away_team": "Stade Brestois 29",
+      "home_team_id": "fdo:533",
+      "away_team_id": "fdo:512",
+      "match_date": "2026-09-05T18:45:00Z",
+      "home_expected_goals": 1.46,
+      "away_expected_goals": 1.29,
+      "most_likely_score": "1-1",
+      "home_win_pct": 39.7,
+      "draw_pct": 28.1,
+      "away_win_pct": 32.1,
+      "over_2_5_pct": 51.7,
+      "btts_yes_pct": 56.9,
+      "double_chance_1x_pct": 67.9,
+      "double_chance_x2_pct": 60.3,
+      "home_power_rating": -6.5,
+      "away_power_rating": -19.7,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 100,
+      "signal_agreement": 60,
+      "reliability_score": 81,
+      "best_market_probability": 71.9,
+      "best_pick": {
+        "market": "Double Chance (Home/Away)",
+        "probability_pct": 71.9,
+        "fair_odds": 1.39,
+        "reliability_score": 81,
+        "market_label": "Le Havre AC Win or Stade Brestois 29 Win"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 13.4,
+          "fair_odds": 7.47
+        },
+        {
+          "score": "2-1",
+          "probability_pct": 8.8,
+          "fair_odds": 11.38
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 8.0,
+          "fair_odds": 12.47
+        },
+        {
+          "score": "1-2",
+          "probability_pct": 7.8,
+          "fair_odds": 12.85
+        },
+        {
+          "score": "0-0",
+          "probability_pct": 7.7,
+          "fair_odds": 12.91
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:548",
+              "name": "AS Monaco FC"
+            },
+            "points": 9,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:523",
+              "name": "Olympique Lyonnais"
+            },
+            "points": 7,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:521",
+              "name": "Lille OSC"
+            },
+            "points": 7,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:1045",
+              "name": "Paris FC"
+            },
+            "points": 4,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:529",
+              "name": "Stade Rennais FC 1901"
+            },
+            "points": 4,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:531",
+              "name": "ES Troyes AC"
+            },
+            "points": 4,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:546",
+              "name": "Racing Club de Lens"
+            },
+            "points": 3,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:516",
+              "name": "Olympique de Marseille"
+            },
+            "points": 3,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:532",
+              "name": "Angers SCO"
+            },
+            "points": 3,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:576",
+              "name": "RC Strasbourg Alsace"
+            },
+            "points": 3,
+            "goalsDiff": -3
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:512",
+              "name": "Stade Brestois 29"
+            },
+            "points": 2,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "fdo:524",
+              "name": "Paris Saint-Germain FC"
+            },
+            "points": 2,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "fdo:535",
+              "name": "Le Mans FC"
+            },
+            "points": 1,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "fdo:525",
+              "name": "FC Lorient"
+            },
+            "points": 1,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "fdo:533",
+              "name": "Le Havre AC"
+            },
+            "points": 1,
+            "goalsDiff": -1
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "fdo:511",
+              "name": "Toulouse FC"
+            },
+            "points": 1,
+            "goalsDiff": -3
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "fdo:522",
+              "name": "OGC Nice"
+            },
+            "points": 1,
+            "goalsDiff": -3
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "fdo:519",
+              "name": "AJ Auxerre"
+            },
+            "points": 0,
+            "goalsDiff": -7
+          }
+        ],
+        "injuries": []
+      }
+    },
+    {
+      "match_id": "fdo:567298",
+      "competition": "Primeira Liga (Portugal)",
+      "league_id": 2017,
+      "season": 2026,
+      "home_team": "Sporting Clube de Portugal",
+      "away_team": "CD Nacional",
+      "home_team_id": "fdo:498",
+      "away_team_id": "fdo:5529",
+      "match_date": "2026-09-05T19:30:00Z",
+      "home_expected_goals": 2.49,
+      "away_expected_goals": 1.05,
+      "most_likely_score": "2-1",
+      "home_win_pct": 67.6,
+      "draw_pct": 19.0,
+      "away_win_pct": 13.3,
+      "over_2_5_pct": 68.3,
+      "btts_yes_pct": 60.4,
+      "double_chance_1x_pct": 86.7,
+      "double_chance_x2_pct": 32.4,
+      "home_power_rating": 42.6,
+      "away_power_rating": -7.3,
+      "home_cards_avg": null,
+      "away_cards_avg": null,
+      "confidence_score": 100,
+      "signal_agreement": 64,
+      "reliability_score": 86,
+      "best_market_probability": 86.7,
+      "best_pick": {
+        "market": "Over 2.5 Goals",
+        "probability_pct": 68.3,
+        "fair_odds": 1.46,
+        "reliability_score": 86,
+        "market_label": "Over 2.5 Goals"
+      },
+      "high_odds_pick": null,
+      "top_scores": [
+        {
+          "score": "2-1",
+          "probability_pct": 9.6,
+          "fair_odds": 10.45
+        },
+        {
+          "score": "2-0",
+          "probability_pct": 9.1,
+          "fair_odds": 10.96
+        },
+        {
+          "score": "1-1",
+          "probability_pct": 8.5,
+          "fair_odds": 11.74
+        },
+        {
+          "score": "3-1",
+          "probability_pct": 8.0,
+          "fair_odds": 12.56
+        },
+        {
+          "score": "3-0",
+          "probability_pct": 7.6,
+          "fair_odds": 13.17
+        },
+        {
+          "score": "1-0",
+          "probability_pct": 6.5,
+          "fair_odds": 15.45
+        }
+      ],
+      "deep_analysis": {
+        "home_team_stats": null,
+        "away_team_stats": null,
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "fdo:503",
+              "name": "FC Porto"
+            },
+            "points": 15,
+            "goalsDiff": 10
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "fdo:498",
+              "name": "Sporting Clube de Portugal"
+            },
+            "points": 10,
+            "goalsDiff": 7
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "fdo:712",
+              "name": "FC Arouca"
+            },
+            "points": 9,
+            "goalsDiff": 4
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "fdo:5530",
+              "name": "CD Santa Clara"
+            },
+            "points": 8,
+            "goalsDiff": 2
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "fdo:1903",
+              "name": "Sport Lisboa e Benfica"
+            },
+            "points": 7,
+            "goalsDiff": 8
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "fdo:5533",
+              "name": "Gil Vicente FC"
+            },
+            "points": 7,
+            "goalsDiff": 3
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "fdo:5575",
+              "name": "CS Marítimo"
+            },
+            "points": 7,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "fdo:9136",
+              "name": "CF Estrela da Amadora"
+            },
+            "points": 5,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "fdo:5613",
+              "name": "Sporting Clube de Braga"
+            },
+            "points": 4,
+            "goalsDiff": 1
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "fdo:5529",
+              "name": "CD Nacional"
+            },
+            "points": 4,
+            "goalsDiff": 0
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "fdo:583",
+              "name": "Moreirense FC"
+            },
+            "points": 4,
+            "goalsDiff": -4
           },
           {
             "rank": 12,
