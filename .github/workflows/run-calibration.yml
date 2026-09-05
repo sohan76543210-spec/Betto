@@ -1,0 +1,42 @@
+name: Run Calibration
+
+# শুধু ম্যানুয়ালি চালানোর জন্য (GitHub অ্যাপ/ওয়েবসাইট থেকে "Run workflow" চাপুন)।
+# data/calibration_result.json-এ সবসময় বিস্তারিত রেজাল্ট লেখে। নতুন কম্বিনেশন
+# held-out টেস্ট সেটে বর্তমান (data/model_config.json-এর) weight-এর চেয়ে সত্যিই
+# ভালো প্রমাণিত হলে, আর যথেষ্ট sample থাকলে (build_calibration_set.py দেখুন),
+# তখনই data/model_config.json নিজে থেকে আপডেট হয় — predictor.py পরের রান থেকেই
+# নতুন weight ব্যবহার করবে, কোনো কোড এডিট/redeploy ছাড়াই।
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run calibration
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          FOOTBALL_DATA_ORG_TOKEN: ${{ secrets.FOOTBALL_DATA_ORG_TOKEN }}
+        run: python scripts/build_calibration_set.py
+
+      - name: Commit calibration result
+        run: |
+          git config user.name "predictions-bot"
+          git config user.email "actions@github.com"
+          git add data/calibration_result.json data/model_config.json
+          git diff --staged --quiet || git commit -m "Update calibration result [auto]"
+          git push
