@@ -1525,5 +1525,257 @@
     "correctscore_pick_status": "incorrect",
     "actual_score": "2-0",
     "checked_at": "2026-09-06T05:46:16.590950+00:00"
+  },
+  {
+    "match_id": "fdo:558255",
+    "competition": "Eredivisie (Netherlands)",
+    "home_team": "FC Groningen",
+    "away_team": "FC Twente '65",
+    "home_team_id": "fdo:677",
+    "away_team_id": "fdo:666",
+    "match_date": "2026-09-06T10:15:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.7,
+      "fair_odds": 1.34,
+      "reliability_score": 85,
+      "market_label": "FC Groningen Win or FC Twente '65 Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "1-1",
+      "probability_pct": 11.2,
+      "fair_odds": 8.94
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "2-2",
+    "checked_at": "2026-09-06T23:35:13.972607+00:00"
+  },
+  {
+    "match_id": "fdo:558256",
+    "competition": "Eredivisie (Netherlands)",
+    "home_team": "SC Heerenveen",
+    "away_team": "AZ",
+    "home_team_id": "fdo:673",
+    "away_team_id": "fdo:682",
+    "match_date": "2026-09-06T12:30:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.6,
+      "fair_odds": 1.36,
+      "reliability_score": 83,
+      "market_label": "SC Heerenveen Win or AZ Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "1-1",
+      "probability_pct": 12.6,
+      "fair_odds": 7.92
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "2-3",
+    "checked_at": "2026-09-06T23:35:13.972607+00:00"
+  },
+  {
+    "match_id": "fdo:560567",
+    "competition": "Premier League (England)",
+    "home_team": "Everton FC",
+    "away_team": "Manchester United FC",
+    "home_team_id": "fdo:62",
+    "away_team_id": "fdo:66",
+    "match_date": "2026-09-06T13:00:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.0,
+      "fair_odds": 1.35,
+      "reliability_score": 86,
+      "market_label": "Everton FC Win or Manchester United FC Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "1-1",
+      "probability_pct": 11.8,
+      "fair_odds": 8.47
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "2-2",
+    "checked_at": "2026-09-06T23:35:13.972607+00:00"
+  },
+  {
+    "match_id": "fdo:564659",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Valencia CF",
+    "away_team": "FC Barcelona",
+    "home_team_id": "fdo:95",
+    "away_team_id": "fdo:81",
+    "match_date": "2026-09-06T14:15:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.8,
+      "fair_odds": 1.34,
+      "reliability_score": 84,
+      "market_label": "Valencia CF Win or FC Barcelona Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "1-1",
+      "probability_pct": 12.0,
+      "fair_odds": 8.32
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "0-5",
+    "checked_at": "2026-09-06T23:35:13.972607+00:00"
+  },
+  {
+    "match_id": "fdo:567300",
+    "competition": "Primeira Liga (Portugal)",
+    "home_team": "CD Santa Clara",
+    "away_team": "Rio Ave FC",
+    "home_team_id": "fdo:5530",
+    "away_team_id": "fdo:496",
+    "match_date": "2026-09-06T14:30:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 70.6,
+      "fair_odds": 1.42,
+      "reliability_score": 85,
+      "market_label": "CD Santa Clara Win or Rio Ave FC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "1-1",
+      "probability_pct": 13.8,
+      "fair_odds": 7.23
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "4-0",
+    "checked_at": "2026-09-06T23:35:13.972607+00:00"
+  },
+  {
+    "match_id": "fdo:560570",
+    "competition": "Premier League (England)",
+    "home_team": "Arsenal FC",
+    "away_team": "Chelsea FC",
+    "home_team_id": "fdo:57",
+    "away_team_id": "fdo:61",
+    "match_date": "2026-09-06T15:30:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 64.7,
+      "fair_odds": 1.55,
+      "reliability_score": 88,
+      "market_label": "Arsenal FC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "2-0",
+      "probability_pct": 11.5,
+      "fair_odds": 8.71
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "2-1",
+    "checked_at": "2026-09-06T23:35:13.972607+00:00"
+  },
+  {
+    "match_id": "fdo:565786",
+    "competition": "Bundesliga (Germany)",
+    "home_team": "Eintracht Frankfurt",
+    "away_team": "FC Augsburg",
+    "home_team_id": "fdo:19",
+    "away_team_id": "fdo:16",
+    "match_date": "2026-09-06T15:30:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.1,
+      "fair_odds": 1.35,
+      "reliability_score": 84,
+      "market_label": "Eintracht Frankfurt Win or FC Augsburg Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "1-1",
+      "probability_pct": 11.8,
+      "fair_odds": 8.49
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "1-4",
+    "checked_at": "2026-09-06T23:35:13.972607+00:00"
+  },
+  {
+    "match_id": "fdo:567294",
+    "competition": "Primeira Liga (Portugal)",
+    "home_team": "Vitória SC",
+    "away_team": "Casa Pia AC",
+    "home_team_id": "fdo:5543",
+    "away_team_id": "fdo:6618",
+    "match_date": "2026-09-06T17:00:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 73.3,
+      "fair_odds": 1.36,
+      "reliability_score": 84,
+      "market_label": "BTTS - No"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "0-0",
+      "probability_pct": 22.5,
+      "fair_odds": 4.43
+    },
+    "correctscore_pick_status": "correct",
+    "actual_score": "0-0",
+    "checked_at": "2026-09-06T23:35:13.972607+00:00"
+  },
+  {
+    "match_id": "fdo:558618",
+    "competition": "Serie A (Italy)",
+    "home_team": "Juventus FC",
+    "away_team": "AC Milan",
+    "home_team_id": "fdo:109",
+    "away_team_id": "fdo:98",
+    "match_date": "2026-09-06T18:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 75.6,
+      "fair_odds": 1.32,
+      "reliability_score": 85,
+      "market_label": "Juventus FC Win or Draw"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "1-1",
+      "probability_pct": 14.5,
+      "fair_odds": 6.88
+    },
+    "correctscore_pick_status": "correct",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-06T23:35:13.972607+00:00"
   }
 ]
