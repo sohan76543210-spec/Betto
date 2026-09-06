@@ -1,0 +1,11 @@
+Non-API fixes applied
+=====================
+1. Added missing model_config.py with validated defaults and atomic config writes.
+2. Restored a real final publication gate: minimum probability 55% and reliability 60.
+3. Fixed the impossible high-odds gate: it now starts at 40% probability while requiring fair odds >= 2.00 and reliability >= 70.
+4. Expanded the score-probability grid from 0-7 to 0-10 goals and aligned calibration with production.
+5. Made Poisson probability handling defensive for invalid negative inputs.
+6. Kept Correct Score publication selective through probability + top-two edge gating.
+7. Kept chronological held-out calibration evaluation and prevented configuration overwrite unless the held-out test is sufficiently large and better than baseline (existing workflow logic).
+8. Preserved API files unchanged; no API-season/data-source behavior was modified.
+9. Python compileall validation passed for all packaged Python files.
