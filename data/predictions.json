@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-06T23:35:13.873334+00:00",
+  "generated_at": "2026-09-06T23:47:58.933434+00:00",
   "prediction_window_bd": {
     "from": "2026-09-06T06:00:00+00:00",
     "to": "2026-09-07T06:00:00+00:00"
   },
   "model_version": "v2.0-high-selectivity",
   "disclaimer": "Statistical estimate only; no prediction is guaranteed.",
-  "top_picks_count": 0,
+  "top_picks_count": 1,
   "api_cache_stats": {
     "fdo": {
       "teams_cached": 0,
@@ -14,14 +14,1498 @@
       "standings_cached": 0
     },
     "aps": {
-      "teams_cached": 0,
-      "h2h_pairs_cached": 0,
-      "team_stats_cached": 0,
-      "standings_cached": 0,
-      "injuries_cached": 0,
+      "teams_cached": 2,
+      "h2h_pairs_cached": 1,
+      "team_stats_cached": 2,
+      "standings_cached": 1,
+      "injuries_cached": 1,
       "lineups_cached": 0
     }
   },
-  "remaining_quota": 99,
-  "matches": []
+  "remaining_quota": 92,
+  "matches": [
+    {
+      "match_id": "aps:1576482",
+      "competition": "Segunda Liga (Portugal)",
+      "league_id": 95,
+      "season": 2026,
+      "home_team": "Farense",
+      "away_team": "Chaves",
+      "home_team_id": "aps:231",
+      "away_team_id": "aps:223",
+      "match_date": "2026-09-06T13:00:00+00:00",
+      "home_expected_goals": 0.93,
+      "away_expected_goals": 1.19,
+      "most_likely_score": "1-1",
+      "home_win_pct": 27.1,
+      "draw_pct": 32.3,
+      "away_win_pct": 40.5,
+      "over_2_5_pct": 35.6,
+      "btts_yes_pct": 43.6,
+      "double_chance_1x_pct": 59.5,
+      "double_chance_x2_pct": 72.9,
+      "home_power_rating": -5.8,
+      "away_power_rating": -13.9,
+      "home_cards_avg": null,
+      "away_cards_avg": 2.82,
+      "confidence_score": 92,
+      "signal_agreement": 63,
+      "reliability_score": 79,
+      "best_market_probability": 72.9,
+      "best_pick": {
+        "market": "Double Chance (Draw/Away)",
+        "probability_pct": 72.9,
+        "fair_odds": 1.37,
+        "reliability_score": 79,
+        "market_label": "Draw or Chaves Win"
+      },
+      "high_odds_pick": {
+        "market": "Both Teams to Score - Yes",
+        "probability_pct": 43.6,
+        "fair_odds": 2.29,
+        "reliability_score": 79,
+        "market_label": "BTTS - Yes"
+      },
+      "top_scores": [
+        {
+          "score": "1-1",
+          "probability_pct": 14.7,
+          "fair_odds": 6.78
+        },
+        {
+          "score": "0-0",
+          "probability_pct": 13.4,
+          "fair_odds": 7.44
+        },
+        {
+          "score": "0-1",
+          "probability_pct": 12.8,
+          "fair_odds": 7.8
+        }
+      ],
+      "correctscore_pick": null,
+      "deep_analysis": {
+        "home_team_stats": {
+          "league": {
+            "id": 95,
+            "name": "Segunda Liga",
+            "country": "Portugal",
+            "logo": "https://media.api-sports.io/football/leagues/95.png",
+            "flag": "https://media.api-sports.io/flags/pt.svg",
+            "season": 2024
+          },
+          "team": {
+            "id": 231,
+            "name": "Farense",
+            "logo": "https://media.api-sports.io/football/teams/231.png"
+          },
+          "form": null,
+          "fixtures": {
+            "played": {
+              "home": 0,
+              "away": 0,
+              "total": 0
+            },
+            "wins": {
+              "home": 0,
+              "away": 0,
+              "total": 0
+            },
+            "draws": {
+              "home": 0,
+              "away": 0,
+              "total": 0
+            },
+            "loses": {
+              "home": 0,
+              "away": 0,
+              "total": 0
+            }
+          },
+          "goals": {
+            "for": {
+              "total": {
+                "home": 0,
+                "away": 0,
+                "total": 0
+              },
+              "average": {
+                "home": "0.0",
+                "away": "0.0",
+                "total": "0.0"
+              },
+              "minute": {
+                "0-15": {
+                  "total": null,
+                  "percentage": null
+                },
+                "16-30": {
+                  "total": null,
+                  "percentage": null
+                },
+                "31-45": {
+                  "total": null,
+                  "percentage": null
+                },
+                "46-60": {
+                  "total": null,
+                  "percentage": null
+                },
+                "61-75": {
+                  "total": null,
+                  "percentage": null
+                },
+                "76-90": {
+                  "total": null,
+                  "percentage": null
+                },
+                "91-105": {
+                  "total": null,
+                  "percentage": null
+                },
+                "106-120": {
+                  "total": null,
+                  "percentage": null
+                }
+              },
+              "under_over": {
+                "0.5": {
+                  "over": 0,
+                  "under": 0
+                },
+                "1.5": {
+                  "over": 0,
+                  "under": 0
+                },
+                "2.5": {
+                  "over": 0,
+                  "under": 0
+                },
+                "3.5": {
+                  "over": 0,
+                  "under": 0
+                },
+                "4.5": {
+                  "over": 0,
+                  "under": 0
+                }
+              }
+            },
+            "against": {
+              "total": {
+                "home": 0,
+                "away": 0,
+                "total": 0
+              },
+              "average": {
+                "home": "0.0",
+                "away": "0.0",
+                "total": "0.0"
+              },
+              "minute": {
+                "0-15": {
+                  "total": null,
+                  "percentage": null
+                },
+                "16-30": {
+                  "total": null,
+                  "percentage": null
+                },
+                "31-45": {
+                  "total": null,
+                  "percentage": null
+                },
+                "46-60": {
+                  "total": null,
+                  "percentage": null
+                },
+                "61-75": {
+                  "total": null,
+                  "percentage": null
+                },
+                "76-90": {
+                  "total": null,
+                  "percentage": null
+                },
+                "91-105": {
+                  "total": null,
+                  "percentage": null
+                },
+                "106-120": {
+                  "total": null,
+                  "percentage": null
+                }
+              },
+              "under_over": {
+                "0.5": {
+                  "over": 0,
+                  "under": 0
+                },
+                "1.5": {
+                  "over": 0,
+                  "under": 0
+                },
+                "2.5": {
+                  "over": 0,
+                  "under": 0
+                },
+                "3.5": {
+                  "over": 0,
+                  "under": 0
+                },
+                "4.5": {
+                  "over": 0,
+                  "under": 0
+                }
+              }
+            }
+          },
+          "biggest": {
+            "streak": {
+              "wins": 0,
+              "draws": 0,
+              "loses": 0
+            },
+            "wins": {
+              "home": null,
+              "away": null
+            },
+            "loses": {
+              "home": null,
+              "away": null
+            },
+            "goals": {
+              "for": {
+                "home": 0,
+                "away": 0
+              },
+              "against": {
+                "home": 0,
+                "away": 0
+              }
+            }
+          },
+          "clean_sheet": {
+            "home": 0,
+            "away": 0,
+            "total": 0
+          },
+          "failed_to_score": {
+            "home": 0,
+            "away": 0,
+            "total": 0
+          },
+          "penalty": {
+            "scored": {
+              "total": 0,
+              "percentage": "0%"
+            },
+            "missed": {
+              "total": 0,
+              "percentage": "0%"
+            },
+            "total": 0
+          },
+          "lineups": [],
+          "cards": {
+            "yellow": {
+              "0-15": {
+                "total": null,
+                "percentage": null
+              },
+              "16-30": {
+                "total": null,
+                "percentage": null
+              },
+              "31-45": {
+                "total": null,
+                "percentage": null
+              },
+              "46-60": {
+                "total": null,
+                "percentage": null
+              },
+              "61-75": {
+                "total": null,
+                "percentage": null
+              },
+              "76-90": {
+                "total": null,
+                "percentage": null
+              },
+              "91-105": {
+                "total": null,
+                "percentage": null
+              },
+              "106-120": {
+                "total": null,
+                "percentage": null
+              }
+            },
+            "red": {
+              "0-15": {
+                "total": null,
+                "percentage": null
+              },
+              "16-30": {
+                "total": null,
+                "percentage": null
+              },
+              "31-45": {
+                "total": null,
+                "percentage": null
+              },
+              "46-60": {
+                "total": null,
+                "percentage": null
+              },
+              "61-75": {
+                "total": null,
+                "percentage": null
+              },
+              "76-90": {
+                "total": null,
+                "percentage": null
+              },
+              "91-105": {
+                "total": null,
+                "percentage": null
+              },
+              "106-120": {
+                "total": null,
+                "percentage": null
+              }
+            }
+          }
+        },
+        "away_team_stats": {
+          "league": {
+            "id": 95,
+            "name": "Segunda Liga",
+            "country": "Portugal",
+            "logo": "https://media.api-sports.io/football/leagues/95.png",
+            "flag": "https://media.api-sports.io/flags/pt.svg",
+            "season": 2024
+          },
+          "team": {
+            "id": 223,
+            "name": "Chaves",
+            "logo": "https://media.api-sports.io/football/teams/223.png"
+          },
+          "form": "LDDLWWLDWWWWWLDLDWDDDWWLWWLLWWLLLD",
+          "fixtures": {
+            "played": {
+              "home": 17,
+              "away": 17,
+              "total": 34
+            },
+            "wins": {
+              "home": 7,
+              "away": 7,
+              "total": 14
+            },
+            "draws": {
+              "home": 4,
+              "away": 5,
+              "total": 9
+            },
+            "loses": {
+              "home": 6,
+              "away": 5,
+              "total": 11
+            }
+          },
+          "goals": {
+            "for": {
+              "total": {
+                "home": 22,
+                "away": 18,
+                "total": 40
+              },
+              "average": {
+                "home": "1.3",
+                "away": "1.1",
+                "total": "1.2"
+              },
+              "minute": {
+                "0-15": {
+                  "total": 6,
+                  "percentage": "15.38%"
+                },
+                "16-30": {
+                  "total": 4,
+                  "percentage": "10.26%"
+                },
+                "31-45": {
+                  "total": 5,
+                  "percentage": "12.82%"
+                },
+                "46-60": {
+                  "total": 11,
+                  "percentage": "28.21%"
+                },
+                "61-75": {
+                  "total": 2,
+                  "percentage": "5.13%"
+                },
+                "76-90": {
+                  "total": 9,
+                  "percentage": "23.08%"
+                },
+                "91-105": {
+                  "total": 2,
+                  "percentage": "5.13%"
+                },
+                "106-120": {
+                  "total": null,
+                  "percentage": null
+                }
+              },
+              "under_over": {
+                "0.5": {
+                  "over": 23,
+                  "under": 11
+                },
+                "1.5": {
+                  "over": 13,
+                  "under": 21
+                },
+                "2.5": {
+                  "over": 3,
+                  "under": 31
+                },
+                "3.5": {
+                  "over": 1,
+                  "under": 33
+                },
+                "4.5": {
+                  "over": 0,
+                  "under": 34
+                }
+              }
+            },
+            "against": {
+              "total": {
+                "home": 18,
+                "away": 16,
+                "total": 34
+              },
+              "average": {
+                "home": "1.1",
+                "away": "0.9",
+                "total": "1.0"
+              },
+              "minute": {
+                "0-15": {
+                  "total": 7,
+                  "percentage": "20.00%"
+                },
+                "16-30": {
+                  "total": 5,
+                  "percentage": "14.29%"
+                },
+                "31-45": {
+                  "total": 3,
+                  "percentage": "8.57%"
+                },
+                "46-60": {
+                  "total": 5,
+                  "percentage": "14.29%"
+                },
+                "61-75": {
+                  "total": 6,
+                  "percentage": "17.14%"
+                },
+                "76-90": {
+                  "total": 5,
+                  "percentage": "14.29%"
+                },
+                "91-105": {
+                  "total": 4,
+                  "percentage": "11.43%"
+                },
+                "106-120": {
+                  "total": null,
+                  "percentage": null
+                }
+              },
+              "under_over": {
+                "0.5": {
+                  "over": 22,
+                  "under": 12
+                },
+                "1.5": {
+                  "over": 10,
+                  "under": 24
+                },
+                "2.5": {
+                  "over": 2,
+                  "under": 32
+                },
+                "3.5": {
+                  "over": 0,
+                  "under": 34
+                },
+                "4.5": {
+                  "over": 0,
+                  "under": 34
+                }
+              }
+            }
+          },
+          "biggest": {
+            "streak": {
+              "wins": 5,
+              "draws": 3,
+              "loses": 3
+            },
+            "wins": {
+              "home": "4-0",
+              "away": "0-3"
+            },
+            "loses": {
+              "home": "0-3",
+              "away": "3-1"
+            },
+            "goals": {
+              "for": {
+                "home": 4,
+                "away": 3
+              },
+              "against": {
+                "home": 3,
+                "away": 3
+              }
+            }
+          },
+          "clean_sheet": {
+            "home": 6,
+            "away": 6,
+            "total": 12
+          },
+          "failed_to_score": {
+            "home": 6,
+            "away": 5,
+            "total": 11
+          },
+          "penalty": {
+            "scored": {
+              "total": 5,
+              "percentage": "71.43%"
+            },
+            "missed": {
+              "total": 2,
+              "percentage": "28.57%"
+            },
+            "total": 7
+          },
+          "lineups": [
+            {
+              "formation": "4-2-3-1",
+              "played": 29
+            },
+            {
+              "formation": "4-1-4-1",
+              "played": 2
+            },
+            {
+              "formation": "4-4-2",
+              "played": 1
+            },
+            {
+              "formation": "4-5-1",
+              "played": 1
+            }
+          ],
+          "cards": {
+            "yellow": {
+              "0-15": {
+                "total": 9,
+                "percentage": "9.78%"
+              },
+              "16-30": {
+                "total": 5,
+                "percentage": "5.43%"
+              },
+              "31-45": {
+                "total": 13,
+                "percentage": "14.13%"
+              },
+              "46-60": {
+                "total": 19,
+                "percentage": "20.65%"
+              },
+              "61-75": {
+                "total": 18,
+                "percentage": "19.57%"
+              },
+              "76-90": {
+                "total": 14,
+                "percentage": "15.22%"
+              },
+              "91-105": {
+                "total": 12,
+                "percentage": "13.04%"
+              },
+              "106-120": {
+                "total": null,
+                "percentage": null
+              },
+              "": {
+                "total": 2,
+                "percentage": "2.17%"
+              }
+            },
+            "red": {
+              "0-15": {
+                "total": null,
+                "percentage": null
+              },
+              "16-30": {
+                "total": null,
+                "percentage": null
+              },
+              "31-45": {
+                "total": null,
+                "percentage": null
+              },
+              "46-60": {
+                "total": 1,
+                "percentage": "25.00%"
+              },
+              "61-75": {
+                "total": 1,
+                "percentage": "25.00%"
+              },
+              "76-90": {
+                "total": 1,
+                "percentage": "25.00%"
+              },
+              "91-105": {
+                "total": 1,
+                "percentage": "25.00%"
+              },
+              "106-120": {
+                "total": null,
+                "percentage": null
+              }
+            }
+          }
+        },
+        "standings": [
+          {
+            "rank": 1,
+            "team": {
+              "id": "aps:218",
+              "name": "Tondela",
+              "logo": "https://media.api-sports.io/football/teams/218.png"
+            },
+            "points": 64,
+            "goalsDiff": 23,
+            "group": "Segunda Liga",
+            "form": "WLWDL",
+            "status": "same",
+            "description": "Promotion",
+            "all": {
+              "played": 34,
+              "win": 17,
+              "draw": 13,
+              "lose": 4,
+              "goals": {
+                "for": 58,
+                "against": 35
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 10,
+              "draw": 4,
+              "lose": 3,
+              "goals": {
+                "for": 28,
+                "against": 18
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 7,
+              "draw": 9,
+              "lose": 1,
+              "goals": {
+                "for": 30,
+                "against": 17
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 2,
+            "team": {
+              "id": "aps:4724",
+              "name": "Alverca",
+              "logo": "https://media.api-sports.io/football/teams/4724.png"
+            },
+            "points": 63,
+            "goalsDiff": 24,
+            "group": "Segunda Liga",
+            "form": "WWWWW",
+            "status": "up",
+            "description": "Promotion",
+            "all": {
+              "played": 34,
+              "win": 17,
+              "draw": 12,
+              "lose": 5,
+              "goals": {
+                "for": 58,
+                "against": 34
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 10,
+              "draw": 6,
+              "lose": 1,
+              "goals": {
+                "for": 33,
+                "against": 16
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 7,
+              "draw": 6,
+              "lose": 4,
+              "goals": {
+                "for": 25,
+                "against": 18
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 3,
+            "team": {
+              "id": "aps:810",
+              "name": "Vizela",
+              "logo": "https://media.api-sports.io/football/teams/810.png"
+            },
+            "points": 62,
+            "goalsDiff": 20,
+            "group": "Segunda Liga",
+            "form": "WDWDW",
+            "status": "down",
+            "description": "Promotion Play-off",
+            "all": {
+              "played": 34,
+              "win": 17,
+              "draw": 11,
+              "lose": 6,
+              "goals": {
+                "for": 50,
+                "against": 30
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 8,
+              "draw": 6,
+              "lose": 3,
+              "goals": {
+                "for": 26,
+                "against": 15
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 9,
+              "draw": 5,
+              "lose": 3,
+              "goals": {
+                "for": 24,
+                "against": 15
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 4,
+            "team": {
+              "id": "aps:229",
+              "name": "Benfica B",
+              "logo": "https://media.api-sports.io/football/teams/229.png"
+            },
+            "points": 55,
+            "goalsDiff": 15,
+            "group": "Segunda Liga",
+            "form": "WDDWW",
+            "status": "same",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 15,
+              "draw": 10,
+              "lose": 9,
+              "goals": {
+                "for": 53,
+                "against": 38
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 9,
+              "draw": 4,
+              "lose": 4,
+              "goals": {
+                "for": 25,
+                "against": 16
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 6,
+              "draw": 6,
+              "lose": 5,
+              "goals": {
+                "for": 28,
+                "against": 22
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 5,
+            "team": {
+              "id": "aps:4799",
+              "name": "Torreense",
+              "logo": "https://media.api-sports.io/football/teams/4799.png"
+            },
+            "points": 54,
+            "goalsDiff": 7,
+            "group": "Segunda Liga",
+            "form": "LWWDW",
+            "status": "same",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 15,
+              "draw": 9,
+              "lose": 10,
+              "goals": {
+                "for": 49,
+                "against": 42
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 8,
+              "draw": 3,
+              "lose": 6,
+              "goals": {
+                "for": 26,
+                "against": 23
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 7,
+              "draw": 6,
+              "lose": 4,
+              "goals": {
+                "for": 23,
+                "against": 19
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 6,
+            "team": {
+              "id": "aps:4662",
+              "name": "União de Leiria",
+              "logo": "https://media.api-sports.io/football/teams/4662.png"
+            },
+            "points": 52,
+            "goalsDiff": 12,
+            "group": "Segunda Liga",
+            "form": "LWWWL",
+            "status": "up",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 15,
+              "draw": 7,
+              "lose": 12,
+              "goals": {
+                "for": 49,
+                "against": 37
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 6,
+              "draw": 5,
+              "lose": 6,
+              "goals": {
+                "for": 19,
+                "against": 19
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 9,
+              "draw": 2,
+              "lose": 6,
+              "goals": {
+                "for": 30,
+                "against": 18
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 7,
+            "team": {
+              "id": "aps:223",
+              "name": "Chaves",
+              "logo": "https://media.api-sports.io/football/teams/223.png"
+            },
+            "points": 51,
+            "goalsDiff": 6,
+            "group": "Segunda Liga",
+            "form": "DLLLW",
+            "status": "down",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 14,
+              "draw": 9,
+              "lose": 11,
+              "goals": {
+                "for": 40,
+                "against": 34
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 7,
+              "draw": 4,
+              "lose": 6,
+              "goals": {
+                "for": 22,
+                "against": 18
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 7,
+              "draw": 5,
+              "lose": 5,
+              "goals": {
+                "for": 18,
+                "against": 16
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 8,
+            "team": {
+              "id": "aps:213",
+              "name": "Feirense",
+              "logo": "https://media.api-sports.io/football/teams/213.png"
+            },
+            "points": 49,
+            "goalsDiff": 1,
+            "group": "Segunda Liga",
+            "form": "LWDLW",
+            "status": "same",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 13,
+              "draw": 10,
+              "lose": 11,
+              "goals": {
+                "for": 35,
+                "against": 34
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 8,
+              "draw": 5,
+              "lose": 4,
+              "goals": {
+                "for": 24,
+                "against": 16
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 5,
+              "draw": 5,
+              "lose": 7,
+              "goals": {
+                "for": 11,
+                "against": 18
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 9,
+            "team": {
+              "id": "aps:4744",
+              "name": "Felgueiras 1932",
+              "logo": "https://media.api-sports.io/football/teams/4744.png"
+            },
+            "points": 46,
+            "goalsDiff": 5,
+            "group": "Segunda Liga",
+            "form": "WWDDW",
+            "status": "up",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 11,
+              "draw": 13,
+              "lose": 10,
+              "goals": {
+                "for": 43,
+                "against": 38
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 7,
+              "draw": 6,
+              "lose": 4,
+              "goals": {
+                "for": 22,
+                "against": 17
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 4,
+              "draw": 7,
+              "lose": 6,
+              "goals": {
+                "for": 21,
+                "against": 21
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 10,
+            "team": {
+              "id": "aps:238",
+              "name": "Academico Viseu",
+              "logo": "https://media.api-sports.io/football/teams/238.png"
+            },
+            "points": 45,
+            "goalsDiff": 2,
+            "group": "Segunda Liga",
+            "form": "LDWLL",
+            "status": "down",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 11,
+              "draw": 12,
+              "lose": 11,
+              "goals": {
+                "for": 43,
+                "against": 41
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 8,
+              "draw": 5,
+              "lose": 4,
+              "goals": {
+                "for": 21,
+                "against": 15
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 3,
+              "draw": 7,
+              "lose": 7,
+              "goals": {
+                "for": 22,
+                "against": 26
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 11,
+            "team": {
+              "id": "aps:235",
+              "name": "Penafiel",
+              "logo": "https://media.api-sports.io/football/teams/235.png"
+            },
+            "points": 45,
+            "goalsDiff": -2,
+            "group": "Segunda Liga",
+            "form": "DDLLL",
+            "status": "down",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 12,
+              "draw": 9,
+              "lose": 13,
+              "goals": {
+                "for": 45,
+                "against": 47
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 6,
+              "draw": 6,
+              "lose": 5,
+              "goals": {
+                "for": 24,
+                "against": 21
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 6,
+              "draw": 3,
+              "lose": 8,
+              "goals": {
+                "for": 21,
+                "against": 26
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 12,
+            "team": {
+              "id": "aps:214",
+              "name": "Maritimo",
+              "logo": "https://media.api-sports.io/football/teams/214.png"
+            },
+            "points": 43,
+            "goalsDiff": -6,
+            "group": "Segunda Liga",
+            "form": "LDDDW",
+            "status": "down",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 10,
+              "draw": 13,
+              "lose": 11,
+              "goals": {
+                "for": 42,
+                "against": 48
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 3,
+              "draw": 8,
+              "lose": 6,
+              "goals": {
+                "for": 19,
+                "against": 22
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 7,
+              "draw": 5,
+              "lose": 5,
+              "goals": {
+                "for": 23,
+                "against": 26
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 13,
+            "team": {
+              "id": "aps:244",
+              "name": "Leixoes",
+              "logo": "https://media.api-sports.io/football/teams/244.png"
+            },
+            "points": 41,
+            "goalsDiff": -5,
+            "group": "Segunda Liga",
+            "form": "WLWWL",
+            "status": "same",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 10,
+              "draw": 11,
+              "lose": 13,
+              "goals": {
+                "for": 37,
+                "against": 42
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 7,
+              "draw": 6,
+              "lose": 4,
+              "goals": {
+                "for": 26,
+                "against": 17
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 3,
+              "draw": 5,
+              "lose": 9,
+              "goals": {
+                "for": 11,
+                "against": 25
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 14,
+            "team": {
+              "id": "aps:243",
+              "name": "FC Porto B",
+              "logo": "https://media.api-sports.io/football/teams/243.png"
+            },
+            "points": 35,
+            "goalsDiff": -11,
+            "group": "Segunda Liga",
+            "form": "LWLWL",
+            "status": "up",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 8,
+              "draw": 11,
+              "lose": 15,
+              "goals": {
+                "for": 36,
+                "against": 47
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 5,
+              "draw": 5,
+              "lose": 7,
+              "goals": {
+                "for": 19,
+                "against": 24
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 3,
+              "draw": 6,
+              "lose": 8,
+              "goals": {
+                "for": 17,
+                "against": 23
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 15,
+            "team": {
+              "id": "aps:216",
+              "name": "Portimonense",
+              "logo": "https://media.api-sports.io/football/teams/216.png"
+            },
+            "points": 34,
+            "goalsDiff": -16,
+            "group": "Segunda Liga",
+            "form": "LLLDW",
+            "status": "down",
+            "description": null,
+            "all": {
+              "played": 34,
+              "win": 9,
+              "draw": 7,
+              "lose": 18,
+              "goals": {
+                "for": 38,
+                "against": 54
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 6,
+              "draw": 3,
+              "lose": 8,
+              "goals": {
+                "for": 24,
+                "against": 27
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 3,
+              "draw": 4,
+              "lose": 10,
+              "goals": {
+                "for": 14,
+                "against": 27
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 16,
+            "team": {
+              "id": "aps:234",
+              "name": "Pacos Ferreira",
+              "logo": "https://media.api-sports.io/football/teams/234.png"
+            },
+            "points": 33,
+            "goalsDiff": -16,
+            "group": "Segunda Liga",
+            "form": "WLLLL",
+            "status": "same",
+            "description": "Relegation Play-off",
+            "all": {
+              "played": 34,
+              "win": 9,
+              "draw": 6,
+              "lose": 19,
+              "goals": {
+                "for": 34,
+                "against": 50
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 4,
+              "draw": 3,
+              "lose": 10,
+              "goals": {
+                "for": 19,
+                "against": 28
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 5,
+              "draw": 3,
+              "lose": 9,
+              "goals": {
+                "for": 15,
+                "against": 22
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 17,
+            "team": {
+              "id": "aps:233",
+              "name": "Oliveirense",
+              "logo": "https://media.api-sports.io/football/teams/233.png"
+            },
+            "points": 29,
+            "goalsDiff": -34,
+            "group": "Segunda Liga",
+            "form": "LDLWL",
+            "status": "same",
+            "description": "Relegation",
+            "all": {
+              "played": 34,
+              "win": 7,
+              "draw": 8,
+              "lose": 19,
+              "goals": {
+                "for": 30,
+                "against": 64
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 3,
+              "draw": 5,
+              "lose": 9,
+              "goals": {
+                "for": 13,
+                "against": 27
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 4,
+              "draw": 3,
+              "lose": 10,
+              "goals": {
+                "for": 17,
+                "against": 37
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          },
+          {
+            "rank": 18,
+            "team": {
+              "id": "aps:245",
+              "name": "Mafra",
+              "logo": "https://media.api-sports.io/football/teams/245.png"
+            },
+            "points": 27,
+            "goalsDiff": -25,
+            "group": "Segunda Liga",
+            "form": "WLLLL",
+            "status": "same",
+            "description": "Relegation",
+            "all": {
+              "played": 34,
+              "win": 6,
+              "draw": 9,
+              "lose": 19,
+              "goals": {
+                "for": 29,
+                "against": 54
+              }
+            },
+            "home": {
+              "played": 17,
+              "win": 5,
+              "draw": 6,
+              "lose": 6,
+              "goals": {
+                "for": 18,
+                "against": 22
+              }
+            },
+            "away": {
+              "played": 17,
+              "win": 1,
+              "draw": 3,
+              "lose": 13,
+              "goals": {
+                "for": 11,
+                "against": 32
+              }
+            },
+            "update": "2025-06-03T00:00:00+00:00"
+          }
+        ],
+        "injuries": []
+      }
+    }
+  ]
 }
