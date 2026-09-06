@@ -1,0 +1,7 @@
+{
+  "h2h_weight": 0.15,
+  "form_weight": 0.4,
+  "venue_weight": 0.45,
+  "half_life": 4,
+  "rho": -0.11
+}
