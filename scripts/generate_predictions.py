@@ -1,0 +1,484 @@
+"""
+generate_predictions.py
+Free-tier optimized daily runner.
+
+Budget design:
+- 1 fixture-date call
+- Phase 1: up to MAX_MATCHES screened candidates, using cached team form + H2H
+- Phase 2: up to FINALIST_POOL finalists, using team stats + one standings
+  call per league + injuries
+- Final predictions are recalculated AFTER deep data is available.
+
+Publication policy:
+- Between MIN_PICKS_PER_DAY and MAX_PICKS_PER_DAY picks are published per day.
+- STRICT tier (MIN_FINAL_PROB/MIN_FINAL_RELIABILITY) is always preferred.
+- If STRICT alone doesn't reach MIN_PICKS_PER_DAY, the best remaining
+  candidates that pass a RELAXED gate (RELAXED_MIN_PROB/RELAXED_MIN_RELIABILITY)
+  top it up, tagged "confidence_tier":"relaxed" so downstream consumers can
+  tell the two apart. No pick is ever fabricated below the relaxed floor, so
+  a very quiet match-day can still publish fewer than MIN_PICKS_PER_DAY.
+"""
+import json, os, sys
+from datetime import datetime, timedelta, timezone
+
+sys.path.insert(0, os.path.dirname(__file__))
+import football_api
+from predictor import predict_match, best_pick, high_odds_pick, top_correct_scores, correct_score_pick
+
+BD_OFFSET = timedelta(hours=6)
+MAX_MATCHES = 35
+MIN_QUOTA_BUFFER = 10
+
+# --------------------------------------------------------------------------
+# Daily pick-count policy: প্রতিদিন ন্যূনতম MIN_PICKS_PER_DAY টা এবং সর্বোচ্চ
+# MAX_PICKS_PER_DAY টা pick প্রকাশ হবে।
+#
+# FINALIST_POOL: phase-2 (deep enrich)-এ কতগুলো screened candidate পাঠানো হবে।
+# এটা MAX_PICKS_PER_DAY-এর চেয়ে বেশি রাখা হয়েছে (buffer) কারণ সব finalist-ই
+# strict gate পাস করবে না — যথেষ্ট পুল না থাকলে ভালো দিনেও ১২টা পূর্ণ হবে না।
+# ⚠️ এটা বাড়ালে phase-2 API কল বাড়ে (প্রতি finalist-এ stats/standings/injuries
+# কল লাগে) — MIN_QUOTA_BUFFER গার্ড এখনো সক্রিয় থাকে বলে কোটা শেষ হয়ে গেলে
+# লুপ নিজে থেকেই থেমে যাবে, ক্র্যাশ করবে না।
+MIN_PICKS_PER_DAY = 6
+MAX_PICKS_PER_DAY = 12
+FINALIST_POOL = 20
+
+# Final publication gate (STRICT / "high confidence" tier): weak probability/
+# reliability combinations are not published under this tier. This keeps the
+# daily output selective instead of forcing a pick for every finalist.
+MIN_FINAL_PROB = 0.55
+MIN_FINAL_RELIABILITY = 60
+
+# --------------------------------------------------------------------------
+# RELAXED tier: শুধু তখনই ব্যবহার হয় যখন STRICT gate-এ MIN_PICKS_PER_DAY-এর
+# চেয়ে কম pick পাস করে — সেদিন কোটা-শূন্য একটা রিপোর্ট দেওয়ার বদলে, পুলের
+# পরের-সেরা candidate-গুলো থেকে (এখনো একটা reasonable floor বজায় রেখে) বাকিটা
+# পূরণ করা হয়। এই তলায় নামা pick-গুলোকে "confidence_tier":"relaxed" দিয়ে আলাদা
+# চিহ্নিত করা হয় (predictions.json/predictions.html-এ), যাতে এগুলোকে STRICT
+# tier-এর সমান নির্ভরযোগ্য মনে না হয়। STRICT gate-এই যথেষ্ট pick পাওয়া গেলে
+# RELAXED কখনো ব্যবহারই হয় না।
+# ⚠️ এটা "জোর করে যেকোনো মূল্যে ৬টা পিক" না — floor-এর নিচে কিছু নেই, তাই খুব
+# দুর্বল ম্যাচ-ডে-তে ৬টার কমও প্রকাশ হতে পারে (কোনো fabricated pick হবে না)।
+RELAXED_MIN_PROB = 0.48
+RELAXED_MIN_RELIABILITY = 45
+
+# NOTE: ১২টা "core" লিগ (PL, Championship, La Liga, Serie A, Bundesliga, Ligue 1,
+# Primeira Liga, Eredivisie, Brazil Serie A, UCL, World Cup, Euro) এখন
+# football_api.py রাউটার football-data.org থেকে আনে এবং সেগুলোকে aps-এর রেজাল্ট
+# থেকে dedup করেই বাদ দেয় (দেখুন football_api.py-এর CORE_LEAGUE_APS_IDS)।
+# তাই এখানে আর সেগুলোর নাম আলাদা করে whitelist করার দরকার নেই — router থেকে আসা
+# fdo ম্যাচ মানেই সেগুলো আমাদের চাওয়া ১২ লিগের একটা, তাই সবসময় allowed।
+#
+# এই লিস্টে শুধু SECONDARY/FALLBACK লিগগুলো থাকে (api-sports.io থেকে আসা,
+# core ১২টার বাইরে) — নাম-ভিত্তিক ম্যাচিং এখানে ঠিক আছে কারণ এগুলো শুধু একটামাত্র
+# সোর্স (aps) থেকে আসে, দুই সোর্সের নাম মেলানোর ঝামেলা নেই।
+FALLBACK_APS_LEAGUES = {
+    ("England","League One"), ("England","League Two"), ("England","National League"),
+    ("Belgium","First Division A"), ("Austria","Bundesliga"),
+    ("Scotland","League One"), ("Norway","Eliteserien"),
+    ("Sweden","Allsvenskan"), ("Sweden","Superettan"), ("Japan","J. League"),
+    ("Saudi Arabia","Saudi Pro League"),
+    ("United Arab Emirates","Pro League"), ("Russia","Premier League"),
+    ("Iran","Persian Gulf"), ("Türkiye","1. Lig"),
+    ("World","UEFA Europa League"), ("World","UEFA Conference League"),
+    # --- newly added leagues (more matches/coverage) ---
+    ("Germany","2. Bundesliga"), ("Spain","Segunda División"),
+    ("Italy","Serie B"), ("France","Ligue 2"),
+    ("Netherlands","Eerste Divisie"), ("Portugal","Liga Portugal 2"),
+    ("Scotland","Premiership"), ("Türkiye","Süper Lig"),
+    ("Greece","Super League 1"), ("Switzerland","Super League"),
+    ("Denmark","Superliga"), ("Poland","Ekstraklasa"),
+    ("USA","MLS"), ("Mexico","Liga MX"), ("Argentina","Liga Profesional Argentina"),
+    ("Brazil","Serie B"), ("South Korea","K League 1"),
+    ("Australia","A-League"), ("China","Super League"),
+    ("Qatar","Stars League"), ("World","UEFA Nations League"),
+    ("World","Copa Libertadores"), ("World","Copa Sudamericana"),
+}
+ALLOWED = {(c.lower(), n.lower()) for c,n in FALLBACK_APS_LEAGUES}
+
+# --------------------------------------------------------------------------
+# NAME-ম্যাচিং ভঙ্গুর (api-sports.io-এর league.name/country ঠিক আক্ষরিক না
+# মিললে বাদ পড়ে)। api_sports.py-এর _adapt_fixture() দেখে জানা যায়,
+# competition.code আসলে aps-এ league["id"]-ই (নাম না) — router-এর নিজের
+# কমেন্টেও (football_api.py) বলা আছে ID-ভিত্তিক routing নাম-ম্যাচিং এর চেয়ে
+# বেশি নির্ভরযোগ্য। তাই এখানে নাম + ID দুইটাই — যেকোনো একটা মিললেই allow
+# (OR লজিক), existing নাম-ভিত্তিক এন্ট্রি না ভেঙেই।
+#
+# ⚠️ এই ID গুলো api-football-এর সুপরিচিত/স্থিতিশীল লিগ ID (একই patterns যা
+# CORE_LEAGUE_APS_IDS-এ (football_api.py) কনফার্ম করা ১২টা লিগের সাথে মেলে),
+# কিন্তু এই সিস্টেমে নেটওয়ার্ক অ্যাক্সেস নেই বলে লাইভ API কল করে ভেরিফাই করা
+# যায়নি। প্রথম রান দেওয়ার পর stderr-এর DEBUG লগে "dropped_not_allowed" সংখ্যা
+# ও sample দেখে ভুল থাকলে ঠিক করে নেওয়া ভালো।
+# --------------------------------------------------------------------------
+FALLBACK_APS_LEAGUE_IDS = {
+    41, 42, 43,      # England: League One, League Two, National League
+    144,             # Belgium First Division A
+    218,             # Austria Bundesliga
+    103,             # Norway Eliteserien
+    113, 114,        # Sweden Allsvenskan, Superettan
+    98,              # Japan J1 League
+    307,             # Saudi Pro League
+    301,             # UAE Pro League
+    235,             # Russia Premier League
+    290,             # Iran Persian Gulf Pro League
+    204,             # Türkiye 1. Lig
+    3, 848,          # UEFA Europa League, UEFA Conference League
+    # --- newly added ---
+    79,              # Germany 2. Bundesliga
+    141,             # Spain Segunda División
+    136,             # Italy Serie B
+    62,              # France Ligue 2
+    89,              # Netherlands Eerste Divisie
+    95,              # Portugal Liga Portugal 2
+    179,             # Scotland Premiership
+    203,             # Türkiye Süper Lig
+    197,             # Greece Super League
+    207,             # Switzerland Super League
+    119,             # Denmark Superliga
+    106,             # Poland Ekstraklasa
+    253,             # USA MLS
+    262,             # Mexico Liga MX
+    128,             # Argentina Liga Profesional
+    72,              # Brazil Serie B
+    292,             # South Korea K League 1
+    188,             # Australia A-League
+    169,             # China Super League
+    305,             # Qatar Stars League
+    5,               # UEFA Nations League
+    13,              # Copa Libertadores
+    11,              # Copa Sudamericana
+}
+
+def prediction_window():
+    now = datetime.now(timezone.utc)
+    bd = now + BD_OFFSET
+    d = bd.date() if bd.hour >= 6 else bd.date() - timedelta(days=1)
+    start_bd = datetime(d.year,d.month,d.day,6)
+    end_bd = start_bd + timedelta(days=1)
+    start = (start_bd - BD_OFFSET).replace(tzinfo=timezone.utc)
+    end = (end_bd - BD_OFFSET).replace(tzinfo=timezone.utc)
+    return start, end, start.date().isoformat()
+
+def allowed(m):
+    c = m.get("competition", {})
+    code = str(c.get("code") or "")
+    if code.startswith("fdo:"):
+        return True  # router-এর ১২ core লিগ থেকে আসা মানেই already whitelisted
+    if ((c.get("country") or "").lower(), (c.get("name") or "").lower()) in ALLOWED:
+        return True
+    if code.startswith("aps:"):
+        try:
+            league_id = int(code.split(":", 1)[1])
+        except (ValueError, IndexError):
+            return False
+        return league_id in FALLBACK_APS_LEAGUE_IDS
+    return False
+
+def humanize(pick, home, away):
+    if not pick: return None
+    mapping={
+        "Home Win":f"{home} Win","Away Win":f"{away} Win","Draw":"Draw",
+        "Double Chance (Home/Draw)":f"{home} Win or Draw",
+        "Double Chance (Draw/Away)":f"Draw or {away} Win",
+        "Double Chance (Home/Away)":f"{home} Win or {away} Win",
+        "Over 2.5 Goals":"Over 2.5 Goals","Under 2.5 Goals":"Under 2.5 Goals",
+        "Both Teams to Score - Yes":"BTTS - Yes","Both Teams to Score - No":"BTTS - No"
+    }
+    return {**pick, "market_label":mapping.get(pick["market"],pick["market"])}
+
+def screen_score(pred):
+    return (
+        0.50 * pred["best_market_probability"] +
+        0.30 * pred["reliability_score"] +
+        0.20 * pred["confidence_score"]
+    )
+
+def deep_enrich(m):
+    # competition_code এখন composite ("fdo:PL" বা "aps:39") — router নিজেই ভেতরে
+    # ডিকোড করে সঠিক সোর্সে পাঠায়। fdo সোর্সে team_stats/injuries সবসময় খালি/None
+    # আসবে (ফ্রি প্ল্যানে ঐ endpoint নেই) — predictor.py সেটা gracefully হ্যান্ডেল করে।
+    out={"home_team_stats":None,"away_team_stats":None,"standings":[],"injuries":[]}
+    code=m.get("competition_code")
+    if code is None: return out
+    season=m.get("season")
+    try: out["home_team_stats"]=football_api.get_team_statistics(m["home_team_id"],code,season)
+    except Exception as e: print("home stats:",e,file=sys.stderr)
+    try: out["away_team_stats"]=football_api.get_team_statistics(m["away_team_id"],code,season)
+    except Exception as e: print("away stats:",e,file=sys.stderr)
+    try: out["standings"]=football_api.get_standings(code,season)
+    except Exception as e: print("standings:",e,file=sys.stderr)
+    try: out["injuries"]=football_api.get_injuries(m["match_id"])
+    except Exception as e: print("injuries:",e,file=sys.stderr)
+    return out
+
+def append_log(items,path):
+    try:
+        with open(path,encoding="utf-8") as f: log=json.load(f)
+    except (FileNotFoundError,json.JSONDecodeError): log=[]
+    ids={x.get("match_id") for x in log}
+    for m in items:
+        if m["match_id"] in ids: continue
+        log.append({
+            "match_id":m["match_id"],"competition":m["competition"],
+            "home_team":m["home_team"],"away_team":m["away_team"],
+            # home_team_id/away_team_id: check_results.py-তে Elo রেটিং আপডেট
+            # করার জন্য দরকার (আগে শুধু নাম সেভ হতো, id না)
+            "home_team_id":m.get("home_team_id"),"away_team_id":m.get("away_team_id"),
+            # season: elo.py-এর regress_team_if_new_season()-এর জন্য দরকার —
+            # check_results.py প্রতিটা resolved ম্যাচের সাথে এই ফিল্ড পড়ে বুঝতে
+            # পারে কোনো টিম নতুন সিজনে ঢুকেছে কিনা (প্রতি টিম আলাদাভাবে, কারণ
+            # বিভিন্ন লিগের সিজন আলাদা সময়ে শুরু হয়)।
+            "season":m.get("season"),
+            "match_date":m["match_date"],"best_pick":m.get("best_pick"),
+            # confidence_score_at_prediction: analyze_accuracy.py এই ফিল্ড দিয়ে
+            # confidence-bucket accuracy হিসাব করে (predicted confidence যত বেশি,
+            # আসল hit-rate তত বেশি কিনা যাচাই করতে) — আগে এই ফিল্ড লগে সেভ হতো
+            # না, তাই সেই সেকশন সবসময় খালি থাকতো। এখন যোগ করা হলো।
+            "confidence_score_at_prediction":m.get("confidence_score"),
+            "high_odds_pick":m.get("high_odds_pick"),
+            # correctscore_pick: /correctscore মার্কেটের নিজস্ব bucket-accuracy
+            # ট্র্যাক করার জন্য — top_correct_scores()-এর সবচেয়ে সম্ভাব্য স্কোরটা
+            # (probability_pct সহ) সেভ রাখা হচ্ছে, যাতে check_results.py পরে
+            # আসল ফলাফলের সাথে মিলিয়ে correct/incorrect মার্ক করতে পারে এবং
+            # tracking.accuracy_report(which="correctscore_pick") দিয়ে আলাদাভাবে
+            # এই মার্কেটের calibration যাচাই করা যায় (দেখুন tracking.py)।
+            # আগে এখানে সরাসরি top_scores[0] নেওয়া হতো, probability যত কমই
+            # হোক না কেন — exact scoreline স্বভাবতই low-probability market
+            # বলে সেটা প্রায়ই "ভুল" প্রমাণ হতো। correct_score_pick() এখন
+            # min_probability_pct/min_edge_pct শর্ত পূরণ না হলে None রাখে,
+            # অর্থাৎ কম-আত্মবিশ্বাসী ম্যাচে কোনো Correct Score pick ট্র্যাকই
+            # হবে না (check_results.py সেটাকে no_pick হিসেবে মার্ক করবে)।
+            "correctscore_pick":correct_score_pick(m.get("top_scores") or []),
+            "status":"pending",
+            "actual_score":None,"checked_at":None
+        })
+    _cap_log(log, path)
+
+
+LOG_MAX_ENTRIES = 1000
+
+
+def _cap_log(log, path):
+    """আগে `log[-1000:]` দিয়ে blind cap করা হতো — সমস্যা: pending entry কম হলেও,
+    resolved (correct/incorrect) এন্ট্রি জমতে জমতে ১০০০ ছুঁয়ে গেলে সবচেয়ে
+    পুরনোগুলো (এমনকি এখনো "pending" থাকা কোনো ম্যাচও!) ছেঁটে ফেলা হতো — অর্থাৎ
+    কখনো check_results.py দিয়ে resolve হওয়ার আগেই একটা প্রেডিকশন হারিয়ে যেতে
+    পারতো। এখন policy: pending এন্ট্রি কখনো cap-এর কারণে বাদ পড়বে না (সেগুলো
+    এখনো "খোলা" — history.json-এ ওদের কোনো ব্যাকআপ নেই)। resolved এন্ট্রি
+    (correct/incorrect/no_pick/unresolved) ইতিমধ্যে data/history.json-এ
+    স্থায়ীভাবে সংরক্ষিত আছে (check_results.py দেখুন), তাই এখানে ডুপ্লিকেট —
+    শুধু সেগুলোর মধ্যে থেকে সবচেয়ে পুরনোগুলো বাদ দিয়ে মোট আকার
+    LOG_MAX_ENTRIES-এর মধ্যে রাখা হয়।
+    """
+    pending = [e for e in log if e.get("status") == "pending"]
+    resolved = [e for e in log if e.get("status") != "pending"]
+    budget = max(0, LOG_MAX_ENTRIES - len(pending))
+    if len(pending) > LOG_MAX_ENTRIES:
+        print(
+            f"WARNING: pending predictions ({len(pending)}) > LOG_MAX_ENTRIES "
+            f"({LOG_MAX_ENTRIES}) — check_results.py ঠিকমতো চলছে কিনা যাচাই করুন, "
+            "নাহলে predictions_log.json অস্বাভাবিক বড় হতে থাকবে।",
+            file=sys.stderr,
+        )
+    trimmed = resolved[-budget:] if budget else []
+    log[:] = trimmed + pending
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(log, f, ensure_ascii=False, indent=2)
+
+def build():
+    start,end,target=prediction_window()
+    matches=football_api.get_matches_for_date(target)
+    print(f"DEBUG: fetched {len(matches)} raw matches for date={target} "
+          f"(window {start.isoformat()} .. {end.isoformat()})", file=sys.stderr)
+
+    dropped_not_allowed=0
+    dropped_no_ts=0
+    dropped_out_of_window=0
+    candidates=[]
+    for m in matches:
+        if not allowed(m):
+            dropped_not_allowed+=1
+            continue
+        ts=m.get("utcDate")
+        if not ts:
+            dropped_no_ts+=1
+            continue
+        try: kick=datetime.fromisoformat(ts.replace("Z","+00:00"))
+        except ValueError:
+            dropped_no_ts+=1
+            continue
+        if not(start<=kick<end):
+            dropped_out_of_window+=1
+            continue
+        candidates.append(m)
+    print(f"DEBUG: after filters -> {len(candidates)} candidates "
+          f"(dropped: not_allowed_league={dropped_not_allowed}, "
+          f"no_timestamp={dropped_no_ts}, outside_window={dropped_out_of_window})",
+          file=sys.stderr)
+    if matches and not candidates:
+        sample=[(m.get("competition",{}).get("name"),m.get("competition",{}).get("country"),
+                 m.get("competition",{}).get("code"),m.get("utcDate")) for m in matches[:8]]
+        print(f"DEBUG: sample of raw matches that got dropped (name,country,code,date): {sample}", file=sys.stderr)
+
+    candidates.sort(key=lambda x:x.get("utcDate") or "")
+    candidates=candidates[:MAX_MATCHES]
+
+    screened=[]
+    dropped_quota=0
+    dropped_predict_error=0
+    dropped_no_real_data=0
+    for m in candidates:
+        remaining=football_api.last_known_remaining_daily_quota
+        if remaining is not None and remaining < MIN_QUOTA_BUFFER:
+            dropped_quota+=1
+            break
+        try:
+            p=predict_match(m["homeTeam"]["id"],m["awayTeam"]["id"],match_id=m["id"],
+                             match_date=m.get("utcDate"))
+        except Exception as e:
+            print("screen failed:",e,file=sys.stderr)
+            dropped_predict_error+=1
+            continue
+        if not p["has_real_data"]:
+            dropped_no_real_data+=1
+            continue
+        screened.append((screen_score(p),m,p))
+    print(f"DEBUG: screening -> {len(screened)} passed has_real_data "
+          f"(dropped: quota_exhausted={dropped_quota}, predict_error={dropped_predict_error}, "
+          f"no_real_data={dropped_no_real_data})", file=sys.stderr)
+
+    screened.sort(key=lambda x:x[0],reverse=True)
+    finalists=screened[:FINALIST_POOL]
+
+    strict_final=[]   # [(score, item), ...] — STRICT gate পাস করা pick
+    relaxed_final=[]  # [(score, item), ...] — শুধু STRICT gate ফেল করেছে এমন pick,
+                       # RELAXED gate পাস করেছে (top-up-এর জন্য reserve রাখা)
+    dropped_no_best_pick=0
+    for score,m,base_pred in finalists:
+        if football_api.last_known_remaining_daily_quota is not None and football_api.last_known_remaining_daily_quota < MIN_QUOTA_BUFFER:
+            break
+        deep=deep_enrich({
+            "match_id":m["id"],"home_team_id":m["homeTeam"]["id"],
+            "away_team_id":m["awayTeam"]["id"],
+            "competition_code":m["competition"].get("code"),
+            "season":m["competition"].get("season")
+        })
+        try:
+            p=predict_match(m["homeTeam"]["id"],m["awayTeam"]["id"],deep=deep,match_id=m["id"],
+                             match_date=m.get("utcDate"))
+        except Exception:
+            p=base_pred
+
+        best=best_pick(p,min_probability=MIN_FINAL_PROB,min_reliability=MIN_FINAL_RELIABILITY,min_odds=1.30)
+        tier="high"
+        if best is None:
+            # STRICT gate ফেল করেছে — RELAXED gate দিয়ে চেষ্টা করা হচ্ছে, যাতে
+            # প্রয়োজনে (MIN_PICKS_PER_DAY পূরণ করতে) পরে top-up-এর জন্য ব্যবহার
+            # করা যায়। এখনই final-এ যোগ হচ্ছে না — নিচে সব finalist প্রসেস হওয়ার
+            # পর দরকার হলেই শুধু ব্যবহার হবে।
+            best=best_pick(p,min_probability=RELAXED_MIN_PROB,min_reliability=RELAXED_MIN_RELIABILITY,min_odds=1.30)
+            tier="relaxed"
+        if best is None:
+            dropped_no_best_pick+=1
+            print(f"DEBUG: finalist has no market with odds >= 1.30 (even relaxed gate): "
+                  f"{m['homeTeam']['name']} vs {m['awayTeam']['name']} "
+                  f"reliability={p.get('reliability_score')} "
+                  f"best_prob={p.get('best_market_probability')}", file=sys.stderr)
+            continue
+
+        high=high_odds_pick(p)
+        item={
+            "confidence_tier":tier,
+            "match_id":m["id"],
+            "competition":f'{m["competition"].get("name")} ({m["competition"].get("country")})',
+            "league_id":m["competition"].get("id"),
+            "season":m["competition"].get("season"),
+            "home_team":m["homeTeam"]["name"],"away_team":m["awayTeam"]["name"],
+            "home_team_id":m["homeTeam"]["id"],"away_team_id":m["awayTeam"]["id"],
+            "match_date":m.get("utcDate"),
+            "home_expected_goals":p["home_expected_goals"],
+            "away_expected_goals":p["away_expected_goals"],
+            "most_likely_score":p["most_likely_score"],
+            "home_win_pct":p["home_win_pct"],"draw_pct":p["draw_pct"],
+            "away_win_pct":p["away_win_pct"],
+            "over_2_5_pct":p["over_2_5_pct"],
+            "btts_yes_pct":p["btts_yes_pct"],
+            "double_chance_1x_pct":p["double_chance_1x_pct"],
+            "double_chance_x2_pct":p["double_chance_x2_pct"],
+            "home_power_rating":p["home_power_rating"],
+            "away_power_rating":p["away_power_rating"],
+            "home_cards_avg":p.get("home_cards_avg"),
+            "away_cards_avg":p.get("away_cards_avg"),
+            "confidence_score":p["confidence_score"],
+            "signal_agreement":p["signal_agreement"],
+            "reliability_score":p["reliability_score"],
+            "best_market_probability":p["best_market_probability"],
+            "best_pick":humanize(best,m["homeTeam"]["name"],m["awayTeam"]["name"]),
+            "high_odds_pick":humanize(high,m["homeTeam"]["name"],m["awayTeam"]["name"]),
+            "top_scores":top_correct_scores(p, max_scores=3),
+            # Correct Score-এর জন্য আলাদা gate: খুব কম probability বা প্রায়-সমান
+            # top-2 score হলে forced pick নয়। Top-3 scores UI-তে থাকবে, কিন্তু
+            # correctscore_pick কেবল gate পাস করলে প্রকাশ/track হবে।
+            "correctscore_pick":correct_score_pick(top_correct_scores(p, max_scores=3)),
+            "deep_analysis":deep,
+        }
+        if tier=="high":
+            strict_final.append((score,item))
+        else:
+            relaxed_final.append((score,item))
+
+    print(f"DEBUG: gate results -> strict={len(strict_final)}, relaxed_available={len(relaxed_final)} "
+          f"(dropped_no_best_pick={dropped_no_best_pick} out of {len(finalists)} finalists checked)",
+          file=sys.stderr)
+
+    # STRICT tier prioritized first, sorted by quality; capped at MAX_PICKS_PER_DAY.
+    strict_final.sort(key=lambda x:x[0],reverse=True)
+    selected=strict_final[:MAX_PICKS_PER_DAY]
+
+    # যদি STRICT tier একাই MIN_PICKS_PER_DAY-এ না পৌঁছায়, RELAXED pool থেকে
+    # (quality-ordered) দরকারমতো top-up করা হয় — MAX_PICKS_PER_DAY-এর মধ্যে থেকেই।
+    if len(selected) < MIN_PICKS_PER_DAY:
+        relaxed_final.sort(key=lambda x:x[0],reverse=True)
+        need=min(MIN_PICKS_PER_DAY-len(selected), MAX_PICKS_PER_DAY-len(selected))
+        topped_up=relaxed_final[:max(0,need)]
+        if topped_up:
+            print(f"DEBUG: strict tier only had {len(selected)} pick(s) — topping up with "
+                  f"{len(topped_up)} relaxed-gate pick(s) to reach MIN_PICKS_PER_DAY="
+                  f"{MIN_PICKS_PER_DAY}", file=sys.stderr)
+        selected+=topped_up
+
+    final=[item for _,item in selected]
+
+    if len(final) < MIN_PICKS_PER_DAY:
+        print(f"DEBUG: only {len(final)} pick(s) could be published today, below the "
+              f"MIN_PICKS_PER_DAY target of {MIN_PICKS_PER_DAY} — no fabricated picks are "
+              "added beyond RELAXED_MIN_PROB/RELAXED_MIN_RELIABILITY, so a quiet match-day "
+              "can still fall short of the target.", file=sys.stderr)
+
+    final.sort(key=lambda x:x["match_date"] or "")
+    payload={
+        "generated_at":datetime.now(timezone.utc).isoformat(),
+        "prediction_window_bd":{
+            "from":(start+BD_OFFSET).isoformat(),"to":(end+BD_OFFSET).isoformat()
+        },
+        "model_version":"v2.0-high-selectivity",
+        "disclaimer":"Statistical estimate only; no prediction is guaranteed.",
+        "top_picks_count":len(final),
+        "min_picks_target":MIN_PICKS_PER_DAY,
+        "max_picks_cap":MAX_PICKS_PER_DAY,
+        "high_confidence_count":sum(1 for m in final if m.get("confidence_tier")=="high"),
+        "relaxed_confidence_count":sum(1 for m in final if m.get("confidence_tier")=="relaxed"),
+        "api_cache_stats":football_api.cache_stats(),
+        "remaining_quota":football_api.last_known_remaining_daily_quota,
+        "matches":final,
+    }
+    root=os.path.dirname(__file__)
+    data_dir=os.path.join(root,"..","data")
+    os.makedirs(data_dir,exist_ok=True)
+    out=os.path.join(data_dir,"predictions.json")
+    with open(out,"w",encoding="utf-8") as f: json.dump(payload,f,ensure_ascii=False,indent=2)
+    append_log(final,os.path.join(data_dir,"predictions_log.json"))
+    print(f"Generated {len(final)} high-confidence picks; remaining quota={football_api.last_known_remaining_daily_quota}")
+
+if __name__=="__main__":
+    build()
