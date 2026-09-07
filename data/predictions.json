@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-09-07T22:22:39.932358+00:00",
+  "generated_at": "2026-09-07T23:34:36.607516+00:00",
   "prediction_window_bd": {
     "from": "2026-09-07T06:00:00+00:00",
     "to": "2026-09-08T06:00:00+00:00"
   },
   "model_version": "v2.0-high-selectivity",
   "disclaimer": "Statistical estimate only; no prediction is guaranteed.",
-  "top_picks_count": 1,
+  "top_picks_count": 0,
   "min_picks_target": 6,
   "max_picks_cap": 12,
-  "high_confidence_count": 1,
+  "high_confidence_count": 0,
   "relaxed_confidence_count": 0,
   "api_cache_stats": {
     "fdo": {
-      "teams_cached": 2,
-      "h2h_matches_cached": 1,
-      "standings_cached": 1
+      "teams_cached": 0,
+      "h2h_matches_cached": 0,
+      "standings_cached": 0
     },
     "aps": {
       "teams_cached": 0,
@@ -26,256 +26,6 @@
       "lineups_cached": 0
     }
   },
-  "remaining_quota": null,
-  "matches": [
-    {
-      "confidence_tier": "high",
-      "match_id": "fdo:554999",
-      "competition": "Campeonato Brasileiro Série A (Brazil)",
-      "league_id": 2013,
-      "season": 2026,
-      "home_team": "EC Vitória",
-      "away_team": "Grêmio FBPA",
-      "home_team_id": "fdo:1782",
-      "away_team_id": "fdo:1767",
-      "match_date": "2026-09-07T23:00:00Z",
-      "home_expected_goals": 1.11,
-      "away_expected_goals": 1.28,
-      "most_likely_score": "1-1",
-      "home_win_pct": 30.6,
-      "draw_pct": 30.4,
-      "away_win_pct": 39.0,
-      "over_2_5_pct": 42.8,
-      "btts_yes_pct": 49.9,
-      "double_chance_1x_pct": 61.0,
-      "double_chance_x2_pct": 69.4,
-      "home_power_rating": -26.7,
-      "away_power_rating": -7.1,
-      "home_cards_avg": null,
-      "away_cards_avg": null,
-      "confidence_score": 100,
-      "signal_agreement": 50,
-      "reliability_score": 77,
-      "best_market_probability": 69.6,
-      "best_pick": {
-        "market": "Double Chance (Home/Away)",
-        "probability_pct": 69.6,
-        "fair_odds": 1.44,
-        "reliability_score": 77,
-        "market_label": "EC Vitória Win or Grêmio FBPA Win"
-      },
-      "high_odds_pick": {
-        "market": "Both Teams to Score - No",
-        "probability_pct": 50.1,
-        "fair_odds": 2.0,
-        "reliability_score": 77,
-        "market_label": "BTTS - No"
-      },
-      "top_scores": [
-        {
-          "score": "1-1",
-          "probability_pct": 14.4,
-          "fair_odds": 6.92
-        },
-        {
-          "score": "0-0",
-          "probability_pct": 10.6,
-          "fair_odds": 9.46
-        },
-        {
-          "score": "0-1",
-          "probability_pct": 10.3,
-          "fair_odds": 9.71
-        }
-      ],
-      "correctscore_pick": null,
-      "deep_analysis": {
-        "home_team_stats": null,
-        "away_team_stats": null,
-        "standings": [
-          {
-            "rank": 1,
-            "team": {
-              "id": "fdo:1783",
-              "name": "CR Flamengo"
-            },
-            "points": 54,
-            "goalsDiff": 30
-          },
-          {
-            "rank": 2,
-            "team": {
-              "id": "fdo:1769",
-              "name": "SE Palmeiras"
-            },
-            "points": 53,
-            "goalsDiff": 24
-          },
-          {
-            "rank": 3,
-            "team": {
-              "id": "fdo:1768",
-              "name": "CA Paranaense"
-            },
-            "points": 45,
-            "goalsDiff": 10
-          },
-          {
-            "rank": 4,
-            "team": {
-              "id": "fdo:1765",
-              "name": "Fluminense FC"
-            },
-            "points": 45,
-            "goalsDiff": 8
-          },
-          {
-            "rank": 5,
-            "team": {
-              "id": "fdo:1777",
-              "name": "EC Bahia"
-            },
-            "points": 43,
-            "goalsDiff": 8
-          },
-          {
-            "rank": 6,
-            "team": {
-              "id": "fdo:1771",
-              "name": "Cruzeiro EC"
-            },
-            "points": 42,
-            "goalsDiff": 1
-          },
-          {
-            "rank": 7,
-            "team": {
-              "id": "fdo:4241",
-              "name": "Coritiba FBC"
-            },
-            "points": 37,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 8,
-            "team": {
-              "id": "fdo:1766",
-              "name": "CA Mineiro"
-            },
-            "points": 36,
-            "goalsDiff": 2
-          },
-          {
-            "rank": 9,
-            "team": {
-              "id": "fdo:4286",
-              "name": "RB Bragantino"
-            },
-            "points": 35,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 10,
-            "team": {
-              "id": "fdo:1776",
-              "name": "São Paulo FC"
-            },
-            "points": 33,
-            "goalsDiff": 3
-          },
-          {
-            "rank": 11,
-            "team": {
-              "id": "fdo:1779",
-              "name": "SC Corinthians Paulista"
-            },
-            "points": 32,
-            "goalsDiff": 0
-          },
-          {
-            "rank": 12,
-            "team": {
-              "id": "fdo:6685",
-              "name": "Santos FC"
-            },
-            "points": 32,
-            "goalsDiff": -1
-          },
-          {
-            "rank": 13,
-            "team": {
-              "id": "fdo:1770",
-              "name": "Botafogo FR"
-            },
-            "points": 31,
-            "goalsDiff": -3
-          },
-          {
-            "rank": 14,
-            "team": {
-              "id": "fdo:1782",
-              "name": "EC Vitória"
-            },
-            "points": 29,
-            "goalsDiff": -13
-          },
-          {
-            "rank": 15,
-            "team": {
-              "id": "fdo:1767",
-              "name": "Grêmio FBPA"
-            },
-            "points": 28,
-            "goalsDiff": -5
-          },
-          {
-            "rank": 16,
-            "team": {
-              "id": "fdo:4364",
-              "name": "Mirassol FC"
-            },
-            "points": 28,
-            "goalsDiff": -11
-          },
-          {
-            "rank": 17,
-            "team": {
-              "id": "fdo:6684",
-              "name": "SC Internacional"
-            },
-            "points": 25,
-            "goalsDiff": -6
-          },
-          {
-            "rank": 18,
-            "team": {
-              "id": "fdo:1780",
-              "name": "CR Vasco da Gama"
-            },
-            "points": 25,
-            "goalsDiff": -13
-          },
-          {
-            "rank": 19,
-            "team": {
-              "id": "fdo:4287",
-              "name": "Clube do Remo"
-            },
-            "points": 23,
-            "goalsDiff": -13
-          },
-          {
-            "rank": 20,
-            "team": {
-              "id": "fdo:1772",
-              "name": "Chapecoense AF"
-            },
-            "points": 17,
-            "goalsDiff": -23
-          }
-        ],
-        "injuries": []
-      }
-    }
-  ]
+  "remaining_quota": 99,
+  "matches": []
 }
