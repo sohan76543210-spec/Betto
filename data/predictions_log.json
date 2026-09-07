@@ -2036,9 +2036,12 @@
       "fair_odds": 2.18,
       "market_label": "Vitoria Win or Botafogo Win"
     },
-    "status": "pending",
+    "status": "unresolved",
     "actual_score": null,
-    "checked_at": null
+    "checked_at": "2026-09-07T00:22:57.288236+00:00",
+    "best_pick_status": "unresolved",
+    "high_odds_pick_status": "unresolved",
+    "correctscore_pick_status": "unresolved"
   },
   {
     "match_id": 1492336,
@@ -2058,9 +2061,12 @@
       "fair_odds": 2.22,
       "market_label": "Flamengo Win"
     },
-    "status": "pending",
+    "status": "unresolved",
     "actual_score": null,
-    "checked_at": null
+    "checked_at": "2026-09-07T00:22:57.288236+00:00",
+    "best_pick_status": "unresolved",
+    "high_odds_pick_status": "unresolved",
+    "correctscore_pick_status": "unresolved"
   },
   {
     "match_id": 1492333,
@@ -2080,9 +2086,12 @@
       "fair_odds": 2.25,
       "market_label": "Cruzeiro Win"
     },
-    "status": "pending",
+    "status": "unresolved",
     "actual_score": null,
-    "checked_at": null
+    "checked_at": "2026-09-07T00:22:57.288236+00:00",
+    "best_pick_status": "unresolved",
+    "high_odds_pick_status": "unresolved",
+    "correctscore_pick_status": "unresolved"
   },
   {
     "match_id": "aps:1547770",
@@ -2198,6 +2207,29 @@
       "reliability_score": 79,
       "market_label": "BTTS - Yes"
     },
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1549015",
+    "competition": "Superliga (Denmark)",
+    "home_team": "FC Midtjylland",
+    "away_team": "FC Nordsjaelland",
+    "home_team_id": "aps:397",
+    "away_team_id": "aps:398",
+    "season": 2026,
+    "match_date": "2026-09-07T17:00:00+00:00",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 72.4,
+      "fair_odds": 1.38,
+      "reliability_score": 84,
+      "market_label": "Over 2.5 Goals"
+    },
+    "confidence_score_at_prediction": 100,
+    "high_odds_pick": null,
     "correctscore_pick": null,
     "status": "pending",
     "actual_score": null,

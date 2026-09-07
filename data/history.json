@@ -1945,5 +1945,89 @@
     "correctscore_pick_status": "no_pick",
     "actual_score": "3-0",
     "checked_at": "2026-09-06T23:47:59.067994+00:00"
+  },
+  {
+    "match_id": 1492339,
+    "competition": "Serie A (Brazil)",
+    "home_team": "Vitoria",
+    "away_team": "Botafogo",
+    "home_team_id": null,
+    "away_team_id": null,
+    "match_date": "2026-08-16T21:30:00+00:00",
+    "confidence_score_at_prediction": null,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 67.0,
+      "fair_odds": 1.49,
+      "market_label": "Vitoria Win or Draw"
+    },
+    "best_pick_status": "unresolved",
+    "high_odds_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 45.9,
+      "fair_odds": 2.18,
+      "market_label": "Vitoria Win or Botafogo Win"
+    },
+    "high_odds_pick_status": "unresolved",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "unresolved",
+    "actual_score": null,
+    "checked_at": "2026-09-07T00:22:57.288236+00:00"
+  },
+  {
+    "match_id": 1492336,
+    "competition": "Serie A (Brazil)",
+    "home_team": "Mirassol",
+    "away_team": "Flamengo",
+    "home_team_id": null,
+    "away_team_id": null,
+    "match_date": "2026-08-16T21:30:00+00:00",
+    "confidence_score_at_prediction": null,
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 66.2,
+      "fair_odds": 1.51,
+      "market_label": "Draw or Flamengo Win"
+    },
+    "best_pick_status": "unresolved",
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 45.0,
+      "fair_odds": 2.22,
+      "market_label": "Flamengo Win"
+    },
+    "high_odds_pick_status": "unresolved",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "unresolved",
+    "actual_score": null,
+    "checked_at": "2026-09-07T00:22:57.288236+00:00"
+  },
+  {
+    "match_id": 1492333,
+    "competition": "Serie A (Brazil)",
+    "home_team": "Corinthians",
+    "away_team": "Cruzeiro",
+    "home_team_id": null,
+    "away_team_id": null,
+    "match_date": "2026-08-16T22:30:00+00:00",
+    "confidence_score_at_prediction": null,
+    "best_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 69.3,
+      "fair_odds": 1.44,
+      "market_label": "Under 2.5 Goals"
+    },
+    "best_pick_status": "unresolved",
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 44.5,
+      "fair_odds": 2.25,
+      "market_label": "Cruzeiro Win"
+    },
+    "high_odds_pick_status": "unresolved",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "unresolved",
+    "actual_score": null,
+    "checked_at": "2026-09-07T00:22:57.288236+00:00"
   }
 ]
