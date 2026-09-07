@@ -2029,5 +2029,33 @@
     "correctscore_pick_status": "unresolved",
     "actual_score": null,
     "checked_at": "2026-09-07T00:22:57.288236+00:00"
+  },
+  {
+    "match_id": "fdo:554992",
+    "competition": "Campeonato Brasileiro Série A (Brazil)",
+    "home_team": "SC Corinthians Paulista",
+    "away_team": "Chapecoense AF",
+    "home_team_id": "fdo:1779",
+    "away_team_id": "fdo:1772",
+    "match_date": "2026-09-06T22:30:00Z",
+    "confidence_score_at_prediction": 92,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 70.2,
+      "fair_odds": 1.42,
+      "reliability_score": 88,
+      "market_label": "SC Corinthians Paulista Win or Chapecoense AF Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "1-0",
+      "probability_pct": 16.5,
+      "fair_odds": 6.04
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "1-2",
+    "checked_at": "2026-09-07T00:39:58.055885+00:00"
   }
 ]
