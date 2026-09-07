@@ -2057,5 +2057,153 @@
     "correctscore_pick_status": "incorrect",
     "actual_score": "1-2",
     "checked_at": "2026-09-07T00:39:58.055885+00:00"
+  },
+  {
+    "match_id": "fdo:558610",
+    "competition": "Serie A (Italy)",
+    "home_team": "Cagliari Calcio",
+    "away_team": "US Lecce",
+    "home_team_id": "fdo:104",
+    "away_team_id": "fdo:5890",
+    "match_date": "2026-09-07T16:30:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 70.1,
+      "fair_odds": 1.43,
+      "reliability_score": 78,
+      "market_label": "Cagliari Calcio Win or Draw"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 49.1,
+      "fair_odds": 2.04,
+      "reliability_score": 78,
+      "market_label": "BTTS - No"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-07T22:22:40.075508+00:00"
+  },
+  {
+    "match_id": "fdo:564665",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Getafe CF",
+    "away_team": "RC Celta de Vigo",
+    "home_team_id": "fdo:82",
+    "away_team_id": "fdo:558",
+    "match_date": "2026-09-07T17:00:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 75.3,
+      "fair_odds": 1.33,
+      "reliability_score": 79,
+      "market_label": "Getafe CF Win or Draw"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "0-0",
+      "probability_pct": 18.9,
+      "fair_odds": 5.28
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-07T22:22:40.075508+00:00"
+  },
+  {
+    "match_id": "fdo:558617",
+    "competition": "Serie A (Italy)",
+    "home_team": "Udinese Calcio",
+    "away_team": "SS Lazio",
+    "home_team_id": "fdo:115",
+    "away_team_id": "fdo:110",
+    "match_date": "2026-09-07T18:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 72.8,
+      "fair_odds": 1.37,
+      "reliability_score": 81,
+      "market_label": "Udinese Calcio Win or Draw"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": {
+      "market": "Both Teams to Score - Yes",
+      "probability_pct": 47.2,
+      "fair_odds": 2.12,
+      "reliability_score": 81,
+      "market_label": "BTTS - Yes"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-2",
+    "checked_at": "2026-09-07T22:22:40.075508+00:00"
+  },
+  {
+    "match_id": "fdo:567295",
+    "competition": "Primeira Liga (Portugal)",
+    "home_team": "GD Estoril Praia",
+    "away_team": "FC Arouca",
+    "home_team_id": "fdo:582",
+    "away_team_id": "fdo:712",
+    "match_date": "2026-09-07T19:15:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.1,
+      "fair_odds": 1.33,
+      "reliability_score": 84,
+      "market_label": "GD Estoril Praia Win or FC Arouca Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 44.7,
+      "fair_odds": 2.24,
+      "reliability_score": 84,
+      "market_label": "GD Estoril Praia Win or Draw"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-0",
+    "checked_at": "2026-09-07T22:22:40.075508+00:00"
+  },
+  {
+    "match_id": "fdo:564658",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Elche CF",
+    "away_team": "Real Sociedad de Fútbol",
+    "home_team_id": "fdo:285",
+    "away_team_id": "fdo:92",
+    "match_date": "2026-09-07T19:30:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.1,
+      "fair_odds": 1.37,
+      "reliability_score": 82,
+      "market_label": "Elche CF Win or Real Sociedad de Fútbol Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 43.2,
+      "fair_odds": 2.31,
+      "reliability_score": 82,
+      "market_label": "Under 2.5 Goals"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-3",
+    "checked_at": "2026-09-07T22:22:40.075508+00:00"
   }
 ]
