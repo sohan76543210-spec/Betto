@@ -2341,5 +2341,185 @@
     "correctscore_pick_status": "no_pick",
     "actual_score": "1-0",
     "checked_at": "2026-09-09T03:15:46.472476+00:00"
+  },
+  {
+    "match_id": "fdo:558233",
+    "competition": "Eredivisie (Netherlands)",
+    "home_team": "NEC",
+    "away_team": "SBV Excelsior",
+    "home_team_id": "fdo:1915",
+    "away_team_id": "fdo:670",
+    "match_date": "2026-09-08T16:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.3,
+      "fair_odds": 1.33,
+      "reliability_score": 84,
+      "market_label": "NEC Win or SBV Excelsior Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 43.8,
+      "fair_odds": 2.28,
+      "reliability_score": 84,
+      "market_label": "SBV Excelsior Win"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-2",
+    "checked_at": "2026-09-09T03:54:05.767167+00:00"
+  },
+  {
+    "match_id": "fdo:561823",
+    "competition": "Championship (England)",
+    "home_team": "Watford FC",
+    "away_team": "Preston North End FC",
+    "home_team_id": "fdo:346",
+    "away_team_id": "fdo:1081",
+    "match_date": "2026-09-08T18:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 72.8,
+      "fair_odds": 1.37,
+      "reliability_score": 82,
+      "market_label": "Watford FC Win or Preston North End FC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 44.7,
+      "fair_odds": 2.24,
+      "reliability_score": 82,
+      "market_label": "Under 2.5 Goals"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-1",
+    "checked_at": "2026-09-09T03:54:05.767167+00:00"
+  },
+  {
+    "match_id": "fdo:561821",
+    "competition": "Championship (England)",
+    "home_team": "Blackburn Rovers FC",
+    "away_team": "Sheffield United FC",
+    "home_team_id": "fdo:59",
+    "away_team_id": "fdo:356",
+    "match_date": "2026-09-08T18:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 71.5,
+      "fair_odds": 1.4,
+      "reliability_score": 80,
+      "market_label": "Blackburn Rovers FC Win or Sheffield United FC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 50.1,
+      "fair_odds": 2.0,
+      "reliability_score": 80,
+      "market_label": "Over 2.5 Goals"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-2",
+    "checked_at": "2026-09-09T03:54:05.767167+00:00"
+  },
+  {
+    "match_id": "fdo:561822",
+    "competition": "Championship (England)",
+    "home_team": "Southampton FC",
+    "away_team": "Swansea City AFC",
+    "home_team_id": "fdo:340",
+    "away_team_id": "fdo:72",
+    "match_date": "2026-09-08T18:45:00Z",
+    "confidence_score_at_prediction": 96,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.1,
+      "fair_odds": 1.35,
+      "reliability_score": 78,
+      "market_label": "Southampton FC Win or Swansea City AFC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Home Win",
+      "probability_pct": 46.8,
+      "fair_odds": 2.14,
+      "reliability_score": 78,
+      "market_label": "Southampton FC Win"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "3-1",
+    "checked_at": "2026-09-09T03:54:05.767167+00:00"
+  },
+  {
+    "match_id": "fdo:561830",
+    "competition": "Championship (England)",
+    "home_team": "Wrexham AFC",
+    "away_team": "Burnley FC",
+    "home_team_id": "fdo:404",
+    "away_team_id": "fdo:328",
+    "match_date": "2026-09-08T18:45:00Z",
+    "confidence_score_at_prediction": 80,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.6,
+      "fair_odds": 1.34,
+      "reliability_score": 73,
+      "market_label": "Wrexham AFC Win or Burnley FC Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 47.7,
+      "fair_odds": 2.1,
+      "reliability_score": 73,
+      "market_label": "Draw or Burnley FC Win"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-09T03:54:05.767167+00:00"
+  },
+  {
+    "match_id": "fdo:561824",
+    "competition": "Championship (England)",
+    "home_team": "Cardiff City FC",
+    "away_team": "Stoke City FC",
+    "home_team_id": "fdo:715",
+    "away_team_id": "fdo:70",
+    "match_date": "2026-09-08T18:45:00Z",
+    "confidence_score_at_prediction": 82,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.9,
+      "fair_odds": 1.35,
+      "reliability_score": 74,
+      "market_label": "Cardiff City FC Win or Stoke City FC Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": {
+      "market": "Home Win",
+      "probability_pct": 42.5,
+      "fair_odds": 2.35,
+      "reliability_score": 74,
+      "market_label": "Cardiff City FC Win"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-09T03:54:05.767167+00:00"
   }
 ]
