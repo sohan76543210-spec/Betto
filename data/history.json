@@ -2259,5 +2259,87 @@
     "correctscore_pick_status": "no_pick",
     "actual_score": "1-0",
     "checked_at": "2026-09-08T04:46:52.395612+00:00"
+  },
+  {
+    "match_id": "aps:1547770",
+    "competition": "CONMEBOL Libertadores (World)",
+    "home_team": "Independ. Rivadavia",
+    "away_team": "Fluminense",
+    "home_team_id": null,
+    "away_team_id": null,
+    "match_date": "2026-08-18T22:00:00+00:00",
+    "confidence_score_at_prediction": null,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 75.9,
+      "fair_odds": 1.32,
+      "reliability_score": 45,
+      "market_label": "Independ. Rivadavia Win or Draw"
+    },
+    "best_pick_status": "unresolved",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "unresolved",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "unresolved",
+    "actual_score": null,
+    "checked_at": "2026-09-09T03:15:46.472476+00:00"
+  },
+  {
+    "match_id": "fdo:558252",
+    "competition": "Eredivisie (Netherlands)",
+    "home_team": "FC Utrecht",
+    "away_team": "Go Ahead Eagles",
+    "home_team_id": "fdo:676",
+    "away_team_id": "fdo:718",
+    "match_date": "2026-09-05T16:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 63.3,
+      "fair_odds": 1.58,
+      "reliability_score": 80,
+      "market_label": "FC Utrecht Win or Draw"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": {
+      "score": "1-1",
+      "probability_pct": 7.6,
+      "fair_odds": 13.09
+    },
+    "correctscore_pick_status": "incorrect",
+    "actual_score": "3-3",
+    "checked_at": "2026-09-09T03:15:46.472476+00:00"
+  },
+  {
+    "match_id": "aps:1507059",
+    "competition": "K League 1 (South-Korea)",
+    "home_team": "Ulsan Hyundai FC",
+    "away_team": "FC Seoul",
+    "home_team_id": "aps:2767",
+    "away_team_id": "aps:2766",
+    "match_date": "2026-09-08T10:30:00+00:00",
+    "confidence_score_at_prediction": 95,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.7,
+      "fair_odds": 1.34,
+      "reliability_score": 83,
+      "market_label": "Ulsan Hyundai FC Win or FC Seoul Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 41.0,
+      "fair_odds": 2.44,
+      "reliability_score": 83,
+      "market_label": "FC Seoul Win"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-09T03:15:46.472476+00:00"
   }
 ]
