@@ -2521,5 +2521,263 @@
     "correctscore_pick_status": "no_pick",
     "actual_score": "1-1",
     "checked_at": "2026-09-09T03:54:05.767167+00:00"
+  },
+  {
+    "match_id": "fdo:567282",
+    "competition": "Primeira Liga (Portugal)",
+    "home_team": "Moreirense FC",
+    "away_team": "Sport Lisboa e Benfica",
+    "home_team_id": "fdo:583",
+    "away_team_id": "fdo:1903",
+    "match_date": "2026-09-09T19:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 64.0,
+      "fair_odds": 1.56,
+      "reliability_score": 84,
+      "market_label": "Over 2.5 Goals"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-4",
+    "checked_at": "2026-09-10T01:20:44.838648+00:00"
+  },
+  {
+    "match_id": "fdo:558239",
+    "competition": "Eredivisie (Netherlands)",
+    "home_team": "FC Twente '65",
+    "away_team": "Telstar 1963",
+    "home_team_id": "fdo:666",
+    "away_team_id": "fdo:1912",
+    "match_date": "2026-09-09T16:45:00Z",
+    "confidence_score_at_prediction": 88,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 76.5,
+      "fair_odds": 1.31,
+      "reliability_score": 76,
+      "market_label": "FC Twente '65 Win or Telstar 1963 Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 44.6,
+      "fair_odds": 2.24,
+      "reliability_score": 76,
+      "market_label": "Draw or Telstar 1963 Win"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-10T01:20:44.838648+00:00"
+  },
+  {
+    "match_id": "fdo:575329",
+    "competition": "UEFA Champions League (Europe)",
+    "home_team": "FC Barcelona",
+    "away_team": "Feyenoord Rotterdam",
+    "home_team_id": "fdo:81",
+    "away_team_id": "fdo:675",
+    "match_date": "2026-09-09T16:45:00Z",
+    "confidence_score_at_prediction": 80,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 71.5,
+      "fair_odds": 1.4,
+      "reliability_score": 75,
+      "market_label": "FC Barcelona Win or Draw"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Home Win",
+      "probability_pct": 48.6,
+      "fair_odds": 2.06,
+      "reliability_score": 75,
+      "market_label": "FC Barcelona Win"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "5-1",
+    "checked_at": "2026-09-10T01:20:44.838648+00:00"
+  },
+  {
+    "match_id": "fdo:561829",
+    "competition": "Championship (England)",
+    "home_team": "Derby County FC",
+    "away_team": "West Bromwich Albion FC",
+    "home_team_id": "fdo:342",
+    "away_team_id": "fdo:74",
+    "match_date": "2026-09-09T18:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 75.3,
+      "fair_odds": 1.33,
+      "reliability_score": 82,
+      "market_label": "Draw or West Bromwich Albion FC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 48.2,
+      "fair_odds": 2.08,
+      "reliability_score": 82,
+      "market_label": "BTTS - No"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-1",
+    "checked_at": "2026-09-10T01:20:44.838648+00:00"
+  },
+  {
+    "match_id": "fdo:561832",
+    "competition": "Championship (England)",
+    "home_team": "Norwich City FC",
+    "away_team": "Birmingham City FC",
+    "home_team_id": "fdo:68",
+    "away_team_id": "fdo:332",
+    "match_date": "2026-09-09T18:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 72.4,
+      "fair_odds": 1.38,
+      "reliability_score": 84,
+      "market_label": "Norwich City FC Win or Birmingham City FC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 45.6,
+      "fair_odds": 2.19,
+      "reliability_score": 84,
+      "market_label": "Under 2.5 Goals"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-1",
+    "checked_at": "2026-09-10T01:20:44.838648+00:00"
+  },
+  {
+    "match_id": "fdo:575331",
+    "competition": "UEFA Champions League (Europe)",
+    "home_team": "Liverpool FC",
+    "away_team": "Club Atlético de Madrid",
+    "home_team_id": "fdo:64",
+    "away_team_id": "fdo:78",
+    "match_date": "2026-09-09T19:00:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.3,
+      "fair_odds": 1.36,
+      "reliability_score": 83,
+      "market_label": "Liverpool FC Win or Club Atlético de Madrid Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 42.4,
+      "fair_odds": 2.36,
+      "reliability_score": 83,
+      "market_label": "Under 2.5 Goals"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-1",
+    "checked_at": "2026-09-10T01:20:44.838648+00:00"
+  },
+  {
+    "match_id": "fdo:575334",
+    "competition": "UEFA Champions League (Europe)",
+    "home_team": "Sporting Clube de Portugal",
+    "away_team": "Galatasaray SK",
+    "home_team_id": "fdo:498",
+    "away_team_id": "fdo:610",
+    "match_date": "2026-09-09T19:00:00Z",
+    "confidence_score_at_prediction": 70,
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 72.3,
+      "fair_odds": 1.38,
+      "reliability_score": 69,
+      "market_label": "Over 2.5 Goals"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "3-1",
+    "checked_at": "2026-09-10T01:20:44.838648+00:00"
+  },
+  {
+    "match_id": "fdo:561831",
+    "competition": "Championship (England)",
+    "home_team": "Charlton Athletic FC",
+    "away_team": "Queens Park Rangers FC",
+    "home_team_id": "fdo:348",
+    "away_team_id": "fdo:69",
+    "match_date": "2026-09-09T19:00:00Z",
+    "confidence_score_at_prediction": 92,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 70.2,
+      "fair_odds": 1.42,
+      "reliability_score": 75,
+      "market_label": "Charlton Athletic FC Win or Queens Park Rangers FC Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 48.3,
+      "fair_odds": 2.07,
+      "reliability_score": 75,
+      "market_label": "BTTS - No"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-0",
+    "checked_at": "2026-09-10T01:20:44.838648+00:00"
+  },
+  {
+    "match_id": "fdo:575333",
+    "competition": "UEFA Champions League (Europe)",
+    "home_team": "SSC Napoli",
+    "away_team": "Arsenal FC",
+    "home_team_id": "fdo:113",
+    "away_team_id": "fdo:57",
+    "match_date": "2026-09-09T19:00:00Z",
+    "confidence_score_at_prediction": 80,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.0,
+      "fair_odds": 1.37,
+      "reliability_score": 70,
+      "market_label": "SSC Napoli Win or Arsenal FC Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 45.9,
+      "fair_odds": 2.18,
+      "reliability_score": 70,
+      "market_label": "Under 2.5 Goals"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-1",
+    "checked_at": "2026-09-10T01:20:44.838648+00:00"
   }
 ]
