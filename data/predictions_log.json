@@ -3027,6 +3027,38 @@
     "correctscore_pick_status": "no_pick"
   },
   {
+    "match_id": "fdo:567276",
+    "competition": "Primeira Liga (Portugal)",
+    "home_team": "CF Estrela da Amadora",
+    "away_team": "Sporting Clube de Braga",
+    "home_team_id": "fdo:9136",
+    "away_team_id": "fdo:5613",
+    "season": 2026,
+    "match_date": "2026-09-10T19:15:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 72.8,
+      "fair_odds": 1.37,
+      "reliability_score": 81,
+      "market_label": "CF Estrela da Amadora Win or Sporting Clube de Braga Win"
+    },
+    "confidence_score_at_prediction": 100,
+    "high_odds_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 45.2,
+      "fair_odds": 2.21,
+      "reliability_score": 81,
+      "market_label": "Under 2.5 Goals"
+    },
+    "correctscore_pick": null,
+    "status": "correct",
+    "actual_score": "2-1",
+    "checked_at": "2026-09-10T21:37:36.228385+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick_status": "no_pick"
+  },
+  {
     "match_id": "aps:1547771",
     "competition": "CONMEBOL Libertadores (World)",
     "home_team": "LDU de Quito",
@@ -3349,35 +3381,6 @@
       "fair_odds": 2.17,
       "reliability_score": 83,
       "market_label": "BTTS - Yes"
-    },
-    "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
-  },
-  {
-    "match_id": "fdo:567276",
-    "competition": "Primeira Liga (Portugal)",
-    "home_team": "CF Estrela da Amadora",
-    "away_team": "Sporting Clube de Braga",
-    "home_team_id": "fdo:9136",
-    "away_team_id": "fdo:5613",
-    "season": 2026,
-    "match_date": "2026-09-10T19:15:00Z",
-    "best_pick": {
-      "market": "Double Chance (Home/Away)",
-      "probability_pct": 72.8,
-      "fair_odds": 1.37,
-      "reliability_score": 81,
-      "market_label": "CF Estrela da Amadora Win or Sporting Clube de Braga Win"
-    },
-    "confidence_score_at_prediction": 100,
-    "high_odds_pick": {
-      "market": "Under 2.5 Goals",
-      "probability_pct": 45.2,
-      "fair_odds": 2.21,
-      "reliability_score": 81,
-      "market_label": "Under 2.5 Goals"
     },
     "correctscore_pick": null,
     "status": "pending",
