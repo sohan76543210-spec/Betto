@@ -2779,5 +2779,131 @@
     "correctscore_pick_status": "no_pick",
     "actual_score": "0-1",
     "checked_at": "2026-09-10T01:20:44.838648+00:00"
+  },
+  {
+    "match_id": "fdo:575336",
+    "competition": "UEFA Champions League (Europe)",
+    "home_team": "PSV",
+    "away_team": "FK Shakhtar Donetsk",
+    "home_team_id": "fdo:674",
+    "away_team_id": "fdo:1887",
+    "match_date": "2026-09-10T16:45:00Z",
+    "confidence_score_at_prediction": 44,
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 72.8,
+      "fair_odds": 1.37,
+      "reliability_score": 60,
+      "market_label": "PSV Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-10T21:05:45.944751+00:00"
+  },
+  {
+    "match_id": "fdo:575335",
+    "competition": "UEFA Champions League (Europe)",
+    "home_team": "Fenerbahçe SK",
+    "away_team": "AS Roma",
+    "home_team_id": "fdo:613",
+    "away_team_id": "fdo:100",
+    "match_date": "2026-09-10T16:45:00Z",
+    "confidence_score_at_prediction": 40,
+    "best_pick": {
+      "market": "Away Win",
+      "probability_pct": 62.8,
+      "fair_odds": 1.59,
+      "reliability_score": 61,
+      "market_label": "AS Roma Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-10T21:05:45.944751+00:00"
+  },
+  {
+    "match_id": "fdo:575337",
+    "competition": "UEFA Champions League (Europe)",
+    "home_team": "FC Bayern München",
+    "away_team": "FK Bodø/Glimt",
+    "home_team_id": "fdo:5",
+    "away_team_id": "fdo:5721",
+    "match_date": "2026-09-10T19:00:00Z",
+    "confidence_score_at_prediction": 70,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 69.7,
+      "fair_odds": 1.44,
+      "reliability_score": 70,
+      "market_label": "FC Bayern München Win or Draw"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 49.8,
+      "fair_odds": 2.01,
+      "reliability_score": 70,
+      "market_label": "Draw or FK Bodø/Glimt Win"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "5-0",
+    "checked_at": "2026-09-10T21:05:45.944751+00:00"
+  },
+  {
+    "match_id": "fdo:575339",
+    "competition": "UEFA Champions League (Europe)",
+    "home_team": "Como 1907",
+    "away_team": "RB Leipzig",
+    "home_team_id": "fdo:7397",
+    "away_team_id": "fdo:721",
+    "match_date": "2026-09-10T19:00:00Z",
+    "confidence_score_at_prediction": 75,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.4,
+      "fair_odds": 1.34,
+      "reliability_score": 74,
+      "market_label": "Como 1907 Win or RB Leipzig Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "4-1",
+    "checked_at": "2026-09-10T21:05:45.944751+00:00"
+  },
+  {
+    "match_id": "fdo:575340",
+    "competition": "UEFA Champions League (Europe)",
+    "home_team": "SK Slavia Praha",
+    "away_team": "Racing Club de Lens",
+    "home_team_id": "fdo:930",
+    "away_team_id": "fdo:546",
+    "match_date": "2026-09-10T19:00:00Z",
+    "confidence_score_at_prediction": 50,
+    "best_pick": {
+      "market": "Away Win",
+      "probability_pct": 62.6,
+      "fair_odds": 1.6,
+      "reliability_score": 59,
+      "market_label": "Racing Club de Lens Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-3",
+    "checked_at": "2026-09-10T21:05:45.944751+00:00"
   }
 ]
