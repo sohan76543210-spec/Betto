@@ -3384,38 +3384,12 @@
       "market_label": "LDU de Quito Win or Mirassol Win"
     },
     "high_odds_pick": null,
-    "status": "pending",
+    "status": "unresolved",
     "actual_score": null,
-    "checked_at": null
-  },
-  {
-    "match_id": "aps:1576482",
-    "competition": "Segunda Liga (Portugal)",
-    "home_team": "Farense",
-    "away_team": "Chaves",
-    "home_team_id": "aps:231",
-    "away_team_id": "aps:223",
-    "season": 2026,
-    "match_date": "2026-09-06T13:00:00+00:00",
-    "best_pick": {
-      "market": "Double Chance (Draw/Away)",
-      "probability_pct": 72.9,
-      "fair_odds": 1.37,
-      "reliability_score": 79,
-      "market_label": "Draw or Chaves Win"
-    },
-    "confidence_score_at_prediction": 92,
-    "high_odds_pick": {
-      "market": "Both Teams to Score - Yes",
-      "probability_pct": 43.6,
-      "fair_odds": 2.29,
-      "reliability_score": 79,
-      "market_label": "BTTS - Yes"
-    },
-    "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "checked_at": "2026-09-11T22:45:30.046325+00:00",
+    "best_pick_status": "unresolved",
+    "high_odds_pick_status": "unresolved",
+    "correctscore_pick_status": "unresolved"
   },
   {
     "match_id": "aps:1520869",
@@ -3442,9 +3416,12 @@
       "market_label": "BTTS - No"
     },
     "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-0",
+    "checked_at": "2026-09-11T22:45:30.046325+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "correct",
+    "correctscore_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1520867",
@@ -3464,6 +3441,38 @@
     },
     "confidence_score_at_prediction": 45,
     "high_odds_pick": null,
+    "correctscore_pick": null,
+    "status": "correct",
+    "actual_score": "1-2",
+    "checked_at": "2026-09-11T22:45:30.046325+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick_status": "no_pick"
+  },
+  {
+    "match_id": "aps:1576482",
+    "competition": "Segunda Liga (Portugal)",
+    "home_team": "Farense",
+    "away_team": "Chaves",
+    "home_team_id": "aps:231",
+    "away_team_id": "aps:223",
+    "season": 2026,
+    "match_date": "2026-09-06T13:00:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 72.9,
+      "fair_odds": 1.37,
+      "reliability_score": 79,
+      "market_label": "Draw or Chaves Win"
+    },
+    "confidence_score_at_prediction": 92,
+    "high_odds_pick": {
+      "market": "Both Teams to Score - Yes",
+      "probability_pct": 43.6,
+      "fair_odds": 2.29,
+      "reliability_score": 79,
+      "market_label": "BTTS - Yes"
+    },
     "correctscore_pick": null,
     "status": "pending",
     "actual_score": null,
