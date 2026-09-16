@@ -3305,5 +3305,293 @@
     "correctscore_pick_status": "no_pick",
     "actual_score": "1-2",
     "checked_at": "2026-09-11T22:45:30.046325+00:00"
+  },
+  {
+    "match_id": "aps:1553125",
+    "competition": "Ekstraklasa (Poland)",
+    "home_team": "Raków Częstochowa",
+    "away_team": "Zaglebie Lubin",
+    "home_team_id": "aps:3491",
+    "away_team_id": "aps:345",
+    "match_date": "2026-09-15T16:00:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.0,
+      "fair_odds": 1.33,
+      "reliability_score": 82,
+      "market_label": "Raków Częstochowa Win or Zaglebie Lubin Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 47.0,
+      "fair_odds": 2.13,
+      "reliability_score": 82,
+      "market_label": "Draw or Zaglebie Lubin Win"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-3",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "aps:1555368",
+    "competition": "Super League (Switzerland)",
+    "home_team": "Grasshoppers",
+    "away_team": "FC Sion",
+    "home_team_id": "aps:1013",
+    "away_team_id": "aps:630",
+    "match_date": "2026-09-15T17:00:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.4,
+      "fair_odds": 1.36,
+      "reliability_score": 84,
+      "market_label": "Grasshoppers Win or FC Sion Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Under 2.5 Goals",
+      "probability_pct": 50.1,
+      "fair_odds": 2.0,
+      "reliability_score": 84,
+      "market_label": "Under 2.5 Goals"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-5",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "aps:1497704",
+    "competition": "Superettan (Sweden)",
+    "home_team": "IFK Varnamo",
+    "away_team": "Osters IF",
+    "home_team_id": "aps:2163",
+    "away_team_id": "aps:2174",
+    "match_date": "2026-09-15T17:00:00+00:00",
+    "confidence_score_at_prediction": 96,
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 73.3,
+      "fair_odds": 1.36,
+      "reliability_score": 81,
+      "market_label": "Draw or Osters IF Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 48.9,
+      "fair_odds": 2.05,
+      "reliability_score": 81,
+      "market_label": "IFK Varnamo Win or Draw"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-3",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "fdo:564680",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Deportivo Alavés",
+    "away_team": "Valencia CF",
+    "home_team_id": "fdo:263",
+    "away_team_id": "fdo:95",
+    "match_date": "2026-09-15T18:00:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.7,
+      "fair_odds": 1.32,
+      "reliability_score": 83,
+      "market_label": "Deportivo Alavés Win or Valencia CF Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 44.2,
+      "fair_odds": 2.26,
+      "reliability_score": 83,
+      "market_label": "Draw or Valencia CF Win"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-1",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "aps:1556642",
+    "competition": "Premiership (Scotland)",
+    "home_team": "Hibernian",
+    "away_team": "Kilmarnock",
+    "home_team_id": "aps:249",
+    "away_team_id": "aps:250",
+    "match_date": "2026-09-15T18:45:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 66.4,
+      "fair_odds": 1.51,
+      "reliability_score": 85,
+      "market_label": "Over 2.5 Goals"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-1",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "aps:1585228",
+    "competition": "National League (England)",
+    "home_team": "Wealdstone",
+    "away_team": "FC Halifax Town",
+    "home_team_id": "aps:8663",
+    "away_team_id": "aps:1841",
+    "match_date": "2026-09-15T18:45:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.1,
+      "fair_odds": 1.37,
+      "reliability_score": 85,
+      "market_label": "Wealdstone Win or FC Halifax Town Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 49.2,
+      "fair_odds": 2.03,
+      "reliability_score": 85,
+      "market_label": "BTTS - No"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-1",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "aps:1556643",
+    "competition": "Premiership (Scotland)",
+    "home_team": "Motherwell",
+    "away_team": "Aberdeen",
+    "home_team_id": "aps:256",
+    "away_team_id": "aps:252",
+    "match_date": "2026-09-15T18:45:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.5,
+      "fair_odds": 1.33,
+      "reliability_score": 81,
+      "market_label": "Motherwell Win or Aberdeen Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 47.0,
+      "fair_odds": 2.13,
+      "reliability_score": 81,
+      "market_label": "Draw or Aberdeen Win"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-4",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "aps:1585221",
+    "competition": "National League (England)",
+    "home_team": "Aldershot Town",
+    "away_team": "Yeovil Town",
+    "home_team_id": "aps:1818",
+    "away_team_id": "aps:1377",
+    "match_date": "2026-09-15T18:45:00+00:00",
+    "confidence_score_at_prediction": 96,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.1,
+      "fair_odds": 1.35,
+      "reliability_score": 84,
+      "market_label": "Aldershot Town Win or Yeovil Town Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "fdo:561825",
+    "competition": "Championship (England)",
+    "home_team": "Middlesbrough FC",
+    "away_team": "Millwall FC",
+    "home_team_id": "fdo:343",
+    "away_team_id": "fdo:384",
+    "match_date": "2026-09-15T18:45:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.0,
+      "fair_odds": 1.33,
+      "reliability_score": 80,
+      "market_label": "Middlesbrough FC Win or Millwall FC Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": {
+      "market": "Home Win",
+      "probability_pct": 48.0,
+      "fair_odds": 2.08,
+      "reliability_score": 80,
+      "market_label": "Middlesbrough FC Win"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-2",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "fdo:564681",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Elche CF",
+    "away_team": "Real Madrid CF",
+    "home_team_id": "fdo:285",
+    "away_team_id": "fdo:86",
+    "match_date": "2026-09-15T19:30:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Away Win",
+      "probability_pct": 67.4,
+      "fair_odds": 1.48,
+      "reliability_score": 87,
+      "market_label": "Real Madrid CF Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 43.6,
+      "fair_odds": 2.29,
+      "reliability_score": 87,
+      "market_label": "BTTS - No"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-3",
+    "checked_at": "2026-09-16T14:54:21.943836+00:00"
   }
 ]
