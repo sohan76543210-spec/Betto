@@ -3593,5 +3593,251 @@
     "correctscore_pick_status": "no_pick",
     "actual_score": "2-3",
     "checked_at": "2026-09-16T14:54:21.943836+00:00"
+  },
+  {
+    "match_id": "aps:1561402",
+    "competition": "Premier League (Russia)",
+    "home_team": "Spartak Moscow",
+    "away_team": "Fakel",
+    "home_team_id": "aps:558",
+    "away_team_id": "aps:1993",
+    "match_date": "2026-09-16T15:30:00+00:00",
+    "confidence_score_at_prediction": 96,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.1,
+      "fair_odds": 1.35,
+      "reliability_score": 86,
+      "market_label": "Spartak Moscow Win or Fakel Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Both Teams to Score - Yes",
+      "probability_pct": 47.8,
+      "fair_odds": 2.09,
+      "reliability_score": 86,
+      "market_label": "BTTS - Yes"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00"
+  },
+  {
+    "match_id": "aps:1561401",
+    "competition": "Premier League (Russia)",
+    "home_team": "Rodina Moskva",
+    "away_team": "Rubin",
+    "home_team_id": "aps:6822",
+    "away_team_id": "aps:1083",
+    "match_date": "2026-09-16T15:30:00+00:00",
+    "confidence_score_at_prediction": 88,
+    "best_pick": {
+      "market": "Home Win",
+      "probability_pct": 69.1,
+      "fair_odds": 1.45,
+      "reliability_score": 78,
+      "market_label": "Rodina Moskva Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00"
+  },
+  {
+    "match_id": "aps:1636217",
+    "competition": "UEFA Europa League (World)",
+    "home_team": "Ararat-Armenia",
+    "away_team": "Sparta Praha",
+    "home_team_id": "aps:3683",
+    "away_team_id": "aps:628",
+    "match_date": "2026-09-16T16:45:00+00:00",
+    "confidence_score_at_prediction": 88,
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 75.3,
+      "fair_odds": 1.33,
+      "reliability_score": 77,
+      "market_label": "Over 2.5 Goals"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-4",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00"
+  },
+  {
+    "match_id": "aps:1555370",
+    "competition": "Super League (Switzerland)",
+    "home_team": "FC Thun",
+    "away_team": "Servette FC",
+    "home_team_id": "aps:1012",
+    "away_team_id": "aps:2184",
+    "match_date": "2026-09-16T17:00:00+00:00",
+    "confidence_score_at_prediction": 92,
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 74.5,
+      "fair_odds": 1.34,
+      "reliability_score": 78,
+      "market_label": "Over 2.5 Goals"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-4",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00"
+  },
+  {
+    "match_id": "aps:1555369",
+    "competition": "Super League (Switzerland)",
+    "home_team": "FC Lugano",
+    "away_team": "FC ST. Gallen",
+    "home_team_id": "aps:606",
+    "away_team_id": "aps:1011",
+    "match_date": "2026-09-16T17:00:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.3,
+      "fair_odds": 1.35,
+      "reliability_score": 79,
+      "market_label": "FC Lugano Win or FC ST. Gallen Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 48.6,
+      "fair_odds": 2.06,
+      "reliability_score": 79,
+      "market_label": "FC ST. Gallen Win"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "4-1",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00"
+  },
+  {
+    "match_id": "fdo:564684",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Club Atlético de Madrid",
+    "away_team": "CA Osasuna",
+    "home_team_id": "fdo:78",
+    "away_team_id": "fdo:79",
+    "match_date": "2026-09-16T17:00:00Z",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Draw)",
+      "probability_pct": 76.6,
+      "fair_odds": 1.31,
+      "reliability_score": 82,
+      "market_label": "Club Atlético de Madrid Win or Draw"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Home Win",
+      "probability_pct": 48.7,
+      "fair_odds": 2.05,
+      "reliability_score": 82,
+      "market_label": "Club Atlético de Madrid Win"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "4-0",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00"
+  },
+  {
+    "match_id": "aps:1561399",
+    "competition": "Premier League (Russia)",
+    "home_team": "Lokomotiv",
+    "away_team": "Krylia Sovetov",
+    "home_team_id": "aps:597",
+    "away_team_id": "aps:1079",
+    "match_date": "2026-09-16T17:45:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.6,
+      "fair_odds": 1.34,
+      "reliability_score": 85,
+      "market_label": "Lokomotiv Win or Krylia Sovetov Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00"
+  },
+  {
+    "match_id": "aps:1561396",
+    "competition": "Premier League (Russia)",
+    "home_team": "Baltika",
+    "away_team": "Zenit",
+    "home_team_id": "aps:2006",
+    "away_team_id": "aps:596",
+    "match_date": "2026-09-16T17:45:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 75.0,
+      "fair_odds": 1.33,
+      "reliability_score": 82,
+      "market_label": "Draw or Zenit Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 40.8,
+      "fair_odds": 2.45,
+      "reliability_score": 82,
+      "market_label": "Zenit Win"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-3",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00"
+  },
+  {
+    "match_id": "aps:1585230",
+    "competition": "National League (England)",
+    "home_team": "Altrincham",
+    "away_team": "Hartlepool",
+    "home_team_id": "aps:4700",
+    "away_team_id": "aps:1366",
+    "match_date": "2026-09-16T18:45:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 73.8,
+      "fair_odds": 1.36,
+      "reliability_score": 84,
+      "market_label": "Altrincham Win or Hartlepool Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 40.7,
+      "fair_odds": 2.46,
+      "reliability_score": 84,
+      "market_label": "Hartlepool Win"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-1",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00"
   }
 ]

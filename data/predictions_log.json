@@ -3758,35 +3758,6 @@
     "correctscore_pick_status": "no_pick"
   },
   {
-    "match_id": "aps:1576482",
-    "competition": "Segunda Liga (Portugal)",
-    "home_team": "Farense",
-    "away_team": "Chaves",
-    "home_team_id": "aps:231",
-    "away_team_id": "aps:223",
-    "season": 2026,
-    "match_date": "2026-09-06T13:00:00+00:00",
-    "best_pick": {
-      "market": "Double Chance (Draw/Away)",
-      "probability_pct": 72.9,
-      "fair_odds": 1.37,
-      "reliability_score": 79,
-      "market_label": "Draw or Chaves Win"
-    },
-    "confidence_score_at_prediction": 92,
-    "high_odds_pick": {
-      "market": "Both Teams to Score - Yes",
-      "probability_pct": 43.6,
-      "fair_odds": 2.29,
-      "reliability_score": 79,
-      "market_label": "BTTS - Yes"
-    },
-    "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
-  },
-  {
     "match_id": "aps:1561402",
     "competition": "Premier League (Russia)",
     "home_team": "Spartak Moscow",
@@ -3811,9 +3782,12 @@
       "market_label": "BTTS - Yes"
     },
     "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-0",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1561401",
@@ -3834,9 +3808,12 @@
     "confidence_score_at_prediction": 88,
     "high_odds_pick": null,
     "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1636217",
@@ -3857,9 +3834,12 @@
     "confidence_score_at_prediction": 88,
     "high_odds_pick": null,
     "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "1-4",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1555370",
@@ -3880,9 +3860,12 @@
     "confidence_score_at_prediction": 92,
     "high_odds_pick": null,
     "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-4",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1555369",
@@ -3909,9 +3892,12 @@
       "market_label": "FC ST. Gallen Win"
     },
     "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "4-1",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick_status": "no_pick"
   },
   {
     "match_id": "fdo:564684",
@@ -3938,9 +3924,12 @@
       "market_label": "Club Atlético de Madrid Win"
     },
     "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "4-0",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "correct",
+    "correctscore_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1561399",
@@ -3961,9 +3950,12 @@
     "confidence_score_at_prediction": 100,
     "high_odds_pick": null,
     "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "incorrect",
+    "actual_score": "1-1",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00",
+    "best_pick_status": "incorrect",
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1561396",
@@ -3990,9 +3982,12 @@
       "market_label": "Zenit Win"
     },
     "correctscore_pick": null,
-    "status": "pending",
-    "actual_score": null,
-    "checked_at": null
+    "status": "correct",
+    "actual_score": "2-3",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "correct",
+    "correctscore_pick_status": "no_pick"
   },
   {
     "match_id": "aps:1585230",
@@ -4017,6 +4012,38 @@
       "fair_odds": 2.46,
       "reliability_score": 84,
       "market_label": "Hartlepool Win"
+    },
+    "correctscore_pick": null,
+    "status": "correct",
+    "actual_score": "2-1",
+    "checked_at": "2026-09-17T11:40:55.530711+00:00",
+    "best_pick_status": "correct",
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick_status": "no_pick"
+  },
+  {
+    "match_id": "aps:1576482",
+    "competition": "Segunda Liga (Portugal)",
+    "home_team": "Farense",
+    "away_team": "Chaves",
+    "home_team_id": "aps:231",
+    "away_team_id": "aps:223",
+    "season": 2026,
+    "match_date": "2026-09-06T13:00:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Draw/Away)",
+      "probability_pct": 72.9,
+      "fair_odds": 1.37,
+      "reliability_score": 79,
+      "market_label": "Draw or Chaves Win"
+    },
+    "confidence_score_at_prediction": 92,
+    "high_odds_pick": {
+      "market": "Both Teams to Score - Yes",
+      "probability_pct": 43.6,
+      "fair_odds": 2.29,
+      "reliability_score": 79,
+      "market_label": "BTTS - Yes"
     },
     "correctscore_pick": null,
     "status": "pending",
@@ -4104,6 +4131,340 @@
       "fair_odds": 2.0,
       "reliability_score": 82,
       "market_label": "BTTS - No"
+    },
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1561400",
+    "competition": "Premier League (Russia)",
+    "home_team": "FC Orenburg",
+    "away_team": "FC Krasnodar",
+    "home_team_id": "aps:1080",
+    "away_team_id": "aps:621",
+    "season": 2026,
+    "match_date": "2026-09-17T13:15:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 76.6,
+      "fair_odds": 1.31,
+      "reliability_score": 86,
+      "market_label": "FC Orenburg Win or FC Krasnodar Win"
+    },
+    "confidence_score_at_prediction": 100,
+    "high_odds_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 45.9,
+      "fair_odds": 2.18,
+      "reliability_score": 86,
+      "market_label": "BTTS - No"
+    },
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1561395",
+    "competition": "Premier League (Russia)",
+    "home_team": "Akron",
+    "away_team": "Akhmat",
+    "home_team_id": "aps:6786",
+    "away_team_id": "aps:1085",
+    "season": 2026,
+    "match_date": "2026-09-17T15:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.2,
+      "fair_odds": 1.35,
+      "reliability_score": 84,
+      "market_label": "Akron Win or Akhmat Win"
+    },
+    "confidence_score_at_prediction": 96,
+    "high_odds_pick": null,
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1561398",
+    "competition": "Premier League (Russia)",
+    "home_team": "FC Rostov",
+    "away_team": "Dynamo",
+    "home_team_id": "aps:779",
+    "away_team_id": "aps:1088",
+    "season": 2026,
+    "match_date": "2026-09-17T15:30:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 69.2,
+      "fair_odds": 1.44,
+      "reliability_score": 74,
+      "market_label": "FC Rostov Win or Dynamo Win"
+    },
+    "confidence_score_at_prediction": 90,
+    "high_odds_pick": {
+      "market": "Both Teams to Score - Yes",
+      "probability_pct": 49.4,
+      "fair_odds": 2.02,
+      "reliability_score": 74,
+      "market_label": "BTTS - Yes"
+    },
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1636304",
+    "competition": "UEFA Europa League (World)",
+    "home_team": "OFI",
+    "away_team": "1899 Hoffenheim",
+    "home_team_id": "aps:1124",
+    "away_team_id": "aps:167",
+    "season": 2026,
+    "match_date": "2026-09-17T16:45:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.3,
+      "fair_odds": 1.35,
+      "reliability_score": 77,
+      "market_label": "OFI Win or 1899 Hoffenheim Win"
+    },
+    "confidence_score_at_prediction": 80,
+    "high_odds_pick": null,
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1636285",
+    "competition": "UEFA Europa League (World)",
+    "home_team": "Levski Sofia",
+    "away_team": "Red Bull Salzburg",
+    "home_team_id": "aps:646",
+    "away_team_id": "aps:571",
+    "season": 2026,
+    "match_date": "2026-09-17T16:45:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.1,
+      "fair_odds": 1.35,
+      "reliability_score": 75,
+      "market_label": "Levski Sofia Win or Red Bull Salzburg Win"
+    },
+    "confidence_score_at_prediction": 80,
+    "high_odds_pick": {
+      "market": "Home Win",
+      "probability_pct": 40.9,
+      "fair_odds": 2.44,
+      "reliability_score": 75,
+      "market_label": "Levski Sofia Win"
+    },
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "fdo:564686",
+    "competition": "Primera Division (Spain)",
+    "home_team": "Real Betis Balompié",
+    "away_team": "Getafe CF",
+    "home_team_id": "fdo:90",
+    "away_team_id": "fdo:82",
+    "season": 2026,
+    "match_date": "2026-09-17T17:00:00Z",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 68.0,
+      "fair_odds": 1.47,
+      "reliability_score": 88,
+      "market_label": "Real Betis Balompié Win or Getafe CF Win"
+    },
+    "confidence_score_at_prediction": 100,
+    "high_odds_pick": {
+      "market": "Home Win",
+      "probability_pct": 46.8,
+      "fair_odds": 2.14,
+      "reliability_score": 88,
+      "market_label": "Real Betis Balompié Win"
+    },
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1561397",
+    "competition": "Premier League (Russia)",
+    "home_team": "Dinamo Makhachkala",
+    "away_team": "CSKA Moscow",
+    "home_team_id": "aps:6813",
+    "away_team_id": "aps:555",
+    "season": 2026,
+    "match_date": "2026-09-17T17:45:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 71.4,
+      "fair_odds": 1.4,
+      "reliability_score": 79,
+      "market_label": "Dinamo Makhachkala Win or CSKA Moscow Win"
+    },
+    "confidence_score_at_prediction": 100,
+    "high_odds_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 49.4,
+      "fair_odds": 2.03,
+      "reliability_score": 79,
+      "market_label": "Over 2.5 Goals"
+    },
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1564307",
+    "competition": "League One (England)",
+    "home_team": "AFC Wimbledon",
+    "away_team": "Milton Keynes Dons",
+    "home_team_id": "aps:1333",
+    "away_team_id": "aps:1348",
+    "season": 2026,
+    "match_date": "2026-09-17T19:00:00+00:00",
+    "best_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 74.7,
+      "fair_odds": 1.34,
+      "reliability_score": 82,
+      "market_label": "BTTS - No"
+    },
+    "confidence_score_at_prediction": 100,
+    "high_odds_pick": {
+      "market": "Home Win",
+      "probability_pct": 45.7,
+      "fair_odds": 2.19,
+      "reliability_score": 82,
+      "market_label": "AFC Wimbledon Win"
+    },
+    "correctscore_pick": {
+      "score": "0-0",
+      "probability_pct": 24.2,
+      "fair_odds": 4.13
+    },
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1636251",
+    "competition": "UEFA Europa League (World)",
+    "home_team": "Crystal Palace",
+    "away_team": "Lech Poznan",
+    "home_team_id": "aps:52",
+    "away_team_id": "aps:347",
+    "season": 2026,
+    "match_date": "2026-09-17T19:00:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 75.5,
+      "fair_odds": 1.32,
+      "reliability_score": 76,
+      "market_label": "Crystal Palace Win or Lech Poznan Win"
+    },
+    "confidence_score_at_prediction": 80,
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 43.0,
+      "fair_odds": 2.32,
+      "reliability_score": 76,
+      "market_label": "Lech Poznan Win"
+    },
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1636232",
+    "competition": "UEFA Europa League (World)",
+    "home_team": "Beşiktaş",
+    "away_team": "Marseille",
+    "home_team_id": "aps:549",
+    "away_team_id": "aps:81",
+    "season": 2026,
+    "match_date": "2026-09-17T19:00:00+00:00",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 76.1,
+      "fair_odds": 1.31,
+      "reliability_score": 72,
+      "market_label": "Over 2.5 Goals"
+    },
+    "confidence_score_at_prediction": 80,
+    "high_odds_pick": {
+      "market": "Home Win",
+      "probability_pct": 41.2,
+      "fair_odds": 2.43,
+      "reliability_score": 72,
+      "market_label": "Beşiktaş Win"
+    },
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1636247",
+    "competition": "UEFA Europa League (World)",
+    "home_team": "Celtic",
+    "away_team": "Ferencvarosi TC",
+    "home_team_id": "aps:247",
+    "away_team_id": "aps:651",
+    "season": 2026,
+    "match_date": "2026-09-17T19:00:00+00:00",
+    "best_pick": {
+      "market": "Over 2.5 Goals",
+      "probability_pct": 74.7,
+      "fair_odds": 1.34,
+      "reliability_score": 72,
+      "market_label": "Over 2.5 Goals"
+    },
+    "confidence_score_at_prediction": 80,
+    "high_odds_pick": null,
+    "correctscore_pick": null,
+    "status": "pending",
+    "actual_score": null,
+    "checked_at": null
+  },
+  {
+    "match_id": "aps:1636316",
+    "competition": "UEFA Europa League (World)",
+    "home_team": "Plzen",
+    "away_team": "Union St. Gilloise",
+    "home_team_id": "aps:567",
+    "away_team_id": "aps:1393",
+    "season": 2026,
+    "match_date": "2026-09-17T19:00:00+00:00",
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.5,
+      "fair_odds": 1.34,
+      "reliability_score": 75,
+      "market_label": "Plzen Win or Union St. Gilloise Win"
+    },
+    "confidence_score_at_prediction": 80,
+    "high_odds_pick": {
+      "market": "Away Win",
+      "probability_pct": 41.6,
+      "fair_odds": 2.4,
+      "reliability_score": 75,
+      "market_label": "Union St. Gilloise Win"
     },
     "correctscore_pick": null,
     "status": "pending",
