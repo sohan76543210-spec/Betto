@@ -3839,5 +3839,113 @@
     "correctscore_pick_status": "no_pick",
     "actual_score": "2-1",
     "checked_at": "2026-09-17T11:40:55.530711+00:00"
+  },
+  {
+    "match_id": "aps:1561400",
+    "competition": "Premier League (Russia)",
+    "home_team": "FC Orenburg",
+    "away_team": "FC Krasnodar",
+    "home_team_id": "aps:1080",
+    "away_team_id": "aps:621",
+    "match_date": "2026-09-17T13:15:00+00:00",
+    "confidence_score_at_prediction": 100,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 76.6,
+      "fair_odds": 1.31,
+      "reliability_score": 86,
+      "market_label": "FC Orenburg Win or FC Krasnodar Win"
+    },
+    "best_pick_status": "incorrect",
+    "high_odds_pick": {
+      "market": "Both Teams to Score - No",
+      "probability_pct": 45.9,
+      "fair_odds": 2.18,
+      "reliability_score": 86,
+      "market_label": "BTTS - No"
+    },
+    "high_odds_pick_status": "correct",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-0",
+    "checked_at": "2026-09-19T14:07:51.211204+00:00"
+  },
+  {
+    "match_id": "aps:1561395",
+    "competition": "Premier League (Russia)",
+    "home_team": "Akron",
+    "away_team": "Akhmat",
+    "home_team_id": "aps:6786",
+    "away_team_id": "aps:1085",
+    "match_date": "2026-09-17T15:30:00+00:00",
+    "confidence_score_at_prediction": 96,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.2,
+      "fair_odds": 1.35,
+      "reliability_score": 84,
+      "market_label": "Akron Win or Akhmat Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-0",
+    "checked_at": "2026-09-19T14:07:51.211204+00:00"
+  },
+  {
+    "match_id": "aps:1561398",
+    "competition": "Premier League (Russia)",
+    "home_team": "FC Rostov",
+    "away_team": "Dynamo",
+    "home_team_id": "aps:779",
+    "away_team_id": "aps:1088",
+    "match_date": "2026-09-17T15:30:00+00:00",
+    "confidence_score_at_prediction": 90,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 69.2,
+      "fair_odds": 1.44,
+      "reliability_score": 74,
+      "market_label": "FC Rostov Win or Dynamo Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": {
+      "market": "Both Teams to Score - Yes",
+      "probability_pct": 49.4,
+      "fair_odds": 2.02,
+      "reliability_score": 74,
+      "market_label": "BTTS - Yes"
+    },
+    "high_odds_pick_status": "incorrect",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "0-3",
+    "checked_at": "2026-09-19T14:07:51.211204+00:00"
+  },
+  {
+    "match_id": "aps:1636304",
+    "competition": "UEFA Europa League (World)",
+    "home_team": "OFI",
+    "away_team": "1899 Hoffenheim",
+    "home_team_id": "aps:1124",
+    "away_team_id": "aps:167",
+    "match_date": "2026-09-17T16:45:00+00:00",
+    "confidence_score_at_prediction": 80,
+    "best_pick": {
+      "market": "Double Chance (Home/Away)",
+      "probability_pct": 74.3,
+      "fair_odds": 1.35,
+      "reliability_score": 77,
+      "market_label": "OFI Win or 1899 Hoffenheim Win"
+    },
+    "best_pick_status": "correct",
+    "high_odds_pick": null,
+    "high_odds_pick_status": "no_pick",
+    "correctscore_pick": null,
+    "correctscore_pick_status": "no_pick",
+    "actual_score": "2-0",
+    "checked_at": "2026-09-19T14:07:51.211204+00:00"
   }
 ]
